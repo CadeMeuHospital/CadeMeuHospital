@@ -14,7 +14,7 @@ João Gabriel de Britto e Silva - 11/0014154 - GPP
 
 Larissa Rodrigues - 11/0015045 - GPP
 
-Levi Moraes - 11/0015339 - MDS
+Levi Moraes - 11/0015339 - MDS 2a Vez
 
 Maxwell de Oliveira - 12/0019108 - MDS
 

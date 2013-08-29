@@ -1,5 +1,7 @@
-SOLUBS - Sistema On-line de Localização de Unidades Básicas de Saúde
+SOLUBS
 ======
+
+Sistema On-line de Localização de Unidades Básicas de Saúde
 
 Componentes:
 

@@ -1,7 +1,6 @@
-SOLUBS
+Cadê meu Hospital?
 ======
 
-Sistema On-line de Localização de Unidades Básicas de Saúde
 
 Componentes:
 

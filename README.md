@@ -12,7 +12,7 @@ Euler Tiago Rodrigues de Carvalho - 11/0148151 - MDS
 
 João Gabriel de Britto e Silva - 11/0014154 - GPP
 
-Larissa Rodrigues - 11/0015045 - GPP
+Larissa Rodrigues - 11/0015045 - GPP - 15:25 - 30/08/2013
 
 Levi Moraes - 11/0015339 - MDS 2a Vez
 

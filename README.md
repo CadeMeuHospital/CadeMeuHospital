@@ -8,7 +8,7 @@ Componentes:
 
 Beatriz Rezener Dourado Matos - 11/0009088 - GPP
 
-Euler Tiago Rodrigues de Carvalho - 11/0148151 - MDS username: tiagorc
+Euler Tiago Rodrigues de Carvalho - 11/0148151 - MDS 
 
 João Gabriel de Britto e Silva - 11/0014154 - GPP
 

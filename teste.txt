@@ -1,4 +1,0 @@
-teste
-
-Commit de teste2.
-Sim, editei o seu arquivo.

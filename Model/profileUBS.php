@@ -33,11 +33,11 @@ class ProfileUBS{
         }
         
         
-        public function getNomeUBS(){
+        public function getNameUBS(){
             return $this->nameUBS;            
         }
-        public function setNomeUBS($nomeUBS){
-            $this->nameUBS = $nomeUBS;            
+        public function setNameUBS($nameUBS){
+            $this->nameUBS = $nameUBS;            
         }
         
         

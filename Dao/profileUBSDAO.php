@@ -11,7 +11,9 @@ class profileUBSDAO {
 
         $sql = "SELECT * FROM ubs WHERE cod_cnes LIKE '".$codCNES."'";
         $execute = mysql_query($sql);	
-        $result = mysql_result($execute, 0, "nom_estab");
+        //$result = mysql_result($execute, 0, "nom_estab");
+        $result = mysql_fetch_array($execute);
+        
         return $result;
     }
     

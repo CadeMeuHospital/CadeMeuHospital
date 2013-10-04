@@ -18,13 +18,20 @@
         }
         
         public function searchUBSByCodCNES($profileUBS){
+            $controllerProfileUBS = new controllerProfileUBS();
+            //Cria um objeto da classe controllerProfileUBSDAO
+            
             $profileUBSDAO = new profileUBSDAO();
             //Cria um objeto da classe profileUBSDAO
             
             $codCNES = $profileUBS->getCodCNES();
             //Cria uma variável para capturar o Codigo CNES do obejto UBS que está sendo passado no parametro do método
             
-            return $profileUBSDAO->searchUBSByCodCNES($codCNES);
+            $attributesUBS = $profileUBSDAO->searchUBSByCodCNES($codCNES);
+            
+            $profileUBS = $controllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], 
+                    $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
+            return $profileUBS;
         }
     }
     

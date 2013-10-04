@@ -1,0 +1,89 @@
+div.content {
+	padding: 10px
+}
+
+label,input {
+	height: 25px;
+	margin: 2px;
+	display: inline-block;
+}
+
+label {
+	float: none;
+	width: 100%;
+	line-height: 29px;
+}
+
+input {
+	float: right;
+}
+
+div.labels {
+	float: left;
+	width: 120px;
+	padding: 2px;
+	text-align: right;
+}
+
+div.profile_user,div.profile_update,div.profile_password {
+	float: left;
+	padding: 10px;
+}
+
+div.profile_user {
+	width: 120px;
+}
+
+div.profile_update {
+	width: 350px;
+}
+
+div.profile_update input {
+	width: 200px;
+}
+
+div.profile_password {
+	float: right;
+	width: 250px;
+	border: 1px dashed #e0e3e1;
+
+	background-color: #EEEEFF;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+div.profile_password input {
+	width: 100px;
+}
+
+input.button {
+	margin-top: 20px;
+	font-weight: bold;
+	line-height: 1;
+	padding: 6px 10px;
+	cursor: pointer;
+	font-size: 11pt;
+	height: 35px;
+	min-width: 150px; padding-left : 20px;
+	padding-right: 20px;
+	vertical-align: middle;
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 -1px 1px #64799e;
+	/* Background gradient */
+	background: #55d400;
+	background: -moz-linear-gradient(top, #55d400 0%, #009900 100%);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#55d400),
+		to(#009900));
+	/* Border style */
+	border: 1px solid #00a800;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	/* Box shadow */
+	-moz-box-shadow: inset 0 1px 0 0 #aec3e5;
+	-webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
+	box-shadow: inset 0 1px 0 0 #aec3e5;
+	padding-left: 20px;
+}

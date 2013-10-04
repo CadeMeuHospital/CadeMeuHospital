@@ -3,22 +3,30 @@
     class profileUBS{
 
         private $idUBS;
-        private $nameUBS;
         private $latitudeUBS;
         private $longitudeUBS;
+        private $codMunic;
         private $codCNES;
+        private $nameUBS;
+        private $descEnder;
+        private $descBairro;
+        private $dscCidade;        
         private $phoneUBS;
         private $physicStructureUBS;
         private $adapOldPeople;
         private $descriTools;
         private $descMedicine;
 
-        function __construct($idUBS,$nameUBS,$latitudeUBS,$longitudeUBS,$codCNES,$phoneUBS,$physicStructureUBS,$adapOldPeople,$descriTools,$descMedicine){
+        function __construct($idUBS,$latitudeUBS, $longitudeUBS, $codMunic,$codCNES, $nameUBS, $descEnder,$descBairro, $descCidade, $phoneUBS,$physicStructureUBS,$adapOldPeople,$descriTools,$descMedicine){
             $this->setIdUBS($idUBS);
-            $this->setNameUBS($nameUBS);
             $this->setLatitudeUBS($latitudeUBS);
             $this->setLongitudeUBS($longitudeUBS);
+            $this->codMunic($codMunic);
             $this->setCodCNES($codCNES);
+            $this->setNameUBS($nameUBS);           
+            $this->setDescEnder($descEnder);
+            $this->setDescBairro($descBairro);
+            $this->setDescCidade($descCidade);    
             $this->setPhoneUBS($phoneUBS);
             $this->setPhysicStructureUBS($physicStructureUBS);
             $this->setAdapOldPeople($adapOldPeople);
@@ -105,6 +113,39 @@
         public function setDescMedicine($descMedicine) {
             $this->descMedicine = $descMedicine;
         }
+        public function getCodMunic() {
+            return $this->codMunic;
+        }
+
+        public function setCodMunic($codMunic) {
+            $this->codMunic = $codMunic;
+        }
+
+        public function getDescEnder() {
+            return $this->descEnder;
+        }
+
+        public function setDescEnder($descEnder) {
+            $this->descEnder = $descEnder;
+        }
+
+        public function getDescBairro() {
+            return $this->descBairro;
+        }
+
+        public function setDescBairro($descBairro) {
+            $this->descBairro = $descBairro;
+        }
+
+        public function getDscCidade() {
+            return $this->dscCidade;
+        }
+
+        public function setDscCidade($dscCidade) {
+            $this->dscCidade = $dscCidade;
+        }
+
+
 
         }
 

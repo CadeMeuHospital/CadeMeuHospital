@@ -1,0 +1,47 @@
+
+1º Passo: Execute o arquivo C:\xampp\php\pear.bat
+
+2º Passo, cmd:
+
+> cd C:\xampp\php\
+
+Verificar a versão com comando:
+
+> pear -V
+
+Caso a versão seja menor que 1.9.4, vá para o passo 2.1
+
+3º passo, CMD:
+
+pear config-create / C:\xampp\php\pear.ini
+
+
+4º Passo:
+
+Seguir orientação da resposta "Try to correct the config paths with following commands: ..."
+
+http://stackoverflow.com/questions/12318446/pear-package-install-fails
+
+5º Passo, cmd:
+ 
+>pear -c c:\xampp\php\pear.ini config-set auto_discover 1
+
+>pear -c c:\xampp\php\pear.ini install pear.phpunit.de/PHPUnit
+
+
+
+Passo 2.1:
+
+Caso a versão do PEAR seja inferior a 1.9.4 , 
+1. baixe a nova versão pelo link:
+http://pear.php.net/go-pear.phar 
+
+2. Salve na pasta c:/xampp/php
+
+3. No cmd digite: php go-pear.phar
+
+4. Verifique o caminho dos arquivos (o 11 não estava apontando para o local certo, que seria C:\xampp\php\pear.ini
+
+5. Re-verifique a versão do PEAR
+
+6. Vá para o 3º passo

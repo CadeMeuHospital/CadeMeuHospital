@@ -1,5 +1,11 @@
-<?php
-    //header("location: view/home.php");
+<html>
+    <body>
+<!--    <p id="demo" align ="center"><font size="09">Click no Botão para gerar a Localizacao</font></p>
+    <p align="center"><button onclick="getLocation();" >Gerar Localizacao</button></p>
+    <div id="mapholder"></div>
+    <script src="http://localhost/CadeMeuHospital/Utils/testlocate.js"></script> -->
+    <?php
+    header("location: view/home.php");
 
     include_once "Controller/controllerProfileUBS.php";
     include_once "Model/profileUBS.php";
@@ -8,5 +14,10 @@
     $controllerProfileUBS = new controllerProfileUBS();
     $profileUBS = $controllerProfileUBS->makeObjectUBS(1, "eu", 12, 13, 6811299, 12312312, "bom", "bom", "bom", "bom");
     $profileUBS2 = $controllerProfileUBS->searchUBSByCodCNES($profileUBS);
-    echo $profileUBS->getIdUBS();
+    echo $profileUBS2->getIdUBS();
+    
+    
+    
 ?>
+    </body>
+</html>

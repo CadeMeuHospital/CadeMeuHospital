@@ -10,12 +10,21 @@
 		<script type="text/javascript" src="../View/shared/js/jquery.maskedinput.js"></script>
 		<script type="text/javascript" src="../View/shared/js/scripts.js"></script>
 		<script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
+                <script src="http://localhost/CadeMeuHospital/Utils/locateUser.js"></script>
 		<link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 		<title> Cadê Meu Hospital - Home</title>
+                
+                <script>  
+           function getLocation() {
+           navigator.geolocation.getCurrentPosition(showPosition,showError);             
+           var latlon=position.coords.latitude+","+position.coords.longitude;          
+          alert(latlon);
+                }
+                 </script>
+                
 	</head>
 	
-<body>
-
+<body onload = "getLocation();">
 	<div class="root">
 		
 		<?php require '../view/shared/header.php';?>

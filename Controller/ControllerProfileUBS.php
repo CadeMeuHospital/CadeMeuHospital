@@ -35,15 +35,12 @@ class controllerProfileUBS {
         return $profileUBS;
     }
 
-    public function searchUBSByNameUBS($profileUBS) {
+    public function searchUBSByNameUBS($nameUBS) {
         $controllerProfileUBS = new controllerProfileUBS();
         //Cria um objeto da classe controllerProfileUBSDAO
 
         $profileUBSDAO = new profileUBSDAO();
         //Cria um objeto da classe profileUBSDAO
-
-        $nameUBS = $profileUBS->getNameUBS();
-        //Cria uma variável para capturar o nome da ubs do obejto UBS que está sendo passado no parametro do método
 
         $attributesUBS = $profileUBSDAO->searchUBSByNameUBS($nameUBS);
 
@@ -51,15 +48,12 @@ class controllerProfileUBS {
         return $profileUBS;
     }
     
-    public function searchUBSByDscCidade($profileUBS) {
+    public function searchUBSByDscCidade($dscCidade) {
         $controllerProfileUBS = new controllerProfileUBS();
         //Cria um objeto da classe controllerProfileUBSDAO
 
         $profileUBSDAO = new profileUBSDAO();
         //Cria um objeto da classe profileUBSDAO
-
-        $dscCidade = $profileUBS->getDscCidade();
-        //Cria uma variável para capturarr a descriçaõ da cidade do obejto UBS que está sendo passado no parametro do método
 
         $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($dscCidade);
 
@@ -68,14 +62,13 @@ class controllerProfileUBS {
     }
     
     public function searchUBSByDescBairro($descBairro) {
+        
+        
         $controllerProfileUBS = new controllerProfileUBS();
         //Cria um objeto da classe controllerProfileUBSDAO
 
         $profileUBSDAO = new profileUBSDAO();
         //Cria um objeto da classe profileUBSDAO
-
-        $descBairro = $profileUBS->getDescBairro();
-        //Cria uma variável para capturar a descrição do bairro do obejto UBS que está sendo passado no parametro do método
 
         $attributesUBS = $profileUBSDAO->searchUBSByDescBairro($descBairro);
 

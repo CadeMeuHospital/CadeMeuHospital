@@ -35,17 +35,49 @@ class controllerProfileUBS {
         return $profileUBS;
     }
 
-    public function searchUBSByCodCNES($profileUBS) {
+    public function searchUBSByNameUBS($profileUBS) {
         $controllerProfileUBS = new controllerProfileUBS();
         //Cria um objeto da classe controllerProfileUBSDAO
 
         $profileUBSDAO = new profileUBSDAO();
         //Cria um objeto da classe profileUBSDAO
 
-        $codCNES = $profileUBS->getCodCNES();
+        $nameUBS = $profileUBS->getNameuUBS();
         //Cria uma variável para capturar o Codigo CNES do obejto UBS que está sendo passado no parametro do método
 
-        $attributesUBS = $profileUBSDAO->searchUBSByCodCNES($codCNES);
+        $attributesUBS = $profileUBSDAO->searchUBSByNameUBS($nameUBS);
+
+        $profileUBS = $controllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
+        return $profileUBS;
+    }
+    
+    public function searchUBSByDscCidade($profileUBS) {
+        $controllerProfileUBS = new controllerProfileUBS();
+        //Cria um objeto da classe controllerProfileUBSDAO
+
+        $profileUBSDAO = new profileUBSDAO();
+        //Cria um objeto da classe profileUBSDAO
+
+        $dscCidade = $profileUBS->getDscCidade();
+        //Cria uma variável para capturar o Codigo CNES do obejto UBS que está sendo passado no parametro do método
+
+        $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($dscCidade);
+
+        $profileUBS = $controllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
+        return $profileUBS;
+    }
+    
+    public function searchUBSByDescBairro($descBairro) {
+        $controllerProfileUBS = new controllerProfileUBS();
+        //Cria um objeto da classe controllerProfileUBSDAO
+
+        $profileUBSDAO = new profileUBSDAO();
+        //Cria um objeto da classe profileUBSDAO
+
+        $descBairro = $profileUBS->getDescBairro();
+        //Cria uma variável para capturar o Codigo CNES do obejto UBS que está sendo passado no parametro do método
+
+        $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($descBairro);
 
         $profileUBS = $controllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
         return $profileUBS;

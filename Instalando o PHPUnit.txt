@@ -29,6 +29,9 @@ http://stackoverflow.com/questions/12318446/pear-package-install-fails
 >pear -c c:\xampp\php\pear.ini install pear.phpunit.de/PHPUnit
 
 
+6º Passo, instalar SkeletonGenerator
+> pear -c c:\xampp\php\pear.ini install phpunit/PHPUnit_SkeletonGenerator
+
 
 Passo 2.1:
 

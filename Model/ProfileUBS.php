@@ -43,11 +43,20 @@ class profileUBS {
     }
 
     public function getNameUBS() {
-        return $this->nameUBS;
+      return $this->nameUBS;
     }
 
     public function setNameUBS($nameUBS) {
-        $this->nameUBS = $nameUBS;
+        if(!DataValidation::validateNullFields($nameUBS)){
+            throw new InvalidNameException("Nome nao pode ser nulo!");
+        }elseif(DataValidation::validateName($nameUBS) == 1){
+            throw new InvalidNameException("Nome contem caracteres invalidos!");
+        }elseif(DataValidation::validateName($nameUBS) == 2){
+            throw new InvalidNameException("Nome contem espaços seguidos!");
+        }else{
+            $this->nameUBS = $nameUBS;
+        }
+        
     }
 
     public function getLatitudeUBS() {

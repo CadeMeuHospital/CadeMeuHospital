@@ -16,13 +16,13 @@ class controllerProfileUBS {
     }
 
     public static function getInstanceControllerProfileUBS() {
-        
+
         if (!isset(self::$instanceControllerProfileUBS)) {
             self::$instanceControllerProfileUBS = new controllerProfileUBS();
         } else {
             //No action
         }
-        
+
         return self::$instanceControllerProfileUBS;
     }
 
@@ -47,7 +47,7 @@ class controllerProfileUBS {
         $profileUBS = $controllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
         return $profileUBS;
     }
-    
+
     public function searchUBSByDscCidade($dscCidade) {
         $controllerProfileUBS = new controllerProfileUBS();
         //Cria um objeto da classe controllerProfileUBSDAO
@@ -60,10 +60,10 @@ class controllerProfileUBS {
         $profileUBS = $controllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
         return $profileUBS;
     }
-    
+
     public function searchUBSByDescBairro($descBairro) {
-        
-        
+
+
         $controllerProfileUBS = new controllerProfileUBS();
         //Cria um objeto da classe controllerProfileUBSDAO
 

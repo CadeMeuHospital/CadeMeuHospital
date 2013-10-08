@@ -21,12 +21,12 @@ class profileUBS {
         $this->setIdUBS($idUBS);
         $this->setLatitudeUBS($latitudeUBS);
         $this->setLongitudeUBS($longitudeUBS);
-        $this->codMunic($codMunic);
+        $this->setCodMunic($codMunic);
         $this->setCodCNES($codCNES);
         $this->setNameUBS($nameUBS);
         $this->setDescEnder($descEnder);
         $this->setDescBairro($descBairro);
-        $this->setDescCidade($descCidade);
+        $this->setDscCidade($descCidade);
         $this->setPhoneUBS($phoneUBS);
         $this->setPhysicStructureUBS($physicStructureUBS);
         $this->setAdapOldPeople($adapOldPeople);

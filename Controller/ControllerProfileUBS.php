@@ -42,7 +42,7 @@ class controllerProfileUBS {
         $profileUBSDAO = new profileUBSDAO();
         //Cria um objeto da classe profileUBSDAO
 
-        $nameUBS = $profileUBS->getNameuUBS();
+        $nameUBS = $profileUBS->getNameUBS();
         //Cria uma variável para capturar o nome da ubs do obejto UBS que está sendo passado no parametro do método
 
         $attributesUBS = $profileUBSDAO->searchUBSByNameUBS($nameUBS);

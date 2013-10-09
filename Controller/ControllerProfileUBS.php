@@ -46,27 +46,22 @@ class controllerProfileUBS {
                 if (DataValidation::validateName($nameUBS) == 2) {
                     throw new InvalidNameException("Nome contem espaços seguidos!");
                 } else {
-                    $controllerProfileUBS = new controllerProfileUBS();
-                    //Cria um objeto da classe controllerProfileUBSDAO
-
+                    
                     $profileUBSDAO = new profileUBSDAO();
-                    //Cria um objeto da classe profileUBSDAO
 
                     $attributesUBS = $profileUBSDAO->searchUBSByNameUBS($nameUBS);
 
                     $profileUBS = $controllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
                     return $profileUBS;
+                    
                 }
             }
         }
     }
 
     public function searchUBSByDscCidade($dscCidade) {
-        $controllerProfileUBS = new controllerProfileUBS();
-//Cria um objeto da classe controllerProfileUBSDAO
 
         $profileUBSDAO = new profileUBSDAO();
-//Cria um objeto da classe profileUBSDAO
 
         $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($dscCidade);
 
@@ -76,12 +71,7 @@ class controllerProfileUBS {
 
     public function searchUBSByDescBairro($descBairro) {
 
-
-        $controllerProfileUBS = new controllerProfileUBS();
-//Cria um objeto da classe controllerProfileUBSDAO
-
         $profileUBSDAO = new profileUBSDAO();
-//Cria um objeto da classe profileUBSDAO
 
         $attributesUBS = $profileUBSDAO->searchUBSByDescBairro($descBairro);
 

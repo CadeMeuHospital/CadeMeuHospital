@@ -156,10 +156,9 @@ class profileUBS {
             $this->nameUBS = $descBairro;
         }
     }
-   
-    }
-
+ 
     public function getDscCidade() {
+        
         return $this->dscCidade;
     }
 

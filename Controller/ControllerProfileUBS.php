@@ -61,6 +61,7 @@ class controllerProfileUBS {
     }
 
     public function searchUBSByDscCidade($dscCidade) {
+        
 
         $profileUBSDAO = new profileUBSDAO();
 
@@ -71,7 +72,14 @@ class controllerProfileUBS {
     }
 
     public function searchUBSByDescBairro($descBairro) {
-
+        if(!DataValidation::validateNullFields($descBairro)){
+            throw new DescBairroException("Nome nao pode ser nulo!");
+        }elseif(DataValidation::validateDescBairro($descBairro) == 1){
+            throw new DescBairroException("Nome contem caracteres invalidos!");
+        }elseif(DataValidation::validateDescBairro($descBairro) == 2){
+            throw new DescBairroException("Nome contem espaços seguidos!");
+        }else{
+         
         $profileUBSDAO = new profileUBSDAO();
 
         $attributesUBS = $profileUBSDAO->searchUBSByDescBairro($descBairro);
@@ -81,5 +89,5 @@ class controllerProfileUBS {
     }
 
 }
-
+}
 ?>

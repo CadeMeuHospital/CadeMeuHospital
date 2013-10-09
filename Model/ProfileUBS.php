@@ -153,7 +153,15 @@ class profileUBS {
     }
 
     public function setDscCidade($dscCidade) {
-        $this->dscCidade = $dscCidade;
+        if(!DataValidation::validateNullFields($dscCidade)){
+            throw new DscCidadeException("Nome nao pode ser nulo!");
+        }elseif(DataValidation::validatedscCidade($dscCidade) == 1){
+            throw new DscCidadeException("Nome contem caracteres invalidos!");
+        }elseif(DataValidation::validatedscCidade($dscCidade) == 2){
+            throw new DscCidadeException("Nome contem espaços seguidos!");
+        }else{
+            $this->nameUBS = $dscCidade;
+        }
     }
 
 }

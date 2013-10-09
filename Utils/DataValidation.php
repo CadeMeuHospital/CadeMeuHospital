@@ -24,6 +24,22 @@ class DataValidation {
                 }
             }
         }
+        
+        public function validatedscCidade($dscCidade){
+
+            $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
+            
+            for ($i = 0; $i < strlen($dscCidade); $i++) {
+                $char = stripos($validCharacters, $dscCidade[$i]);
+                if(!$char){
+                    return 1;
+                }
+                
+                if($dscCidade[$i] == " " && $dscCidade[$i+1] == " "){
+                    return 2;   
+                }
+            }
+        }
 }
 
 ?>

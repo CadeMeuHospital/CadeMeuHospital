@@ -40,10 +40,10 @@ class DataValidation {
                 }
             }
         }
+        
         public function validateDescBairro($descBairro){
 
             $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
-            
        
             for ($i = 0; $i < strlen($descBairro); $i++) {
                 $char = stripos($validCharacters, $descBairro[$i]);
@@ -55,6 +55,20 @@ class DataValidation {
                     return 2;   
                 }
             }
+        }
+        
+        public function validateCodMunic($codMunic){
+            
+            $result = FALSE;
+            $isNumeric = is_numeric($codMunic);
+            
+            if($isNumeric){
+                $result = TRUE;
+            }else{
+                $result = FALSE;
+            }
+            
+            return $result;
         }
 }
 

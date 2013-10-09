@@ -141,11 +141,22 @@ class profileUBS {
     }
 
     public function getDescBairro() {
+        
         return $this->descBairro;
     }
 
     public function setDescBairro($descBairro) {
-        $this->descBairro = $descBairro;
+        if(!DataValidation::validateNullFields($descBairro)){
+            throw new DescBairroException("Nome nao pode ser nulo!");
+        }elseif(DataValidation::validateDescBairro($descBairro) == 1){
+            throw new DescBairroException("Nome contem caracteres invalidos!");
+        }elseif(DataValidation::validateDescBairro($descBairro) == 2){
+            throw new DescBairroException("Nome contem espaços seguidos!");
+        }else{
+            $this->nameUBS = $descBairro;
+        }
+    }
+   
     }
 
     public function getDscCidade() {
@@ -155,12 +166,12 @@ class profileUBS {
     public function setDscCidade($dscCidade) {
         if(!DataValidation::validateNullFields($dscCidade)){
             throw new DscCidadeException("Nome nao pode ser nulo!");
-        }elseif(DataValidation::validatedscCidade($dscCidade) == 1){
+        }elseif(DataValidation::validateDscCidade($dscCidade) == 1){
             throw new DscCidadeException("Nome contem caracteres invalidos!");
-        }elseif(DataValidation::validatedscCidade($dscCidade) == 2){
+        }elseif(DataValidation::validateDscCidade($dscCidade) == 2){
             throw new DscCidadeException("Nome contem espaços seguidos!");
         }else{
-            $this->nameUBS = $dscCidade;
+            $this->$dscCidade = $dscCidade;
         }
     }
 

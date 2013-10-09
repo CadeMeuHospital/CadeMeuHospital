@@ -25,7 +25,7 @@ class DataValidation {
             }
         }
         
-        public function validatedscCidade($dscCidade){
+        public function validateDscCidade($dscCidade){
 
             $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
             
@@ -36,6 +36,22 @@ class DataValidation {
                 }
                 
                 if($dscCidade[$i] == " " && $dscCidade[$i+1] == " "){
+                    return 2;   
+                }
+            }
+        }
+        public function validateDescBairro($descBairro){
+
+            $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
+            
+       
+            for ($i = 0; $i < strlen($descBairro); $i++) {
+                $char = stripos($validCharacters, $descBairro[$i]);
+                if(!$char){
+                    return 1;
+                }
+                
+                if($descBairro[$i] == " " && $descBairro[$i+1] == " "){
                     return 2;   
                 }
             }

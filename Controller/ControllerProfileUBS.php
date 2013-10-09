@@ -61,7 +61,14 @@ class controllerProfileUBS {
     }
 
     public function searchUBSByDscCidade($dscCidade) {
-        
+         if(!DataValidation::validateNullFields($dscCidade)){
+            throw new DscCidadeException("Nome nao pode ser nulo!");
+        }elseif(DataValidation::validateDscCidade($dscCidade) == 1){
+            throw new DscCidadeException("Nome contem caracteres invalidos!");
+        }elseif(DataValidation::validateDscCidade($dscCidade) == 2){
+            throw new DscCidadeException("Nome contem espaços seguidos!");
+        }else{
+          
 
         $profileUBSDAO = new profileUBSDAO();
 
@@ -70,7 +77,8 @@ class controllerProfileUBS {
         $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
         return $profileUBS;
     }
-
+    }
+    
     public function searchUBSByDescBairro($descBairro) {
         if(!DataValidation::validateNullFields($descBairro)){
             throw new DescBairroException("Nome nao pode ser nulo!");

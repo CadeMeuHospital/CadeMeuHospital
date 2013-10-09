@@ -27,11 +27,11 @@ class controllerProfileUBS {
     }
 
     public function makeObjectUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
-        //try{
+        try{
         $profileUBS = new profileUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
-        //}catch(Exception $e){
-        //    print"<script>alert('".$e->getMessage()."')</script>";
-        //}
+        }catch(Exception $e){
+            print"<script>alert('".$e->getMessage()."')</script>";
+        }
         return $profileUBS;
     }
 

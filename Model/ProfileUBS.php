@@ -46,7 +46,7 @@ class profileUBS {
       return $this->nameUBS;
     }
 
-    public function setNameUBS($nameUBS) {
+    public function setNameUBS($nameUBS) {//validando dados
         if(!DataValidation::validateNullFields($nameUBS)){
             throw new InvalidNameException("Nome nao pode ser nulo!");
         }elseif(DataValidation::validateName($nameUBS) == 1){

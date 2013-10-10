@@ -28,10 +28,10 @@ class controllerProfileUBS {
     }
 
     public function makeObjectUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
-        try{
-        $profileUBS = new profileUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
-        }catch(Exception $e){
-            print"<script>alert('".$e->getMessage()."')</script>";
+        try {
+            $profileUBS = new profileUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
+        } catch (Exception $e) {
+            print"<script>alert('" . $e->getMessage() . "')</script>";
         }
         return $profileUBS;
     }
@@ -47,55 +47,63 @@ class controllerProfileUBS {
                 if (DataValidation::validateName($nameUBS) == 2) {
                     throw new InvalidNameException("Nome contem espaços seguidos!");
                 } else {
-                    
+
                     $profileUBSDAO = new profileUBSDAO();
 
                     $attributesUBS = $profileUBSDAO->searchUBSByNameUBS($nameUBS);
 
                     $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
                     return $profileUBS;
-                    
                 }
             }
         }
     }
 
     public function searchUBSByDscCidade($dscCidade) {
-         if(!DataValidation::validateNullFields($dscCidade)){
+        if (!DataValidation::validateNullFields($dscCidade)) {
             throw new DscCidadeException("Nome nao pode ser nulo!");
-        }elseif(DataValidation::validateDscCidade($dscCidade) == 1){
-            throw new DscCidadeException("Nome contem caracteres invalidos!");
-        }elseif(DataValidation::validateDscCidade($dscCidade) == 2){
-            throw new DscCidadeException("Nome contem espaços seguidos!");
-        }else{
-          
+        } else {
+            if (DataValidation::validateDscCidade($dscCidade) == 1) {
+                throw new DscCidadeException("Nome contem caracteres invalidos!");
+            } else {
+                if (DataValidation::validateDscCidade($dscCidade) == 2) {
+                    throw new DscCidadeException("Nome contem espaços seguidos!");
+                } else {
 
-        $profileUBSDAO = new profileUBSDAO();
 
-        $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($dscCidade);
+                    $profileUBSDAO = new profileUBSDAO();
 
-        $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
-        return $profileUBS;
+                    $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($dscCidade);
+
+                    $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
+                    return $profileUBS;
+                }
+            }
+        }
     }
-    }
-    
+
     public function searchUBSByDescBairro($descBairro) {
-        if(!DataValidation::validateNullFields($descBairro)){
+        if (!DataValidation::validateNullFields($descBairro)) {
             throw new DescBairroException("Nome nao pode ser nulo!");
-        }elseif(DataValidation::validateDescBairro($descBairro) == 1){
-            throw new DescBairroException("Nome contem caracteres invalidos!");
-        }elseif(DataValidation::validateDescBairro($descBairro) == 2){
-            throw new DescBairroException("Nome contem espaços seguidos!");
-        }else{
-         
-        $profileUBSDAO = new profileUBSDAO();
+        } else {
+            if (DataValidation::validateDescBairro($descBairro) == 1) {
+                throw new DescBairroException("Nome contem caracteres invalidos!");
+            } else {
+                if (DataValidation::validateDescBairro($descBairro) == 2) {
+                    throw new DescBairroException("Nome contem espaços seguidos!");
+                } else {
 
-        $attributesUBS = $profileUBSDAO->searchUBSByDescBairro($descBairro);
+                    $profileUBSDAO = new profileUBSDAO();
 
-        $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
-        return $profileUBS;
+                    $attributesUBS = $profileUBSDAO->searchUBSByDescBairro($descBairro);
+
+                    $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
+                    return $profileUBS;
+                }
+            }
+        }
     }
 
 }
-}
+
 ?>

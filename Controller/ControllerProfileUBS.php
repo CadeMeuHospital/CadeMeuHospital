@@ -4,7 +4,7 @@
 include_once '/../Model/profileUBS.php';
 include_once '/../DAO/profileUBSDAO.php';
 
-class controllerProfileUBS {
+class ControllerProfileUBS {
 
     private static $instanceControllerProfileUBS;
 
@@ -19,7 +19,7 @@ class controllerProfileUBS {
     public static function getInstanceControllerProfileUBS() {
 
         if (!isset(self::$instanceControllerProfileUBS)) {
-            self::$instanceControllerProfileUBS = new controllerProfileUBS();
+            self::$instanceControllerProfileUBS = new ControllerProfileUBS();
         } else {
             //No action
         }
@@ -27,9 +27,9 @@ class controllerProfileUBS {
         return self::$instanceControllerProfileUBS;
     }
 
-    public function makeObjectUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
+    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
         try {
-            $profileUBS = new profileUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
+            $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
         } catch (Exception $e) {
             print"<script>alert('" . $e->getMessage() . "')</script>";
         }
@@ -48,7 +48,7 @@ class controllerProfileUBS {
                     throw new InvalidNameException("Nome contem espaços seguidos!");
                 } else {
 
-                    $profileUBSDAO = new profileUBSDAO();
+                    $profileUBSDAO = new ProfileUBSDAO();
 
                     $attributesUBS = $profileUBSDAO->searchUBSByNameUBS($nameUBS);
 
@@ -71,7 +71,7 @@ class controllerProfileUBS {
                 } else {
 
 
-                    $profileUBSDAO = new profileUBSDAO();
+                    $profileUBSDAO = new ProfileUBSDAO();
 
                     $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($dscCidade);
 
@@ -93,7 +93,7 @@ class controllerProfileUBS {
                     throw new DescBairroException("Nome contem espaços seguidos!");
                 } else {
 
-                    $profileUBSDAO = new profileUBSDAO();
+                    $profileUBSDAO = new ProfileUBSDAO();
 
                     $attributesUBS = $profileUBSDAO->searchUBSByDescBairro($descBairro);
 

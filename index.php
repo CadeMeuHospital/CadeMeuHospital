@@ -11,7 +11,7 @@
     include_once "Model/profileUBS.php";
     include_once "DAO/profileUBSDAO.php";
     
-    $controllerProfileUBS = new controllerProfileUBS();
+    $controllerProfileUBS = new ControllerProfileUBS();
     $profileUBS = $controllerProfileUBS->makeObjectUBS(1, "eu", 12, 13, 6811299, 12312312, "bom", "bom", "bom", "bom");
     $profileUBS2 = $controllerProfileUBS->searchUBSByCodCNES($profileUBS);
 

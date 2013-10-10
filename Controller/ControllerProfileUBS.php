@@ -1,8 +1,8 @@
 
 <?php
 
-include_once 'Model/profileUBS.php';
-include_once 'DAO/profileUBSDAO.php';
+include_once '/../Model/profileUBS.php';
+include_once '/../DAO/profileUBSDAO.php';
 
 class controllerProfileUBS {
 

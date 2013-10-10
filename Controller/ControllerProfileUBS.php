@@ -4,7 +4,7 @@
 include_once '/../Model/profileUBS.php';
 include_once '/../DAO/profileUBSDAO.php';
 
-class ControllerProfileUBS {
+class controllerProfileUBS {
 
     private static $instanceControllerProfileUBS;
 
@@ -19,7 +19,7 @@ class ControllerProfileUBS {
     public static function getInstanceControllerProfileUBS() {
 
         if (!isset(self::$instanceControllerProfileUBS)) {
-            self::$instanceControllerProfileUBS = new ControllerProfileUBS();
+            self::$instanceControllerProfileUBS = new controllerProfileUBS();
         } else {
             //No action
         }
@@ -27,10 +27,9 @@ class ControllerProfileUBS {
         return self::$instanceControllerProfileUBS;
     }
 
-    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
-        try {
-            $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
-        } catch (Exception $e) {
+public function makeObjectUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
+	try {
+$profileUBS = new profileUBS($idUBS, $nameUBS, $latitudeUBS, $longitudeUBS, $codCNES, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);        } catch (Exception $e) {
             print"<script>alert('" . $e->getMessage() . "')</script>";
         }
         return $profileUBS;
@@ -48,7 +47,7 @@ class ControllerProfileUBS {
                     throw new InvalidNameException("Nome contem espaços seguidos!");
                 } else {
 
-                    $profileUBSDAO = new ProfileUBSDAO();
+                    $profileUBSDAO = new profileUBSDAO();
 
                     $attributesUBS = $profileUBSDAO->searchUBSByNameUBS($nameUBS);
 
@@ -71,7 +70,7 @@ class ControllerProfileUBS {
                 } else {
 
 
-                    $profileUBSDAO = new ProfileUBSDAO();
+                    $profileUBSDAO = new profileUBSDAO();
 
                     $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($dscCidade);
 

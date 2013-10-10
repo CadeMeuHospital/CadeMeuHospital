@@ -70,6 +70,20 @@ class DataValidation {
             
             return $result;
         }
+        
+        public function validateCodCNES($codCNES){
+            
+            $result = FALSE;
+            $isNumeric = is_numeric($codCNES);
+            
+            if($isNumeric){
+                $result = TRUE;
+            } else {
+                $result = FALSE;
+            }
+            
+            return $result;
+        }
 }
 
 ?>

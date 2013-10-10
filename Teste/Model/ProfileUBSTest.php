@@ -2,7 +2,7 @@
 
 require_once dirname(__FILE__) . '/../../Model/profileUBS.php';
 
-class profileUBSTest extends PHPUnit_Framework_TestCase {
+class ProfileUBSTest extends PHPUnit_Framework_TestCase {
 
     protected $profileUBS;
 

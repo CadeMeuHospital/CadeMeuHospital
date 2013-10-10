@@ -1,6 +1,6 @@
 <?php
 
-class profileUBS {
+class ProfileUBS {
 
     private $idUBS;
     private $latitudeUBS;

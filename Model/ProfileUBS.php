@@ -47,16 +47,10 @@ class profileUBS {
     }
 	
 	public function setNameUBS($nameUBS) {//validando dados
-        if(!DataValidation::validateNullFields($nameUBS)){
-            throw new InvalidNameException("Nome nao pode ser nulo!");
-        }elseif(DataValidation::validateName($nameUBS) == 1){
-            throw new InvalidNameException("Nome contem caracteres invalidos!");
-        }elseif(DataValidation::validateName($nameUBS) == 2){
-            throw new InvalidNameException("Nome contem espaços seguidos!");
-        }else{
+       
             $this->nameUBS = $nameUBS;
+        
         }
-
     public function getLatitudeUBS() {
         return $this->latitudeUBS;
     }
@@ -142,32 +136,18 @@ class profileUBS {
     }
 
     public function setDescBairro($descBairro) {
-         if(!DataValidation::validateNullFields($descBairro)){
-            throw new DescBairroException("Nome nao pode ser nulo!");
-        }elseif(DataValidation::validateDescBairro($descBairro) == 1){
-            throw new DescBairroException("Nome contem caracteres invalidos!");
-        }elseif(DataValidation::validateDescBairro($descBairro) == 2){
-            throw new DescBairroException("Nome contem espaços seguidos!");
-        }else{
+       
             $this->nameUBS = $descBairro;
        }
-   }
-    
-
+ 
     public function getDscCidade() {
         return $this->dscCidade;
     }
 
     public function setDscCidade($dscCidade) {
-         if(!DataValidation::validateNullFields($dscCidade)){
-            throw new DscCidadeException("Nome nao pode ser nulo!");
-        }elseif(DataValidation::validateDscCidade($dscCidade) == 1){
-            throw new DscCidadeException("Nome contem caracteres invalidos!");
-        }elseif(DataValidation::validateDscCidade($dscCidade) == 2){
-            throw new DscCidadeException("Nome contem espaços seguidos!");
-       }else{
+         
             $this->$dscCidade = $dscCidade;
-        }
+        
     }
 
 }

@@ -46,7 +46,7 @@ class profileUBS {
         return $this->nameUBS;
     }
 
-    public function setNameUBS($nameUBS) {//validando dados
+    public function setNameUBS($nameUBS) {
         $this->nameUBS = $nameUBS;
     }
 
@@ -135,7 +135,7 @@ class profileUBS {
     }
 
     public function setDescBairro($descBairro) {
-        $this->nameUBS = $descBairro;
+        $this->descBairro = $descBairro;
     }
 
     public function getDscCidade() {

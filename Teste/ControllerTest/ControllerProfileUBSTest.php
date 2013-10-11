@@ -22,7 +22,11 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     public function testMakeObjectUBS(){
         $result = $this->controllerProfileUBS->makeObjectUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom");
         $this->assertInstanceOf('ProfileUBS',$result);
-        $this->assertNULL($result);
+    }
+    
+    public function testSearchUBSByNameUBS(){
+        $result = $this->controllerProfileUBS->searchUBSByNameUBS("nomeUbs");
+        $this->assertInstanceOf('ProfileUBS',$result);
     }
 }
 

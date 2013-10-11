@@ -14,10 +14,16 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         unset($this->controllerProfileUBS);
     }
 
-    public function test() {
-
+    public function testSingleton() {
         $result = $this->controllerProfileUBS->getInstanceControllerProfileUBS();
+        $this->assertInstanceOf('ControllerProfileUBS', $result);
+    }
+
+    public function testMakeObjectUBS(){
+        $result = $this->controllerProfileUBS->makeObjectUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom");
+        $this->assertInstanceOf('ProfileUBS',$result);
         $this->assertNULL($result);
+    }
 }
-}
+
 ?>

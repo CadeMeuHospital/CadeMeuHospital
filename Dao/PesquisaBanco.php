@@ -9,8 +9,10 @@
 
  		$i = 0;
  		
- 		$executar = mysql_query("SELECT * FROM ubs WHERE cod_unico LIKE 2");	
- 		$total = mysql_result($executar, $i, "nom_estab");
- 		echo $total;
+ 		$executar = mysql_query("SELECT * FROM ubs WHERE cod_unico LIKE 7");	
+ 		$latitude = mysql_result($executar, $i, "vlr_latitude");
+                $longitude = mysql_result($executar, $i, "vlr_longitude");
+ 		return $latitude.",".$longitude;
+                
  		
 ?>

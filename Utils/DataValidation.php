@@ -1,7 +1,29 @@
 <?php
 
-class DataValidation {
+include_once '/../Util/Exception/InvalidNameException.php';
 
+define('SIZECODMUNIC', 6);
+
+class DataValidation {
+    
+    public static function throwTextFieldException($textField) {
+        
+        if (!validateNullFields($textField)) {
+            throw new InvalidNameException("Campo não pode ser nulo!");
+        } else {
+            if (validateName($textField) == 1) {
+                throw new InvalidNameException("Campo contém caracteres invalidos!");
+            } else {
+                if (validateName($textField) == 2) {
+                    throw new InvalidNameException("Campo contém espaços seguidos!");
+                } else {
+                    return TRUE;
+                }
+            }
+        }
+        
+    }
+    
     public function validateNullFields($parameter) {
         return !(empty($parameter));
         //retorna verdadeiro caso a variavel esteja vazia

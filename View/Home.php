@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
 		<link rel="stylesheet" href="css/login.css" type="text/css">
 		<script type="text/javascript" src="../View/shared/js/jquery-2.0.2.js"></script>
+		<script type="text/javascript" src="../View/shared/js/location.js"></script>
 		<script type="text/javascript" src="../View/shared/js/jquery-ui-1.10.3.js"></script>
 		<script type="text/javascript" src="../View/shared/js/jquery.maskedinput.js"></script>
 		<script type="text/javascript" src="../View/shared/js/scripts.js"></script>
@@ -18,34 +19,16 @@
 	
         <body>
        <div class="root">                   
-           <button onclick="getLocation()"><img src="satellite.png" width="50px" heigth="50px"></button> 
 		<?php require '../view/shared/header.php';?>
             
 		<?php require '../view/shared/navigation_bar.php';?>
-		
-		<div class="content">
-		<script type="text/javascript" src="../Utils/locateUser.js" ></script>	
-               <p id="demo">Click the button to get your coordinates:</p>
-           <script>
-           var x=document.getElementById("demo");
-            function getLocation()
-              {
-              if (navigator.geolocation)
-                {
-                navigator.geolocation.getCurrentPosition(showPosition);
-                 }
-              else{x.innerHTML="Geolocation is not supported by this browser.";}
-              }
-            function showPosition(position)
-              {
-              x.innerHTML="Latitude: " + position.coords.latitude + 
-              "<br>Longitude: " + position.coords.longitude;
-              }
-           </script> 
-           
-</body>
+
+				
+		<div class="content"> 
+
+		<?php require '../view/shared/getlocation.php';?>
                 </div>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br /><br /><br /><br /><br /><br /><br />
 		<?php require '../view/shared/footer.php';?>
             </div>
     

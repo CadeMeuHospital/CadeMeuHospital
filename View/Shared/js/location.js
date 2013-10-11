@@ -1,11 +1,4 @@
-<html>	
-
-<h2>Sua localiza&ccedil;&atildeo:</h2>
-<p id="demo" onLoad="">
-	<div id="mapholder"></div>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script>
-var x=document.getElementById("demo");
+var x=document.getElementById("getlocation");
 function getLocation()
   {
   if (navigator.geolocation)
@@ -17,7 +10,7 @@ function getLocation()
 
 function showPosition(position)
   {
-  var latlon=-29.767954+","+-57.071657;
+  var latlon=position.coords.latitude+","+position.coords.longitude;
 
   var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
   +latlon+"&zoom=14&size=400x300&sensor=false";
@@ -44,5 +37,3 @@ function showError(error)
   }
 
  getLocation()
-</script>
-</html>

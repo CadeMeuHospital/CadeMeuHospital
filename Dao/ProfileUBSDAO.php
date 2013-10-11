@@ -2,7 +2,7 @@
 
 include_once "/../Utils/dataBaseConnection.php";
 
-class profileUBSDAO {
+class ProfileUBSDAO {
     
     public function __construct(){
     }

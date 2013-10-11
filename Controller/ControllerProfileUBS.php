@@ -36,6 +36,11 @@ class ControllerProfileUBS {
         }
         return $profileUBS;
     }
+    
+    public function searchUBS($field,$searchType){
+        
+    }
+
 
     public function searchUBSByNameUBS($nameUBS) {
 

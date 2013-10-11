@@ -19,5 +19,5 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $result = $this->controllerProfileUBS->getInstanceControllerProfileUBS();
         $this->assertNULL($result);
 }
-
+}
 ?>

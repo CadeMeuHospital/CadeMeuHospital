@@ -24,13 +24,13 @@ class DataValidation {
         
     }
     
-    public function validateNullFields($parameter) {
+    public static function validateNullFields($parameter) {
         return !(empty($parameter));
         //retorna verdadeiro caso a variavel esteja vazia
         //com isso, o valor false eh invertido e enviado como true
     }
 
-    public function validateName($nameUBS) {
+    public static function validateName($nameUBS) {
 
         $result = 0;
         $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
@@ -49,7 +49,7 @@ class DataValidation {
         return $result;
     }
 
-    public function validateDscCidade($dscCidade) {
+    public static function validateDscCidade($dscCidade) {
 
         $result = 0;
         $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
@@ -68,7 +68,7 @@ class DataValidation {
         return $result;
     }
 
-    public function validateDescBairro($descBairro) {
+    public static function validateDescBairro($descBairro) {
 
         $result = 0;
         $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
@@ -87,7 +87,7 @@ class DataValidation {
         return $result;
     }
 
-    public function validateCodMunic($codMunic) {
+    public static function validateCodMunic($codMunic) {
 
         $result = FALSE;
         $isNumeric = is_numeric($codMunic);
@@ -101,7 +101,7 @@ class DataValidation {
         return $result;
     }
 
-    public function validateCodCNES($codCNES) {
+    public static function validateCodCNES($codCNES) {
 
         $result = FALSE;
         $isNumeric = is_numeric($codCNES);

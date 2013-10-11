@@ -42,15 +42,6 @@ class profileUBS {
         $this->idUBS = $idUBS;
     }
 
-    public function getNameUBS() {
-       return $this->nameUBS;
-    }
-	
-	public function setNameUBS($nameUBS) {//validando dados
-       
-            $this->nameUBS = $nameUBS;
-        
-        }
     public function getLatitudeUBS() {
         return $this->latitudeUBS;
     }
@@ -67,12 +58,52 @@ class profileUBS {
         $this->longitudeUBS = $longitudeUBS;
     }
 
+    public function getCodMunic() {
+        return $this->codMunic;
+    }
+
+    public function setCodMunic($codMunic) {
+        $this->codMunic = $codMunic;
+    }
+
     public function getCodCNES() {
         return $this->codCNES;
     }
 
     public function setCodCNES($codCNES) {
         $this->codCNES = $codCNES;
+    }
+
+    public function getNameUBS() {
+        return $this->nameUBS;
+    }
+
+    public function setNameUBS($nameUBS) {
+        $this->nameUBS = $nameUBS;
+    }
+
+    public function getDescEnder() {
+        return $this->descEnder;
+    }
+
+    public function setDescEnder($descEnder) {
+        $this->descEnder = $descEnder;
+    }
+
+    public function getDescBairro() {
+        return $this->descBairro;
+    }
+
+    public function setDescBairro($descBairro) {
+        $this->descBairro = $descBairro;
+    }
+
+    public function getDscCidade() {
+        return $this->dscCidade;
+    }
+
+    public function setDscCidade($dscCidade) {
+        $this->dscCidade = $dscCidade;
     }
 
     public function getPhoneUBS() {
@@ -113,41 +144,6 @@ class profileUBS {
 
     public function setDescMedicine($descMedicine) {
         $this->descMedicine = $descMedicine;
-    }
-
-    public function getCodMunic() {
-        return $this->codMunic;
-    }
-
-    public function setCodMunic($codMunic) {
-        $this->codMunic = $codMunic;
-    }
-
-    public function getDescEnder() {
-        return $this->descEnder;
-    }
-
-    public function setDescEnder($descEnder) {
-        $this->descEnder = $descEnder;
-    }
-
-    public function getDescBairro() {
-        return $this->descBairro;
-    }
-
-    public function setDescBairro($descBairro) {
-       
-            $this->nameUBS = $descBairro;
-       }
- 
-    public function getDscCidade() {
-        return $this->dscCidade;
-    }
-
-    public function setDscCidade($dscCidade) {
-         
-            $this->$dscCidade = $dscCidade;
-        
     }
 
 }

@@ -23,6 +23,14 @@ class DataValidation {
         }
     }
 
+    public static function throwCodMunicException($codMunic) {
+        if (validateCodMunic($codMunic)) {
+            throw new CodMunicException("Codigo do municipio invalido!");
+        } else {
+            return TRUE;
+        }
+    }
+
     public static function validateNullFields($parameter) {
         return !(empty($parameter));
     }
@@ -45,13 +53,14 @@ class DataValidation {
 
         return $result;
     }
-    
+
     public static function validateCodMunic($codMunic) {
 
         $result = FALSE;
         $isNumeric = is_numeric($codMunic);
+        $codSize = strlen($codMunic);
 
-        if ($isNumeric) {
+        if ($isNumeric && ($$codSize == SIZECODMUNIC)) {
             $result = TRUE;
         } else {
             $result = FALSE;

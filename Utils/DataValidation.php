@@ -1,6 +1,7 @@
 <?php
 
-include_once '/../Util/Exception/InvalidNameException.php';
+include_once '/../Utils/Exception/TextFieldException.php';
+include_once '/../Utils/Exception/CodMunicException.php';
 
 define('SIZECODMUNIC', 6);
 
@@ -8,14 +9,14 @@ class DataValidation {
 
     public static function throwTextFieldException($textField) {
 
-        if (!validateNullFields($textField)) {
-            throw new InvalidNameException("Campo não pode ser nulo!");
+        if (!DataValidation::validateNullFields($textField)) {
+            throw new TextFieldException("Campo não pode ser nulo!");
         } else {
-            if (validateTextField($textField) == 1) {
-                throw new InvalidNameException("Campo contém caracteres invalidos!");
+            if (DataValidation::validateTextField($textField) == 1) {
+                throw new TextFieldException("Campo contém caracteres invalidos!");
             } else {
-                if (validateTextField($textField) == 2) {
-                    throw new InvalidNameException("Campo contém espaços seguidos!");
+                if (DataValidation::validateTextField($textField) == 2) {
+                    throw new TextFieldException("Campo contém espaços seguidos!");
                 } else {
                     return TRUE;
                 }
@@ -31,7 +32,7 @@ class DataValidation {
         }
     }
 
-    public static function validateNullFields($parameter) {
+    private static function validateNullFields($parameter) {
         return !(empty($parameter));
     }
 

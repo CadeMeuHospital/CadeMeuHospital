@@ -3,7 +3,7 @@
 
 include_once '/../Model/profileUBS.php';
 include_once '/../DAO/profileUBSDAO.php';
-include_once '/../Util/DataValidation.php';
+include_once '/../Utils/DataValidation.php';
 
 class ControllerProfileUBS {
 
@@ -43,7 +43,7 @@ class ControllerProfileUBS {
 
             $profileUBSDAO = new ProfileUBSDAO();
 
-            $attributesUBS = $profileUBSDAO->searchUBSByNameUBS($nameUBS);
+            $attributesUBS = $profileUBSDAO->searchUBSByName($nameUBS);
 
             $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9]);
             return $profileUBS;

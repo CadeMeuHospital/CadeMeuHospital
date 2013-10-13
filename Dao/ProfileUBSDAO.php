@@ -33,6 +33,7 @@ class ProfileUBSDAO {
     }
 
     public function returnUBS($id) {
+        
 	$sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $id . "'"; 
         $execute = mysql_query($sql);
         $result = mysql_fetch_array($execute);

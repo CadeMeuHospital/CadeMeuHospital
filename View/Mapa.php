@@ -12,7 +12,7 @@
 		<script type="text/javascript" src="../View/shared/js/scripts.js"></script>
 		<script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
 		<link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-		<title> Cadê Meu Hospital - Home</title>
+		<title> Cadê Meu Hospital - Mapa</title>
                 
                 
 	</head>
@@ -26,7 +26,7 @@
 				
 		<div class="content"> 
 
-
+		<?php require '../view/shared/getlocation.php';?>
                 </div>
             <br /><br /><br /><br /><br /><br /><br />
 		<?php require '../view/shared/footer.php';?>

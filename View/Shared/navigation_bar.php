@@ -6,7 +6,7 @@
 
 			<li><a href="../index.php">UBS</a></li>
 
-			<li><a href="../index.php">Mapa</a></li>
+			<li><a href="../View/Mapa.php">Mapa</a></li>
 
 			<li><a href="../index.php">Dados Abertos</a></li>
 

@@ -1,0 +1,42 @@
+div#project-content {
+	float:left;	
+	border-radius:10px;
+	font-size: 10pt;
+	float:left;
+	margin-left:20px;
+	width:635px;
+	min-height:130px;
+}
+
+div#tabs {
+	max-width: 600px;
+	margin:auto;
+	margin-bottom:20px;
+}
+
+.button {
+	font-weight: bold;
+	line-height: 1;
+	cursor: pointer;
+	font-size: 11pt;
+	height: 28px;
+	min-width: 150px; 
+	vertical-align: middle;
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 -1px 1px #64799e;
+	/* Background gradient */
+	background: #55d400;
+	background: -moz-linear-gradient(top, #55d400 0%, #009900 100%);
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#55d400),
+		to(#009900));
+	/* Border style */
+	border: 1px solid #00a800;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	/* Box shadow */
+	-moz-box-shadow: inset 0 1px 0 0 #aec3e5;
+	-webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
+	box-shadow: inset 0 1px 0 0 #aec3e5;
+}

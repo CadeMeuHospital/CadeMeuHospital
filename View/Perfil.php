@@ -4,14 +4,15 @@
 
 require_once '../Controller/ControllerProfileUBS.php';
 
-$controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
+	$controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
 
 if(!isset($_GET['id'])) {
 	header ("location: ../index.php");
 }
 
 try {
-	$projeto =  $controllerProfileUBS->returnUBS($_REQUEST['id']);
+	$profileUBS = $controllerProfileUBS->returnUBS($_REQUEST['id']);
+
 } catch(Exception $e) {
 	echo "Tratar esse erro :/";
 }
@@ -30,7 +31,7 @@ try {
 		<script type="text/javascript" src="../View/shared/js/scripts.js"></script>
 		<script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
 		<link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-		<title> Cadê Meu Hospital - Perfil UBS [<?php echo $profileUBS->$attributesUBS[5];?>]</title>
+		<title> Cadê Meu Hospital - Perfil UBS <?php echo $profileUBS->getNameUBS();?></title>
                 
                 
 	</head>
@@ -43,7 +44,11 @@ try {
 	
 		<div class="content"> 
 
-		<?php require '../view/shared/getlocation.php';?>
+
+					
+
+
+
                 </div>
             <br /><br /><br /><br /><br /><br /><br />
 		<?php require '../view/shared/footer.php';?>

@@ -1,5 +1,4 @@
 
-<h2>Sua localiza&ccedil;&atildeo:</h2>
 <html>	
 <p id="getlocation" onLoad="">
 	<div id="mapholder"></div>

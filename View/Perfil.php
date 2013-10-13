@@ -21,10 +21,11 @@ try {
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
 		<link rel="stylesheet" href="css/home.css" type="text/css">
 		<link rel="stylesheet" href="css/profile.css" type="text/css">
+		<script type="text/javascript" src="../View/shared/js/locationUBS.js"></script>
 		<title> Cadê Meu Hospital - Perfil UBS <?php echo $profileUBS->getNameUBS();?></title>
                 
                 
@@ -86,11 +87,12 @@ try {
 								
 								<br />
 																
-
 						</div>
 						
 					
-						
+	<p id="getlocationUBS" onLoad="">
+	<div id="mapholder"></div>
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>				
 
 
                 </div>

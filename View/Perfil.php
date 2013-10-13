@@ -23,15 +23,8 @@ try {
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
-		<link rel="stylesheet" href="css/login.css" type="text/css">
+		<link rel="stylesheet" href="css/home.css" type="text/css">
 		<link rel="stylesheet" href="css/profile.css" type="text/css">
-		<script type="text/javascript" src="../View/shared/js/jquery-2.0.2.js"></script>
-		<script type="text/javascript" src="../View/shared/js/location.js"></script>
-		<script type="text/javascript" src="../View/shared/js/jquery-ui-1.10.3.js"></script>
-		<script type="text/javascript" src="../View/shared/js/jquery.maskedinput.js"></script>
-		<script type="text/javascript" src="../View/shared/js/scripts.js"></script>
-		<script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
-		<link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 		<title> Cadê Meu Hospital - Perfil UBS <?php echo $profileUBS->getNameUBS();?></title>
                 
                 
@@ -43,13 +36,15 @@ try {
             
 		<?php require '../view/shared/navigation_bar.php';?>
 	
-		<div class="content"> 
+	<!--	<div class="content">  --!>
 
 
-					
-						<h2 style="text-indent:40px;">
+					<div class="profile"> 
+						<h2 style="text-indent:30px;">
 							<?php echo $profileUBS->getNameUBS();?>
 						</h2>
+						<div id= "line">
+						</div>
 						<div id="tabs">
 							<ul>
 								<span>Dados da UBS</span>
@@ -87,7 +82,7 @@ try {
 										<th>Adaptação das Pessoas Idosas:</th>
 										<td class="align-left"><?php echo $profileUBS->getAdapOldPeople();?></td>
 									</tr>
-										<th>Ferramenteas:</th>
+										<th>Ferramentas:</th>
 										<td class="align-left"><?php echo $profileUBS->getDescriTools();?></td>
 									</tr>
 										<th>Descrição dos Remédios:</th>
@@ -104,7 +99,7 @@ try {
 							<div id="tabs-3"></div>
 							<div id="tabs-4"></div>
 							<div id="tabs-5"></div>							
-						</div>
+					<!--	</div>   --!>
 						
 
 

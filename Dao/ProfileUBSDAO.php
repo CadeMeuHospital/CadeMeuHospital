@@ -2,40 +2,36 @@
 
 include_once "/../Utils/dataBaseConnection.php";
 
+define('NOME', 1);
+define('CIDADE', 2);
+define('BAIRRO', 3);
+
 class ProfileUBSDAO {
-    
-    public function __construct(){
-    }
-    
-    public function searchUBSByName($nameUBS){
 
-        $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '".$nameUBS."'";
-        $execute = mysql_query($sql);	
-        //$result = mysql_result($execute, 0, "nom_estab");
-        $result = mysql_fetch_array($execute);
+    public function __construct() {
         
+    }
+
+    public function searchUBS($field, $searchType) {
+
+        switch ($searchType) {
+            case NOME :
+                $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '" . $field . "'";
+                break;
+            case CIDADE :
+                $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '" . $field . "'";
+                break;
+            case BAIRRO :
+                $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '" . $field . "'";
+                break;
+        }
+        
+        $execute = mysql_query($sql);
+        $result = mysql_fetch_array($execute);
+
         return $result;
     }
-    
-    public function searchUBSByDscCidade($dscCidade){
 
-        $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '".$dscCidade."'";
-        $execute = mysql_query($sql);	
-        //$result = mysql_result($execute, 0, "dsc_cidade");
-        $result = mysql_fetch_array($execute);
-        
-        return $result;
-    }
-    
-    public function searchUBSByDscBairro($descBairro){
-
-        $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '".$descBairro."'";
-        $execute = mysql_query($sql);	
-        //$result = mysql_result($execute, 0, "dsc_bairro");
-        $result = mysql_fetch_array($execute);
-        
-        return $result;
-    }
 }
 
 ?>

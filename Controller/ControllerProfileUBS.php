@@ -36,62 +36,23 @@ class ControllerProfileUBS {
         }
         return $profileUBS;
     }
-    
-    public function searchUBS($field,$searchType){
-        
-    }
 
-
-    public function searchUBSByNameUBS($nameUBS) {
-
-        if (DataValidation::throwTextFieldException($nameUBS)) {
+    public function searchUBS($field, $searchType) {
+        try {
 
             $profileUBSDAO = new ProfileUBSDAO();
 
-            $attributesUBS = $profileUBSDAO->searchUBSByName($nameUBS);
+            $attributesUBS = $profileUBSDAO->searchUBS($field,$searchType);
 
             $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], 
                     $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9], $attributesUBS[10], 
                     $attributesUBS[11], $attributesUBS[12], $attributesUBS[13], $attributesUBS[14]);
             return $profileUBS;
-        } else {
-            //Exception thrown
-        }
-    }
-
-    public function searchUBSByDscCidade($dscCidade) {
-
-        if (DataValidation::throwTextFieldException($dscCidade)) {
             
-            $profileUBSDAO = new ProfileUBSDAO();
-
-            $attributesUBS = $profileUBSDAO->searchUBSByDscCidade($dscCidade);
-
-            $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], 
-                    $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9], $attributesUBS[10], 
-                    $attributesUBS[11], $attributesUBS[12], $attributesUBS[13], $attributesUBS[14]);
-            return $profileUBS;
-        } else {
-            //Exception thrown
+        } catch (Exception $e) {
+            
         }
     }
-
-    public function searchUBSByDescBairro($descBairro) {
-
-        if (DataValidation::throwTextFieldException($descBairro)) {
-            $profileUBSDAO = new ProfileUBSDAO();
-
-            $attributesUBS = $profileUBSDAO->searchUBSByDescBairro($descBairro);
-
-            $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], 
-                    $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9], $attributesUBS[10], 
-                    $attributesUBS[11], $attributesUBS[12], $attributesUBS[13], $attributesUBS[14]);
-            return $profileUBS;
-        } else {
-            //Exception thrown
-        }
-    }
-
+    
 }
-
 ?>

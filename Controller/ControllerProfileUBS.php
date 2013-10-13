@@ -28,9 +28,11 @@ class ControllerProfileUBS {
         return self::$instanceControllerProfileUBS;
     }
 
-    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
+    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS,
+            $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
         try {
-            $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
+            $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade,
+                    $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
         } catch (Exception $e) {
             print"<script>alert('" . $e->getMessage() . "')</script>";
         }
@@ -54,6 +56,10 @@ class ControllerProfileUBS {
         }
     }
 
+    public function getArrayUBS(){
+        
+    }
+    
     public function returnUBS($id){
         try {
 		
@@ -67,6 +73,7 @@ class ControllerProfileUBS {
             return $profileUBS;
 
 	} catch (Exception $e) {
+            
 	}
       }
 	

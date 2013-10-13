@@ -25,7 +25,7 @@ class ProfileUBSDAO {
                 $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '" . $field . "'";
                 break;
         }
-        
+
         $execute = mysql_query($sql);
         $result = mysql_fetch_array($execute);
 
@@ -33,11 +33,12 @@ class ProfileUBSDAO {
     }
 
     public function returnUBS($id) {
-	$sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $id . "'"; 
+        $sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $id . "'";
         $execute = mysql_query($sql);
         $result = mysql_fetch_array($execute);
         return $result;
-	}
+    }
+
 }
 
 ?>

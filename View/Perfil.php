@@ -24,6 +24,7 @@ try {
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
 		<link rel="stylesheet" href="css/login.css" type="text/css">
+		<link rel="stylesheet" href="css/profile.css" type="text/css">
 		<script type="text/javascript" src="../View/shared/js/jquery-2.0.2.js"></script>
 		<script type="text/javascript" src="../View/shared/js/location.js"></script>
 		<script type="text/javascript" src="../View/shared/js/jquery-ui-1.10.3.js"></script>
@@ -46,7 +47,65 @@ try {
 
 
 					
+						<h2 style="text-indent:40px;">
+							<?php echo $profileUBS->getNameUBS();?>
+						</h2>
+						<div id="tabs">
+							<ul>
+								<span>Dados da UBS</span>
+							</ul>
+							<div id="tabs-1">
+								<table id="tabela-dados-UBS" style="text-align: left; width:950px;">
+									<tr>
+										<th>Nome:</th>
+										<td class="align-left"><?php echo $profileUBS->getNameUBS();?></td>
+									</tr>
+									<tr>
+										<th>Código do Municipio</th>
+										<td class="align-left"><?php echo $profileUBS->getCodMunic();?></td>
+									</tr>
+									<tr>
+										<th>Código CNES</th>
+										<td class="align-left"><?php echo $profileUBS->getCodCNES();?></td>
+									</tr>
+									<tr>
+										<th>Descrição do Endereço:</th>
+										<td class="align-left"><?php echo $profileUBS->getDescEnder();?></td>
+									</tr>
+										<th>Bairro: </th>
+										<td class="align-left"><?php echo $profileUBS->getDescBairro();?></td>
+									</tr>
+										<th>Cidade:</th>
+										<td class="align-left"><?php echo $profileUBS->getDscCidade();?></td>
+									</tr>
+										<th>Telefone:</th>
+										<td class="align-left"><?php echo $profileUBS->getPhoneUBS();?></td>
+									</tr>
+										<th>Estrutura Física:</th>
+										<td class="align-left"><?php echo $profileUBS->getPhysicStructureUBS();?></td>
+									</tr>
+										<th>Adaptação das Pessoas Idosas:</th>
+										<td class="align-left"><?php echo $profileUBS->getAdapOldPeople();?></td>
+									</tr>
+										<th>Ferramenteas:</th>
+										<td class="align-left"><?php echo $profileUBS->getDescriTools();?></td>
+									</tr>
+										<th>Descrição dos Remédios:</th>
+										<td class="align-left"><?php echo $profileUBS->getDescMedicine();?></td>
+									</tr>								
+								</table>
+								
+								<br />
+																
 
+							</div>
+							
+							<div id="tabs-2"></div>
+							<div id="tabs-3"></div>
+							<div id="tabs-4"></div>
+							<div id="tabs-5"></div>							
+						</div>
+						
 
 
                 </div>

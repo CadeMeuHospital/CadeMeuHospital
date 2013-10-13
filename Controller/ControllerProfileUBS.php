@@ -1,9 +1,15 @@
+<html>
+    <form method="post" action="../Controller/ControllerProfileUBS.php?action=searchUBS" id="Enviar">
+
 
 <?php
+
 
 include_once '/../Model/profileUBS.php';
 include_once '/../DAO/profileUBSDAO.php';
 include_once '/../Utils/DataValidation.php';
+
+  
 
 class ControllerProfileUBS {
 
@@ -91,5 +97,7 @@ class ControllerProfileUBS {
     }
 
 }
-
 ?>
+        
+        
+</html>

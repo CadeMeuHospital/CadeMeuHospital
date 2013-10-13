@@ -53,6 +53,23 @@ class ControllerProfileUBS {
             
         }
     }
+
+    public function returnUBS($id){
+        try {
+		
+	    $profileUBSDAO = new ProfileUBSDAO();
+	    
+            $attributesUBS = $profileUBSDAO->returnUBS($id);
+
+            $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], 
+                    $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9], $attributesUBS[10], 
+                    $attributesUBS[11], $attributesUBS[12], $attributesUBS[13], $attributesUBS[14]);
+            return $profileUBS;
+
+	} catch (Exception $e) {
+	}
+      }
+	
     
 }
 ?>

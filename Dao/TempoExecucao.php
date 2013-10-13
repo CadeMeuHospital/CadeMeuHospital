@@ -17,7 +17,9 @@
  		$cod_unico = mysql_result($result, $i,"cod_unico");
  		$dsc_bairro = mysql_result($result, $i,"dsc_bairro");
  		$dsc_cidade = mysql_result($result, $i,"dsc_cidade");
- 		echo "$cod_unico  ---  $nom_estab --- $dsc_bairro --- $dsc_cidade <br>" ;
+                $dsc_estrut = mysql_result($result, $i,"dsc_equipamentos");
+                $dsc_estrut2 = mysql_result($result, $i,"dsc_medicamentos");
+ 		echo "$cod_unico  ---  $dsc_estrut --- $dsc_estrut2<br>" ;
  		$i++;
  		}
  		

@@ -5,6 +5,7 @@ include_once "/../Utils/dataBaseConnection.php";
 define('NOME', 1);
 define('CIDADE', 2);
 define('BAIRRO', 3);
+define('ID', 4);
 
 class ProfileUBSDAO {
 
@@ -25,19 +26,19 @@ class ProfileUBSDAO {
                 $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '" . $field . "'";
                 break;
         }
-        
-        $execute = mysql_query($sql);
-        $result = mysql_fetch_array($execute);
 
+        $result = mysql_query($sql);
+        
         return $result;
     }
 
     public function returnUBS($id) {
-	$sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $id . "'"; 
+        $sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $id . "'";
         $execute = mysql_query($sql);
         $result = mysql_fetch_array($execute);
         return $result;
-	}
+    }
+
 }
 
 ?>

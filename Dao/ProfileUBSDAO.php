@@ -5,6 +5,7 @@ include_once "/../Utils/dataBaseConnection.php";
 define('NOME', 1);
 define('CIDADE', 2);
 define('BAIRRO', 3);
+define('ID', 4);
 
 class ProfileUBSDAO {
 
@@ -26,9 +27,8 @@ class ProfileUBSDAO {
                 break;
         }
 
-        $execute = mysql_query($sql);
-        $result = mysql_fetch_array($execute);
-
+        $result = mysql_query($sql);
+        
         return $result;
     }
 

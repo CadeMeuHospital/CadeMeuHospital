@@ -4,13 +4,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
-		<link rel="stylesheet" href="css/login.css" type="text/css">
-		<script type="text/javascript" src="../View/shared/js/jquery-2.0.2.js"></script>
+		<link rel="stylesheet" href="css/home.css" type="text/css">
 		<script type="text/javascript" src="../View/shared/js/location.js"></script>
-		<script type="text/javascript" src="../View/shared/js/jquery-ui-1.10.3.js"></script>
-		<script type="text/javascript" src="../View/shared/js/jquery.maskedinput.js"></script>
-		<script type="text/javascript" src="../View/shared/js/scripts.js"></script>
-		<script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
 		<link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 		<title> Cadê Meu Hospital - Mapa</title>
                 

@@ -25,7 +25,6 @@ try {
 		<link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
 		<link rel="stylesheet" href="css/home.css" type="text/css">
 		<link rel="stylesheet" href="css/profile.css" type="text/css">
-		<script type="text/javascript" src="../View/shared/js/locationUBS.js"></script>
 		<title> Cadê Meu Hospital - Perfil UBS <?php echo $profileUBS->getNameUBS();?></title>
                 
                 
@@ -89,12 +88,20 @@ try {
 																
 						</div>
 						
-					
-	<p id="getlocationUBS" onLoad="">
-	<div id="mapholder"></div>
+						<div id="mapholder"></div>
+<h2>
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>				
+	<script>
 
+  {
+  var latlon=<?php echo $profileUBS->getLatitudeUBS();?>+","+<?php echo $profileUBS->getLongitudeUBS();?>;
 
+  var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
+  +latlon+"&zoom=14&size=600x400&sensor=false";
+  document.getElementById("mapholder").innerHTML="<img src='"+img_url+"'>";
+  }
+	</script>
+</h2>
                 </div>
             <br /><br /><br /><br /><br /><br /><br />
 		<?php require '../view/shared/footer.php';?>

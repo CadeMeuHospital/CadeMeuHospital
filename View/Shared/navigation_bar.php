@@ -10,7 +10,7 @@
 
 			<li><a href="../index.php">Dados Abertos</a></li>
 
-			<li><a href="../index.php">Contatos</a></li>
+			<li><a href="../view/Contato.php">Contatos</a></li>
 
 		</ul>
 	</center>

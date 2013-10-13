@@ -3,9 +3,6 @@ div.profile {
 	
 	padding: 3px;
 
-    	margin-left: auto;
-
-   	margin-right: auto;
 
 }
 
@@ -14,7 +11,6 @@ div.profile h2 {
 	color: #990000;
 	text-decoration: none;
 	font-size: 30pt;
-	padding-top: 10px;
 	border-bottom: 1px double #990000;
 }
 
@@ -56,7 +52,7 @@ div.profile li a {
 	
 	display: block;
 	padding: 0px;
-	// border-radius: 7px;
+	border-radius: 7px;
 	text-align: center;
 }
 
@@ -64,4 +60,22 @@ div.profile li a:HOVER {
 	background: #55d400;
 	background: -moz-linear-gradient(top, #cc0000 0%, #990000 100%);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cc0000),to(#990000));
+}
+
+div.box {
+
+
+}
+div.profile tr {
+	
+	background: #cccccc;	
+	text-align: left;
+	text-decoration: none;
+	font-size: 14pt;
+}
+
+div.profile td {
+	background: #f0eaea;
+	
+	text-align: right;
 }

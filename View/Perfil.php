@@ -36,21 +36,15 @@ try {
             
 		<?php require '../view/shared/navigation_bar.php';?>
 	
-	<!--	<div class="content">  --!>
 
 
 					<div class="profile"> 
 						<h2 style="text-indent:30px;">
 							<?php echo $profileUBS->getNameUBS();?>
 						</h2>
-						<div id= "line">
-						</div>
-						<div id="tabs">
-							<ul>
-								<span>Dados da UBS</span>
-							</ul>
-							<div id="tabs-1">
-								<table id="tabela-dados-UBS" style="text-align: left; width:950px;">
+						<div class="content">
+				
+								<table id="tabela-dados-UBS" style="text-align: left; width:800px;">
 									<tr>
 										<th>Nome:</th>
 										<td class="align-left"><?php echo $profileUBS->getNameUBS();?></td>
@@ -60,7 +54,7 @@ try {
 										<td class="align-left"><?php echo $profileUBS->getCodMunic();?></td>
 									</tr>
 									<tr>
-										<th>Código CNES</th>
+										<th>Código CNES:</th>
 										<td class="align-left"><?php echo $profileUBS->getCodCNES();?></td>
 									</tr>
 									<tr>
@@ -93,13 +87,9 @@ try {
 								<br />
 																
 
-							</div>
-							
-							<div id="tabs-2"></div>
-							<div id="tabs-3"></div>
-							<div id="tabs-4"></div>
-							<div id="tabs-5"></div>							
-					<!--	</div>   --!>
+						</div>
+						
+					
 						
 
 

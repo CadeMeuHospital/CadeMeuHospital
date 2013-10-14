@@ -1,65 +1,65 @@
 div.profile {
-	text-align: center;
-	
-	padding: 3px;
+    text-align: center;
+
+    padding: 3px;
 
 
 }
 
 div.profile h2 {
 
-	color: #990000;
-	text-decoration: none;
-	font-size: 30pt;
-	border-bottom: 1px double #990000;
+    color: #990000;
+    text-decoration: none;
+    font-size: 30pt;
+    border-bottom: 1px double #990000;
 }
 
 
 div.profile #right {
-	float: right;
+    float: right;
 }
 
 div.profile #center {
-	align = "center";
-	floaat: center;
-	margin: 0 auto;
+    align = "center";
+    floaat: center;
+    margin: 0 auto;
 }
 
 div.navbar #left {
-	float: left;
+    float: left;
 }
 
 div.navbar #right,#left {
-	display: inline-block;
-	height: 30px;
+    display: inline-block;
+    height: 30px;
 }
 
 div.profile ul {
-	padding: 0;
-	margin: 0;
-	margin-left: 0px;
+    padding: 0;
+    margin: 0;
+    margin-left: 0px;
 }
 
 div.profile li {
-	display: inline-block;
-	border: none;
-	width: 100px;
-	height: 40px;
-	line-height: 40px;
+    display: inline-block;
+    border: none;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
 }
 
 div.profile li a {
-	
-	display: block;
-	padding: 0px;
-	border-radius: 7px;
-	text-align: center;
+
+    display: block;
+    padding: 0px;
+    border-radius: 7px;
+    text-align: center;
 }
 
 div.profile li a:HOVER {
-	background: #55d400;
-	background: -moz-linear-gradient(top, #cc0000 0%, #990000 100%);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cc0000),to(#990000));
+    background: #55d400;
+    background: -moz-linear-gradient(top, #cc0000 0%, #990000 100%);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cc0000),to(#990000));
 }
 
 div.box {
@@ -67,15 +67,15 @@ div.box {
 
 }
 div.profile tr {
-	
-	background: #cccccc;	
-	text-align: left;
-	text-decoration: none;
-	font-size: 14pt;
+
+    background: #cccccc;	
+    text-align: left;
+    text-decoration: none;
+    font-size: 14pt;
 }
 
 div.profile td {
-	background: #f0eaea;
-	
-	text-align: right;
+    background: #f0eaea;
+
+    text-align: right;
 }

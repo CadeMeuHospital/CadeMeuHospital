@@ -1,126 +1,126 @@
 @IMPORT url('navbar.css');
 body {
-	font-family: Helvetica, Verdana, Arial;
-	color: #454837;
-	font-size: 12pt;	
+    font-family: Helvetica, Verdana, Arial;
+    color: #454837;
+    font-size: 12pt;	
 }
 
 h2 .title {
-	font-size:10pt;
+    font-size:10pt;
 }
 
 input[type=text], input[type=password] { 
-	height:20px;
+    height:20px;
 }
 
 div {
-	border: none;
+    border: none;
 }
 
 div.box {	
-	background: #DFFAD0;
-	border: 1px solid #C4F4AA;
+    background: #DFFAD0;
+    border: 1px solid #C4F4AA;
 }
 
 div.root {
-	width: 1000px;
-	margin: 0 auto;
+    width: 1000px;
+    margin: 0 auto;
 }
 
 div.header {
-	height: 140px;
+    height: 140px;
 }
 
 div.header #left {
-	float: left;
+    float: left;
 }
 
 div.header #center {
-	float: center;
+    float: center;
 }
 
 div.header #right {
-	float: right;
+    float: right;
 }
 
 div.content {
-	min-height: 300px;
-	padding-top:20px;
-	display:inline-table;
+    min-height: 300px;
+    padding-top:20px;
+    display:inline-table;
 }
 
 div.footer {
-	height: 40px;
-	font-size: 9pt;
-	color: #663333;
-	text-align: center;
-	padding-top: 10px;
-	border-top: 1px dashed #e0e3e1;
+    height: 40px;
+    font-size: 9pt;
+    color: #663333;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px dashed #e0e3e1;
 }
 
 #centered {
-	margin: 0 auto;
+    margin: 0 auto;
 }
 
 div.headerlink a:link, a:visited {
-color: darkorchid;
-text-decoration: none
+    color: darkorchid;
+    text-decoration: none
 }
 div.headerlink a:hover {
-	background: #55d400;
-	background: -moz-linear-gradient(top, #55d400 0%, #009900 100%);
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#55d400),to(#009900));
-	border-radius:3px;
+    background: #55d400;
+    background: -moz-linear-gradient(top, #55d400 0%, #009900 100%);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#55d400),to(#009900));
+    border-radius:3px;
 }
 div.headerlink a:active {
-text-decoration: none
+    text-decoration: none
 }
 
 div.headerimg  img{
-/* borda arredondada da div para webkit*/
--webkit-border-radius: 10px;
-/* borda arredondada da div moz*/
--moz-border-radius: 10px;
+    /* borda arredondada da div para webkit*/
+    -webkit-border-radius: 10px;
+    /* borda arredondada da div moz*/
+    -moz-border-radius: 10px;
 }
 
 div #sidebar {
-	float: left;
-	border-radius:10px;
-	padding: 0 20px 30px 20px;
-	width:200px;
+    float: left;
+    border-radius:10px;
+    padding: 0 20px 30px 20px;
+    width:200px;
 }
 
 div #title-sidebar {
-	margin-left:-20px;
-	width:240px;
-	border-top-left-radius:10px;
-	border-top-right-radius:10px;
-	padding-top:10px;
-	font-size: 12pt;
+    margin-left:-20px;
+    width:240px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    padding-top:10px;
+    font-size: 12pt;
 }
 
 div #sidebar a {	
-	font-size:11pt;
-	color:#333;
+    font-size:11pt;
+    color:#333;
 }
 
 .destak {
-	padding-top:15px;
-	font-weight: bold;
-	font-size: 11pt;
-	height: 30px;
-	min-width: 150px;
-	color: #fff;
-	text-align: center;
-	vertical-align:middle;
-	text-shadow: 0 -1px 1px #64799e;
-	/* Background gradient */
-	background: #18aa00;
-	/* Border style */
-	border-top: 1px solid #00a800;
-	border-bottom: 1px solid #00a800;
-	/* Box shadow */
-	-moz-box-shadow: inset 0 1px 0 0 #aec3e5;
-	-webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
-	box-shadow: inset 0 1px 0 0 #aec3e5;
+    padding-top:15px;
+    font-weight: bold;
+    font-size: 11pt;
+    height: 30px;
+    min-width: 150px;
+    color: #fff;
+    text-align: center;
+    vertical-align:middle;
+    text-shadow: 0 -1px 1px #64799e;
+    /* Background gradient */
+    background: #18aa00;
+    /* Border style */
+    border-top: 1px solid #00a800;
+    border-bottom: 1px solid #00a800;
+    /* Box shadow */
+    -moz-box-shadow: inset 0 1px 0 0 #aec3e5;
+    -webkit-box-shadow: inset 0 1px 0 0 #aec3e5;
+    box-shadow: inset 0 1px 0 0 #aec3e5;
 }

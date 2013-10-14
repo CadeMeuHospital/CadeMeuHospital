@@ -1,20 +1,20 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
+<?php
+$buscaUBS = $_POST["BuscaUBS"];
+$value = $_POST["searchType"];
+
+require_once '../Controller/ControllerProfileUBS.php';
+
+$controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+
+try {
+    $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
+} catch (Exception $e) {
+    echo "Tratar esse erro :/";
+}
+?>
 <html>
-    <?php
-    $buscaUBS = $_POST["BuscaUBS"];
-    $value = $_POST["searchType"];
-
-    require_once '../Controller/ControllerProfileUBS.php';
-
-    $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-
-    try {
-        $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
-    } catch (Exception $e) {
-        echo "Tratar esse erro :/";
-    }
-    ?>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
@@ -27,10 +27,10 @@
     </head>
 
     <body>
-        <div class="root">                   
+        
+        <div class="root">
             <?php require '../view/shared/header.php'; ?>
             <?php require '../view/shared/navigation_bar.php'; ?>
-
 
             <div class="content"> 
 

@@ -15,12 +15,9 @@
     <body>
         <div class="root">                   
             <?php require '../view/shared/header.php'; ?>
-
             <?php require '../view/shared/navigation_bar.php'; ?>
 
-
             <div class="content"> 
-
 
             </div>
             <br /><br /><br /><br /><br /><br /><br />

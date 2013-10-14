@@ -13,6 +13,7 @@
 } catch(Exception $e) {
     echo "Tratar esse erro :/";
 }   
+
  ?>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -43,7 +44,6 @@
                             echo "<a href=".$path."> ".$nameUBS." </a><br>";
   
                         }
-                    
                     ?>
                                 
                 </div>

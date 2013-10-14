@@ -3,7 +3,7 @@
         <img src="../view/shared/img/logo_cmh.png" align="center" />
     </div>
     <div id ="right">
-
+    
         <form method="post" action="../view/BuscaUBS.php" id="formSearchUBS">	
             <label> Buscar UBS:</label>
             <input type="text" name="BuscaUBS" value="" />
@@ -14,8 +14,10 @@
                 <option value=3>Bairro</option>
 
             </select>
+            
+            <input type = "submit" value="Enviar" name="Enviar" />
         </form>
-            <input type = "submit" value="submit" name="Enviar" onclick="BuscaUBS.php" />
+            
     </div>
 
 </div>

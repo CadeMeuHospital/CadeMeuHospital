@@ -1,34 +1,49 @@
 <?php
 
+require_once dirname(__FILE__) . '/../../Utils/DataValidation.php';
+
 class DataValidationTest extends PHPUnit_Framework_TestCase {
 
     protected $dataValidation;
 
     protected function setUp() {
-        $this->dataValidation = new DataValidation;
+        $this->dataValidation = new DataValidation();
     }
 
     protected function tearDown() {
+        
     }
 
     public function testThrowTextFieldException() {
-        $this->markTestIncomplete();
     }
 
     public function testThrowCodMunicException() {
-        $this->markTestIncomplete();
+    }
+
+    public function testValidateNullFields() {
+        $resultTrue = $this->dataValidation->validateNullFields("field");
+        $this->assertTrue($resultTrue);
+        $resultFalse = $this->dataValidation->validateNullFields(NULL);
+        $this->assertFalse($resultFalse);
     }
 
     public function testValidateTextField() {
-        $this->markTestIncomplete();
+        $result = $this->dataValidation->validateTextField("Páulo");
+        $this->assertEquals(2,$result);
     }
 
     public function testValidateCodMunic() {
-        $this->markTestIncomplete();
+        $resultTrue = $this->dataValidation->validateCodMunic("123456");
+        $this->assertTrue($resultTrue);
+        $resultFalse = $this->dataValidation->validateCodMunic("123");
+        $this->assertFalse($resultFalse);
     }
 
     public function testValidateCodCNES() {
-        $this->markTestIncomplete();
+        $resultTrue = $this->dataValidation->validateCodCNES("123");
+        $this->assertTrue($resultTrue);
+        $resultFalse = $this->dataValidation->validateCodCNES("123c");
+        $this->assertFalse($resultFalse);
     }
 
 }

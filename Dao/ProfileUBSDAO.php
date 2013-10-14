@@ -15,7 +15,7 @@ class ProfileUBSDAO {
 
     public function searchUBS($field, $searchType) {
             if($field == ""){
-                throw new Exception ("Campo vazio!! Digite Novamente");
+                throw new Exception ("Campo vazio!!");
             }
             else{
         switch ($searchType) {

@@ -14,7 +14,8 @@ try {
 	$profileUBS = $controllerProfileUBS->returnUBS($_REQUEST['id']);
 
 } catch(Exception $e) {
-	echo "Tratar esse erro :/";
+	echo 
+         
 }
 
 ?>

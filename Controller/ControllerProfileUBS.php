@@ -1,7 +1,6 @@
 <html>
     <form method="post" action="../Controller/ControllerProfileUBS.php?action=searchUBS" id="Enviar">
 
-
 <?php
 
 
@@ -50,7 +49,7 @@ class ControllerProfileUBS {
             $i = 0;
 
             $profileUBSDAO = new ProfileUBSDAO();
-            $attributeUBS = $profileUBSDAO->searchUBS($field, $searchType);
+            $attributeUBS = $profileUBSDAO->searchUBSinDatabase($field, $searchType);
             $lines =  mysql_num_rows($attributeUBS);
  
 

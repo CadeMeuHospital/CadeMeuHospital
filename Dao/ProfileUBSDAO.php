@@ -13,25 +13,24 @@ class ProfileUBSDAO {
         
     }
 
-    public function searchUBS($field, $searchType) {
-            if($field == ""){   
-                throw new Exception ("Campo vazio!!");
+    public function searchUBSinDatabase($field, $searchType) {
+        if ($field == "") {
+            throw new Exception("Campo vazio!!");
+        } else {
+            switch ($searchType) {
+                case NOME :
+                    $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '" . $field . "'";
+                    break;
+                case CIDADE :
+                    $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '" . $field . "'";
+                    break;
+                case BAIRRO :
+                    $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '" . $field . "'";
+                    break;
             }
-           else{
-        switch ($searchType) {
-            case NOME :
-                $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '" . $field . "'";
-                break;
-            case CIDADE :
-                $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '" . $field . "'";
-                break;
-            case BAIRRO :
-                $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '" . $field . "'";
-                break;
+            $result = mysql_query($sql);
+            return $result;
         }
-        $result = mysql_query($sql);       
-        return $result;
-            }
     }
 
     public function returnUBS($id) {

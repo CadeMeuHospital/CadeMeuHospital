@@ -36,6 +36,7 @@ class DataValidation {
         return !(empty($parameter));
     }
 
+    //Fail method
     public static function validateTextField($textField) {
 
         $result = 0;

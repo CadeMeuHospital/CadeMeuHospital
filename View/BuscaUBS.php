@@ -8,14 +8,9 @@
 
 	$controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
 
-    
  try {
         $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
-        
- 
-
 } catch(Exception $e) {
-	
     echo "Tratar esse erro :/";
 }   
  ?>
@@ -33,13 +28,23 @@
         <body>
        <div class="root">                   
 		<?php require '../view/shared/header.php';?>
-            
 		<?php require '../view/shared/navigation_bar.php';?>
 
 				
 		<div class="content"> 
                     
-                    <?php echo $arrayUBS[0]->getNameUBS();?>
+                   
+                    <?php 
+                        $quantityResult = count($arrayUBS);
+                        for($i=0;$i<$quantityResult;$i++){
+                            $nameUBS = $arrayUBS[$i]->getNameUBS();
+                            $idUBS = $arrayUBS[$i]->getIdUBS();
+                            $path = "../view/Perfil.php?id=".$idUBS."";
+                            echo "<a href=".$path."> ".$nameUBS." </a><br>";
+  
+                        }
+                    
+                    ?>
                                 
                 </div>
             <br /><br /><br /><br /><br /><br /><br />
@@ -50,3 +55,4 @@
 	</div>
 </body>
 </html>
+

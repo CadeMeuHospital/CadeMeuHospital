@@ -15,7 +15,7 @@
 
             </select>
         </form>
-            <input type = "submit" value="submit" name="Enviar" onclick="/BuscaUBS.php" />
+            <input type = "submit" value="submit" name="Enviar" onclick="BuscaUBS.php" />
     </div>
 
 </div>

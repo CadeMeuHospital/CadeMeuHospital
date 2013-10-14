@@ -52,7 +52,8 @@ class ControllerProfileUBS {
             $profileUBSDAO = new ProfileUBSDAO();
             $attributeUBS = $profileUBSDAO->searchUBS($field, $searchType);
             $lines =  mysql_num_rows($attributeUBS);
-            
+ 
+
             while ($i < $lines) {
 
                 $idUBS = mysql_result($attributeUBS, $i, "cod_unico");
@@ -78,10 +79,10 @@ class ControllerProfileUBS {
             }  
             return $arrayUBS;
         } catch (Exception $e) {
-            
+           echo ($e ->getMessage());
         }
     }
-
+    
     public function returnUBS($id) {
         try {
 

@@ -14,7 +14,10 @@ class ProfileUBSDAO {
     }
 
     public function searchUBS($field, $searchType) {
-
+            if($field == ""){
+                throw new Exception ("Campo vazio!! Digite Novamente");
+            }
+            else{
         switch ($searchType) {
             case NOME :
                 $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '" . $field . "'";
@@ -31,7 +34,7 @@ class ProfileUBSDAO {
         
         return $result;
     }
-
+    }
     public function returnUBS($id) {
         $sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $id . "'";
         $execute = mysql_query($sql);

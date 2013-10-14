@@ -14,8 +14,7 @@ try {
 	$profileUBS = $controllerProfileUBS->returnUBS($_REQUEST['id']);
 
 } catch(Exception $e) {
-	echo 
-         
+    echo($e -> getMessage("erro ao capturar id"));    
 }
 
 ?>

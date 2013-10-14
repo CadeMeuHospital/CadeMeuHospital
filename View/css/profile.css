@@ -1,6 +1,8 @@
+
+
 div.profile {
 	text-align: center;
-	
+min-width:1000px;
 	padding: 3px;
 
 
@@ -21,7 +23,7 @@ div.profile #right {
 
 div.profile #center {
 	align = "center";
-	floaat: center;
+	float: center;
 	margin: 0 auto;
 }
 

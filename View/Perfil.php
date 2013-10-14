@@ -1,29 +1,21 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+﻿
 
 <?php
 if(!isset($_GET['id'])) {
 	header ("location: ../index.php");
 }
 
-require_once '../Controller/ControllerProfileUBS.php';
-
-	$controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
 ?>
 
-<?php
-try {
-	$profileUBS = $controllerProfileUBS->returnUBS($_REQUEST['id']);
 
-} catch(Exception $e) {
-    echo($e -> getMessage("erro ao capturar id"));    
-}
 
-?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 
 
 	<head>
+
 
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -32,20 +24,39 @@ try {
 		<link rel="stylesheet" href="css/profile.css" type="text/css">
 		<script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-		<title> Cadê Meu Hospital - Perfil UBS <?php echo $profileUBS->getNameUBS();?></title>
+
+
+		<title> Cadê Meu Hospital - Perfil UBS </title>
                 
                 
 	</head>
 	
         <body>
-       <div class="root">                   
-		<?php require '../view/shared/header.php';?>
+
+
+       <div class="root">  
+
+       <?php require '../view/shared/header.php';?>
             
 		<?php require '../view/shared/navigation_bar.php';?>
-	
 
+		<?php
+require_once '../Controller/ControllerProfileUBS.php';
+
+	$controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
+
+
+try {
+	$profileUBS = $controllerProfileUBS->returnUBS($_REQUEST['id']);
+
+} catch(Exception $e) {
+    echo($e -> getMessage("erro ao capturar id"));    
+}
+
+?>   
 
 					<div class="profile"> 
+
 						<h2 style="text-indent:30px;">
 							<?php echo $profileUBS->getNameUBS();?>
 						</h2>

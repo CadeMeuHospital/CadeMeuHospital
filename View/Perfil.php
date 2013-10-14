@@ -1,15 +1,16 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <?php
-
-require_once '../Controller/ControllerProfileUBS.php';
-
-	$controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
-
 if(!isset($_GET['id'])) {
 	header ("location: ../index.php");
 }
 
+require_once '../Controller/ControllerProfileUBS.php';
+
+	$controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
+?>
+
+<?php
 try {
 	$profileUBS = $controllerProfileUBS->returnUBS($_REQUEST['id']);
 
@@ -20,11 +21,17 @@ try {
 ?>
 
 <html>
+
+
 	<head>
+
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
+		<link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
 		<link rel="stylesheet" href="css/home.css" type="text/css">
 		<link rel="stylesheet" href="css/profile.css" type="text/css">
+		<script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
+        <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
 		<title> Cadê Meu Hospital - Perfil UBS <?php echo $profileUBS->getNameUBS();?></title>
                 
                 

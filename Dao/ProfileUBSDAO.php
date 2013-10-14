@@ -15,7 +15,7 @@ class ProfileUBSDAO {
 
     public function searchUBSinDatabase($field, $searchType) {
         if ($field == "") {
-            throw new Exception("Campo vazio!!");
+            throw new Exception("Campo vazio!! Informe o bairro, o estado ou  nome");
         } else {
             switch ($searchType) {
                 case NOME :

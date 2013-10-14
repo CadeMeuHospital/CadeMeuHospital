@@ -76,7 +76,8 @@
                     }
                     return $arrayUBS;
                 } catch (Exception $e) {
-                    echo ($e->getMessage());
+                    print"<script>alert('".$e->getMessage()."')</script>
+                        <script>  window.location='http://localhost/CadeMeuHospital/view/home.php'</script>";
                 }
             }
 
@@ -90,7 +91,7 @@
                     $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9], $attributesUBS[10], $attributesUBS[11], $attributesUBS[12], $attributesUBS[13]);
                     return $profileUBS;
                 } catch (Exception $e) {
-                    
+                    print"<script>alert('".$e->getMessage()."')</script>";
                 }
             }
 

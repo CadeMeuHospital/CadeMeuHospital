@@ -32,10 +32,11 @@ class DataValidation {
         }
     }
 
-    private static function validateNullFields($parameter) {
+    public static function validateNullFields($parameter) {
         return !(empty($parameter));
     }
 
+    //Fail method
     public static function validateTextField($textField) {
 
         $result = 0;
@@ -61,7 +62,7 @@ class DataValidation {
         $isNumeric = is_numeric($codMunic);
         $codSize = strlen($codMunic);
 
-        if ($isNumeric && ($$codSize == SIZECODMUNIC)) {
+        if ($isNumeric && ($codSize == SIZECODMUNIC)) {
             $result = TRUE;
         } else {
             $result = FALSE;

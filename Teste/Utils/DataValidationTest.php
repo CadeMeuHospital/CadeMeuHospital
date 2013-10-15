@@ -18,6 +18,8 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testThrowCodMunicException() {
+        $resultTrue = $this->dataValidation->throwCodMunicException("123456");
+        $this->assertTrue($resultTrue);
     }
 
     public function testValidateNullFields() {

@@ -1,15 +1,15 @@
 
 
 div.profile {
-<<<<<<< HEAD
+
 	text-align: center;
 min-width:1000px;
 	padding: 3px;
-=======
+
     text-align: center;
 
     padding: 3px;
->>>>>>> bfacdff70a1e7251237a03bb113427c646c93f4a
+
 
 
 }
@@ -28,15 +28,10 @@ div.profile #right {
 }
 
 div.profile #center {
-<<<<<<< HEAD
 	align = "center";
 	float: center;
 	margin: 0 auto;
-=======
-    align = "center";
-    floaat: center;
-    margin: 0 auto;
->>>>>>> bfacdff70a1e7251237a03bb113427c646c93f4a
+
 }
 
 div.navbar #left {

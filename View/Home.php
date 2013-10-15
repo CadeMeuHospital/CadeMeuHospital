@@ -20,17 +20,15 @@
             <div class="content"> 
 
             </div>
-<<<<<<< HEAD
-    
    
 
 </body>
-=======
+
             <br /><br /><br /><br /><br /><br /><br />
             <?php require '../view/shared/footer.php'; ?>
         </div>
 
 
     </body>
->>>>>>> bfacdff70a1e7251237a03bb113427c646c93f4a
+
 </html>

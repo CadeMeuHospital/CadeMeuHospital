@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
@@ -10,16 +10,18 @@
         <title> Cadê Meu Hospital - Home</title>
     </head>
 
-    <body>
+    <body align="center">
         <div class="root">                   
             <?php require '../view/shared/header.php'; ?>
             <?php require '../view/shared/navigation_bar.php'; ?>
 
-            <div class="content"> 
-
+            <div id="center">
+                <div class="content"> 
+                    <img src="../view/shared/img/home.jpg" align="center" />
+                </div>        
             </div>
 
-            <br /><br /><br /><br /><br /><br /><br />
+            
             <?php require '../view/shared/footer.php'; ?>
         </div>
 

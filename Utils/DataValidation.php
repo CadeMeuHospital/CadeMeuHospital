@@ -8,7 +8,7 @@ define('SIZECODMUNIC', 6);
 class DataValidation {
     public static function throwTextFieldException($textField) {
 
-        if (!DataValidation::validateNullFields($textField)) {
+        if (DataValidation::validateNullFields($textField)) {
             throw new TextFieldException("Campo não pode ser nulo!");
         } else {
             if (DataValidation::validateTextField($textField) == 1) {
@@ -24,7 +24,7 @@ class DataValidation {
     }
 
     public static function throwCodMunicException($codMunic) {
-        if (validateCodMunic($codMunic)) {
+        if (DataValidation::validateCodMunic($codMunic)) {
             throw new CodMunicException("Codigo do municipio invalido!");
         } else {
             return TRUE;
@@ -35,20 +35,20 @@ class DataValidation {
         return !(empty($parameter));
     }
 
-    public static function validateTextField($textField) {
-        $result = 0;
-        $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
-
-        for ($i = 0; $i < strlen($textField); $i++) {
-            $char = stripos($validCharacters, $textField[$i]);
-            if (!$char) {
-                $result = 1;
+    public static function validateTextField($nome) {
+        
+            $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
+            
+            for ($i = 0; $i < strlen($nome); $i++) {
+                $char = stripos($caracteresValidos, $nome[$i]);
+                if(!$char){
+                    return 1;
+                }
+                
+                if($nome[$i] == " " && $nome[$i+1] == " "){
+                    return 2;   
+                }
             }
-            if ($textField[$i] == " " && $textField[$i + 1] == " ") {
-                $result = 2;
-            }
-        }
-        return $result;
     }
 
     public static function validateCodMunic($codMunic) {

@@ -10,39 +10,29 @@
 
             private static $instanceControllerProfileUBS;
 
-            private function __construct() {
-                
-            }
-
-            private function __clone() {
-                
-            }
+            private function __construct() {}
+        
+            private function __clone() {}
 
             public static function getInstanceControllerProfileUBS() {
-
                 if (!isset(self::$instanceControllerProfileUBS)) {
                     self::$instanceControllerProfileUBS = new ControllerProfileUBS();
                 } else {
                     //No action
                 }
-
                 return self::$instanceControllerProfileUBS;
             }
 
-            public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
+            public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, 
+                    $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
 
-                $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
-
-                if ($profileUBS == NULL) {
-                    
-                }
-
+                $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder,
+                        $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
                 return $profileUBS;
             }
 
             public function searchUBS($field, $searchType) {
                 try {
-
                     $arrayUBS = array();
                     $i = 0;
 
@@ -50,9 +40,7 @@
                     $attributeUBS = $profileUBSDAO->searchUBSinDatabase($field, $searchType);
                     $lines = mysql_num_rows($attributeUBS);
 
-
                     while ($i < $lines) {
-
                         $idUBS = mysql_result($attributeUBS, $i, "cod_unico");
                         $latitudeUBS = mysql_result($attributeUBS, $i, "vlr_latitude");
                         $longitudeUBS = mysql_result($attributeUBS, $i, "vlr_longitude");
@@ -83,7 +71,6 @@
 
             public function returnUBS($id) {
                 try {
-
                     $profileUBSDAO = new ProfileUBSDAO();
 
                     $attributesUBS = $profileUBSDAO->returnUBS($id);
@@ -94,7 +81,6 @@
                     print"<script>alert('".$e->getMessage()."')</script>";
                 }
             }
-
         }
         ?>
 

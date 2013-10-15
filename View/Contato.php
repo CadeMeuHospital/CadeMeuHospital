@@ -19,11 +19,7 @@
             <?php require '../view/shared/navigation_bar.php'; ?>
 
             <div align ="center">
-
                 <table border = "1">
-
-
-
                     <b><font size="6">Equipe de Desenvolvimento</font></b>
                     <table width="768"border="1">
                         <tr>

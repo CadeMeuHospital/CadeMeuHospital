@@ -10,14 +10,12 @@
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
 		<title> Cadê Meu Hospital - Busca</title>
-                
-                
+           
 	</head>
     <body>
         
         <div class="root">
-
-                    
+      
             <?php require '../view/shared/header.php'; ?>
             <?php require '../view/shared/navigation_bar.php'; ?>
 

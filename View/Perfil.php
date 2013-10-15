@@ -8,16 +8,12 @@ if(!isset($_GET['id'])) {
 
 ?>
 
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
 
 
 	<head>
-
-
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
@@ -40,12 +36,10 @@ if(!isset($_GET['id'])) {
        <?php require '../view/shared/header.php';?>
             
 		<?php require '../view/shared/navigation_bar.php';?>
-
 		<?php
 require_once '../Controller/ControllerProfileUBS.php';
 
 	$controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
-
 
 try {
 	$profileUBS = $controllerProfileUBS->returnUBS($_REQUEST['id']);

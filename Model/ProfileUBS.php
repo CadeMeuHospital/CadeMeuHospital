@@ -145,7 +145,6 @@ class ProfileUBS {
     public function setDescMedicine($descMedicine) {
         $this->descMedicine = $descMedicine;
     }
-
 }
 
 ?>

@@ -6,7 +6,6 @@ include_once '/../Utils/Exception/CodMunicException.php';
 define('SIZECODMUNIC', 6);
 
 class DataValidation {
-
     public static function throwTextFieldException($textField) {
 
         if (!DataValidation::validateNullFields($textField)) {
@@ -36,9 +35,7 @@ class DataValidation {
         return !(empty($parameter));
     }
 
-    //Fail method
     public static function validateTextField($textField) {
-
         $result = 0;
         $validCharacters = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
 
@@ -47,17 +44,14 @@ class DataValidation {
             if (!$char) {
                 $result = 1;
             }
-
             if ($textField[$i] == " " && $textField[$i + 1] == " ") {
                 $result = 2;
             }
         }
-
         return $result;
     }
 
     public static function validateCodMunic($codMunic) {
-
         $result = FALSE;
         $isNumeric = is_numeric($codMunic);
         $codSize = strlen($codMunic);
@@ -67,12 +61,10 @@ class DataValidation {
         } else {
             $result = FALSE;
         }
-
         return $result;
     }
 
     public static function validateCodCNES($codCNES) {
-
         $result = FALSE;
         $isNumeric = is_numeric($codCNES);
 
@@ -81,10 +73,8 @@ class DataValidation {
         } else {
             $result = FALSE;
         }
-
         return $result;
     }
-
 }
 
 ?>

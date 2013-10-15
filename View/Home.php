@@ -8,8 +8,6 @@
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <title> Cadê Meu Hospital - Home</title>
-
-
     </head>
 
     <body>

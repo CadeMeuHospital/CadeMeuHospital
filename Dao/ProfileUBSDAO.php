@@ -9,10 +9,8 @@ define('ID', 4);
 
 class ProfileUBSDAO {
 
-    public function __construct() {
+    public function __construct() {}
         
-    }
-
     public function searchUBSinDatabase($field, $searchType) {
         if ($field == "") {
             throw new Exception("Campo vazio!! Informe o bairro, o estado ou  nome");
@@ -39,7 +37,6 @@ class ProfileUBSDAO {
         $result = mysql_fetch_array($execute);
         return $result;
     }
-
 }
 
 ?>

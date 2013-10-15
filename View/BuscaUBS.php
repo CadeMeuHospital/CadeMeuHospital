@@ -9,47 +9,59 @@
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
+<<<<<<< HEAD
 		<title> Cadê Meu Hospital - Busca</title>
            
 	</head>
+=======
+        <title> Cadê Meu Hospital - Busca</title>
+
+
+    </head>
+>>>>>>> 4248fe3504d2983f5f6e3c200c2ef851a1057131
     <body>
-        
+
         <div class="root">
+<<<<<<< HEAD
       
+=======
+
+
+>>>>>>> 4248fe3504d2983f5f6e3c200c2ef851a1057131
             <?php require '../view/shared/header.php'; ?>
             <?php require '../view/shared/navigation_bar.php'; ?>
 
             <div class="content"> 
 
 
- <?php $buscaUBS = $_POST["BuscaUBS"];
-                        $value = $_POST["searchType"];
-      
-                        require_once '../Controller/ControllerProfileUBS.php';
-
-                       $controllerProfileUBS =  ControllerProfileUBS::getInstanceControllerProfileUBS();
-
-                        try {
-                            $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
-                        } catch(Exception $e) {
-                             echo "Tratar esse erro :/";
-                        }   
-
-                    ?>
-
-<div class="profile">
-
                 <?php
-                $quantityResult = count($arrayUBS);
-                for ($i = 0; $i < $quantityResult; $i++) {
-                    $nameUBS = $arrayUBS[$i]->getNameUBS();
-                    $idUBS = $arrayUBS[$i]->getIdUBS();
-                    $path = "../view/Perfil.php?id=" . $idUBS . "";
-                    echo "<a href=" . $path . "> " . $nameUBS . " </a><br>";
+                $buscaUBS = $_POST["BuscaUBS"];
+                $value = $_POST["searchType"];
+
+                require_once '../Controller/ControllerProfileUBS.php';
+
+                $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+
+                try {
+                    $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
+                } catch (Exception $e) {
+                    echo "Tratar esse erro :/";
                 }
                 ?>
 
-</div>
+                <div class="profile">
+
+                    <?php
+                    $quantityResult = count($arrayUBS);
+                    for ($i = 0; $i < $quantityResult; $i++) {
+                        $nameUBS = $arrayUBS[$i]->getNameUBS();
+                        $idUBS = $arrayUBS[$i]->getIdUBS();
+                        $path = "../view/Perfil.php?id=" . $idUBS . "";
+                        echo "<a href=" . $path . "> " . $nameUBS . " </a><br>";
+                    }
+                    ?>
+
+                </div>
             </div>
             <br /><br /><br /><br /><br /><br /><br />
             <?php require '../view/shared/footer.php'; ?>

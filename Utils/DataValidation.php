@@ -25,7 +25,7 @@ class DataValidation {
     }
 
     public static function throwCodMunicException($codMunic) {
-        if (validateCodMunic($codMunic)) {
+        if (!DataValidation::validateCodMunic($codMunic)) {
             throw new CodMunicException("Codigo do municipio invalido!");
         } else {
             return TRUE;

@@ -10,6 +10,7 @@ $dataBase = mysql_select_db("cademeuhospital");
 try {
     (!$dbconnection) == TRUE;
 } catch (Exception $e) {
-    echo ($e->getMessage());
+   echo ($e->getMessage());
+   die;
 }
 ?>

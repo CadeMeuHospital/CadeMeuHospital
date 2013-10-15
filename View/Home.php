@@ -20,9 +20,6 @@
             <div class="content"> 
 
             </div>
-   
-
-</body>
 
             <br /><br /><br /><br /><br /><br /><br />
             <?php require '../view/shared/footer.php'; ?>

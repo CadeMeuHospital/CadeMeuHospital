@@ -122,7 +122,7 @@ try {
 	</script>
 </h2>
                
-            </div>
+            
             <br /><br /><br /><br /><br /><br /><br />
             <?php require '../view/shared/footer.php'; ?>
         </div>

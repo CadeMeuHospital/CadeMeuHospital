@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/profile.css" type="text/css">        
 		<title> Cadê Meu Hospital - Busca</title>
                 
                 
@@ -22,7 +23,7 @@
 
             <div class="content"> 
 
-                
+
  <?php $buscaUBS = $_POST["BuscaUBS"];
                         $value = $_POST["searchType"];
       
@@ -38,6 +39,7 @@
 
                     ?>
 
+<div class="profile">
 
                 <?php
                 $quantityResult = count($arrayUBS);
@@ -49,6 +51,7 @@
                 }
                 ?>
 
+</div>
             </div>
             <br /><br /><br /><br /><br /><br /><br />
             <?php require '../view/shared/footer.php'; ?>

@@ -20,6 +20,7 @@
 
             <div align ="center">
                 <table border = "1">
+                    <br /><br /><br />
                     <b><font size="6">Equipe de Desenvolvimento</font></b>
                     <table width="768"border="1">
                         <tr>
@@ -43,10 +44,26 @@
                             <td>paulohtfs@gmail.com</td>
                         </tr>
                     </table>
-                    <div class="content"> 
-
-
-                    </div>
+                    <br /><br /><br />
+                    <b><font size="6">Equipe de Gerenciamento</font></b>
+                    <table width="768"border="1">
+                        <tr>
+                            <td>Beatriz Rezener</td>
+                            <td>beatrizrezener@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>João Gabriel</td>
+                            <td>joaogabrieldebrittoesilva@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Larissa Rodrigues</td>
+                            <td>larissax55@gmail.com</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="content"> </div>
+                    
+                    
                     <br /><br /><br /><br /><br /><br /><br />
                     <?php require '../view/shared/footer.php'; ?>
             </div>

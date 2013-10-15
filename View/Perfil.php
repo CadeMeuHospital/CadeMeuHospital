@@ -13,7 +13,7 @@ if (!isset($_GET['id'])) {
 
     <head>
 
-<<<<<<< HEAD
+
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
 		<link rel="stylesheet" href="css/home.css" type="text/css">

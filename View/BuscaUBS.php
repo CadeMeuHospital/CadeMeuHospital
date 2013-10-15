@@ -9,25 +9,20 @@
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
-<<<<<<< HEAD
+
 		<title> Cadê Meu Hospital - Busca</title>
            
 	</head>
-=======
+
         <title> Cadê Meu Hospital - Busca</title>
 
 
     </head>
->>>>>>> 4248fe3504d2983f5f6e3c200c2ef851a1057131
+
     <body>
 
         <div class="root">
-<<<<<<< HEAD
-      
-=======
 
-
->>>>>>> 4248fe3504d2983f5f6e3c200c2ef851a1057131
             <?php require '../view/shared/header.php'; ?>
             <?php require '../view/shared/navigation_bar.php'; ?>
 

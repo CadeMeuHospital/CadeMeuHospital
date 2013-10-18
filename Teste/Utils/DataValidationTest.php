@@ -18,7 +18,7 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testThrowCodMunicException() {
-        $resultTrue = $this->dataValidation->throwCodMunicException("123456");
+        $resultTrue = $this->dataValidation->throwCodMunicException(123456);
         $this->assertTrue($resultTrue);
     }
 
@@ -30,8 +30,12 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testValidateTextField() {
-        $result = $this->dataValidation->validateTextField("Páulo");
-        $this->assertEquals(2,$result);
+        $resultE2 = $this->dataValidation->validateTextField("P   ulo");
+        $this->assertEquals(2,$resultE2);
+        $resultE3 = $this->dataValidation->validateTextField("%123)(-");
+        $this->assertEquals(1,$resultE3);
+        $resultE0 = $this->dataValidation->validateTextField("paulo");
+        $this->assertEquals(0,$resultE0);
     }
 
     public function testValidateCodMunic() {

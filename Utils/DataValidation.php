@@ -6,6 +6,7 @@ include_once '/../Utils/Exception/CodMunicException.php';
 define('SIZECODMUNIC', 6);
 
 class DataValidation {
+
     public static function throwTextFieldException($textField) {
 
         if (DataValidation::validateNullFields($textField)) {
@@ -24,7 +25,7 @@ class DataValidation {
     }
 
     public static function throwCodMunicException($codMunic) {
-        if (DataValidation::validateCodMunic($codMunic)) {
+        if (!DataValidation::validateCodMunic($codMunic)) {
             throw new CodMunicException("Codigo do municipio invalido!");
         } else {
             return TRUE;
@@ -36,19 +37,23 @@ class DataValidation {
     }
 
     public static function validateTextField($nome) {
+
+        $result = 0;
         
-            $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
-            
-            for ($i = 0; $i < strlen($nome); $i++) {
-                $char = stripos($caracteresValidos, $nome[$i]);
-                if(!$char){
-                    return 1;
-                }
-                
-                if($nome[$i] == " " && $nome[$i+1] == " "){
-                    return 2;   
-                }
+        $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
+
+        for ($i = 0; $i < strlen($nome); $i++) {
+            $char = stripos($caracteresValidos, $nome[$i]);
+            if (!$char) {
+                $result = 1;
             }
+
+            if ($nome[$i] == " " && $nome[$i + 1] == " ") {
+                $result = 2;
+            }
+        }
+        
+        return $result;
     }
 
     public static function validateCodMunic($codMunic) {
@@ -75,6 +80,7 @@ class DataValidation {
         }
         return $result;
     }
+
 }
 
 ?>

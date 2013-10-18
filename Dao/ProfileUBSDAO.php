@@ -1,6 +1,7 @@
 <?php
 
-include_once "/../Utils/dataBaseConnection.php";
+include_once "/../Utils/DataBaseConnection.php";
+include_once "/../Utils/DataValidation.php";
 
 define('NOME', 1);
 define('CIDADE', 2);
@@ -9,12 +10,16 @@ define('ID', 4);
 
 class ProfileUBSDAO {
 
-    public function __construct() {}
+    public function __construct() {
         
+    }
+
     public function searchUBSinDatabase($field, $searchType) {
-        if ($field == "") {
-            throw new Exception("Campo vazio!! Informe o bairro, o estado ou  nome");
-        } else {
+
+        $isValidated = DataValidation::throwTextFieldException($field);
+
+        if ($isValidated) {
+
             switch ($searchType) {
                 case NOME :
                     $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '" . $field . "'";
@@ -27,8 +32,10 @@ class ProfileUBSDAO {
                     break;
             }
             $result = mysql_query($sql);
-            return $result;
+        } else {
+            
         }
+        return $result;
     }
 
     public function returnUBS($id) {
@@ -37,6 +44,7 @@ class ProfileUBSDAO {
         $result = mysql_fetch_array($execute);
         return $result;
     }
+
 }
 
 ?>

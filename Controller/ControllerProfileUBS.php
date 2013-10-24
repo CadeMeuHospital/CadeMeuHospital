@@ -10,9 +10,9 @@
 
             private static $instanceControllerProfileUBS;
 
-            private function __construct() {}
-        
-            private function __clone() {}
+            private function __construct() {
+                
+            }
 
             public static function getInstanceControllerProfileUBS() {
                 if (!isset(self::$instanceControllerProfileUBS)) {
@@ -23,11 +23,9 @@
                 return self::$instanceControllerProfileUBS;
             }
 
-            public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, 
-                    $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
+            public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine) {
 
-                $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder,
-                        $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
+                $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
                 return $profileUBS;
             }
 
@@ -64,7 +62,7 @@
                     }
                     return $arrayUBS;
                 } catch (Exception $e) {
-                    print"<script>alert('".$e->getMessage()."')</script>
+                    print"<script>alert('" . $e->getMessage() . "')</script>
                         <script>  window.location='http://localhost/CadeMeuHospital/view/home.php'</script>";
                 }
             }
@@ -78,9 +76,10 @@
                     $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($attributesUBS[0], $attributesUBS[1], $attributesUBS[2], $attributesUBS[3], $attributesUBS[4], $attributesUBS[5], $attributesUBS[6], $attributesUBS[7], $attributesUBS[8], $attributesUBS[9], $attributesUBS[10], $attributesUBS[11], $attributesUBS[12], $attributesUBS[13]);
                     return $profileUBS;
                 } catch (Exception $e) {
-                    print"<script>alert('".$e->getMessage()."')</script>";
+                    print"<script>alert('" . $e->getMessage() . "')</script>";
                 }
             }
+
         }
         ?>
 

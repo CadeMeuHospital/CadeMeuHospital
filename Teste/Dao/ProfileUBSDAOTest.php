@@ -15,8 +15,8 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testSearchUBSinDatabase() {
-        $result = $this->profileUBSDao->searchUBSinDatabase("", 2);
-        $this->assertNotNULL($result);
+        $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("", 2);
+        $this->assertNotNULL($resultNotNULL);
     }
 
     public function testReturnUBS() {

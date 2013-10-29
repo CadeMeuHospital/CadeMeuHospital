@@ -29,7 +29,7 @@ class ProfileUBSDAO {
                             $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '" . $field . "'";
                             break;
                         case CIDADE :
-                            $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '" . $field . "'";
+                            $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '%" . $field . "%'";
                             break;
                         case BAIRRO :
                             $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '" . $field . "'";

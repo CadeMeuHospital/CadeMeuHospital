@@ -26,7 +26,7 @@ class ProfileUBSDAO {
                 } else {
                     switch ($searchType) {
                         case NOME :
-                            $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '" . $field . "'";
+                            $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '%" . $field . "%'";
                             break;
                         case CIDADE :
                             $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '%" . $field . "%'";

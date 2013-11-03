@@ -6,11 +6,11 @@ class ProfileUBSTest extends PHPUnit_Framework_TestCase {
 
     protected $profileUBS;
 
-    protected function setUp() {
+    protected function setUpProfileUBS() {
         $this->profileUBS = new profileUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom");
     }
 
-    protected function tearDown() {
+    protected function tearDownProfileUBS() {
         unset($this->profileUBS);
     }
 

@@ -7,8 +7,8 @@
     $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
     
     $return = $controllerProfileUBS->evaluateUBS($evaluate, $idUBS);
-    
-    if($return){
+            
+    if($return != FALSE){
         ?>
             <script language="Javascript" type="text/javascript">
                 alert("Sua avaliação foi gravada com sucesso!!Obrigado! =D");
@@ -22,6 +22,7 @@
         <?php
     }
     ?>
+
         <script language = "Javascript">
             window.location="https://localhost/CadeMeuHospital/view/Profile.php?id=<?php echo $idUBS; ?>";
         </script>

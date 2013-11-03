@@ -32,7 +32,11 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     
     }
     
-    public function testSaveEvaluationUBS(){
+    public function testSaveEvaluationUBSNotNULL(){
+        $this->setUpProfileUBS();
+        $resultNotNULL = $this->profileUBSDao->saveEvaluationUBS(6, 1);
+        $this->assertNotNULL($resultNotNULL);
+        $this->tearDownProfileUBS();
         
     }
 }

@@ -53,31 +53,6 @@ class DataValidation {
         }
     }
 
-    public static function validateCodMunic($codMunic) {
-        $result = FALSE;
-        $isNumeric = is_numeric($codMunic);
-        $codSize = strlen($codMunic);
-
-        if ($isNumeric && ($codSize == SIZECODMUNIC)) {
-            $result = TRUE;
-        } else {
-            $result = FALSE;
-        }
-        return $result;
-    }
-
-    public static function validateCodCNES($codCNES) {
-        $result = FALSE;
-        $isNumeric = is_numeric($codCNES);
-
-        if ($isNumeric) {
-            $result = TRUE;
-        } else {
-            $result = FALSE;
-        }
-        return $result;
-    }
-
 }
 
 ?>

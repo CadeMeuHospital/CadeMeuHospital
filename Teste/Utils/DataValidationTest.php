@@ -6,11 +6,11 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
 
     protected $dataValidation;
 
-    protected function setUp() {
+    protected function setUpProfileUBS() {
         $this->dataValidation = new DataValidation();
     }
 
-    protected function tearDown() {
+    protected function tearDownProfileUBS() {
         unset($this->dataValidation);
     }
 
@@ -18,22 +18,23 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
     }
    
     public function testValidateNullFields() {
-        $this->setUp();
+        $this->setUpProfileUBS();
         $resultTrue = $this->dataValidation->validateNullFields("field");
         $this->assertTrue($resultTrue);
         $resultFalse = $this->dataValidation->validateNullFields(NULL);
         $this->assertFalse($resultFalse);
-        $this->tearDown();
+        $this->tearDownProfileUBS();
+        
     }
 
     public function testValidateTextField() {
-        $this->setUp();
+        $this->setUpProfileUBS();
         $resultE2 = $this->dataValidation->validateTextField("P   ulo");
         $this->assertEquals(2,$resultE2);
         $resultE3 = $this->dataValidation->validateTextField("%123)(-");
         $this->assertEquals(1,$resultE3);
         $resultE0 = $this->dataValidation->validateTextField("paulo");
         $this->assertEquals(0,$resultE0);
-        $this->tearDown();
+        $this->tearDownProfileUBS();
     }
 }

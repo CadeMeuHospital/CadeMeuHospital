@@ -1,7 +1,6 @@
 <?php
 
 include_once '/../Utils/Exception/TextFieldException.php';
-include_once '/../Utils/Exception/CodMunicException.php';
 
 define('SIZECODMUNIC', 6);
 
@@ -10,13 +9,13 @@ class DataValidation {
     public static function throwTextFieldException($textField) {
 
         if (!DataValidation::validateNullFields($textField)) {
-            return FALSE;
+            throw new TextFieldException("Campo não pode ser nulo!");
         } else {
             if (DataValidation::validateTextField($textField) == 1) {
-                return 1;
+                throw new TextFieldException("Campo contém caracteres invalidos!");
             } else {
                 if (DataValidation::validateTextField($textField) == 2) {
-                    return 2;
+                       throw new TextFieldException("Campo contém espaços seguidos!");
                 } else {
                     return TRUE;
                 }
@@ -29,17 +28,17 @@ class DataValidation {
         return !(empty($parameter));
     }
 
-    public static function validateTextField($nome) {
+    public static function validateTextField($name) {
 
         $caracteresValidos = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
 
-        for ($i = 0; $i < strlen($nome); $i++) {
-            $char = stripos($caracteresValidos, $nome[$i]);
+        for ($i = 0; $i < strlen($name); $i++) {
+            $char = stripos($caracteresValidos, $name[$i]);
             if (!$char) {
                 return 1;
             }
 
-            if ($nome[$i] == " " && $nome[$i + 1] == " ") {
+            if ($name[$i] == " " && $name[$i + 1] == " ") {
                 return 2;
             }
         }

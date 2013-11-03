@@ -3,14 +3,19 @@
 $server = "localhost";
 $username = "root";
 $password = "";
-$dbconnection = mysql_connect($server, $username, $password);
 
-$dataBase = mysql_select_db("cademeuhospital");
+//add an @ sign to suppress warning / error messages
+$db_connection = @mysql_connect($server, $username, $password);
+if (!$db_connection) {
+    print"<script>alert('Falha na conexão ao SGBD.')</script>
+    <script> window.location='http://localhost/CadeMeuHospital/view/home.php'</script>";
+    die;
+}
 
-try {
-    (!$dbconnection) == TRUE;
-} catch (Exception $e) {
-   echo ($e->getMessage());
-   die;
+$db_selected = mysql_select_db("cademeuhospital");
+if (!$db_selected) {
+    print"<script>alert('Falha na conexão ao banco de dados \"cademeuhospital\".')</script>
+    <script>  window.location='http://localhost/CadeMeuHospital/view/home.php'</script>";
+    die;
 }
 ?>

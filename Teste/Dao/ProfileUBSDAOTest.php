@@ -21,9 +21,13 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $this->tearDownProfileUBS();
     }
 
-    public function testReturnUBS() {
-        
+    public function testReturnUBSFalse() {
+        $this->setUpProfileUBS();
+        $resultFalse = $this->profileUBSDao->returnUBS(40000);
+        $this->assertFalse($resultFalse);
+        $this->tearDownProfileUBS();        
     }
+    
     public function testSearchUBSInTableEvaluate(){
         $this->setUpProfileUBS();
         $resultNotNULL = $this->profileUBSDao->searchUBSInTableEvaluate(1);
@@ -36,7 +40,13 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $this->setUpProfileUBS();
         $resultNotNULL = $this->profileUBSDao->saveEvaluationUBS(6, 1);
         $this->assertNotNULL($resultNotNULL);
+        $this->tearDownProfileUBS();        
+    }
+    
+    public function testTakeAverageUBSFalse(){
+        $this->setUpProfileUBS();
+        $resultFalse = $this->profileUBSDao->takeAverageUBS(NULL);
+        $this->assertFalse($resultFalse);
         $this->tearDownProfileUBS();
-        
     }
 }

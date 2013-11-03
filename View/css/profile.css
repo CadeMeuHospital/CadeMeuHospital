@@ -1,16 +1,9 @@
 
 
 div.profile {
-
-	text-align: center;
-min-width:1000px;
-	padding: 3px;
-
     text-align: center;
-
+    min-width:1000px;
     padding: 3px;
-
-
 
 }
 
@@ -87,4 +80,9 @@ div.profile td {
     background: #f0eaea;
 
     text-align: right;
+}
+div.evaluate{
+    background:#ffffff;
+    font-size: 12pt;
+    text-decoration: none;
 }

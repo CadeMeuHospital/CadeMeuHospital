@@ -49,15 +49,15 @@ class ProfileUBSDAO {
         $returnConsult = ProfileUBSDAO::searchUBSInTableEvaluate($idUBS);
 
         if(!$returnConsult){
-            $sql = " INSERT INTO evaluate (id_cod_unico, amount_people, value_vote) VALUES ('".$idUBS."', 1, '".$evaluate."')";
+            $sql = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote) VALUES ('".$idUBS."', 1, '".$evaluate."')";
         }else{
             $amount_people = $returnConsult[2] + 1;
             $value_vote = $returnConsult[3] + $evaluate;
-            $sql = " UPDATE evaluate SET  amount_people='".$amount_people."', value_vote='".$value_vote."' WHERE id_evaluate='".$returnConsult[0]."'";
+            $sql = "UPDATE evaluate SET  amount_people='".$amount_people."', value_vote='".$value_vote."' WHERE id_evaluate='".$returnConsult[0]."'";
         }
         
         $execute = mysql_query($sql);
-        $evaluateAverage=ProfileUBSDAO::updateEvaluateAverage($idUBS);
+        $evaluateAverage = ProfileUBSDAO::updateEvaluateAverage($idUBS);
         
         if($execute){
             return $evaluateAverage;
@@ -73,7 +73,6 @@ class ProfileUBSDAO {
         $evaluateAverage = $resultAverage[3] / $resultAverage[2];
         $sql="UPDATE ubs SET average= '".$evaluateAverage."' WHERE cod_unico LIKE '".$idUBS."'";
         $resultUpdateEvaluate = mysql_query($sql);
-        
         if($resultUpdateEvaluate){
             return $evaluateAverage;
         }else{

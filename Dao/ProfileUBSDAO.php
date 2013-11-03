@@ -79,5 +79,11 @@ class ProfileUBSDAO {
             return $resultUpdateEvaluate;
         }
     }
+    public function takeAverageUBS($idUBS){
+        $sql="SELECT (average) FROM ubs WHERE cod_unico LIKE '".$idUBS."'";
+        $result = mysql_query($sql);
+        $average = mysql_fetch_row($result);
+        return $average;
+    }
 }
 ?>

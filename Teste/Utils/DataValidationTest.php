@@ -17,22 +17,30 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
     public function testThrowTextFieldException() {
     }
    
-    public function testValidateNullFields() {
+    public function testValidateNullFieldsFalse() {
         $this->setUpProfileUBS();
-        $resultTrue = $this->dataValidation->validateNullFields("field");
-        $this->assertTrue($resultTrue);
-        $resultFalse = $this->dataValidation->validateNullFields(NULL);
+        $resultFalse = $this->dataValidation->validateNullFields("field");
         $this->assertFalse($resultFalse);
+        $this->tearDownProfileUBS();
+    }
+    
+    public function testValidateNullFieldsTrue(){
+        $this->setUpProfileUBS();
+        $resultTrue = $this->dataValidation->validateNullFields(NULL);
+        $this->assertTrue($resultTrue);
         $this->tearDownProfileUBS();
         
     }
-
-    public function testValidateTextField() {
+    
+    public function testValidadeTextFieldInvalid(){
         $this->setUpProfileUBS();
-        $resultE2 = $this->dataValidation->validateTextField("P   ulo");
-        $this->assertEquals(2,$resultE2);
         $resultE3 = $this->dataValidation->validateTextField("%123)(-");
         $this->assertEquals(1,$resultE3);
+        $this->tearDownProfileUBS();
+    }
+    
+    public function testValidadeTextFieldValidate(){
+        $this->setUpProfileUBS();
         $resultE0 = $this->dataValidation->validateTextField("paulo");
         $this->assertEquals(0,$resultE0);
         $this->tearDownProfileUBS();

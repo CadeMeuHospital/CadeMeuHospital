@@ -6,23 +6,33 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
 
     protected $profileUBSDao;
 
-    protected function setUp() {
+    protected function setUpProfileUBS() {
         $this->profileUBSDao = new ProfileUBSDAO();
     }
 
-    protected function tearDown() {
+    protected function tearDownProfileUBS() {
         unset($this->profileUBSDao);
     }
 
     public function testSearchUBSinDatabase() {
-        $this->setUp();
-        $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("", 2);
+        $this->setUpProfileUBS();
+        $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("taguatinga", 2);
         $this->assertNotNULL($resultNotNULL);
-        $this->tearDown();
+        $this->tearDownProfileUBS();
     }
 
     public function testReturnUBS() {
         
     }
-
+    public function testSearchUBSInTableEvaluate(){
+        $this->setUpProfileUBS();
+        $resultNotNULL = $this->profileUBSDao->searchUBSInTableEvaluate(1);
+        $this->assertNotNULL($resultNotNULL);
+        $this->tearDownProfileUBS();
+    
+    }
+    
+    public function testSaveEvaluationUBS(){
+        
+    }
 }

@@ -49,7 +49,28 @@ class ProfileUBSDAO {
         $result = mysql_fetch_array($execute);
         return $result;
     }
+    
+    public function searchUBSInTableEvaluate($idUBS){
+        $sql = "SELECT * FROM evaluate WHERE id_cod_unico LIKE '".$idUBS."'";
+        $execute = mysql_query($sql);
+        $result = mysql_fetch_array($execute);
+        return $result;
+    }
+    
+    public function saveEvaluationUBS($evaluate, $idUBS){
+        
+        $returnConsult = ProfileUBSDAO::searchUBSInTableEvaluate($idUBS);
 
+        if(!$returnConsult){
+            $sql = " INSERT INTO evaluate (id_cod_unico, amount_people, value_vote) VALUES ('".$idUBS."', 1, '".$evaluate."')";
+        }else{
+            $amount_people = $returnConsult[2] + 1;
+            $value_vote = $returnConsult[3] + $evaluate;
+            $sql = " UPDATE evaluate SET  amount_people='".$amount_people."', value_vote='".$value_vote."' WHERE id_evaluate='".$returnConsult[0]."'";
+        }
+        
+        $execute = mysql_query($sql);
+        return $execute;
+    }
 }
-
 ?>

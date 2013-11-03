@@ -27,10 +27,8 @@
             <?php
         }
         ?>
-
-            <script language = "Javascript">
-                window.location="https://localhost/CadeMeuHospital/view/Profile.php?id=<?php echo $idUBS; ?>";
-            </script>
-
+        <script language="Javascript" type="text/javascript">
+            window.location="https://localhost/CadeMeuHospital/view/Profile.php?id=<?php echo $idUBS; ?>";
+        </script>
 </html>
 

@@ -29,7 +29,6 @@ class DataValidation {
 
     public static function validateTextField($name) {
         $result = 0;
-
         $validChars = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
 
         for ($i = 0; $i < strlen($name); $i++) {

@@ -12,7 +12,6 @@ div.login {
     float: left;	
 }
 
-
 div.login label,input{
     display: block;
     height: 30px;
@@ -35,9 +34,7 @@ form {
     margin-top: 20px;
     margin-bottom: 20px;
     padding-top: 20px;
-
     border-top: 1px dashed #e0e3e1;
-
 }
 
 label {
@@ -57,7 +54,6 @@ input {
     margin: 3px;
     color: #666666;
     font-size: 13pt;
-
     border: 1px solid #cccccc;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -65,7 +61,6 @@ input {
 }
 
 input.button {
-
     font-weight: bold;
     line-height: 1;
     padding: 6px 10px;

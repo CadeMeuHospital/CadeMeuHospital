@@ -21,7 +21,7 @@
                 </div>        
             </div>
 
-            
+
             <?php require '../view/shared/footer.php'; ?>
         </div>
 

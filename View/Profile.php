@@ -34,7 +34,9 @@ if (!isset($_GET['id'])) {
 
             <div class="profile"> 
 
-                <h2 style="text-indent:30px;"><?php echo $profileUBS->getNameUBS(); ?></h2>
+                <h2 style="text-indent:30px;">
+                    <?php echo $profileUBS->getNameUBS(); ?>
+                </h2>
                 <div class="content">
 
                     <table id="tabela-dados-UBS" style="text-align: left; width:700px;">
@@ -114,21 +116,21 @@ if (!isset($_GET['id'])) {
                         }
                     </script>
                     <script>(function(d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0];
-                        if (d.getElementById(id))
-                            return;
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }(document, 'script', 'facebook-jssdk'));</script>
-                <div id="fb-root"></div>
-                <div class="fb-comments" data-href="http://localhost/CadeMeuHospital/view/Profile.php?id=<?php echo $_REQUEST['id']?>" data-numposts="4" data-width="600"></div>
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id))
+                                return;
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    <div id="fb-root"></div>
+                    <div class="fb-comments" data-href="http://localhost/CadeMeuHospital/view/Profile.php?id=<?php echo $_REQUEST['id'] ?>" data-numposts="4" data-width="600"></div>
                 </h2>
 
 
                 <br /><br /><br /><br /><br /><br /><br />
-<?php require '../view/shared/footer.php'; ?>
+                <?php require '../view/shared/footer.php'; ?>
             </div>
         </div>
 

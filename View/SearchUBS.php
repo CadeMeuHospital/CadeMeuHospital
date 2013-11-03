@@ -10,59 +10,55 @@
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
 
-		<title> Cadê Meu Hospital - Busca</title>
-           
-	</head>
-
         <title> Cadê Meu Hospital - Busca</title>
-
 
     </head>
 
-    <body>
+    <title> Cadê Meu Hospital - Busca</title>
 
-        <div class="root">
+</head>
 
-            <?php require '../view/shared/header.php'; ?>
-            <?php require '../view/shared/navigation_bar.php'; ?>
+<body>
 
-            <div class="content"> 
+    <div class="root">
 
+        <?php require '../view/shared/header.php'; ?>
+        <?php require '../view/shared/navigation_bar.php'; ?>
+
+        <div class="content"> 
+
+            <?php
+            $buscaUBS = $_POST["BuscaUBS"];
+            $value = $_POST["searchType"];
+
+            require_once '../Controller/ControllerProfileUBS.php';
+
+            $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+
+            try {
+                $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
+            } catch (Exception $e) {
+                echo "Tratar esse erro :/";
+            }
+            ?>
+
+            <div class="profile">
 
                 <?php
-                $buscaUBS = $_POST["BuscaUBS"];
-                $value = $_POST["searchType"];
-
-                require_once '../Controller/ControllerProfileUBS.php';
-
-                $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-
-                try {
-                    $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
-                } catch (Exception $e) {
-                    echo "Tratar esse erro :/";
+                $quantityResult = count($arrayUBS);
+                for ($i = 0; $i < $quantityResult; $i++) {
+                    $nameUBS = $arrayUBS[$i]->getNameUBS();
+                    $idUBS = $arrayUBS[$i]->getIdUBS();
+                    $path = "../view/Profile.php?id=" . $idUBS . "";
+                    echo "<a href=" . $path . "> " . $nameUBS . " </a><br>";
                 }
                 ?>
 
-                <div class="profile">
-
-                    <?php
-                    $quantityResult = count($arrayUBS);
-                    for ($i = 0; $i < $quantityResult; $i++) {
-                        $nameUBS = $arrayUBS[$i]->getNameUBS();
-                        $idUBS = $arrayUBS[$i]->getIdUBS();
-                        $path = "../view/Profile.php?id=" . $idUBS . "";
-                        echo "<a href=" . $path . "> " . $nameUBS . " </a><br>";
-                    }
-                    ?>
-
-                </div>
             </div>
-            <br /><br /><br /><br /><br /><br /><br />
-            <?php require '../view/shared/footer.php'; ?>
         </div>
+        <br /><br /><br /><br /><br /><br /><br />
+        <?php require '../view/shared/footer.php'; ?>
+    </div>
 
-    </body>
+</body>
 </html>
-
-

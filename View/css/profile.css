@@ -4,27 +4,23 @@ div.profile {
     text-align: center;
     min-width:1000px;
     padding: 3px;
-
 }
 
 div.profile h2 {
-
     color: #990000;
     text-decoration: none;
     font-size: 30pt;
     border-bottom: 1px double #990000;
 }
 
-
 div.profile #right {
     float: right;
 }
 
 div.profile #center {
-	align = "center";
-	float: center;
-	margin: 0 auto;
-
+    align = "center";
+    float: center;
+    margin: 0 auto;
 }
 
 div.navbar #left {
@@ -51,7 +47,6 @@ div.profile li {
 }
 
 div.profile li a {
-
     display: block;
     padding: 0px;
     border-radius: 7px;
@@ -65,11 +60,9 @@ div.profile li a:HOVER {
 }
 
 div.box {
-
-
 }
-div.profile tr {
 
+div.profile tr {
     background: #cccccc;	
     text-align: left;
     text-decoration: none;
@@ -78,7 +71,6 @@ div.profile tr {
 
 div.profile td {
     background: #f0eaea;
-
     text-align: right;
 }
 div.evaluate{

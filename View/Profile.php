@@ -1,7 +1,17 @@
 <?php
-if (!isset($_GET['id'])) {
-    header("location: ../index.php");
-}
+    
+    require_once '../Controller/ControllerProfileUBS.php';
+    
+    if (!isset($_GET['id'])) {
+        header("location: ../index.php");
+    }
+    
+    $idUBS=$_REQUEST['id'];
+   
+    $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+    
+    $average = $controllerProfileUBS->takeAverageUBS($idUBS);
+    
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,11 +30,11 @@ if (!isset($_GET['id'])) {
             <?php require '../view/shared/header.php'; ?>
             <?php require '../view/shared/navigation_bar.php'; ?>
             <?php
-                require_once '../Controller/ControllerProfileUBS.php';
-
-                $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
                 
-                $idUBS=$_REQUEST['id'];
+
+                //$controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+                
+                
                 try {
                     $profileUBS = $controllerProfileUBS->returnUBS($idUBS);
                 } catch (Exception $e) {
@@ -99,7 +109,9 @@ if (!isset($_GET['id'])) {
                         <input type="hidden" name="idUBS" value="<?php echo $idUBS; ?>" >
                     </form>
                 </div>
-
+                <br><br>
+                
+                Média das avaliações: <?php echo $average[0]; ?>
                 <br><br>
 
                 <div id="mapholder"></div>

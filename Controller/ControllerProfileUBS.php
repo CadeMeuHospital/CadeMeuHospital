@@ -25,43 +25,48 @@
             $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
             return $profileUBS;
         }
+            public function makeObjectUBSLoop($attributeUBS, $i) {
 
-        public function searchUBS($field, $searchType) {
-            try {
-                $arrayUBS = array();
-                $i = 0;
+                $idUBS = mysql_result($attributeUBS, $i, "cod_unico");
+                $latitudeUBS = mysql_result($attributeUBS, $i, "vlr_latitude");
+                $longitudeUBS = mysql_result($attributeUBS, $i, "vlr_longitude");
+                $codMunic = mysql_result($attributeUBS, $i, "cod_munic");
+                $codCNES = mysql_result($attributeUBS, $i, "cod_cnes");
+                $nameUBS = mysql_result($attributeUBS, $i, "nom_estab");
+                $dscEnder = mysql_result($attributeUBS, $i, "dsc_endereco");
+                $dscBairro = mysql_result($attributeUBS, $i, "dsc_bairro");
+                $dscCidade = mysql_result($attributeUBS, $i, "dsc_cidade");
+                $phoneUBS = mysql_result($attributeUBS, $i, "dsc_telefone");
+                $physicStructureUBS = mysql_result($attributeUBS, $i, "dsc_estrut_fisic_ambiencia");
+                $adapOldPeople = mysql_result($attributeUBS, $i, "dsc_adap_defic_fisic_idosos");
+                $descriTools = mysql_result($attributeUBS, $i, "dsc_equipamentos");
+                $descMedicine = mysql_result($attributeUBS, $i, "dsc_medicamentos");
 
-                $profileUBSDAO = new ProfileUBSDAO();
-                $attributeUBS = $profileUBSDAO->searchUBSinDatabase($field, $searchType);
-                $lines = mysql_num_rows($attributeUBS);
-
-                while ($i < $lines) {
-                    $idUBS = mysql_result($attributeUBS, $i, "cod_unico");
-                    $latitudeUBS = mysql_result($attributeUBS, $i, "vlr_latitude");
-                    $longitudeUBS = mysql_result($attributeUBS, $i, "vlr_longitude");
-                    $codMunic = mysql_result($attributeUBS, $i, "cod_munic");
-                    $codCNES = mysql_result($attributeUBS, $i, "cod_cnes");
-                    $nameUBS = mysql_result($attributeUBS, $i, "nom_estab");
-                    $descEnder = mysql_result($attributeUBS, $i, "dsc_endereco");
-                    $descBairro = mysql_result($attributeUBS, $i, "dsc_bairro");
-                    $dscCidade = mysql_result($attributeUBS, $i, "dsc_cidade");
-                    $phoneUBS = mysql_result($attributeUBS, $i, "dsc_telefone");
-                    $physicStructureUBS = mysql_result($attributeUBS, $i, "dsc_estrut_fisic_ambiencia");
-                    $adapOldPeople = mysql_result($attributeUBS, $i, "dsc_adap_defic_fisic_idosos");
-                    $descriTools = mysql_result($attributeUBS, $i, "dsc_equipamentos");
-                    $descMedicine = mysql_result($attributeUBS, $i, "dsc_medicamentos");
-
-                    $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $dscCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
-
-                    array_push($arrayUBS, $profileUBS);
-
-                    $i++;
-                }
-                return $arrayUBS;
-            } catch (Exception $e) {
-                print"<script>alert('" . $e->getMessage() . "')</script>
-                    <script>  window.location='http://localhost/CadeMeuHospital/view/home.php'</script>";
+                $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $dscEnder, $dscBairro, $dscCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
+                return $profileUBS;
             }
+
+            public function searchUBS($field, $searchType) {
+                try {
+                    $arrayUBS = array();
+                    $i = 0;
+
+                    $profileUBSDAO = new ProfileUBSDAO();
+                    $attributeUBS = $profileUBSDAO->searchUBSinDatabase($field, $searchType);
+                    $lines = mysql_num_rows($attributeUBS);
+
+                    while ($i < $lines) {
+                        $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBSLoop($attributeUBS, $i);
+
+                        array_push($arrayUBS, $profileUBS);
+
+                        $i++;
+                    }
+                    return $arrayUBS;
+                } catch (Exception $e) {
+                    print"<script>alert('" . $e->getMessage() . "')</script>
+                        <script>  window.location='http://localhost/CadeMeuHospital/view/home.php'</script>";
+                }
         }
 
         public function returnUBS($id) {

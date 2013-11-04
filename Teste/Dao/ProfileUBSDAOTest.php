@@ -11,15 +11,18 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     protected function tearDown() {
-        
+        unset($this->profileUBSDao);
     }
 
     public function testSearchUBSinDatabase() {
+        $this->setUp();
         $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("", 2);
         $this->assertNotNULL($resultNotNULL);
+        $this->tearDown();
     }
 
     public function testReturnUBS() {
+        
     }
 
 }

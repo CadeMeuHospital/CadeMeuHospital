@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metrics generated="2013-11-04T01:00:05" pdepend="1.1.1" ahh="0.66666666666667" andc="0" calls="99" ccn="97" ccn2="97" cloc="1" clsa="0" clsc="9" eloc="458" fanout="9" leafs="7" lloc="323" loc="582" maxDIT="2" ncloc="581" noc="9" nof="0" noi="0" nom="83" nop="1" roots="2">
+  <files>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Controller\ControllerProfileUBS.php" cloc="1" eloc="75" lloc="57" loc="96" ncloc="95"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Dao\ProfileUBSDAO.php" cloc="0" eloc="75" lloc="58" loc="90" ncloc="90"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Model\ProfileUBS.php" cloc="0" eloc="118" lloc="85" loc="151" ncloc="151"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\ControllerTest\ControllerProfileUBSTest.php" cloc="0" eloc="45" lloc="31" loc="57" ncloc="57"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" cloc="0" eloc="19" lloc="12" loc="29" ncloc="29"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\ModelTest\ProfileUBSTest.php" cloc="0" eloc="54" lloc="34" loc="64" ncloc="64"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" cloc="0" eloc="31" lloc="23" loc="40" ncloc="40"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Utils\DataValidation.php" cloc="0" eloc="34" lloc="21" loc="45" ncloc="45"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\Utils\Exception\TextFieldException.php" cloc="0" eloc="7" lloc="2" loc="10" ncloc="10"/>
+  </files>
+  <package name="+global" cr="0.15" noc="9" nof="0" noi="0" nom="83" rcr="0.2775">
+    <class name="ControllerProfileUBS" ca="1" cbo="3" ce="3" cis="7" cloc="1" cr="0.15" csz="9" dit="0" eloc="67" impl="0" lloc="45" loc="89" ncloc="88" noam="0" nocc="0" nom="8" noom="0" npm="7" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="12" wmci="12" wmcnp="11">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Controller\ControllerProfileUBS.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="3" ncloc="3" npath="1"/>
+      <method name="getInstanceControllerProfileUBS" ccn="2" ccn2="2" cloc="1" eloc="7" lloc="3" loc="8" ncloc="7" npath="2"/>
+      <method name="makeObjectUBS" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="5" ncloc="5" npath="1"/>
+      <method name="makeObjectUBSLoop" ccn="1" ccn2="1" cloc="0" eloc="18" lloc="16" loc="20" ncloc="20" npath="1"/>
+      <method name="searchUBS" ccn="3" ccn2="3" cloc="0" eloc="18" lloc="13" loc="22" ncloc="22" npath="3"/>
+      <method name="returnUBS" ccn="2" ccn2="2" cloc="0" eloc="10" lloc="7" loc="12" ncloc="12" npath="2"/>
+      <method name="evaluateUBS" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
+      <method name="takeAverageUBS" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
+    </class>
+    <class name="ProfileUBSDAO" ca="2" cbo="1" ce="1" cis="7" cloc="0" cr="0.15" csz="7" dit="0" eloc="66" impl="0" lloc="46" loc="79" ncloc="79" noam="0" nocc="0" nom="7" noom="0" npm="7" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="13" wmci="13" wmcnp="13">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Dao\ProfileUBSDAO.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="1" lloc="0" loc="1" ncloc="1" npath="1"/>
+      <method name="searchUBSinDatabase" ccn="4" ccn2="4" cloc="0" eloc="17" lloc="14" loc="18" ncloc="18" npath="3"/>
+      <method name="returnUBS" ccn="1" ccn2="1" cloc="0" eloc="6" lloc="4" loc="6" ncloc="6" npath="1"/>
+      <method name="searchUBSInTableEvaluate" ccn="1" ccn2="1" cloc="0" eloc="6" lloc="4" loc="6" ncloc="6" npath="1"/>
+      <method name="saveEvaluationUBS" ccn="3" ccn2="3" cloc="0" eloc="17" lloc="11" loc="21" ncloc="21" npath="4"/>
+      <method name="updateEvaluateAverage" ccn="2" ccn2="2" cloc="0" eloc="13" lloc="9" loc="13" ncloc="13" npath="2"/>
+      <method name="takeAverageUBS" ccn="1" ccn2="1" cloc="0" eloc="6" lloc="4" loc="6" ncloc="6" npath="1"/>
+    </class>
+    <class name="ProfileUBS" ca="2" cbo="0" ce="0" cis="29" cloc="0" cr="0.15" csz="43" dit="0" eloc="100" impl="0" lloc="42" loc="146" ncloc="146" noam="0" nocc="0" nom="29" noom="0" npm="29" rcr="0.15" vars="14" varsi="14" varsnp="0" wmc="29" wmci="29" wmcnp="29">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Model\ProfileUBS.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="16" lloc="14" loc="16" ncloc="16" npath="1"/>
+      <method name="getIdUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setIdUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getLatitudeUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setLatitudeUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getLongitudeUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setLongitudeUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getCodMunic" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setCodMunic" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getCodCNES" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setCodCNES" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getNameUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setNameUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getDescEnder" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setDescEnder" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getDescBairro" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setDescBairro" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getDscCidade" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setDscCidade" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getPhoneUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setPhoneUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getPhysicStructureUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setPhysicStructureUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getAdapOldPeople" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setAdapOldPeople" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getDescriTools" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setDescriTools" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="getDescMedicine" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setDescMedicine" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+    </class>
+    <class name="ControllerProfileUBSTest" ca="0" cbo="1" ce="1" cis="6" cloc="0" cr="0.15" csz="12" dit="2" eloc="38" impl="0" lloc="18" loc="52" ncloc="52" noam="10" nocc="0" nom="10" noom="0" npm="6" rcr="0.181875" vars="2" varsi="2" varsnp="0" wmc="10" wmci="10" wmcnp="6">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\ControllerTest\ControllerProfileUBSTest.php"/>
+      <method name="setUpControllerProfileUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="setUpObjectProfileUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="tearDownControllerProfileUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="tearDownObjectProfileUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testSingletonNotNull" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
+      <method name="testMakeObjectUBSNotNull" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
+      <method name="testMakeObjectUBSInstanceOf" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
+      <method name="testSearchUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testReturnUBSNotNull" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
+      <method name="testReturnUBSEqualsID" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
+    </class>
+    <class name="ProfileUBSDAOTest" ca="0" cbo="1" ce="1" cis="2" cloc="0" cr="0.15" csz="5" dit="2" eloc="14" impl="0" lloc="6" loc="24" ncloc="24" noam="4" nocc="0" nom="4" noom="0" npm="2" rcr="0.181875" vars="1" varsi="1" varsnp="0" wmc="4" wmci="4" wmcnp="2">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php"/>
+      <method name="setUp" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="tearDown" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testSearchUBSinDatabase" ccn="1" ccn2="1" cloc="0" eloc="6" lloc="4" loc="6" ncloc="6" npath="1"/>
+      <method name="testReturnUBS" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="3" ncloc="3" npath="1"/>
+    </class>
+    <class name="ProfileUBSTest" ca="0" cbo="1" ce="1" cis="14" cloc="0" cr="0.15" csz="17" dit="2" eloc="48" impl="0" lloc="16" loc="57" ncloc="57" noam="16" nocc="0" nom="16" noom="0" npm="14" rcr="0.181875" vars="1" varsi="1" varsnp="0" wmc="16" wmci="16" wmcnp="14">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\ModelTest\ProfileUBSTest.php"/>
+      <method name="setUp" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="tearDown" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetIdUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="4" ncloc="4" npath="1"/>
+      <method name="testGetLatitudeUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetLongitudeUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetCodMunic" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetCodCNES" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetNameUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetDescEnder" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetDscCidade" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetDescBairro" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetPhoneUBS" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetPhysicStructure" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetAdapOldPeople" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetDescriTools" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testGetDescMedicine" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+    </class>
+    <class name="DataValidationTest" ca="0" cbo="1" ce="1" cis="3" cloc="0" cr="0.15" csz="6" dit="2" eloc="26" impl="0" lloc="16" loc="35" ncloc="35" noam="5" nocc="0" nom="5" noom="0" npm="3" rcr="0.181875" vars="1" varsi="1" varsnp="0" wmc="5" wmci="5" wmcnp="3">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php"/>
+      <method name="setUp" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="tearDown" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+      <method name="testThrowTextFieldException" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="2" ncloc="2" npath="1"/>
+      <method name="testValidateNullFields" ccn="1" ccn2="1" cloc="0" eloc="8" lloc="6" loc="8" ncloc="8" npath="1"/>
+      <method name="testValidateTextField" ccn="1" ccn2="1" cloc="0" eloc="10" lloc="8" loc="10" ncloc="10" npath="1"/>
+    </class>
+    <class name="DataValidation" ca="2" cbo="1" ce="1" cis="3" cloc="0" cr="0.15" csz="3" dit="0" eloc="28" impl="0" lloc="16" loc="37" ncloc="37" noam="0" nocc="0" nom="3" noom="0" npm="3" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="7" wmci="7" wmcnp="7">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Utils\DataValidation.php"/>
+      <method name="throwTextFieldException" ccn="3" ccn2="3" cloc="0" eloc="13" lloc="7" loc="15" ncloc="15" npath="3"/>
+      <method name="validateNullFields" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
+      <method name="validateTextField" ccn="3" ccn2="3" cloc="0" eloc="11" lloc="7" loc="12" ncloc="12" npath="3"/>
+    </class>
+    <class name="TextFieldException" ca="1" cbo="0" ce="0" cis="1" cloc="0" cr="0.15" csz="1" dit="2" eloc="3" impl="0" lloc="1" loc="6" ncloc="6" noam="1" nocc="0" nom="1" noom="0" npm="1" rcr="0.2775" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+      <file name="C:\xampp\htdocs\CadeMeuHospital\Utils\Exception\TextFieldException.php"/>
+      <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
+    </class>
+  </package>
+</metrics>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="1.5.0" timestamp="2013-11-04T01:00:27+01:00">
+  <file name="C:\xampp\htdocs\CadeMeuHospital\Controller\ControllerProfileUBS.php">
+    <violation beginline="23" endline="27" rule="ExcessiveParameterList" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveparameterlist" class="ControllerProfileUBS" method="makeObjectUBS" priority="1">
+      The method makeObjectUBS has 14 parameters. Consider to reduce parameter number under 10.
+    </violation>
+  </file>
+  <file name="C:\xampp\htdocs\CadeMeuHospital\Model\ProfileUBS.php">
+    <violation beginline="20" endline="35" rule="ExcessiveParameterList" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveparameterlist" class="ProfileUBS" method="__construct" priority="1">
+      The method __construct has 14 parameters. Consider to reduce parameter number under 10.
+    </violation>
+  </file>
+  <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\ControllerTest\ControllerProfileUBSTest.php">
+    <violation beginline="41" endline="41" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$result'.
+    </violation>
+    <violation beginline="46" endline="46" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$idUBS'.
+    </violation>
+  </file>
+  <file name="C:\xampp\htdocs\CadeMeuHospital\Teste\ModelTest\ProfileUBSTest.php">
+    <violation beginline="5" endline="61" rule="TooManyMethods" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="ProfileUBSTest" priority="3">
+      The class ProfileUBSTest has 15 methods. Consider refactoring ProfileUBSTest to keep number of methods under 10.
+    </violation>
+  </file>
+</pmd>

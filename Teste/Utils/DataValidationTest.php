@@ -6,34 +6,43 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
 
     protected $dataValidation;
 
-    protected function setUp() {
+    protected function setUpProfileUBS() {
         $this->dataValidation = new DataValidation();
     }
 
-    protected function tearDown() {
+    protected function tearDownProfileUBS() {
         unset($this->dataValidation);
     }
 
     public function testThrowTextFieldException() {
     }
    
-    public function testValidateNullFields() {
-        $this->setUp();
-        $resultTrue = $this->dataValidation->validateNullFields("field");
-        $this->assertTrue($resultTrue);
-        $resultFalse = $this->dataValidation->validateNullFields(NULL);
+    public function testValidateNullFieldsFalse() {
+        $this->setUpProfileUBS();
+        $resultFalse = $this->dataValidation->validateNullFields("field");
         $this->assertFalse($resultFalse);
-        $this->tearDown();
+        $this->tearDownProfileUBS();
     }
-
-    public function testValidateTextField() {
-        $this->setUp();
-        $resultE2 = $this->dataValidation->validateTextField("P   ulo");
-        $this->assertEquals(2,$resultE2);
+    
+    public function testValidateNullFieldsTrue(){
+        $this->setUpProfileUBS();
+        $resultTrue = $this->dataValidation->validateNullFields(NULL);
+        $this->assertTrue($resultTrue);
+        $this->tearDownProfileUBS();
+        
+    }
+    
+    public function testValidadeTextFieldInvalid(){
+        $this->setUpProfileUBS();
         $resultE3 = $this->dataValidation->validateTextField("%123)(-");
         $this->assertEquals(1,$resultE3);
+        $this->tearDownProfileUBS();
+    }
+    
+    public function testValidadeTextFieldValidate(){
+        $this->setUpProfileUBS();
         $resultE0 = $this->dataValidation->validateTextField("paulo");
         $this->assertEquals(0,$resultE0);
-        $this->tearDown();
+        $this->tearDownProfileUBS();
     }
 }

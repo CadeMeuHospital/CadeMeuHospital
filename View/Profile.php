@@ -50,10 +50,7 @@
                 <div class="content">
 
                     <table id="tabela-dados-UBS" style="text-align: left; width:700px;">
-                        <!--<tr>
-                            <th>Nome:</th>
-                            <td class="align-left"><?php //echo $profileUBS->getNameUBS(); ?></td>
-                        </tr>-->
+                        
                         <tr>
                             <th>Código do Municipio</th>
                             <td class="align-left"><?php echo $profileUBS->getCodMunic(); ?></td>
@@ -66,27 +63,39 @@
                             <th>Descrição do Endereço:</th>
                             <td class="align-left"><?php echo $profileUBS->getDescEnder(); ?></td>
                         </tr>
+                        <tr>
                         <th>Bairro: </th>
                         <td class="align-left"><?php echo $profileUBS->getDescBairro(); ?></td>
                         </tr>
+                        <tr>
                         <th>Cidade:</th>
                         <td class="align-left"><?php echo $profileUBS->getDscCidade(); ?></td>
                         </tr>
+                        <tr>
                         <th>Telefone:</th>
                         <td class="align-left"><?php echo $profileUBS->getPhoneUBS(); ?></td>
                         </tr>
+                        <tr>
                         <th>Estrutura Física:</th>
                         <td class="align-left"><?php echo $profileUBS->getPhysicStructureUBS(); ?></td>
                         </tr>
+                        <tr>
                         <th>Adaptação das Pessoas Idosas:</th>
                         <td class="align-left"><?php echo $profileUBS->getAdapOldPeople(); ?></td>
                         </tr>
+                        <tr>
                         <th>Ferramentas:</th>
                         <td class="align-left"><?php echo $profileUBS->getDescriTools(); ?></td>
                         </tr>
+                        <tr>
                         <th>Descrição dos Remédios:</th>
                         <td class="align-left"><?php echo $profileUBS->getDescMedicine(); ?></td>
-                        </tr>								
+                        </tr>
+                        <tr>
+                        <th>Média das avaliações:</th>
+                        <td class="align-left"><?php echo $average[0]; ?></td>
+                        </tr>
+                          
                     </table>
 
                     <br />
@@ -111,7 +120,7 @@
                 </div>
                 <br><br>
                 
-                Média das avaliações: <?php echo $average[0]; ?>
+               
                 <br><br>
 
                 <div id="mapholder"></div>

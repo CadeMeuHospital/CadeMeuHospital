@@ -125,17 +125,50 @@
 
                 <div id="mapholder"></div>
                 <h2>
-                    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>				
+                    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>				
                     <script>
 
-                        {
-                            var latlon =<?php echo $profileUBS->getLatitudeUBS(); ?> + "," +<?php echo $profileUBS->getLongitudeUBS(); ?>;
 
-                            var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
-                                    + latlon + "&zoom=14&size=600x400&sensor=false";
-                            document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
-                        }
+
+                        <?php $latlon = $profileUBS->getLatitudeUBS() . "," . $profileUBS->getLongitudeUBS(); ?>;
+                        var myCenter = new google.maps.LatLng(<?php echo $latlon; ?>);
+                    function initialize()
+                    {
+                    var mapProp = {
+                      center:new google.maps.LatLng(<?php echo $latlon?>),
+                      zoom:16,
+                      mapTypeId:google.maps.MapTypeId.ROADMAP
+                      }; 
+                    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+                    var marker = new google.maps.Marker({
+                        position: myCenter,
+                        animation: google.maps.Animation.BOUNCE
+                    });
+
+                    marker.setMap(map);
+
+                    }
+
+                    google.maps.event.addDomListener(window, 'load', initialize);
+
+
+
+
+
+                        // {
+                        //     var latlon =<?php echo $profileUBS->getLatitudeUBS(); ?> + "," +<?php echo $profileUBS->getLongitudeUBS(); ?>;
+
+                        //     var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+                        //             + latlon + "&zoom=14&size=600x400&sensor=false";
+                        //     document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+                        // }
+
                     </script>
+
+                <div id="googleMap" style="width:900px;height:380px;align:center;" ></div>
+
                     <script>(function(d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0];
                             if (d.getElementById(id))

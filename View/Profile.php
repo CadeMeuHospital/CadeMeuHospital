@@ -102,7 +102,7 @@
 
                 </div>
             
-                <div class="evaluate">
+                <div class="evaluate" style="align-center">
                     <h2>Avalie esta UBS!!</h2>
                     <form name="Evaluate" action="EvaluateUBS.php" method="post">
                         <table id="Tabela" >
@@ -118,14 +118,16 @@
                         <input type="hidden" name="idUBS" value="<?php echo $idUBS; ?>" >
                     </form>
                 </div>
+ 
                 <br><br>
                 
                
                 <br><br>
 
-                <div id="mapholder"></div>
-                <h2>
-                    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>				
+                <h2>Mapa</h2>
+                <div id="mapholder" ></div>
+                <div class="content">
+                    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>			
                     <script>
 
 
@@ -157,7 +159,12 @@
 
                     </script>
 
-                <div id="googleMap" style="width:900px;height:380px;align:center;" ></div>
+                <div id="googleMap" style="width:900px;height:380px;align-center;" ></div>
+                </div>
+
+                <br><br>
+
+                <h2>Deixe a sua Opinião</h2>
 
                     <script>(function(d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0];

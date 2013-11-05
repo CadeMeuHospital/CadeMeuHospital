@@ -59,7 +59,7 @@ class ProfileUBSDAO {
         $execute = mysql_query($sql);
         $evaluateAverage = ProfileUBSDAO::updateEvaluateAverage($idUBS);
         
-        if($execute){
+        if($evaluateAverage){
             return $evaluateAverage;
         }else{
             return $execute;
@@ -71,17 +71,17 @@ class ProfileUBSDAO {
         $sql="SELECT * FROM evaluate WHERE id_cod_unico LIKE '".$idUBS."'";
         $result = mysql_query($sql);
         
-        $resultAverage = mysql_fetch_row($result);
-        $evaluateAverage = $resultAverage[3] / $resultAverage[2];
-        
-        $sql="UPDATE ubs SET average= '".$evaluateAverage."' WHERE cod_unico LIKE '".$idUBS."'";
-        $resultUpdateEvaluate = mysql_query($sql);
-        
-        if($resultUpdateEvaluate){
-            return $evaluateAverage;
-        }else{
-            return $resultUpdateEvaluate;
+        if($result == false){
+            return false;
         }
+        $resultAverage = mysql_fetch_row($result);
+        //var_dump($resultAverage);
+        $evaluateAverage = $resultAverage[3] / $resultAverage[2];
+        //$evaluateAverage = 18;
+        $sql="UPDATE ubs SET average= '".$evaluateAverage."' WHERE cod_unico LIKE '".$idUBS."'";
+        mysql_query($sql);
+        return $evaluateAverage;
+        
     }
     
     public function takeAverageUBS($idUBS){

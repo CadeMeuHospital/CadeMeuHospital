@@ -6,43 +6,57 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
 
     protected $dataValidation;
 
+    /* SetUp methods to inicialize the test suit */
+
+    protected function setUp() {
+        $this->setUpProfileUBS();
+    }
+
     protected function setUpProfileUBS() {
         $this->dataValidation = new DataValidation();
+    }
+
+    /* TearDown methods to delete the suit case */
+
+    protected function tearDown() {
+        $this->tearDownProfileUBS();
     }
 
     protected function tearDownProfileUBS() {
         unset($this->dataValidation);
     }
 
-    public function testThrowTextFieldException() {
+    /* Method throwTextFieldException suit test case */
+
+    public function testThrowTextFieldExceptionThrowException() {
+        try {
+            $this->dataValidation->throwTextFieldException("");
+        } catch (InvalidArgumentException $expected) {
+            return;
+        }
+        $this->fail('An expected exception has not been raised.');
     }
-   
+
+    /* Method validateNullField suit test case */
+
     public function testValidateNullFieldsFalse() {
-        $this->setUpProfileUBS();
         $resultFalse = $this->dataValidation->validateNullFields("field");
         $this->assertFalse($resultFalse);
-        $this->tearDownProfileUBS();
     }
-    
-    public function testValidateNullFieldsTrue(){
-        $this->setUpProfileUBS();
+
+    public function testValidateNullFieldsTrue() {
         $resultTrue = $this->dataValidation->validateNullFields(NULL);
         $this->assertTrue($resultTrue);
-        $this->tearDownProfileUBS();
-        
     }
-    
-    public function testValidadeTextFieldInvalid(){
-        $this->setUpProfileUBS();
-        $resultE3 = $this->dataValidation->validateTextField("%123)(-");
-        $this->assertEquals(1,$resultE3);
-        $this->tearDownProfileUBS();
+
+    public function testValidadeTextFieldInvalid() {
+        $resultEquals2 = $this->dataValidation->validateTextField("%123)(-");
+        $this->assertEquals(1, $resultEquals2);
     }
-    
-    public function testValidadeTextFieldValidate(){
-        $this->setUpProfileUBS();
-        $resultE0 = $this->dataValidation->validateTextField("paulo");
-        $this->assertEquals(0,$resultE0);
-        $this->tearDownProfileUBS();
+
+    public function testValidadeTextFieldValidate() {
+        $resultEquals0 = $this->dataValidation->validateTextField("paulo");
+        $this->assertEquals(0, $resultEquals0);
     }
+
 }

@@ -8,8 +8,19 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
 
     protected $profileUBSDao;
 
+    /*SetUp methods to inicialize the test suit */
+    protected function setUp(){
+        $this->setUpProfileUBS();
+    }
+    
     protected function setUpProfileUBS() {
         $this->profileUBSDao = new ProfileUBSDAO();
+    }
+    
+    /*TearDown methods to delete the suit case */
+    protected function tearDown(){
+        $this->tearDownDataBase();
+        $this->tearDownProfileUBS();
     }
 
     protected function tearDownProfileUBS() {
@@ -18,56 +29,48 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     
     protected function tearDownDataBase(){
         $sqlDeleteRowEvaluate = "DELETE FROM evaluate WHERE id_evaluate LIKE 999999";
-        $result = mysql_query($sqlDeleteRowEvaluate);
+        mysql_query($sqlDeleteRowEvaluate);
     }
 
+    /*Method insertUBSInDatabase suit test case*/
     protected function insertUBSInDataBase() {
         $queryInsertUBS = "INSERT INTO ubs (cod_unico, vlr_latitude, vlr_longitude, cod_munic, cod_cnes, nom_estab, dsc_endereco, dsc_bairro, dsc_cidade, dsc_telefone, dsc_estrut_fisic_ambiencia, dsc_adap_defic_fisic_idosos, dsc_equipamentos, dsc_medicamentos, average) VALUES (37798, -99.9999999999999, -99.9999999999999, 999999, 99999, 'testeNome','testeEndereco', 'testeBairro', 'descBairro', 99999999999,  'testeDescEstFisiAmb', 'testDescAdaptIdoso', 'testeDescEquip', 'testeDescEquip', 9999999)";
         $executeQuery = mysql_query($queryInsertUBS);
         return $executeQuery;
     }
 
+    /*Method searchUBSinDatabase suit test case*/
     public function testSearchUBSinDatabase() {
-        $this->setUpProfileUBS();
         $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("taguatinga", 2);
         $this->assertNotNULL($resultNotNULL);
-        $this->tearDownProfileUBS();
     }
 
+    /*Method returnUBS suit test case*/
     public function testReturnUBSFalse() {
-        $this->setUpProfileUBS();
         $resultFalse = $this->profileUBSDao->returnUBS(40000);
         $this->assertFalse($resultFalse);
-        $this->tearDownProfileUBS();
     }
 
-    public function testSearchUBSInTableEvaluate() {
-        $this->setUpProfileUBS();
+    /*Method searchUBSInTableEvaluate suit test case*/
+    public function testSearchUBSInTableEvaluateNotNull() {
         $resultNotNULL = $this->profileUBSDao->searchUBSInTableEvaluate(1);
-        $this->assertNotNULL($resultNotNULL);
-        $this->tearDownProfileUBS();
+        $this->assertNotNull($resultNotNULL);
     }
 
-    public function testeSaveEvaluationUBSInsere() {
-        $this->setUpProfileUBS();
+    /*Method saveEvaluationUBS suit test case*/
+    public function testeSaveEvaluationUBSInsert() {
         $result = $this->profileUBSDao->saveEvaluationUBS(NULL, IDEVALUATE);
-        $this->tearDownProfileUBS();
-        $this->tearDownDataBase();
     }
 
     public function testSaveEvaluationUBSNotNULL() {
-        $this->setUpProfileUBS();
         $resultNotNULL = $this->profileUBSDao->saveEvaluationUBS(5, IDEVALUATE);
         $this->assertNotNULL($resultNotNULL);
-        $this->tearDownProfileUBS();
-        $this->tearDownDataBase();
     }
 
+    /*Method takeAvarageUBS suit test case*/
     public function testTakeAverageUBSFalse() {
-        $this->setUpProfileUBS();
         $resultFalse = $this->profileUBSDao->takeAverageUBS(NULL);
         $this->assertFalse($resultFalse);
-        $this->tearDownProfileUBS();
     }
 
 }

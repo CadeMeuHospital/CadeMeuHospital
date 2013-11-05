@@ -1,12 +1,12 @@
 <div class="header">
     <div id="left">
-        <img src="../view/shared/img/LogoCMH.png" align="center" />
+        <a href="home.php"><img src="../view/shared/img/LogoCMH.png" align="center" /></a>
     </div>
     <div id ="right">
 
         <form method="post" action="../view/SearchUBS.php" id="formSearchUBS">	
             <label> Buscar UBS:</label>
-            <input type="text" name="BuscaUBS" value="" />
+            <input type="text" name="BuscaUBS" value="" required/>
 
             <select name="searchType">
                 <option value=1>Nome</option>

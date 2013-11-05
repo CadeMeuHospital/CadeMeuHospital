@@ -28,33 +28,24 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
 
     /* Method throwTextFieldException suit test case */
 
+    /**
+     * @expectedException TextFieldException
+     */
     public function testThrowTextFieldExceptionThrowException() {
-        $this->setExpectedException('TextFieldException');
-        try {
-            $this->dataValidation->throwTextFieldException("");
-        } catch (InvalidArgumentException $expected) {
-            return;
-        }
-        $resultExpectedException = $this->getExpectedException();
-        $this->assertEquals("Campo não pode ser nulo!", $resultExpectedException);
+        $this->dataValidation->throwTextFieldException("");
     }
-    
-    public function testThrowTextFieldExceptionInvalidChar(){
-        $this->setExpectedException('TextFieldException');
-        try{
-            $this->dataValidation->throwTextFieldException("%¨%#(");
-        } catch (InvalidArgumentException $expected) {
-            return;
-        }
-        $resultExpectedException = $this->getExpectedException();
-        $this->assertEquals("Campo contém caracteres invalidos!", $resultExpectedException);
+
+    /**
+     * @expectedException TextFieldException
+     */
+    public function testThrowTextFieldExceptionInvalidChar() {
+        $this->dataValidation->throwTextFieldException("%¨%#(");
     }
-    
-    public function testThrowTextFieldExceptionTrue(){
+
+    public function testThrowTextFieldExceptionTrue() {
         $resultTrue = $this->dataValidation->throwTextFieldException("Tiago");
         $this->assertTrue($resultTrue);
     }
-    
 
     /* Method validateNullField suit test case */
 

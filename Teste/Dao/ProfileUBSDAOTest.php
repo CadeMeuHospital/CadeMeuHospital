@@ -12,10 +12,16 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
 
     protected function setUp() {
         $this->setUpProfileUBS();
+        $this->setUpUBSEvaluate();
     }
 
     protected function setUpProfileUBS() {
         $this->profileUBSDao = new ProfileUBSDAO();
+    }
+
+    protected function setUpUBSEvaluate() {
+        $sqlInsertUBS = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote) VALUES (999999999, 999999999, 999999999)";
+        mysql_query($sqlInsertUBS);
     }
 
     /* TearDown methods to delete the suit case */
@@ -23,6 +29,7 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     protected function tearDown() {
         $this->tearDownDataBase();
         $this->tearDownProfileUBS();
+        $this->tearDownUBSEvaluate();
     }
 
     protected function tearDownProfileUBS() {
@@ -34,6 +41,11 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         mysql_query($sqlDeleteRowEvaluate);
     }
 
+    protected function tearDownUBSEvaluate(){
+        $sqlDeleteRowEvaluate = "DELETE FROM evaluate WHERE id_cod_unico='999999999'";
+        mysql_query($sqlDeleteRowEvaluate);
+    }
+    
     /* Method insertUBSInDatabase suit test case */
 
     protected function insertUBSInDataBase() {
@@ -44,8 +56,18 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
 
     /* Method searchUBSinDatabase suit test case */
 
-    public function testSearchUBSinDatabase() {
+    public function testSearchUBSinDatabaseByName() {
+        $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("us oswaldo de souza", 1);
+        $this->assertNotNULL($resultNotNULL);
+    }
+
+    public function testSearchUBSinDatabaseByCity() {
         $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("taguatinga", 2);
+        $this->assertNotNULL($resultNotNULL);
+    }
+
+    public function testSearchUBSinDatabaseByNeighborhood() {
+        $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("gama", 3);
         $this->assertNotNULL($resultNotNULL);
     }
 
@@ -87,4 +109,9 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertNotNull($resultNotNull);
     }
 
+    /* Method updateEvaluateAverage suit test case 
+      public function testUpdateEvaluateAverage(){
+      $resultNULL = $this->profileUBSDao->updateEvaluateAverage(999999998);
+      $this->assertNull($resultNULL);
+      } */
 }

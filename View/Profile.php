@@ -136,7 +136,7 @@
                     {
                     var mapProp = {
                       center:new google.maps.LatLng(<?php echo $latlon?>),
-                     // zoom:16,
+                       zoom:16,
                       mapTypeId:google.maps.MapTypeId.ROADMAP
                       }; 
                     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);

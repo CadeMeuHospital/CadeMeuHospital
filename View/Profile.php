@@ -144,6 +144,7 @@
 
                     var marker = new google.maps.Marker({
                         position: myCenter,
+                        icon: 'Shared/img/cmh.png',
                         animation: google.maps.Animation.BOUNCE
                     });
 
@@ -153,17 +154,6 @@
 
                     google.maps.event.addDomListener(window, 'load', initialize);
 
-
-
-
-
-                        // {
-                        //     var latlon =<?php echo $profileUBS->getLatitudeUBS(); ?> + "," +<?php echo $profileUBS->getLongitudeUBS(); ?>;
-
-                        //     var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
-                        //             + latlon + "&zoom=14&size=600x400&sensor=false";
-                        //     document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
-                        // }
 
                     </script>
 

@@ -1,13 +1,15 @@
 <?php
 
 require_once dirname(__FILE__) . '/../../Controller/ControllerProfileUBS.php';
+require_once dirname(__FILE__) . '/../../Utils/Exception/TextFieldException.php';
 
 class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
 
     protected $controllerProfileUBS;
     protected $objectProfileUBS;
 
-    /*SetUp methods to inicialize the test suit */
+    /* SetUp methods to inicialize the test suit */
+
     protected function setUp() {
         $this->setUpControllerProfileUBS();
         $this->setUpObjectProfileUBS();
@@ -21,7 +23,8 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $this->objectProfileUBS = $this->controllerProfileUBS->makeObjectUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom");
     }
 
-    /*TearDown methods to delete the suit case */
+    /* TearDown methods to delete the suit case */
+
     protected function tearDown() {
         $this->tearDownControllerProfileUBS();
         $this->tearDownObjectProfileUBS();
@@ -35,18 +38,20 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         unset($this->objectProfileUBS);
     }
 
-    /*Singleton suit test case*/
+    /* Singleton suit test case */
+
     public function testSingletonNotNull() {
         $resultNotNull = $this->controllerProfileUBS->getInstanceControllerProfileUBS();
         $this->assertNotNULL($resultNotNull);
     }
-    
-    public function testSingletonInstanceOf(){
+
+    public function testSingletonInstanceOf() {
         $resultInstanceOf = $this->controllerProfileUBS->getInstanceControllerProfileUBS();
-        $this->assertInstanceOf('ControllerProfileUBS', $resultInstanceOf);        
+        $this->assertInstanceOf('ControllerProfileUBS', $resultInstanceOf);
     }
 
-    /*Method MakeObjectUBS suit test case*/
+    /* Method MakeObjectUBS suit test case */
+
     public function testMakeObjectUBSNotNull() {
         $resultNotNull = $this->objectProfileUBS;
         $this->assertNotNULL($resultNotNull);
@@ -57,14 +62,23 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('ProfileUBS', $resultInstanceOf);
     }
 
-    /*Method SearchUBS suit test case*/
+    /* Method SearchUBS suit test case */
+
     public function testSearchUBSInstanceOf() {
         $arrayObjectSearch = $this->controllerProfileUBS->searchUBS("Taguatinga", 2);
         $resultInstanceOf = $arrayObjectSearch[0];
         $this->assertInstanceOf('ProfileUBS', $resultInstanceOf);
     }
 
-    /*Method ReturnUBS suit test case*/
+    /**
+     * @expectedExceptionMessage "Campo não pode ser nulo!"
+     */
+    public function testSearchUBSException() {
+        $this->controllerProfileUBS->searchUBS("", 1);
+    }
+
+    /* Method ReturnUBS suit test case */
+
     public function testReturnUBSNotNull() {
         $resultNotNull = $this->controllerProfileUBS->returnUBS(1);
         $this->assertNotNULL($resultNotNull);
@@ -75,22 +89,26 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $idUBS = $resultId->getIdUBS();
         $this->assertEquals(1, $idUBS);
     }
-    
-    public function testReturnUBSInvalidId(){
+
+    public function testReturnUBSInvalidId() {
         $resultInvalidId = $this->controllerProfileUBS->returnUBS(9999999997);
         $this->assertNotNull($resultInvalidId);
     }
-    /*Method EvaluateUBS suit test case*/
-    public function testEvaluateUBSNotNull(){
-        $resultNotNull = $this->controllerProfileUBS->evaluateUBS(3,4);
+
+    /* Method EvaluateUBS suit test case */
+
+    public function testEvaluateUBSNotNull() {
+        $resultNotNull = $this->controllerProfileUBS->evaluateUBS(3, 4);
         $this->assertNotNull($resultNotNull);
     }
-    
-    /*Method TakeAverageUBS suit test case*/
-    public function testTakeAverageUBSNotNull(){
+
+    /* Method TakeAverageUBS suit test case */
+
+    public function testTakeAverageUBSNotNull() {
         $resultNotNull = $this->controllerProfileUBS->takeAverageUBS(1);
         $this->assertNotNull($resultNotNull);
     }
+
 }
 
 ?>

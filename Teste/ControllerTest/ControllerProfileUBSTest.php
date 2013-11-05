@@ -7,66 +7,86 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     protected $controllerProfileUBS;
     protected $objectProfileUBS;
 
+    /*SetUp methods to inicialize the test suit */
+    protected function setUp() {
+        $this->setUpControllerProfileUBS();
+        $this->setUpObjectProfileUBS();
+    }
+
     protected function setUpControllerProfileUBS() {
         $this->controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
     }
-    protected function setUpObjectProfileUBS(){
-        $this->setUpControllerProfileUBS();
-        $this->objectProfileUBS = $this->controllerProfileUBS->makeObjectUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom");  
-        $this->tearDownControllerProfileUBS();        
+
+    protected function setUpObjectProfileUBS() {
+        $this->objectProfileUBS = $this->controllerProfileUBS->makeObjectUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom");
+    }
+
+    /*TearDown methods to delete the suit case */
+    protected function tearDown() {
+        $this->tearDownControllerProfileUBS();
+        $this->tearDownObjectProfileUBS();
     }
 
     protected function tearDownControllerProfileUBS() {
         unset($this->controllerProfileUBS);
     }
-    protected function tearDownObjectProfileUBS(){
+
+    protected function tearDownObjectProfileUBS() {
         unset($this->objectProfileUBS);
     }
 
+    /*Singleton suit test case*/
     public function testSingletonNotNull() {
-        $this->setUpControllerProfileUBS();
-        $result = $this->controllerProfileUBS->getInstanceControllerProfileUBS();
-        $this->assertInstanceOf('ControllerProfileUBS', $result);
-        $this->assertNotNULL($result);
-        $this->tearDownControllerProfileUBS();
+        $resultNotNull = $this->controllerProfileUBS->getInstanceControllerProfileUBS();
+        $this->assertNotNULL($resultNotNull);
+    }
+    
+    public function testSingletonInstanceOf(){
+        $resultInstanceOf = $this->controllerProfileUBS->getInstanceControllerProfileUBS();
+        $this->assertInstanceOf('ControllerProfileUBS', $resultInstanceOf);        
     }
 
+    /*Method MakeObjectUBS suit test case*/
     public function testMakeObjectUBSNotNull() {
-        $this->setUpObjectProfileUBS();
-        $result = $this->objectProfileUBS;
-        $this->assertNotNULL($result);
-        $this->tearDownObjectProfileUBS();
+        $resultNotNull = $this->objectProfileUBS;
+        $this->assertNotNULL($resultNotNull);
     }
 
     public function testMakeObjectUBSInstanceOf() {
-        $this->setUpObjectProfileUBS();
-        $result = $this->objectProfileUBS;
-        $this->assertInstanceOf('ProfileUBS', $result);
-        $this->tearDownObjectProfileUBS();
+        $resultInstanceOf = $this->objectProfileUBS;
+        $this->assertInstanceOf('ProfileUBS', $resultInstanceOf);
     }
 
-    public function testSearchUBS() {
-        $this->setUpControllerProfileUBS();
+    /*Method SearchUBS suit test case*/
+    public function testSearchUBSInstanceOf() {
         $arrayObjectSearch = $this->controllerProfileUBS->searchUBS("Taguatinga", 2);
-        $result = $arrayObjectSearch[0];
-        $this->assertInstanceOf('ProfileUBS', $result);
-        $this->tearDownControllerProfileUBS();
+        $resultInstanceOf = $arrayObjectSearch[0];
+        $this->assertInstanceOf('ProfileUBS', $resultInstanceOf);
     }
 
+    /*Method ReturnUBS suit test case*/
     public function testReturnUBSNotNull() {
-        $this->setUpControllerProfileUBS();
-        $result = $this->controllerProfileUBS->returnUBS(1);
-        $this->assertNotNULL($result);
-        $this->tearDownControllerProfileUBS();
+        $resultNotNull = $this->controllerProfileUBS->returnUBS(1);
+        $this->assertNotNULL($resultNotNull);
     }
 
     public function testReturnUBSEqualsID() {
-        $this->setUpControllerProfileUBS();
-        $result = $this->controllerProfileUBS->returnUBS(1);
-        $idUBS = $result->getIdUBS();
+        $resultId = $this->controllerProfileUBS->returnUBS(1);
+        $idUBS = $resultId->getIdUBS();
         $this->assertEquals(1, $idUBS);
-        $this->tearDownControllerProfileUBS();
     }
 
+    /*Method EvaluateUBS suit test case*/
+    public function testEvaluateUBSNotNull(){
+        $resultNotNull = $this->controllerProfileUBS->evaluateUBS(3,4);
+        $this->assertNotNull($resultNotNull);
+    }
+    
+    /*Method TakeAverageUBS suit test case*/
+    public function testTakeAverageUBSNotNull(){
+        $resultNotNull = $this->controllerProfileUBS->takeAverageUBS(1);
+        $this->assertNotNull($resultNotNull);
+    }
 }
+
 ?>

@@ -70,12 +70,16 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $this->assertNotNULL($resultNotNull);
     }
 
-    public function testReturnUBSEqualsID() {
+    public function testReturnUBSEqualsId() {
         $resultId = $this->controllerProfileUBS->returnUBS(1);
         $idUBS = $resultId->getIdUBS();
         $this->assertEquals(1, $idUBS);
     }
-
+    
+    public function testReturnUBSInvalidId(){
+        $resultInvalidId = $this->controllerProfileUBS->returnUBS(9999999997);
+        $this->assertNotNull($resultInvalidId);
+    }
     /*Method EvaluateUBS suit test case*/
     public function testEvaluateUBSNotNull(){
         $resultNotNull = $this->controllerProfileUBS->evaluateUBS(3,4);

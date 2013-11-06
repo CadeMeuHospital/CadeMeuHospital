@@ -14,17 +14,38 @@ class RankingDAOTest extends PHPUnit_Framework_TestCase {
         unset($this->RankingDAO);
     }
 
-    public function testGetRankNotNull() {
-        
+    public function testGetRank() {
         $this->setUpRankingDAO();
-        $resultFalse = $this->object->getRank(NULL);
+        $result = $this->object->getRank("US OSWALDO DE SOUZA", 1, 3);
+        $this->tearDownRankingDAO();
+    }
+
+    public function testGetRankNotNull() {
+        $this->setUpRankingDAO();
+        $resultNotNull = $this->object->getRank(NULL);
+        $this->tearDownRankingDAO();
+    }
+
+    public function testGetRankFalse() {
+        $this->setUpRankingDAO();
+        $resultFalse = $this->object->getRank("dnfjsf", 9999999, 123);
         $this->tearDownRankingDAO();
     }
 
     public function testGetRankByCity() {
         $this->setUpRankingDAO();
-        $resultFalse = $this->object->getRankByCity("adjaijaid");
+        $result = $this->object->getRankByCity("Aracaju");
         $this->tearDownRankingDAO();
     }
 
+    public function testGetRankByCityFalse() {
+        $this->setUpRankingDAO();
+        $resultFalse = $this->object->getRankByCity("adjaijaid");
+        $this->tearDownRankingDAO();
+    }
+   public function testGetRankByCityNotNull() {
+        $this->setUpRankingDAO();
+         $resultNotNull = $this->object->getRankByCity(NULL);
+        $this->tearDownRankingDAO();
+    }
 }

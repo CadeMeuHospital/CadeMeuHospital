@@ -23,7 +23,11 @@ class ControllerRanking {
         $rankingDAO = new RankingDAO();
         return $rankingDAO->getRank();
     }
-
+    
+    public function makeRankByCity($city) {
+        $rankingDAO = new RankingDAO();
+        return $rankingDAO->getRankByCity($city);
+    }
 
 }
 

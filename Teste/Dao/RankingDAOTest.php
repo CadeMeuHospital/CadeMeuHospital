@@ -4,39 +4,27 @@ include_once dirname(__FILE__) . "/../../Dao/RankingDAO.php";
 
 class RankingDAOTest extends PHPUnit_Framework_TestCase {
 
-    /**
-     * @var RankingDAO
-     */
     protected $object;
 
-    /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
-    protected function setUp() {
+    protected function setUpRankingDAO() {
         $this->object = new RankingDAO();
     }
 
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
-    protected function tearDown() {
+    protected function tearDownRankingDAO() {
+        unset($this->RankingDAO);
+    }
+
+    public function testGetRankNotNull() {
         
+        $this->setUpRankingDAO();
+        $resultFalse = $this->object->getRank(NULL);
+        $this->tearDownRankingDAO();
     }
 
-    /**
-     * @covers RankingDAO::getRank
-     * @todo   Implement testGetRank().
-     */
-    public function testGetRank() {
-    }
-
-    /**
-     * @covers RankingDAO::getRankByCity
-     * @todo   Implement testGetRankByCity().
-     */
     public function testGetRankByCity() {
+        $this->setUpRankingDAO();
+        $resultFalse = $this->object->getRankByCity("adjaijaid");
+        $this->tearDownRankingDAO();
     }
 
 }

@@ -1,0 +1,30 @@
+<?php
+
+include_once '/../DAO/RankingDAO.php';
+
+class ControllerRanking {
+
+    private static $instanceControllerRanking;
+
+    private function __construct() {
+        
+    }
+
+    public static function getInstanceControllerRanking() {
+        if (!isset(self::$instanceControllerRanking)) {
+            self::$instanceControllerRanking = new ControllerRanking();
+        } else {
+            //No action
+        }
+        return self::$instanceControllerRanking;
+    }
+
+    public function makeRank() {
+        $rankingDAO = new RankingDAO();
+        return $rankingDAO->getRank();
+    }
+
+
+}
+
+?>

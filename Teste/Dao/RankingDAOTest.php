@@ -19,20 +19,13 @@ class RankingDAOTest extends PHPUnit_Framework_TestCase {
         $result = $this->object->getRank("US OSWALDO DE SOUZA", 1, 3);
         $this->tearDownRankingDAO();
     }
-
-    public function testGetRankNotNull() {
-        $this->setUpRankingDAO();
-        $resultNotNull = $this->object->getRank(NULL);
-        $this->tearDownRankingDAO();
-    }
-
     public function testGetRankFalse() {
         $this->setUpRankingDAO();
         $resultFalse = $this->object->getRank("dnfjsf", 9999999, 123);
         $this->tearDownRankingDAO();
     }
 
-    public function testGetRankByCity() {
+    public function testGetRankByCityNotNull() {
         $this->setUpRankingDAO();
         $result = $this->object->getRankByCity("Aracaju");
         $this->tearDownRankingDAO();
@@ -41,11 +34,6 @@ class RankingDAOTest extends PHPUnit_Framework_TestCase {
     public function testGetRankByCityFalse() {
         $this->setUpRankingDAO();
         $resultFalse = $this->object->getRankByCity("adjaijaid");
-        $this->tearDownRankingDAO();
-    }
-   public function testGetRankByCityNotNull() {
-        $this->setUpRankingDAO();
-         $resultNotNull = $this->object->getRankByCity(NULL);
         $this->tearDownRankingDAO();
     }
 }

@@ -21,15 +21,20 @@
             <div id="center">
                 <div class="content"> 
                     <img src="../view/shared/img/home.jpg" align="center" />
-                    
+                    <br>
+                    <br>
+                    <br>
                     <?php
                          $controllerRanking = ControllerRanking::getInstanceControllerRanking();
                          $topFiveUBS = $controllerRanking->makeRank();
-                         
                          for ($i=0;$i<5;$i++){
-                             ?>
-                                
-                             <?php
+                               $nameUBS = mysql_result($topFiveUBS,$i,"nom_estab" );
+                               $idUBS = mysql_result($topFiveUBS,$i,"cod_unico" );
+                               $average = mysql_result($topFiveUBS,$i,"average" );
+                             
+                                $path = "../view/Profile.php?id=" . $idUBS . "";
+                                 echo "<a href=" . $path . "> " . $nameUBS . " </a>".$average."<br>";
+   
                          }
                          
                     ?>

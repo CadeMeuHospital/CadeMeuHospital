@@ -1,4 +1,10 @@
-
+<?php       
+    if (!isset($_POST['submit'])) {
+        $rankType = "geral";
+    }else{
+        $rankType = $_POST['rank'];
+    }
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -32,20 +38,18 @@
                     <br><br><br><br><br><br>
                     <?php
                         
-                        //$rankType = $_POST['submit'];
-
                         $controllerRanking = ControllerRanking::getInstanceControllerRanking();
-//                        switch($rankType){
-//                            case "geral":
-//                                $topFiveUBS = $controllerRanking->makeRank();
-//                                break;
-//                            case "cidade":
-//                                $topFiveUBS = $controllerRanking->makeRankByCity();
-//                                break;
-//                            case "bairro":
-//                                $topFiveUBS = $controllerRanking->makeRankByNeighborhood();
-//                                break;
-//                        }
+                        switch($rankType){
+                            case "geral":
+                                $topFiveUBS = $controllerRanking->makeRank();
+                                break;
+                            case "cidade":
+                                $topFiveUBS = $controllerRanking->makeRankByCity($rankType);
+                                break;
+                            case "bairro":
+                                $topFiveUBS = $controllerRanking->makeRankByNeighborhood($rankType);
+                                break;
+                        }
                         $topFiveUBS = $controllerRanking->makeRank();
                         for ($i=0;$i<  mysql_num_rows($topFiveUBS);$i++){
                               $nameUBS = mysql_result($topFiveUBS,$i,"nom_estab" );
@@ -69,3 +73,7 @@
     </body>
 
 </html>
+
+<?php
+
+?>

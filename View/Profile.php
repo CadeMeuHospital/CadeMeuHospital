@@ -159,6 +159,15 @@
                     marker.setMap(map);
 
                     }
+                    
+                    function calcRoute() {
+                        var start = document.getElementById("endereco").value;
+                        var end = document.getElementById("destino").value;
+                        var request = {
+                            origin:start, 
+                            destination:end,
+                            travelMode: google.maps.DirectionsTravelMode.DRIVING
+                    };
 
                     google.maps.event.addDomListener(window, 'load', initialize);
 

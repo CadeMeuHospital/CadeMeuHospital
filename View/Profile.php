@@ -229,7 +229,7 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                             <?php $latlon2 = "-15.780147999999999, -47.92917"; ?>
                             <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
                         </div>
-                        <button type="submit" name="localizacao">Como chegar?</button>
+                        <input type="submit" name="localizacao" value="Como chegar?"/>
                     </form>
 
                     <div id="mapview">

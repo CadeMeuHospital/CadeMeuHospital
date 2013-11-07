@@ -189,6 +189,22 @@
     <div>
         <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
     </div>
+                    
+                    <div>
+        <?php $latlon2="-15.780147999999999, -47.92917"; ?>
+         <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
+    </div>
+    <button type="submit">Como chegar?</button>
+</form>
+ 
+<div id="mapview">
+  <!--  <div id="map_canvas" style="float: left; width: 900px; height: 380px;"></div> -->
+    <div class="direcao" style="float: left; width: 900px; height: 380px; overflow: scroll;">
+        <div id="directionsPanel" style="width: 480px;height 100px"></div>
+    </div>
+                
+                
+                </div>
 
                 <br><br>
 

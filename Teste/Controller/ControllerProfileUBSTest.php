@@ -75,6 +75,7 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
      */
     public function testSearchUBSException() {
         $this->controllerProfileUBS->searchUBS("", 1);
+        
     }
 
     /* Method ReturnUBS suit test case */

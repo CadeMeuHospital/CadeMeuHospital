@@ -47,7 +47,7 @@
 //                                break;
 //                        }
                         $topFiveUBS = $controllerRanking->makeRank();
-                        for ($i=0;$i<5;$i++){
+                        for ($i=0;$i<  mysql_num_rows($topFiveUBS);$i++){
                               $nameUBS = mysql_result($topFiveUBS,$i,"nom_estab" );
                               $idUBS = mysql_result($topFiveUBS,$i,"cod_unico" );
                               $average = mysql_result($topFiveUBS,$i,"average" );

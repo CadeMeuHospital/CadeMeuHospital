@@ -4,46 +4,43 @@ include_once dirname(__FILE__) . '/../../Controller/ControllerRanking.php';
 
 class ControllerRankingTest extends PHPUnit_Framework_TestCase {
 
-    /**
-     * @var ControllerRanking
-     */
     protected $object;
 
-    /**
-     * Sets up the fixture, for example, opens a network connection.
-     * This method is called before a test is executed.
-     */
     protected function setUp() {
-        $this->object = new ControllerRankingTest();
+        $this->setUpControllerRanking();
     }
 
-    /**
-     * Tears down the fixture, for example, closes a network connection.
-     * This method is called after a test is executed.
-     */
+    protected function setUpControllerRanking() {
+        $this->object = ControllerRanking::getInstanceControllerRanking();
+    }
+
     protected function tearDown() {
-        
+        $this->tearDownControllerRanking();
     }
 
-    /**
-     * @covers ControllerRanking::getInstanceControllerRanking
-     * @todo   Implement testGetInstanceControllerRanking().
-     */
-    public function testGetInstanceControllerRanking() {
+    protected function tearDownControllerRanking() {
+        unset($this->ControllerRanking);
     }
 
-    /**
-     * @covers ControllerRanking::makeRank
-     * @todo   Implement testMakeRank().
-     */
-    public function testMakeRank() {
+    public function testMakeRankNotNull() {
+        $resultNotNull = $this->object->makeRank("US OSWALDO DE SOUZA", 1, 3);
+    }
+     public function testMakeRankFalse() {
+        $resultFalse = $this->object->makeRank("dnfjsf", 9999999, 123);
+    }
+      public function testMakeRankNull() {
+        $resultNull = $this->object->makeRank(Null);
+    }
+    public function testMakeRankByCityNotNull() {
+        $resultNotNull = $this->object->makeRankByCity("taguatinga");
     }
 
-    /**
-     * @covers ControllerRanking::makeRankByCity
-     * @todo   Implement testMakeRankByCity().
-     */
-    public function testMakeRankByCity() {
+    public function testMakeRankByCityFalse() {
+        $resultFalse = $this->object->makeRankByCity("asdjaidj");
+    }
+
+    public function testMakeRankByCityNull() {
+        $resultFalse = $this->object->makeRankByCity(NULL);
     }
 
 }

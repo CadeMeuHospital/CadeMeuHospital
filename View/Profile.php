@@ -22,6 +22,8 @@
         <link rel="stylesheet" href="css/profile.css" type="text/css">
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+
         <title> Cadê Meu Hospital - Perfil UBS </title>
     </head>
     
@@ -124,13 +126,13 @@
                
                 <br><br>
 
-                <h2>Mapa</h2>
+                 <h2>Mapa</h2>
                 <div id="mapholder" ></div>
                 <div class="content">
                     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>			
                     <script>
-
-
+                        var directionDisplay;
+                        var directionsService = new google.maps.DirectionsService();         
 
                         <?php $latlon = $profileUBS->getLatitudeUBS() . "," . $profileUBS->getLongitudeUBS(); ?>;
                         var myCenter = new google.maps.LatLng(<?php echo $latlon; ?>);

@@ -21,7 +21,11 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
-
+        
+        <style>
+            #mapview{display:none;}
+        </style>
+        
         <title> Cadê Meu Hospital - Perfil UBS </title>
     </head>
 
@@ -195,7 +199,7 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                                 } else {
                                     alert(status);
                                 }
-
+                                document.getElementById('mapview').style.display = 'block';
                                 document.getElementById('mapview').style.visibility = 'visible';
                             });
                         }

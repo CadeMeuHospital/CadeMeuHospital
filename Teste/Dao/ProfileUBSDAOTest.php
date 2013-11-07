@@ -51,7 +51,8 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     protected function insertUBSInDataBase() {
         $queryInsertUBS = "INSERT INTO ubs (cod_unico, vlr_latitude, vlr_longitude, cod_munic, cod_cnes, nom_estab, dsc_endereco, dsc_bairro, dsc_cidade, dsc_telefone, dsc_estrut_fisic_ambiencia, dsc_adap_defic_fisic_idosos, dsc_equipamentos, dsc_medicamentos, average) VALUES (37798, -99.9999999999999, -99.9999999999999, 999999, 99999, 'testeNome','testeEndereco', 'testeBairro', 'descBairro', 99999999999,  'testeDescEstFisiAmb', 'testDescAdaptIdoso', 'testeDescEquip', 'testeDescEquip', 9999999)";
         $executeQuery = mysql_query($queryInsertUBS);
-        return $executeQuery;
+//        return $executeQuery;
+        $this->assertTrue($executeQuery);
     }
 
     /* Method searchUBSinDatabase suit test case */

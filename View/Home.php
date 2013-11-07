@@ -12,7 +12,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-        <link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
@@ -32,11 +32,36 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                     <img src="../view/shared/img/home.jpg" align="center" />
                     <br><br><br>
                     <form name="rankForm" action="Home.php" method="post">
-                        <input type="radio" name="rank" value="geral" checked/> Geral <br>
-                        <input type="radio" name="rank" value="cidade"/> Cidade <br>
-                        <input type="radio" name="rank" value="bairro"/> Bairro <br>
-                        <input type="text" name ="textField" />
-                        <input type="submit" name="submit" value="Enviar"/>
+                        <table>
+                            <tr>
+                                <th>Geral</th>
+                                <td class="align-left">
+                                    <input type="radio" name="rank" value="geral" checked/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Cidade</th>
+                                <td class="align-left">
+                                    <input type="radio" name="rank" value="cidade"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Bairro</th>
+                                <td class="align-left">
+                                    <input type="radio" name="rank" value="bairro"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left">
+                                    <input type="text" name ="textField" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left">
+                                    <input type="submit" name="submit" value="Enviar"/>
+                                </td>
+                            </tr>
+                        </table>
                     </form>
                     <br><br><br><br><br><br>
 
@@ -55,10 +80,11 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                     }
                     $numberUBS = mysql_num_rows($topFiveUBS);
                     if ($numberUBS == 0){
-                        print"  <script>
+                        print "  <script>
                                     alert('" .$mensagemErro . "')
                                     window.location='Home.php';
-                                </script> ";
+                                </script> 
+                              ";
                     }else{
                         for ($i = 0; $i < $numberUBS; $i++) {
                             $nameUBS = mysql_result($topFiveUBS, $i, "nom_estab");

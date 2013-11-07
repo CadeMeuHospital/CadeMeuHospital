@@ -69,7 +69,7 @@ class ProfileUBSDAO {
     public function updateEvaluateAverage($idUBS){
         
         $sql="SELECT * FROM evaluate WHERE id_cod_unico LIKE '".$idUBS."'";
-        $result = mysql_query($sql);      
+        $result = mysql_query($sql);
         $resultAverage = mysql_fetch_row($result);
         
         if($resultAverage == null){

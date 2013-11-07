@@ -23,24 +23,30 @@ class ControllerRankingTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testMakeRankNotNull() {
-        $resultNotNull = $this->object->makeRank("US OSWALDO DE SOUZA", 1, 3);
+        $resultNotNull = $this->object->makeRank();
+        $this->assertNotNull($resultNotNull);
     }
-     public function testMakeRankFalse() {
-        $resultFalse = $this->object->makeRank("dnfjsf", 9999999, 123);
-    }
-      public function testMakeRankNull() {
-        $resultNull = $this->object->makeRank(Null);
-    }
+    
     public function testMakeRankByCityNotNull() {
         $resultNotNull = $this->object->makeRankByCity("taguatinga");
+         $this->assertNotNull($resultNotNull);
     }
 
     public function testMakeRankByCityFalse() {
-        $resultFalse = $this->object->makeRankByCity("asdjaidj");
+        $result = $this->object->makeRankByCity("asdjaidj");
+        $resultFalse = mysql_fetch_row($result);
+        $this->assertFalse($resultFalse);
     }
 
-    public function testMakeRankByCityNull() {
-        $resultFalse = $this->object->makeRankByCity(NULL);
+    public function testMakeRankByNeighborhoodNotNull(){
+        $resultNotNull = $this->object->makeRankByNeighborhood("centro");
+        $this->assertNotNull($resultNotNull);
     }
+    public function testMakeRankByNeighborhoodFalse(){
+        $result = $this->object->makeRankByNeighborhood("addssafg");
+        $resultFalse = mysql_fetch_row($result);
+        $this->assertFalse($resultFalse);
+    }
+
 
 }

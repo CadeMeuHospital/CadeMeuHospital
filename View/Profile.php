@@ -43,7 +43,7 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
             <div class="profile"> 
 
                 <h2 style="text-indent:30px;">
-<?php echo $profileUBS->getNameUBS(); ?>
+                    <?php echo $profileUBS->getNameUBS(); ?>
                 </h2>
                 <div class="content">
 
@@ -95,24 +95,48 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                         </tr>
 
                     </table>
-
                     <br />
-
                 </div>
-
                 <div class="evaluate" style="align-center">
                     <h2>Avalie esta UBS!!</h2>
                     <form name="Evaluate" action="EvaluateUBS.php" method="post">
                         <table id="Tabela" >
-
-                            <th><input type="radio" name="evaluate" value="1" checked/> Ruim</th>
-                            <th><input type="radio" name="evaluate" value="2"/> Regular </th>        
-                            <th><input type="radio" name="evaluate" value="3"/> Bom </th>
-                            <th><input type="radio" name="evaluate" value="4"/> Muito Bom</th>
-                            <th><input type="radio" name="evaluate" value="5"/> Excelente! </th>
-
+                            <tr>
+                                <th>Ruim!!! D=</th>
+                                <td class="align-left">
+                                    <input type="radio" name="evaluate" value="1" checked/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Regular! )=</th>
+                                <td class="align-left">
+                                    <input type="radio" name="evaluate" value="2"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Bom .-.</th>
+                                <td class="align-left">
+                                    <input type="radio" name="evaluate" value="3"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Muito Bom! =D</th>
+                                <td class="align-left">
+                                    <input type="radio" name="evaluate" value="4"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Excelente!!!*.*</th>
+                                <td class="align-left">
+                                    <input type="radio" name="evaluate" value="5"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-left">
+                                    <input type="submit" name="submitEvaluate" value="Avaliar"/>
+                                </td>
+                            </tr>
                         </table>
-                        <input type="submit" name="submitEvaluate" value="Avaliar"/></tr>
                         <input type="hidden" name="idUBS" value="<?php echo $idUBS; ?>" >
                     </form>
                 </div>

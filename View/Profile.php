@@ -10,6 +10,7 @@ $idUBS = $_REQUEST['id'];
 $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
 
 $average = $controllerProfileUBS->takeAverageUBS($idUBS);
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -31,7 +32,7 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
 
     <body>
         <div class="root">  
-<?php require '../view/shared/header.php'; ?>
+            <?php require '../view/shared/header.php'; ?>
             <?php require '../view/shared/navigation_bar.php'; ?>
             <?php
             //$controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
@@ -147,7 +148,6 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
 
                 <br><br>
 
-
                 <br><br>
 
                 <h2>Mapa</h2>
@@ -194,7 +194,7 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                             };
 
                             directionsService.route(request, function(response, status) {
-                                if (status == google.maps.DirectionsStatus.OK) {
+                                if (status === google.maps.DirectionsStatus.OK) {
                                     directionsDisplay.setDirections(response);
                                 } else {
                                     alert(status);
@@ -208,27 +208,36 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
 
                     </script>
 
-                    <div id="googleMap" style="width:900px;height:380px;align-center;" ></div>
-                    <form action="javascript: void(0);" onSubmit="calcRoute()">
-                        <div>
+                    <div id="googleMap" style="width:900px; height:380px; text-align: center;" ></div>
+                    <form action="javascript: void(0);" method="post" onSubmit="calcRoute();">
+                        <div onload="getLocation();">
+                            <p id="demo">Click the button to get your coordinates:</p>
+                            <script>
+                                var x = document.getElementById("demo");
+                                navigator.geolocation.getCurrentPosition(showpos);
+                                function showpos(position) {
+                                    var  lat=position.coords.latitude;
+                                    var  lon=position.coords.longitude;
+                                    var  latlon =lat+','+lon;                 
+                                    x.innerHTML = latlon;
+                                }
+                                
+                            </script> 
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
-
                         <div>
-<?php $latlon2 = "-15.780147999999999, -47.92917"; ?>
+                            <?php $latlon2 = "-15.780147999999999, -47.92917"; ?>
                             <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
                         </div>
-                        <button type="submit">Como chegar?</button>
+                        <button type="submit" name="localizacao">Como chegar?</button>
                     </form>
 
                     <div id="mapview">
                         <!--  <div id="map_canvas" style="float: left; width: 900px; height: 380px;"></div> -->
                         <div class="direcao" style="float: left; width: 900px; height: 380px; overflow: scroll;">
-                            <div id="directionsPanel" style="width: 480px;height 100px"></div>
+                            <div id="directionsPanel" style="width: 480px; height: 100px"></div>
                         </div>
-
-
-                    </div>
+                    </div>   
 
                     <br><br>
 
@@ -247,9 +256,8 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                     <div class="fb-comments" data-href="http://localhost/CadeMeuHospital/view/Profile.php?id=<?php echo $_REQUEST['id'] ?>" data-numposts="4" data-width="600"></div>
                     </h2>
 
-
                     <br /><br /><br /><br /><br /><br /><br />
-<?php require '../view/shared/footer.php'; ?>
+                    <?php require '../view/shared/footer.php'; ?>
                 </div>
             </div>
 

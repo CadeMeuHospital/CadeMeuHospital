@@ -111,7 +111,7 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
 
     // Method updateEvaluateAverage suit test case
     public function testUpdateEvaluateAverage(){
-        $resultFalse = $this->profileUBSDao->updateEvaluateAverage(8999999999);
+        $resultFalse = $this->profileUBSDao->updateEvaluateAverage(8999999);
         $this->assertFalse($resultFalse);
     } 
     

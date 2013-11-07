@@ -138,13 +138,17 @@
                         var myCenter = new google.maps.LatLng(<?php echo $latlon; ?>);
                     function initialize()
                     {
+                    directionsDisplay = new google.maps.DirectionsRenderer();
+                        var myLatlng = new google.maps.LatLng();
+                        
                     var mapProp = {
                       center:new google.maps.LatLng(<?php echo $latlon?>),
                        zoom:16,
                       mapTypeId:google.maps.MapTypeId.ROADMAP
                       }; 
                     var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
+                    directionsDisplay.setMap(map);
+                    directionsDisplay.setPanel(document.getElementById("directionsPanel"));
 
                     var marker = new google.maps.Marker({
                         position: myCenter,

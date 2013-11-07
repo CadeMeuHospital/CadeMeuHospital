@@ -70,12 +70,13 @@ class ProfileUBSDAO {
         
         $sql="SELECT * FROM evaluate WHERE id_cod_unico LIKE '".$idUBS."'";
         $result = mysql_query($sql);
+        $resultAverage = mysql_fetch_row($result);       
         
-        if($result == false){
+        if($resultAverage == null){
+            echo "\nÉ NULL";    
             return false;
         }
-        $resultAverage = mysql_fetch_row($result);
-        //var_dump($resultAverage);
+        
         $evaluateAverage = $resultAverage[3] / $resultAverage[2];
         //$evaluateAverage = 18;
         $sql="UPDATE ubs SET average= '".$evaluateAverage."' WHERE cod_unico LIKE '".$idUBS."'";

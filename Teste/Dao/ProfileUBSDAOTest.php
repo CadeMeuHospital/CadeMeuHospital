@@ -91,7 +91,7 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(NULL, IDEVALUATE);
         $this->assertNotNull($resultNotNull);
     }
-
+    
     public function testSaveEvaluationUBSNotNULL() {
         $resultNotNULL = $this->profileUBSDao->saveEvaluationUBS(5, IDEVALUATE);
         $this->assertNotNULL($resultNotNULL);
@@ -108,15 +108,15 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $resultNotNull = $this->profileUBSDao->takeAverageUBS(1);
         $this->assertNotNull($resultNotNull);
     }
-/*
+
     // Method updateEvaluateAverage suit test case
     public function testUpdateEvaluateAverage(){
-        $resultFalse = $this->profileUBSDao->updateEvaluateAverage(999999999);
+        $resultFalse = $this->profileUBSDao->updateEvaluateAverage(8999999999);
         $this->assertFalse($resultFalse);
     } 
     
     public function testUpdateEvaluateAverageNotNull(){
         $resultNotNull = $this->profileUBSDao->updateEvaluateAverage(1);
         $this->assertNotNull($resultNotNull);
-    } */
+    } 
 }

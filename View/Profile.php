@@ -168,6 +168,17 @@
                             destination:end,
                             travelMode: google.maps.DirectionsTravelMode.DRIVING
                     };
+                    
+                    directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    } else {
+                        alert(status);
+                    }
+ 
+                document.getElementById('mapview').style.visibility = 'visible';
+            });
+        }
 
                     google.maps.event.addDomListener(window, 'load', initialize);
 

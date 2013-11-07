@@ -181,12 +181,14 @@
         }
 
                     google.maps.event.addDomListener(window, 'load', initialize);
-
-
+                    
                     </script>
 
-                <div id="googleMap" style="width:900px;height:380px;align-center;" ></div>
-                </div>
+                    <div id="googleMap" style="width:900px;height:380px;align-center;" ></div>
+                <form action="javascript: void(0);" onSubmit="calcRoute()">
+    <div>
+        <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
+    </div>
 
                 <br><br>
 

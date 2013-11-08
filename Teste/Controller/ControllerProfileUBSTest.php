@@ -118,6 +118,16 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $resultNotNull = $this->controllerProfileUBS->takeAverageUBS(1);
         $this->assertNotNull($resultNotNull);
     }
+    
+    public function testGetDistanceBetweenTwoLatLon() {
+        $distance = $this->controllerProfileUBS->getDistanceBetweenTwoLatLon("-15.780147999999999","-47.92917","-10.91123700141880","-37.062077522277");
+        $this->assertTrue($distance > 1250 && $distance < 1300);
+    }
+    
+    public function testGetDistanceBetweenTwoLatLonEquals() {
+        $distance = $this->controllerProfileUBS->getDistanceBetweenTwoLatLon("-15.780147999999999","-47.92917","-15.780147999999999","-47.92917");
+        $this->assertEquals($distance, 0.0);
+    }
 
 }
 

@@ -3,6 +3,7 @@
 include_once '/../Model/profileUBS.php';
 include_once '/../DAO/profileUBSDAO.php';
 include_once '/../Utils/DataValidation.php';
+include_once '/../Utils/DistanceLatLon.php';
 
 class ControllerProfileUBS {
 
@@ -88,6 +89,10 @@ class ControllerProfileUBS {
     public function takeAverageUBS($idUBS) {
         $profileUBSDAO = new ProfileUBSDAO();
         return $profileUBSDAO->takeAverageUBS($idUBS);
+    }
+    
+    public function getDistanceBetweenTwoLatLon($from_lat, $from_lon, $to_lat, $to_lon) {
+        return compute_distance($from_lat, $from_lon, $to_lat, $to_lon);
     }
 
 }

@@ -95,7 +95,7 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                     </table>
                     <br />
                 </div>
-                <div class="evaluate" style="align-center">
+                <div class="evaluate" style="text-align: center">
                     <h2>Avalie esta UBS!!</h2>
                     <form name="Evaluate" action="EvaluateUBS.php" method="post">
                         <table id="Tabela" >
@@ -207,8 +207,8 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                             <script>
                                 navigator.geolocation.getCurrentPosition(showpos);
                                 function showpos(position) {
-                                    var  lat=position.coords.latitude;
-                                    var  lon=position.coords.longitude;
+                                    var lat=position.coords.latitude;
+                                    var lon=position.coords.longitude;
                                     var latlon =lat+','+lon;                 
 
                                      <?php

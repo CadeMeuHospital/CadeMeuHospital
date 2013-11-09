@@ -15,7 +15,7 @@ function compute_distance($from_lat, $from_lon, $to_lat, $to_lon) {
     }
 
     // COMPUTE THE DISTANCE WITH THE HAVERSINE FORMULA
-    $distance = acos
+    $distanceRad = acos
     ( sin(deg2rad($from_lat))
     * sin(deg2rad($to_lat))
     + cos(deg2rad($from_lat))
@@ -24,10 +24,10 @@ function compute_distance($from_lat, $from_lon, $to_lat, $to_lon) {
     )
     ;
 
-    $distance = rad2deg($distance);
+    $distanceDegree = rad2deg($distanceRad);
 
     // DISTANCE IN MILES AND KM - ADD OTHERS IF NEEDED
-    $miles = (float) $distance * 69.0;
+    $miles = (float) $distanceDegree * 69.0;
     $km    = (float) $miles * 1.61;
 
     // RETURN KILOMETERS = MILES * 1.61

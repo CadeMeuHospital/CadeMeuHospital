@@ -99,14 +99,9 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
 
                 </div>        
             </div>
-
-
-<?php require '../view/shared/footer.php'; ?>
+            <?php require '../view/shared/footer.php'; ?>
         </div>
-
-
     </body>
-
 </html>
 
 <?php

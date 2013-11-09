@@ -1,16 +1,13 @@
 <?php
-require_once '../Controller/ControllerProfileUBS.php';
+    require_once '../Controller/ControllerProfileUBS.php';
 
-if (!isset($_GET['id'])) {
-    header("location: ../index.php");
-}
+    if (!isset($_GET['id'])) {
+        header("location: ../index.php");
+    }
 
-$idUBS = $_REQUEST['id'];
-
-$controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-
-$average = $controllerProfileUBS->takeAverageUBS($idUBS);
-
+    $idUBS = $_REQUEST['id'];
+    $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+    $average = $controllerProfileUBS->takeAverageUBS($idUBS);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,14 +16,10 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
         <link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <link rel="stylesheet" href="css/profile.css" type="text/css">
-        <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
-        
-        <style>
-            #mapview{display:none;}
-        </style>
-        
+        <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
+        <style>#mapview{display:none;}</style>
         <title> Cadê Meu Hospital - Perfil UBS </title>
     </head>
 

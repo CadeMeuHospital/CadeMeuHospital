@@ -28,18 +28,13 @@
         <div class="content"> 
 
             <?php
-            $buscaUBS = $_POST["BuscaUBS"];
-            $value = $_POST["searchType"];
+                $buscaUBS = $_POST["BuscaUBS"];
+                $value = $_POST["searchType"];
 
-            require_once '../Controller/ControllerProfileUBS.php';
+                require_once '../Controller/ControllerProfileUBS.php';
 
-            $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-
-            try {
+                $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
                 $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
-            } catch (Exception $e) {
-                echo "Tratar esse erro :/";
-            }
             ?>
 
             <div class="profile">

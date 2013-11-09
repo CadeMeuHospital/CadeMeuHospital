@@ -207,26 +207,31 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                         google.maps.event.addDomListener(window, 'load', initialize);
 
                     </script>
-
+                   
                     <div id="googleMap" style="width:900px; height:380px; text-align: center;" ></div>
                     <form action="javascript: void(0);" method="post" onSubmit="calcRoute();">
                         <div onload="getLocation();">
                             <p id="demo">Click the button to get your coordinates:</p>
                             <script>
-                                var x = document.getElementById("demo");
                                 navigator.geolocation.getCurrentPosition(showpos);
                                 function showpos(position) {
                                     var  lat=position.coords.latitude;
                                     var  lon=position.coords.longitude;
-                                    var  latlon =lat+','+lon;                 
-                                    x.innerHTML = latlon;
+                                    var latlon =lat+','+lon;                 
+
+                                     <?php
+                                        if(!isset($_REQUEST['latlon'])) {
+                                     ?>
+                                          window.location="Profile.php?id=<?php echo $idUBS?>&latlon="+latlon;
+                                     <?php
+                                        }
+                                    ?>
                                 }
-                                
                             </script> 
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
                         <div>
-                            <?php $latlon2 = "-15.780147999999999, -47.92917"; ?>
+                            <?php $latlon2 = $_REQUEST['latlon']; ?>
                             <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
                         </div>
                         <button type="submit" name="localizacao">Como chegar?</button>

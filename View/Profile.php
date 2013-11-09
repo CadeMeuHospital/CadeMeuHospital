@@ -211,7 +211,6 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                     <div id="googleMap" style="width:900px; height:380px; text-align: center;" ></div>
                     <form action="javascript: void(0);" method="post" onSubmit="calcRoute();">
                         <div onload="getLocation();">
-                            <p id="demo">Click the button to get your coordinates:</p>
                             <script>
                                 navigator.geolocation.getCurrentPosition(showpos);
                                 function showpos(position) {
@@ -231,8 +230,13 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
                         <div>
-                            <?php $latlon2 = $_REQUEST['latlon']; ?>
-                            <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
+                            <?php 
+                             if(isset($_REQUEST['latlon'])) {
+                                 $latlon2 = $_REQUEST['latlon']; 
+                            ?>
+                                <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
+                            <?php 
+                             }?>
                         </div>
                         <button type="submit" name="localizacao">Como chegar?</button>
                     </form>

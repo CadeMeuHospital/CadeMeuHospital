@@ -28,7 +28,7 @@
         }
         ?>
         <script language="Javascript" type="text/javascript">
-            window.location="http://localhost/CadeMeuHospital/view/Profile.php?id=<?php echo $idUBS; ?>";
+            window.location="Profile.php?id=<?php echo $idUBS; ?>";
         </script>
 </html>
 

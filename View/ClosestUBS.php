@@ -17,14 +17,11 @@
         if(!isset($_REQUEST['lat'])){
         ?>
             <script type="text/javascript"> 
-                var lon = geoip_longitude();
-                
                 navigator.geolocation.getCurrentPosition(showpos);
                 function showpos(position) {
                     var city = geoip_city();
                     var lat=position.coords.latitude;
                     var lon=position.coords.longitude;
-                    var latlon =lat+','+lon;                 
                     window.location="ClosestUBS.php?city="+city+"&lat="+lat+"&lon="+lon;
                 }
             </script>

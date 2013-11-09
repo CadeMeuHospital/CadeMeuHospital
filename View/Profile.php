@@ -32,17 +32,10 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
 
     <body>
         <div class="root">  
-            <?php require '../view/shared/header.php'; ?>
-            <?php require '../view/shared/navigation_bar.php'; ?>
-            <?php
-            //$controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-
-
-            try {
+            <?php 
+                require '../view/shared/header.php';
+                require '../view/shared/navigation_bar.php';
                 $profileUBS = $controllerProfileUBS->returnUBS($idUBS);
-            } catch (Exception $e) {
-                echo($e->getMessage("erro ao capturar id"));
-            }
             ?>   
 
             <div class="profile"> 
@@ -227,18 +220,12 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                                     ?>
                                 }
                             </script> 
+
+                            <?php $latlon2 = $_REQUEST['latlon']; ?>
+                            <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
-                        <div>
-                            <?php 
-                             if(isset($_REQUEST['latlon'])) {
-                                 $latlon2 = $_REQUEST['latlon']; 
-                            ?>
-                                <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
-                            <?php 
-                             }?>
-                        </div>
-                        <button type="submit" name="localizacao">Como chegar?</button>
+                        <input type="submit" name="localizacao" value="Como chegar?" />
                     </form>
 
                     <div id="mapview">
@@ -262,7 +249,7 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                             fjs.parentNode.insertBefore(js, fjs);
                         }(document, 'script', 'facebook-jssdk'));</script>
                     <div id="fb-root"></div>
-                    <div class="fb-comments" data-href="http://localhost/CadeMeuHospital/view/Profile.php?id=<?php echo $_REQUEST['id'] ?>" data-numposts="4" data-width="600"></div>
+                    <div class="fb-comments" data-href="Profile.php?id=<?php echo $_REQUEST['id'] ?>" data-numposts="4" data-width="600"></div>
                     </h2>
 
                     <br /><br /><br /><br /><br /><br /><br />

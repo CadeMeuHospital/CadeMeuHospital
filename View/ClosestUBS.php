@@ -12,9 +12,9 @@
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
         
-        <style>
-            #mapview{display:none;}
-        </style>
+        <?php
+        if(!isset($_REQUEST['lat'])){
+        ?>
         <script onload="getLocation();">
             function getLocation(){
               if (navigator.geolocation){
@@ -27,6 +27,13 @@
                 window.location="ClosestUBS.php?lat="+lat+"&lon="+lon;
             }
         </script>
+        <?php
+    }else{
+        ?>
+        
+        <style>
+            #mapview{display:none;}
+        </style>
         
         <title> Cadê Meu Hospital - Perfil UBS </title>
     </head>
@@ -40,33 +47,24 @@
                 $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
                 $userLat = $_REQUEST['lat'];
                 $userLon = $_REQUEST['lon'];
-//                var_dump($userLat);
-//                var_dump($userLon);
-//                exit;
-//                $arrayUBS = array();
-//                $distances = array();
                 $menor = 20000;
 
-                for ($i = 1; $i <= 5; $i++) {
+                for ($i = 1; $i <= 15; $i++) {
                     $currentUBS = $controllerProfileUBS->returnUBS($i);
-                    //array_push($arrayUBS, $currentUBS);
 
                     $distance =  $controllerProfileUBS->getDistanceBetweenTwoLatLon($userLat, $userLon ,$currentUBS->getLatitudeUBS() , $currentUBS->getLongitudeUBS());  
-//                    array_push($distances, $distance);
-                    //$var = $distances[$i-1];
-                    
+       
                     if ($distance < $menor) {
                         $menor = $distance;
                         $closestUBS = $currentUBS;
                     }
                 }
-//                var_dump($distances);
-//                exit;
             ?>   
 
             <script>
                 window.location="Profile.php?id=<?php echo $closestUBS->getIdUBS();?>";
             </script>
-
     </body>
 </html>
+
+    <?php } ?>

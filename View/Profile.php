@@ -46,15 +46,14 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                 <div class="content">
 
                     <table id="tabela-dados-UBS" style="text-align: left; width:700px;">
-
-                        <tr>
+<!--                        <tr>
                             <th>Código do Municipio</th>
                             <td class="align-left"><?php echo $profileUBS->getCodMunic(); ?></td>
                         </tr>
                         <tr>
                             <th>Código CNES:</th>
                             <td class="align-left"><?php echo $profileUBS->getCodCNES(); ?></td>
-                        </tr>
+                        </tr>-->
                         <tr>
                             <th>Descrição do Endereço:</th>
                             <td class="align-left"><?php echo $profileUBS->getDescEnder(); ?></td>
@@ -76,22 +75,21 @@ $average = $controllerProfileUBS->takeAverageUBS($idUBS);
                             <td class="align-left"><?php echo $profileUBS->getPhysicStructureUBS(); ?></td>
                         </tr>
                         <tr>
-                            <th>Adaptação das Pessoas Idosas:</th>
+                            <th>Adaptação para Deficientes e Idosos:</th>
                             <td class="align-left"><?php echo $profileUBS->getAdapOldPeople(); ?></td>
                         </tr>
                         <tr>
-                            <th>Ferramentas:</th>
+                            <th>Situação dos Equipamentos:</th>
                             <td class="align-left"><?php echo $profileUBS->getDescriTools(); ?></td>
                         </tr>
                         <tr>
-                            <th>Descrição dos Remédios:</th>
+                            <th>Situação dos Remédios:</th>
                             <td class="align-left"><?php echo $profileUBS->getDescMedicine(); ?></td>
                         </tr>
                         <tr>
                             <th>Média das avaliações:</th>
                             <td class="align-left"><?php echo $average[0]; ?></td>
                         </tr>
-
                     </table>
                     <br />
                 </div>

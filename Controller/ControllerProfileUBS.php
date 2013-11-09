@@ -76,7 +76,7 @@ class ControllerProfileUBS {
         $profileUBSDAO = new ProfileUBSDAO();
 
         $attributesUBS = $profileUBSDAO->returnUBS($id);
-        $quantity = count($attributesUBS);
+        $quantity = (count($attributesUBS)-1);
         
         for($i = 0; $i < $quantity; $i++){
             if($attributesUBS[$i] == NULL){

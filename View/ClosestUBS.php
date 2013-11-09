@@ -1,75 +1,3 @@
-<!--<html>
-<head>
-  <script type="text/javascript" src="//j.maxmind.com/js/geoip.js">
-  </script>
-
-  <title>JS Example</title>
-</head>
-
-<body>
-
-  <dl>
-
-    <dt>City</dt>
-    <dd>
-      <script type="text/javascript">
-        document.write( geoip_city() );
-      </script>
-    </dd>
-
-    <dt>Region</dt>
-    <dd>
-      <script type="text/javascript">
-        document.write( geoip_region() );
-      </script>
-    </dd>
-
-    <dt>Region Name</dt>
-    <dd>
-      <script type="text/javascript">
-        document.write( geoip_region_name() );
-      </script>
-    </dd>
-
-    <dt>Postal Code</dt>
-    <dd>
-      <script type="text/javascript">
-        document.write( geoip_postal_code() );
-      </script>
-    </dd>
-
-    <dt>Country Code</dt>
-    <dd>
-      <script type="text/javascript">
-        document.write( geoip_country_code() );
-      </script>
-    </dd>
-
-    <dt>Country Name</dt>
-    <dd>
-      <script type="text/javascript">
-        document.write( geoip_country_name() );
-      </script>
-    </dd>
-
-    <dt>Latitude</dt>
-    <dd>
-      <script type="text/javascript">
-        document.write( geoip_latitude() );
-      </script>
-    </dd>
-
-    <dt>Longitude</dt>
-    <dd>
-      <script type="text/javascript">
-        document.write( geoip_longitude() );
-      </script>
-    </dd>
-
-  </dl>
-
-</body>
-</html>-->
 <?php
     require_once '../Controller/ControllerProfileUBS.php';
 ?>
@@ -89,10 +17,16 @@
         if(!isset($_REQUEST['lat'])){
         ?>
             <script type="text/javascript"> 
-                var city = geoip_city();
-                var lat = geoip_latitude();
                 var lon = geoip_longitude();
-                window.location="ClosestUBS.php?city="+city+"&lat="+lat+"&lon="+lon;
+                
+                navigator.geolocation.getCurrentPosition(showpos);
+                function showpos(position) {
+                    var city = geoip_city();
+                    var lat=position.coords.latitude;
+                    var lon=position.coords.longitude;
+                    var latlon =lat+','+lon;                 
+                    window.location="ClosestUBS.php?city="+city+"&lat="+lat+"&lon="+lon;
+                }
             </script>
         <?php
     }else{
@@ -114,7 +48,6 @@
                 $userCity = $_REQUEST['city'];
                 $closestUBSs = $controllerProfileUBS->searchUBS($userCity, 2);
                 $menor = 20000;
-
                 for ($i = 0; $i < count($closestUBSs); $i++) {
                     $currentUBS = $closestUBSs[$i];
 

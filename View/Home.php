@@ -15,6 +15,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
         <link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <title> Cadê Meu Hospital - Home</title>
     </head>
@@ -65,6 +66,50 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                     </form>
                     <br><br><br><br><br><br>
 
+                    
+                    <script type="text/javascript">  
+                        $(document).ready(function(){  $("#content div:nth-child(1)").show();
+                            $(".abas li:first div").addClass("selected");
+                            $(".aba").click(function(){  $(".aba").removeClass("selected");
+                                $(this).addClass("selected");
+                                var indice = $(this).parent().index();  indice++;
+                                $("#content div").hide();
+                                $("#content div:nth-child("+indice+")").show();
+                            });
+                            $(".aba").hover(  function(){$(this).addClass("ativa")},  function(){$(this).removeClass("ativa")}  );
+                        });  
+                    $(elemento).hover( 
+                            function(){/*função a ser executada ao pôr o cursor sobre o elemento*/},
+                            function(){/*função a ser executada ao tirar o cursor do elemento*/} 
+                    );
+
+                    </script>
+
+
+                    
+                    
+                  <style> body{font-family:Calibri, Tahoma, Arial} .TabControl{ width:100%; overflow:hidden; height:400px} .TabControl #header{ width:100%; border: overflow:hidden; cursor:hand} .TabControl #content{ width:100%; border: solid 1px;overflow:hidden; height:100%; } .TabControl .abas{display:inline;} .TabControl .abas li{float:left} .aba{width:100px; height:30px; border:solid 1px; border-radius:5px 5px 0 0; text-align:center; padding-top:5px; background:#3A5FCD} .ativa{width:100px; height:30px; border:solid 1 px; border-radius:5px 5px 0 0; text-align:center; padding-top:5px; background:#27408B;} .ativa span, .selected span{color:#fff} .TabControl #content{background:#27408B} .TabControl .conteudo{width:100%; background:#27408B;; display:none; height:100%;color:#fff} .selected{width:100px; height:30px; border:solid 1 px; border-radius:5px 5px 0 0; text-align:center; padding-top:5px; background:#27408B}} </style>
+
+
+
+                    
+                    
+                    
+                    
+                    <div class="TabControl"> <div id="header"> <ul class="abas"> <li> <div class="aba"> <span>Tab 1</span> </div> </li> <li> <div class="aba"> <span>Tab 2</span> </div> </li> <li> <div class="aba"> <span>Tab 3</span> </div> </li> <li> <div class="aba"> <span>Tab 4</span> </div> </li> </ul> </div> <div id="content"> <div class="conteudo"> Conteúdo da aba 1 </div> <div class="conteudo"> Conteúdo da aba 2 </div> <div class="conteudo"> Conteúdo da aba 3 </div> <div class="conteudo"> Conteúdo da aba 4 </div> </div> </div>
+
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     <?php
                     $controllerRanking = ControllerRanking::getInstanceControllerRanking();
                     switch ($rankType) {

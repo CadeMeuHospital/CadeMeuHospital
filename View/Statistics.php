@@ -81,6 +81,23 @@
                             dashboard.draw(data);
                         }
                     </script>
+
+
+                    <script>
+                        function drawVisualization() {
+                            var data = new google.visualization.DataTable();
+                            data.addRows(28);
+
+                            data.addColumn('string', 'Country');
+                            data.addColumn('number', 'Popularity');
+
+                            data.setValue(0, 0, 'Rio Grande do Sul');
+                            data.setValue(0, 1, 500);
+
+                            data.setValue(1, 0, 'Rio Grande do Norte');
+                            data.setValue(1, 1, 300);
+
+                    </script>
                     <!--Div that will hold the dashboard-->
                     <div id="dashboard_div">
                         <!--Divs that will hold each control and chart-->

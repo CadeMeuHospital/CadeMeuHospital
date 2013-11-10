@@ -2,7 +2,7 @@
 <style>#search{display:block;}</style>
 <script>
     function verifyOption(option){
-        if(option==2){
+        if(option==4){
             document.getElementById('states').style.display = 'block';
             document.getElementById('search').style.display = 'none';
             document.getElementById('search').value = 'blank';
@@ -13,7 +13,7 @@
         }
     }
     function verifyUF(){
-        if(document.getElementById('searchType').value == 2 && document.getElementById('optionUF').value == "vazio"){
+        if(document.getElementById('searchType').value == 4 && document.getElementById('optionUF').value == "vazio"){
             alert('Selecione uma UF.');
             return false;
         } else {
@@ -69,9 +69,9 @@
                     <td>
                         <select id="searchType" name="searchType" onchange='verifyOption(this.value);'>
                             <option value=1>Nome</option>
-                            <option value=2>Estado</option>
-                            <option value=3>Cidade</option>
-                            <option value=4>Bairro</option>
+                            <option value=4>Estado</option>
+                            <option value=2>Cidade</option>
+                            <option value=3>Bairro</option>
                         </select>
                     </td>
                     <td><input type = "submit" value="Enviar" name="Enviar" onclick="return verifyUF();" /></td>

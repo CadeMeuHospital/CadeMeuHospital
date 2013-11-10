@@ -43,7 +43,7 @@ function showposUser(position)
     var city = geoip_city();
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
-    lat = "-15.8328149"; 
-    lon = "-48.0022667";
+//    lat = "-15.8328149"; 
+//    lon = "-48.0022667";
     window.location = "ClosestUBS.php?city=" + city + "&lat=" + lat + "&lon=" + lon;
 }

@@ -79,13 +79,12 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                             break;
                     }
                     $numberUBS = mysql_num_rows($topFiveUBS);
-                    if ($numberUBS == 0){
-                        print "  <script>
-                                    alert('" .$mensagemErro . "')
-                                    window.location='Home.php';
-                                </script> 
-                              ";
-                    }else{
+                    if ($numberUBS > 0){
+//                        print "  <script>
+//                                    alert('" .$mensagemErro . "')
+//                                    window.location='Home.php';
+//                                </script> 
+//                              ";
                         for ($i = 0; $i < $numberUBS; $i++) {
                             $nameUBS = mysql_result($topFiveUBS, $i, "nom_estab");
                             $idUBS = mysql_result($topFiveUBS, $i, "cod_unico");
@@ -94,6 +93,9 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                             $path = "../view/Profile.php?id=" . $idUBS . "";
                             echo "<a href=" . $path . "> " . $nameUBS . " </a> - " . $average . "<br>";
                         }
+                        echo '<br><br>';
+                    }else {
+                        echo 'Não há UBSs avaliadas. <br><br>';
                     }
                     ?>
 

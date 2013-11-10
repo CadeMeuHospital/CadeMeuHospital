@@ -58,11 +58,24 @@
 
                 for ($i = 0; $i < $quantityPage; $i++) {
                     if($value == "2"){
-                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&SearchUBSbyState=".$buscaUBS."&searchType=".$value."";
+                                $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&SearchUBSbyState=".$buscaUBS."&searchType=".$value."";
                     } else {
-                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                                $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                     }
-                    echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a><br>";
+                    
+                    if($i == ($quantityPage-1)) {
+                        if($currentPage == $i+1) {
+                            echo $i+1;  // Escreve somente o número da página sem ação alguma
+                        } else {
+                            echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
+                            }
+                    } else {
+                        if($currentPage == $i+1) {
+                            echo ($i+1)." | ";  // Escreve somente o número da página sem ação alguma
+                        } else {
+                            echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a> | ";
+                            }
+                    }
                 }
                 ?>
 

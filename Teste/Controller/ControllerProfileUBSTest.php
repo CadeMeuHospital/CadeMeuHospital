@@ -137,6 +137,10 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $result = $this->controllerProfileUBS->takeState(123456);
         $this->assertNotNull($result);
     }
+    public function testTakeStateFalse() {
+        $resultFalse = $this->controllerProfileUBS->takeState(16);
+        $this->assertFalse($resultFalse);
+    }
 
 }
 

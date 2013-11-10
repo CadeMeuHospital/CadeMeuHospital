@@ -32,7 +32,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                 <div class="content"> 
                     <img src="../view/shared/img/home.jpg" align="center" />
                     <br><br><br>
-                    <form name="rankForm" action="Home.php" method="post">
+<!--                    <form name="rankForm" action="Home.php" method="post">
                         <table>
                             <tr>
                                 <th>Geral</th>
@@ -63,8 +63,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                                 </td>
                             </tr>
                         </table>
-                    </form>
-                    <br><br><br><br><br><br>
+                    </form>-->
 
 
                     <script type="text/javascript">
@@ -95,9 +94,12 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                     </script>
 
 
-                    <style> 
+                    <style>
+                        .Outline1{background:#25536b; width:297px; }
+                        .Outline1 #text{font-size: 28px; text-align: right; color: #c9e4d3; position:relative; top:20px; right:10px;}
+                        .Outline2{background:#25536b; width:297px; }
                         body{font-family:Calibri, Tahoma, Arial}
-                        .TabControl{ width:100%; overflow:hidden; height:400px}
+                        .TabControl{ width:297px; overflow:hidden; height:450px;}
                         .TabControl #header{ width:100%; border: overflow:hidden; cursor:hand}
                         .TabControl #content{ width:100%; border: solid 1px;overflow:hidden; height:100%; }
                         .TabControl .abas{display:inline;}
@@ -121,12 +123,15 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                     switch ($rankType) {
                         case "geral":
                             $topFiveUBS = $controllerRanking->makeRank();
+                            $topFiveUBSG = $topFiveUBS;
                             break;
                         case "cidade":
                             $topFiveUBS = $controllerRanking->makeRankByCity($textField);
+                            $topFiveUBSC = $topFiveUBS;
                             break;
                         case "bairro":
                             $topFiveUBS = $controllerRanking->makeRankByNeighborhood($textField);
+                            $topFiveUBSB = $topFiveUBS;
                             break;
                     }
                     $numberUBS = mysql_num_rows($topFiveUBS);
@@ -146,7 +151,8 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                     }
                     ?>
                     
-                    
+            <div class="Outline1">
+                <div id="text">Classificacao &nbsp <img src="../view/shared/img/cmhRankTitle.png" align="right" /></div>
                     <div class="TabControl">
                         <div id="header">
                             <ul class="abas">
@@ -155,7 +161,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                                         <span>Geral</span>
                                     </div>
                                 </li>
-                                <li>
+<!--                                <li>
                                     <div class="aba">
                                         <span>Estado</span>
                                     </div> 
@@ -168,9 +174,8 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                                 <li>
                                     <div class="aba">
                                         <span>Bairro</span>
-                                        <?php ?>
                                     </div>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                         <div id="content">
@@ -182,11 +187,26 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                             }
                             ?>
                             </div>
-                            <div class="conteudo"> Conteúdo da aba 2 </div>
-                            <div class="conteudo"> Conteúdo da aba 3 </div>
+                            <div class="conteudo">
+                                <?php 
+                            for($i=0;$i<count($topFiveArray);$i++)
+                            {
+                                echo $topFiveArray[$i]."<br>";
+                            }
+                            ?>
+                            </div>
+                            <div class="conteudo">
+                            <?php 
+                            for($i=0;$i<count($topFiveArray);$i++)
+                            {
+                                echo $topFiveArray[$i]."<br>";
+                            }
+                            ?>
+                            </div>
                             <div class="conteudo"> Conteúdo da aba 4 </div>
                         </div>
                     </div>
+            </div>
 
 
 

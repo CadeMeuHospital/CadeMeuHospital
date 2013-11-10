@@ -50,124 +50,17 @@ class ProfileUBSDAO {
 
         $returnConsult = ProfileUBSDAO::searchUBSInTableEvaluate($idUBS);
         if (!$returnConsult) {
-            $operationType = "insert";
+            $query = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_" . $evaluate . ")
+                        VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1)";
         } else {
-            $operationType = "update";
+            $query = "";
+            $amount_people = $returnConsult[2] + 1;
+            $value_vote = $returnConsult[3] + $evaluate;
+            $amount_people_x = $returnConsult[$evaluate+3] + 1;
+            $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "',
+                    amount_people_".$evaluate."='" . $amount_people_x . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
         }
-
-        switch ($evaluate) {
-            case 1:
-                $return = ProfileUBSDAO::saveEvaluation1UBS($evaluate, $idUBS, $operationType, $returnConsult);
-                break;
-            case 2:
-                $return = ProfileUBSDAO::saveEvaluation2UBS($evaluate, $idUBS, $operationType, $returnConsult);
-                break;
-            case 3:
-                $return = ProfileUBSDAO::saveEvaluation3UBS($evaluate, $idUBS, $operationType, $returnConsult);
-                break;
-            case 4:
-                $return = ProfileUBSDAO::saveEvaluation4UBS($evaluate, $idUBS, $operationType, $returnConsult);
-                break;
-            case 5:
-                $return = ProfileUBSDAO::saveEvaluation5UBS($evaluate, $idUBS, $operationType, $returnConsult);
-                break;
-        }
-        return $return;
-    }
-
-    public function saveEvaluation1UBS($evaluate, $idUBS, $operationType, $returnConsult) {
-
-        switch ($operationType) {
-            case "insert":
-                $sql = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_1, value_vote_1) 
-                        VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1, '" . $evaluate . "')";
-                break;
-            case "update":
-                $amount_people = $returnConsult[2] + 1;
-                $value_vote = $returnConsult[3] + $evaluate;
-                $amount_people_1 = $returnConsult[4] + 1;
-                $value_vote_1 = $returnConsult[5] + $evaluate;
-                $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "', 
-                    amount_people_1='" . $amount_people_1 . "', value_vote_1='" . $value_vote_1 . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
-                break;
-        }
-
-        return ProfileUBSDAO::executeComandSQL($sql, $idUBS);
-    }
-
-    public function saveEvaluation2UBS($evaluate, $idUBS, $operationType, $returnConsult) {
-        switch ($operationType) {
-            case "insert":
-                $sql = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_2,  value_vote_2) 
-                    VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1, '" . $evaluate . "')";
-                 break;
-            case "update":
-                $amount_people = $returnConsult[2] + 1;
-                $value_vote = $returnConsult[3] + $evaluate;
-                $amount_people_2 = $returnConsult[6] + 1;
-                $value_vote_2 = $returnConsult[7] + $evaluate;
-                $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "', 
-                    amount_people_2='" . $amount_people_2 . "', value_vote_2='" . $value_vote_2 . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
-                 break;
-        }
-
-        return ProfileUBSDAO::executeComandSQL($sql, $idUBS);
-    }
-
-    public function saveEvaluation3UBS($evaluate, $idUBS, $operationType, $returnConsult) {
-        switch ($operationType) {
-            case "insert":
-                $sql = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_3,  value_vote_3) 
-                    VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1, '" . $evaluate . "')";
-                 break;
-            case "update":
-                $amount_people = $returnConsult[2] + 1;
-                $value_vote = $returnConsult[3] + $evaluate;
-                $amount_people_3 = $returnConsult[8] + 1;
-                $value_vote_3 = $returnConsult[9] + $evaluate;
-                $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "', 
-                    amount_people_3='" . $amount_people_3 . "', value_vote_3='" . $value_vote_3 . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
-                 break;
-        }
-
-        return ProfileUBSDAO::executeComandSQL($sql, $idUBS);
-    }
-
-    public function saveEvaluation4UBS($evaluate, $idUBS, $operationType, $returnConsult) {
-        switch ($operationType) {
-            case "insert":
-                $sql = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_4,  value_vote_4) 
-                    VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1, '" . $evaluate . "')";
-                 break;
-            case "update":
-                $amount_people = $returnConsult[2] + 1;
-                $value_vote = $returnConsult[3] + $evaluate;
-                $amount_people_4 = $returnConsult[10] + 1;
-                $value_vote_4 = $returnConsult[11] + $evaluate;
-                $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "', 
-                    amount_people_4='" . $amount_people_4 . "', value_vote_4='" . $value_vote_4 . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
-                 break;
-        }
-
-        return ProfileUBSDAO::executeComandSQL($sql, $idUBS);
-    }
-
-    public function saveEvaluation5UBS($evaluate, $idUBS, $operationType, $returnConsult) {
-        switch ($operationType) {
-            case "insert":
-                $sql = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_5,  value_vote_5) 
-                    VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1, '" . $evaluate . "')";
-                 break;
-            case "update":
-                $amount_people = $returnConsult[2] + 1;
-                $value_vote = $returnConsult[3] + $evaluate;
-                $amount_people_5 = $returnConsult[12] + 1;
-                $value_vote_5 = $returnConsult[13] + $evaluate;
-                $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "', 
-                    amount_people_5='" . $amount_people_5 . "', value_vote_5='" . $value_vote_5 . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
-                 break;
-        }
-
+        
         return ProfileUBSDAO::executeComandSQL($sql, $idUBS);
     }
 
@@ -205,7 +98,7 @@ class ProfileUBSDAO {
         $average = mysql_fetch_row($result);
         return $average;
     }
-    
+
 }
 
 ?>

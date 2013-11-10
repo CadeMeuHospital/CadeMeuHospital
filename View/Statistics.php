@@ -84,6 +84,8 @@
 
 
                     <script>
+                        
+                         google.load('visualization', '1', {packages: ['geochart']});
                         function drawVisualization() {
                             var data = new google.visualization.DataTable();
                             data.addRows(28);
@@ -187,7 +189,10 @@
                                     document.getElementById('visualization'));
                             geochart.draw(data, options);
                         }
+                        
+                        google.setOnLoadCallback(drawVisualization);
                     </script>
+                    
                     <!--Div that will hold the dashboard-->
                     <div id="dashboard_div">
                         <!--Divs that will hold each control and chart-->
@@ -195,6 +200,7 @@
                         <div id="chart_div"></div>
                     </div>
 
+                       <div id="visualization"></div>
                 </div>
             </div>
         </div>

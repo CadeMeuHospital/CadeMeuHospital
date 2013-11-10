@@ -3,7 +3,7 @@
 include_once '/../DAO/StatisticsDAO.php';
 
 class ControllerStatistics {
-    
+
     private static $instanceControllerStatistics;
 
     private function __construct() {
@@ -18,14 +18,14 @@ class ControllerStatistics {
         }
         return self::$instanceControllerStatistics;
     }
-    
-    public function generateValuesToChartAverageEvaluate(){
-        $statisticsDAO = new StatisticsDAO();
+
+    public function generateValuesToChartAverageEvaluate() {
+        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
         $allEvaluates = $statisticsDAO->getValuesToChartAverageEvaluate();
-        
+
         return $allEvaluates;
     }
-    
+
 }
 
 ?>

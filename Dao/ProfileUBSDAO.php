@@ -50,17 +50,16 @@ class ProfileUBSDAO {
 
         $returnConsult = ProfileUBSDAO::searchUBSInTableEvaluate($idUBS);
         if (!$returnConsult) {
-            $query = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_" . $evaluate . ")
+            $sql = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_" . $evaluate . ")
                         VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1)";
         } else {
-            $query = "";
             $amount_people = $returnConsult[2] + 1;
             $value_vote = $returnConsult[3] + $evaluate;
-            $amount_people_x = $returnConsult[$evaluate+3] + 1;
+            $amount_people_x = $returnConsult[$evaluate + 3] + 1;
             $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "',
-                    amount_people_".$evaluate."='" . $amount_people_x . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
+                    amount_people_" . $evaluate . "='" . $amount_people_x . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
         }
-        
+
         return ProfileUBSDAO::executeComandSQL($sql, $idUBS);
     }
 
@@ -105,6 +104,7 @@ class ProfileUBSDAO {
         $state = mysql_fetch_row($result);
         return $state;
     }
+
 }
 
 ?>

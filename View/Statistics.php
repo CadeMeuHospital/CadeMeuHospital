@@ -14,7 +14,12 @@
       <?php
             require '../view/shared/header.php';
             require '../view/shared/navigation_bar.php';
-            require '../Controller/ControllerRanking.php';
+            require '../Controller/ControllerStatistics.php';
+            
+            $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
+            
+            $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
+            
         ?>
       <script type="text/javascript">
         // Load the Visualization API and the controls package.
@@ -30,14 +35,12 @@
 
           // Create our data table.
           var data = google.visualization.arrayToDataTable([
-            ['Name', 'Donuts eaten'],
-            ['Michael' , 5],
-            ['Elisa', 7],
-            ['Robert', 3],
-            ['John', 2],
-            ['Jessica', 6],
-            ['Aaron', 1],
-            ['Margareth', 8]
+            ['Nota', 'Percentual'],
+            ['Ruim' , <?php echo $arrayStatistics[0];?>],
+            ['Regular', <?php echo $arrayStatistics[1];?>],
+            ['Bom', <?php echo $arrayStatistics[2];?>],
+            ['Muito bom', <?php echo $arrayStatistics[3];?>],
+            ['Excelente', <?php echo $arrayStatistics[4];?>],
           ]);
 
           // Create a dashboard.
@@ -49,7 +52,7 @@
             'controlType': 'NumberRangeFilter',
             'containerId': 'filter_div',
             'options': {
-              'filterColumnLabel': 'Donuts eaten'
+              'filterColumnLabel': 'Percentual'
             }
           });
 

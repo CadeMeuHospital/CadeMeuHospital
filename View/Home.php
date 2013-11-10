@@ -108,14 +108,45 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                                text-align:center; padding-top:5px; background:#27408B;}
                         .ativa span,
                         .selected span{color:#fff}
-                        .TabControl #content{background:#27408B}
-                        .TabControl .conteudo{width:100%; background:#27408B;display:none; height:100%;color:#fff}
+                        .TabControl #content{background:#E5DEE2}
+                        .TabControl .conteudo{width:100%; background:#E5DEE2;display:none; height:100%;color:#fff}
                         .selected{width:100px; height:30px; border:solid 1 px; border-radius:5px 5px 0 0;
-                                  text-align:center; padding-top:5px; background:#27408B}
+                                  text-align:center; padding-top:5px; background:#E5DEE2}
                         }
                     </style>
 
+                    <?php
+                    $controllerRanking = ControllerRanking::getInstanceControllerRanking();
+                    $topFiveArray = array();
+                    switch ($rankType) {
+                        case "geral":
+                            $topFiveUBS = $controllerRanking->makeRank();
+                            break;
+                        case "cidade":
+                            $topFiveUBS = $controllerRanking->makeRankByCity($textField);
+                            break;
+                        case "bairro":
+                            $topFiveUBS = $controllerRanking->makeRankByNeighborhood($textField);
+                            break;
+                    }
+                    $numberUBS = mysql_num_rows($topFiveUBS);
+                    if ($numberUBS > 0) {
+                        for ($i = 0; $i < $numberUBS; $i++) {
+                            $nameUBS = mysql_result($topFiveUBS, $i, "nom_estab");
+                            $idUBS = mysql_result($topFiveUBS, $i, "cod_unico");
+                            $average = mysql_result($topFiveUBS, $i, "average");
 
+                            $path = "../view/Profile.php?id=" . $idUBS . "";
+                            $completePath = "<a href=" . $path . "> " . $nameUBS . " </a> - " . $average . "<br>";
+                            array_push($topFiveArray, $completePath);
+                        }
+                        echo '<br><br>';
+                    } else {
+                        echo 'Não há UBSs avaliadas. <br><br>';
+                    }
+                    ?>
+                    
+                    
                     <div class="TabControl">
                         <div id="header">
                             <ul class="abas">
@@ -142,41 +173,21 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                             </ul>
                         </div>
                         <div id="content">
-                            <div class="conteudo"> Conteúdo da aba 1 </div>
+                            <div class="conteudo">
+                            <?php 
+                            for($i=0;$i<count($topFiveArray);$i++)
+                            {
+                                echo $topFiveArray[$i]."<br>";
+                            }
+                            ?>
+                            </div>
                             <div class="conteudo"> Conteúdo da aba 2 </div>
                             <div class="conteudo"> Conteúdo da aba 3 </div>
                             <div class="conteudo"> Conteúdo da aba 4 </div>
                         </div>
                     </div>
 
-                    <?php
-                    $controllerRanking = ControllerRanking::getInstanceControllerRanking();
-                    switch ($rankType) {
-                        case "geral":
-                            $topFiveUBS = $controllerRanking->makeRank();
-                            break;
-                        case "cidade":
-                            $topFiveUBS = $controllerRanking->makeRankByCity($textField);
-                            break;
-                        case "bairro":
-                            $topFiveUBS = $controllerRanking->makeRankByNeighborhood($textField);
-                            break;
-                    }
-                    $numberUBS = mysql_num_rows($topFiveUBS);
-                    if ($numberUBS > 0) {
-                        for ($i = 0; $i < $numberUBS; $i++) {
-                            $nameUBS = mysql_result($topFiveUBS, $i, "nom_estab");
-                            $idUBS = mysql_result($topFiveUBS, $i, "cod_unico");
-                            $average = mysql_result($topFiveUBS, $i, "average");
 
-                            $path = "../view/Profile.php?id=" . $idUBS . "";
-                            echo "<a href=" . $path . "> " . $nameUBS . " </a> - " . $average . "<br>";
-                        }
-                        echo '<br><br>';
-                    } else {
-                        echo 'Não há UBSs avaliadas. <br><br>';
-                    }
-                    ?>
 
                 </div>        
             </div>

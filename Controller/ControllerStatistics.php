@@ -32,7 +32,6 @@ class ControllerStatistics {
         
         return $evaluatesUBS;
     }
-
 }
 
 ?>

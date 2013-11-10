@@ -1,14 +1,3 @@
-<?php
-    require_once '../Controller/ControllerProfileUBS.php';
-
-    if (!isset($_GET['id'])) {
-        header("location: ../index.php");
-    }
-
-    $idUBS = $_REQUEST['id'];
-    $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-    $average = $controllerProfileUBS->takeAverageUBS($idUBS);
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -20,16 +9,30 @@
         <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <script type="text/javascript" src="../View/shared/js/location.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <style>#mapview{display:none;}</style>
         <title> Cadê Meu Hospital - Perfil UBS </title>
     </head>
 
     <body>
         <div class="root">  
-            <?php 
-                require '../view/shared/header.php';
-                require '../view/shared/navigation_bar.php';
-                $profileUBS = $controllerProfileUBS->returnUBS($idUBS);
+            <?php
+            require_once '../Controller/ControllerProfileUBS.php';
+            require_once '../Controller/ControllerStatistics.php';
+            require_once '../view/shared/header.php';
+            require_once '../view/shared/navigation_bar.php';
+
+            if (!isset($_GET['id'])) {
+                header("location: ../index.php");
+            }
+
+            $idUBS = $_REQUEST['id'];
+            $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+            $average = $controllerProfileUBS->takeAverageUBS($idUBS);
+            $profileUBS = $controllerProfileUBS->returnUBS($idUBS);
+
+            $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
+            $evaluatesUBS = $controllerStatistics->generateValuesToChartAverageEvaluateSingleUBS($idUBS);
             ?>   
 
             <div class="profile"> 
@@ -62,7 +65,10 @@
                         </tr>
                         <tr>
                             <th>Estado:</th>
-                            <td class="align-left"><?php $state=$controllerProfileUBS->takeState($profileUBS->getCodMunic()); echo $state[0]?></td>
+                            <td class="align-left"><?php
+                                $state = $controllerProfileUBS->takeState($profileUBS->getCodMunic());
+                                echo $state[0]
+                                ?></td>
                         </tr>
                         <tr>
                             <th>Telefone:</th>
@@ -133,11 +139,81 @@
                         </table>
                         <input type="hidden" name="idUBS" value="<?php echo $idUBS; ?>" >
                     </form>
+
+                    <script type="text/javascript">
+                        // Load the Visualization API and the controls package.
+                        google.load('visualization', '1.0', {'packages': ['controls']});
+
+                        // Set a callback to run when the Google Visualization API is loaded.
+                        google.setOnLoadCallback(drawDashboard);
+
+                        // Callback that creates and populates a data table,
+                        // instantiates a dashboard, a range slider and a pie chart,
+                        // passes in the data and draws it.
+                        function drawDashboard() {
+
+                            //Create our data table.
+                            var data = google.visualization.arrayToDataTable([
+                                ['Nota', 'Percentual'],
+                                ['Ruim', <?php echo $evaluatesUBS[0]; ?>],
+                                ['Regular', <?php echo $evaluatesUBS[1]; ?>],
+                                ['Bom', <?php echo $evaluatesUBS[2]; ?>],
+                                ['Muito bom', <?php echo $evaluatesUBS[3]; ?>],
+                                ['Excelente', <?php echo $evaluatesUBS[4]; ?>]
+                            ]);
+//                            var data = google.visualization.arrayToDataTable([
+//                                ['Nota', 'Percentual'],
+//                                ['Ruim', 2],
+//                                ['Regular', 3],
+//                                ['Bom', 3],
+//                                ['Muito bom', 3],
+//                                ['Excelente', 2]
+//                            ]);
+                            // Create a dashboard.
+                            var dashboard = new google.visualization.Dashboard(
+                                    document.getElementById('dashboard_div'));
+
+                            // Create a range slider, passing some options
+                            var donutRangeSlider = new google.visualization.ControlWrapper({
+                                'controlType': 'NumberRangeFilter',
+                                'containerId': 'filter_div',
+                                'options': {
+                                    'filterColumnLabel': 'Percentual'
+                                }
+                            });
+
+                            // Create a pie chart, passing some options
+                            var pieChart = new google.visualization.ChartWrapper({
+                                'chartType': 'PieChart',
+                                'containerId': 'chart_div',
+                                'options': {
+                                    'width': 300,
+                                    'height': 300,
+                                    'pieSliceText': 'value',
+                                    'legend': 'right'
+                                }
+                            });
+
+                            // Establish dependencies, declaring that 'filter' drives 'pieChart',
+                            // so that the pie chart will only display entries that are let through
+                            // given the chosen slider range.
+                            dashboard.bind(donutRangeSlider, pieChart);
+
+                            // Draw the dashboard.
+                            dashboard.draw(data);
+                        }
+                    </script>
+
+
+                </div>
+                <!--Div that will hold the dashboard-->
+                <div id="dashboard_div">
+                    <!--Divs that will hold each control and chart-->
+                    <div id="filter_div"></div>
+                    <div id="chart_div"></div>
                 </div>
 
-                <br><br>
-
-                <br><br>
+                <br><br><br><br>
 
                 <h2>Mapa</h2>
                 <div id="mapholder" ></div>
@@ -196,27 +272,28 @@
                         google.maps.event.addDomListener(window, 'load', initialize);
 
                     </script>
-                   
+
                     <div id="googleMap" style="width:900px; height:380px; text-align: center;" ></div>
                     <form action="javascript: void(0);" method="post" onSubmit="calcRoute();">
                         <div onload="getLocation();">
-                              <?php
-                                if(!isset($_REQUEST['latlon'])) {
-                                ?>
-                            <script>
-                                navigator.geolocation.getCurrentPosition(showposUBS);
-                                function showposUBS(position) {
-                                    var lat=position.coords.latitude;
-                                    var lon=position.coords.longitude;
-                                    var latlon =lat+','+lon;  
-                                    window.location="Profile.php?id=<?php echo $idUBS?>&latlon="+latlon;
-                                }
-                            </script> 
                             <?php
-                                } else {
-                                    $latlon2 = $_REQUEST['latlon']; ?>
-                            <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
-                                <?php }?>
+                            if (!isset($_REQUEST['latlon'])) {
+                                ?>
+                                <script>
+                        navigator.geolocation.getCurrentPosition(showposUBS);
+                        function showposUBS(position) {
+                            var lat = position.coords.latitude;
+                            var lon = position.coords.longitude;
+                            var latlon = lat + ',' + lon;
+                            window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
+                        }
+                                </script> 
+                                <?php
+                            } else {
+                                $latlon2 = $_REQUEST['latlon'];
+                                ?>
+                                <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
+                            <?php } ?>
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
                         <input type="submit" name="localizacao" value="Como chegar?" />

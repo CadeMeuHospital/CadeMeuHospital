@@ -4,9 +4,9 @@ include_once "/../Utils/dataBaseConnection.php";
 include_once "/../Utils/DataValidation.php";
 
 define('NOME', 1);
-define('ESTADO', 2);
-define('CIDADE', 3);
-define('BAIRRO', 4);
+define('CIDADE', 2);
+define('BAIRRO', 3);
+define('ESTADO', 4);
 
 class ProfileUBSDAO {
 

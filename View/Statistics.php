@@ -97,6 +97,25 @@
                             data.setValue(1, 0, 'Rio Grande do Norte');
                             data.setValue(1, 1, 300);
 
+data.setValue(2, 0, 'Alagoas'); 
+  data.setValue(2, 1, 100);
+  
+  data.setValue(3, 0, 'Amapa'); 
+  data.setValue(3, 1, 100);
+  
+  data.setValue(4, 0, 'Acre'); 
+  data.setValue(4, 1, 100);
+  
+  data.setValue(5, 0, 'Amazonas'); 
+  data.setValue(5, 1, 100);
+  
+  data.setValue(6, 0, 'Bahia'); 
+  data.setValue(6, 1, 100);
+
+  data.setValue(7, 0, 'Ceara'); 
+  data.setValue(7, 1, 100);
+  
+  
                     </script>
                     <!--Div that will hold the dashboard-->
                     <div id="dashboard_div">

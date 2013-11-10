@@ -35,7 +35,7 @@
             require_once '../Controller/ControllerProfileUBS.php';
 
             $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-                $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
+            $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
             ?>
 
             <div class="profile">

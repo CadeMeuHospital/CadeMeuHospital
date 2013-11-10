@@ -24,6 +24,10 @@ class ControllerRanking {
         return $rankingDAO->getRank();
     }
     
+//    public function makeRankByState($state){
+//        
+//    }
+    
     public function makeRankByCity($city) {
         $rankingDAO = new RankingDAO();
         return $rankingDAO->getRankByCity($city);
@@ -32,7 +36,7 @@ class ControllerRanking {
     public function makeRankByNeighborhood($neighborhood){
         $rankingDAO = new RankingDAO();
         return $rankingDAO->getRankByNeighborhood($neighborhood);
-    }
+    }    
 }
 
 ?>

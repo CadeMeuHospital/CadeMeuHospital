@@ -15,18 +15,18 @@ class StatisticsDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testGetInstanceStatisticsDAO() {
-        $resultNotNull = $this->statisticsDao->getValuesToChartAverageEvaluate();
-        $this->assertNotNull($resultNotNull);        
+
+        $resultNotNull = $this->statisticsDao->getInstanceStatisticsDAO();
+        $this->assertNotNull($resultNotNull);
     }
 
     public function testGetValuesToChartAverageEvaluate() {
-       
-       
+        $resultNotNull = $this->statisticsDao->getValuesToChartAverageEvaluate();
+        $this->assertNotNull($resultNotNull);
     }
 
-  
     public function testGetValuesToChartAverageEvaluateSigleUBS() {
-      
+        
     }
 
 }

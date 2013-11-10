@@ -14,25 +14,31 @@ class ControllerStatisticsTest extends PHPUnit_Framework_TestCase {
         unset($this->controllerStatistics);
     }
 
+    public function testGetInstanceControllerStatisticsNotNull() {
+        $resultNotNull = $this->controllerStatistics->getInstanceControllerStatistics();
+        $this->assertNotNULL($resultNotNull);
+    }
+
     public function testGetInstanceControllerStatistics() {
-    
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $resultInstanceOf = $this->controllerStatistics->getInstanceControllerStatistics();
+        $this->assertInstanceOf('ControllerStatistics', $resultInstanceOf);
     }
 
     public function testGenerateValuesToChartAverageEvaluate() {
-    
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $resultNotNull = $this->controllerStatistics->generateValuesToChartAverageEvaluate();
+        $this->assertNotNULL($resultNotNull);
     }
 
     public function testGenerateValuesToChartAverageEvaluateSingleUBS() {
-   
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $resultNotNull = $this->controllerStatistics->generateValuesToChartAverageEvaluateSingleUBS(4);
+        $this->assertNotNULL($resultNotNull);
+       
+    }
+    
+    public function testGenerateValuesToChartAverageEvaluateSingleUBSFalse() {
+        $resultFalse = $this->controllerStatistics->generateValuesToChartAverageEvaluateSingleUBS(44564887);
+        $this->assertFalse($resultFalse);
+       
     }
 
 }

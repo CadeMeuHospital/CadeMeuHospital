@@ -48,6 +48,11 @@ class ControllerProfileUBS {
         $profileUBS = self::$instanceControllerProfileUBS->makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $dscEnder, $dscBairro, $dscCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine);
         return $profileUBS;
     }
+    
+    public function takeState($codMunic) {
+        $profileUBSDAO = new ProfileUBSDAO();
+        return $state = $profileUBSDAO->takeStateUBS($codMunic);
+    }
 
     public function searchUBS($field, $searchType) {
         try {

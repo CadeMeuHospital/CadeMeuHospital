@@ -61,6 +61,10 @@
                             <td class="align-left"><?php echo $profileUBS->getDscCidade(); ?></td>
                         </tr>
                         <tr>
+                            <th>Estado:</th>
+                            <td class="align-left"><?php $state=$controllerProfileUBS->takeState($profileUBS->getCodMunic()); echo $state[0]?></td>
+                        </tr>
+                        <tr>
                             <th>Telefone:</th>
                             <td class="align-left"><?php echo $profileUBS->getPhoneUBS(); ?></td>
                         </tr>

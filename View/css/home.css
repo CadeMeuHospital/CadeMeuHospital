@@ -59,6 +59,18 @@ input {
     -webkit-border-radius: 3px;
     border-radius: 3px;
 }
+states {
+    width: 180px;
+    height: 30px;
+    float: right;
+    margin: 3px;
+    color: #666666;
+    font-size: 13pt;
+    border: 1px solid #cccccc;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
 
 input.button {
     font-weight: bold;

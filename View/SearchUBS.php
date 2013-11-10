@@ -13,10 +13,6 @@
 
     </head>
 
-    <title> Cadê Meu Hospital - Busca</title>
-
-</head>
-
 <body>
 
     <div class="root">

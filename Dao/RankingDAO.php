@@ -4,29 +4,41 @@ include_once "/../Utils/dataBaseConnection.php";
 
 class RankingDAO {
 
-    public function __construct() {}
+    public function __construct() {
+        
+    }
 
-    public function getRank(){
+    public function getRank() {
         $sql = "SELECT nom_estab,cod_unico,average FROM ubs INNER JOIN evaluate 
             ON ubs.cod_unico = evaluate.id_cod_unico WHERE average > 0 ORDER BY average DESC,amount_people DESC LIMIT 5";
         $result = mysql_query($sql);
         return $result;
     }
+
+//    public function getRankByState($state) {
+//        $sql = "SELECT codigo FROM municipios_ibge WHERE uf = '" . $state . "' ";
+//        $sql2 = "SELECT nom_estab,cod_unico,average FROM ubs INNER JOIN evaluate 
+//            ON ubs.cod_unico = evaluate.id_cod_unico WHERE average > 0 AND cod_munic = '" . $sql . "' 
+//            ORDER BY average DESC,amount_people DESC LIMIT 5";
+//    }
     
-    public function getRankByCity($city){
+    
+
+    public function getRankByCity($city) {
         $sql = "SELECT nom_estab,cod_unico,average FROM ubs INNER JOIN evaluate 
-            ON ubs.cod_unico = evaluate.id_cod_unico WHERE average > 0 AND dsc_cidade = '".$city."' ORDER BY average DESC,amount_people DESC LIMIT 5";
+            ON ubs.cod_unico = evaluate.id_cod_unico WHERE average > 0 AND dsc_cidade = '" . $city . "' ORDER BY average DESC,amount_people DESC LIMIT 5";
         $result = mysql_query($sql);
-        
+
         return $result;
     }
-    
-    public function getRankByNeighborhood($neighborhood){
+
+    public function getRankByNeighborhood($neighborhood) {
         $sql = "SELECT nom_estab,cod_unico,average FROM ubs INNER JOIN evaluate 
-            ON ubs.cod_unico = evaluate.id_cod_unico WHERE average > 0 AND dsc_bairro = '".$neighborhood."' ORDER BY average DESC,amount_people DESC LIMIT 5";
+            ON ubs.cod_unico = evaluate.id_cod_unico WHERE average > 0 AND dsc_bairro = '" . $neighborhood . "' ORDER BY average DESC,amount_people DESC LIMIT 5";
         $result = mysql_query($sql);
-        
+
         return $result;
     }
 }
+
 ?>

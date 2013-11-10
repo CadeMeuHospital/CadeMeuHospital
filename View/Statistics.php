@@ -115,7 +115,23 @@ data.setValue(2, 0, 'Alagoas');
   data.setValue(7, 0, 'Ceara'); 
   data.setValue(7, 1, 100);
   
+ data.setValue(8, 0, 'Distrito Federal'); 
+  data.setValue(8, 1, 600);
   
+  data.setValue(9, 0, 'Espirito Santo'); 
+  data.setValue(9, 1, 100);
+  
+  data.setValue(10, 0, 'Goias'); 
+  data.setValue(10, 1, 100);
+  
+  data.setValue(11, 0, 'Maranhao'); 
+  data.setValue(11, 1, 100);
+  
+  data.setValue(12, 0, 'Minas Gerais'); 
+  data.setValue(12, 1, 100);
+  
+  data.setValue(13, 0, 'Mato Grosso'); 
+  data.setValue(13, 1, 100); 
                     </script>
                     <!--Div that will hold the dashboard-->
                     <div id="dashboard_div">

@@ -65,7 +65,7 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     /* Method SearchUBS suit test case */
 
     public function testSearchUBSInstanceOf() {
-        $arrayObjectSearch = $this->controllerProfileUBS->searchUBS("Taguatinga", 2);
+        $arrayObjectSearch = $this->controllerProfileUBS->searchUBS("Gama", 2);
         $resultInstanceOf = $arrayObjectSearch[0];
         $this->assertInstanceOf('ProfileUBS', $resultInstanceOf);
     }

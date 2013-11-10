@@ -174,6 +174,19 @@ data.setValue(14, 0, 'Mato Grosso do Sul');
   
   data.setValue(24, 0, 'Tocantins'); 
   data.setValue(24, 1, 100);
+  
+  var options = {}; 
+      options['region'] = 'BR'; 
+      options['resolution'] = 'provinces'; 
+      options['width'] = 556; 
+      options['height'] = 347;
+      options['colorAxis'] = {colors : ['#E5DEE2','#990000']};
+
+
+  var geochart = new google.visualization.GeoChart( 
+      document.getElementById('visualization')); 
+  geochart.draw(data,options); 
+} 
                     </script>
                     <!--Div that will hold the dashboard-->
                     <div id="dashboard_div">

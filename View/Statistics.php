@@ -147,6 +147,33 @@ data.setValue(14, 0, 'Mato Grosso do Sul');
   
   data.setValue(25, 0, 'Piaui'); 
   data.setValue(25, 1, 100);  
+  
+  data.setValue(26, 0, 'Para'); 
+  data.setValue(26, 1, 100);
+  
+  data.setValue(27, 0, 'Paraiba'); 
+  data.setValue(27, 1, 100);
+     
+  data.setValue(18, 0, 'Roraima'); 
+  data.setValue(18, 1, 100); 
+  
+  data.setValue(19, 0, 'Rondonia'); 
+  data.setValue(19, 1, 100);
+  
+  data.setValue(20, 0, 'Rio de Janeiro'); 
+  data.setValue(20, 1, 100);
+  
+  data.setValue(21, 0,'Sao Paulo'); 
+  data.setValue(21, 1, 100);
+  
+  data.setValue(22, 0, 'Santa Catarina'); 
+  data.setValue(22, 1, 100);
+  
+  data.setValue(23, 0, 'Sergipe'); 
+  data.setValue(23, 1, 100);
+  
+  data.setValue(24, 0, 'Tocantins'); 
+  data.setValue(24, 1, 100);
                     </script>
                     <!--Div that will hold the dashboard-->
                     <div id="dashboard_div">

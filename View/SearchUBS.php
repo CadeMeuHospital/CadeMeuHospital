@@ -23,13 +23,19 @@
         <div class="content"> 
 
             <?php
-            $buscaUBS = $_REQUEST['BuscaUBS'];
+           
             $value = $_REQUEST['searchType'];
-
+            
+            if($value == "2"){
+                $buscaUBS = $_REQUEST['SearchUBSbyState'];
+            }else{
+                $buscaUBS = $_REQUEST['BuscaUBS'];
+            }
+            
             require_once '../Controller/ControllerProfileUBS.php';
 
             $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-            $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
+                $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
             ?>
 
             <div class="profile">
@@ -51,7 +57,11 @@
                 }
 
                 for ($i = 0; $i < $quantityPage; $i++) {
-                    $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                    if($value == "2"){
+                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&SearchUBSbyState=".$buscaUBS."&searchType=".$value."";
+                    } else {
+                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                    }
                     echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a><br>";
                 }
                 ?>

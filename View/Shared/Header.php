@@ -5,13 +5,15 @@
         if(option==2){
             document.getElementById('states').style.display = 'block';
             document.getElementById('search').style.display = 'none';
+            document.getElementById('search').value = 'blank';
         } else {
             document.getElementById('states').style.display = 'none';
             document.getElementById('search').style.display = 'block';
+            document.getElementById('search').value = '';
         }
     }
     function verifyUF(){
-        if(document.getElementById('optionUF').value == 0){
+        if(document.getElementById('searchType').value == 2 && document.getElementById('optionUF').value == "vazio"){
             alert('Selecione uma UF.');
             return false;
         } else {
@@ -30,8 +32,8 @@
                 <tr>
                     <td><label> Buscar UBS:</label></td>
                     <td id="states">
-                    <select id='optionUF' name="searchByState">
-                        <option value=0>Selecione UF</option>
+                    <select id='optionUF' name="SearchUBSbyState">
+                        <option value="vazio">Selecione UF</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>
@@ -65,7 +67,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <select name="searchType" onchange='verifyOption(this.value);'>
+                        <select id="searchType" name="searchType" onchange='verifyOption(this.value);'>
                             <option value=1>Nome</option>
                             <option value=2>Estado</option>
                             <option value=3>Cidade</option>

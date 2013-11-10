@@ -4,8 +4,9 @@ include_once "/../Utils/dataBaseConnection.php";
 include_once "/../Utils/DataValidation.php";
 
 define('NOME', 1);
-define('CIDADE', 2);
-define('BAIRRO', 3);
+define('ESTADO', 2);
+define('CIDADE', 3);
+define('BAIRRO', 4);
 
 class ProfileUBSDAO {
 
@@ -16,10 +17,15 @@ class ProfileUBSDAO {
     public function searchUBSinDatabase($field, $searchType) {
         $field = trim($field);
         DataValidation::throwTextFieldException($field);
-
+  
         switch ($searchType) {
             case NOME :
                 $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '%" . $field . "%'";
+                break;
+            case ESTADO :
+                $sql = "SELECT * FROM ubs INNER JOIN municipios_ibge 
+                    ON ubs.cod_munic = municipios_ibge.codigo 
+                    WHERE municipios_ibge.uf LIKE '%" . $field . "%'";
                 break;
             case CIDADE :
                 $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '%" . $field . "%'";

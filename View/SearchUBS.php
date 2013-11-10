@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -28,24 +27,36 @@
         <div class="content"> 
 
             <?php
-                $buscaUBS = $_POST["BuscaUBS"];
-                $value = $_POST["searchType"];
+            $buscaUBS = $_REQUEST['BuscaUBS'];
+            $value = $_REQUEST['searchType'];
 
-                require_once '../Controller/ControllerProfileUBS.php';
+            require_once '../Controller/ControllerProfileUBS.php';
 
-                $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-                $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
+            $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+            $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
             ?>
 
             <div class="profile">
 
                 <?php
-                $quantityResult = count($arrayUBS);
-                for ($i = 0; $i < $quantityResult; $i++) {
-                    $nameUBS = $arrayUBS[$i]->getNameUBS();
-                    $idUBS = $arrayUBS[$i]->getIdUBS();
-                    $path = "../view/Profile.php?id=" . $idUBS . "";
-                    echo "<a href=" . $path . "> " . $nameUBS . " </a><br>";
+                $quantityUBS = count($arrayUBS);
+                $quantityPage = ceil($quantityUBS / 10);
+                $currentPage = $_GET['page'];
+                $page = $currentPage * 10;
+
+                for ($i = ($page - 10); $i < $page; $i++) {
+
+                    if (isset($arrayUBS[$i])) {
+                        $nameUBS = $arrayUBS[$i]->getNameUBS();
+                        $idUBS = $arrayUBS[$i]->getIdUBS();
+                        $path = "../view/Profile.php?id=" . $idUBS . "";
+                        echo "<a href=" . $path . "> " . $nameUBS . " </a><br>";
+                    }
+                }
+
+                for ($i = 0; $i < $quantityPage; $i++) {
+                    $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                    echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a><br>";
                 }
                 ?>
 

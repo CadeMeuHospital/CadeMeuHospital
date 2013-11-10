@@ -4,7 +4,7 @@
     </div>
     <div id ="right">
 
-        <form method="post" action="../view/SearchUBS.php" id="formSearchUBS">	
+        <form method="post" action="../view/SearchUBS.php?page=1" id="formSearchUBS">	
             <label> Buscar UBS:</label>
             <input type="text" name="BuscaUBS" value="" required/>
 

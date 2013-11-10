@@ -19,6 +19,7 @@
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
+        <script type="text/javascript" src="../View/shared/js/location.js"></script>
         <style>#mapview{display:none;}</style>
         <title> Cadê Meu Hospital - Perfil UBS </title>
     </head>
@@ -195,25 +196,23 @@
                     <div id="googleMap" style="width:900px; height:380px; text-align: center;" ></div>
                     <form action="javascript: void(0);" method="post" onSubmit="calcRoute();">
                         <div onload="getLocation();">
+                              <?php
+                                if(!isset($_REQUEST['latlon'])) {
+                                ?>
                             <script>
-                                navigator.geolocation.getCurrentPosition(showpos);
-                                function showpos(position) {
+                                navigator.geolocation.getCurrentPosition(showposUBS);
+                                function showposUBS(position) {
                                     var lat=position.coords.latitude;
                                     var lon=position.coords.longitude;
-                                    var latlon =lat+','+lon;                 
-
-                                     <?php
-                                        if(!isset($_REQUEST['latlon'])) {
-                                     ?>
-                                          window.location="Profile.php?id=<?php echo $idUBS?>&latlon="+latlon;
-                                     <?php
-                                        }
-                                    ?>
+                                    var latlon =lat+','+lon;  
+                                    window.location="Profile.php?id=<?php echo $idUBS?>&latlon="+latlon;
                                 }
                             </script> 
-
-                            <?php $latlon2 = $_REQUEST['latlon']; ?>
+                            <?php
+                                } else {
+                                    $latlon2 = $_REQUEST['latlon']; ?>
                             <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
+                                <?php }?>
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
                         <input type="submit" name="localizacao" value="Como chegar?" />

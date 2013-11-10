@@ -168,6 +168,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                                 <li>
                                     <div class="aba">
                                         <span>Bairro</span>
+                                        <?php ?>
                                     </div>
                                 </li>
                             </ul>

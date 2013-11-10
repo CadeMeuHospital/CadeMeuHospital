@@ -14,11 +14,14 @@ class ControllerStatisticsTest extends PHPUnit_Framework_TestCase {
         unset($this->controllerStatistics);
     }
 
+    public function testGetInstanceControllerStatisticsNotNull() {
+        $resultNotNull = $this->controllerStatistics->getInstanceControllerStatistics();
+        $this->assertNotNULL($resultNotNull);
+    }
+
     public function testGetInstanceControllerStatistics() {
-    
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $resultInstanceOf = $this->controllerStatistics->getInstanceControllerStatistics();
+        $this->assertInstanceOf('ControllerStatistics', $resultInstanceOf);
     }
 
     public function testGenerateValuesToChartAverageEvaluate() {

@@ -30,6 +30,15 @@ class StatisticsDAO {
         return $return;
     }
 
+    public function getValuesToChartAverageEvaluateSigleUBS($idUBS) {
+
+        $query = "SELECT amount_people_1,amount_people_2,amount_people_3,amount_people_4,amount_people_5 FROM evaluate WHERE id_cod_unico='" . $idUBS . "'";
+        $result = mysql_query($query);
+        $return = mysql_fetch_array($result);
+
+        return $return;
+    }
+
 }
 
 ?>

@@ -25,6 +25,13 @@ class ControllerStatistics {
 
         return $allEvaluates;
     }
+    
+    public function generateValuesToChartAverageEvaluateSingleUBS($idUBS){
+        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
+        $evaluatesUBS = $statisticsDAO->getValuesToChartAverageEvaluateSigleUBS($idUBS);
+        
+        return $evaluatesUBS;
+    }
 
 }
 

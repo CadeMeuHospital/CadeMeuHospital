@@ -101,7 +101,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
          }                        body{font-family:Calibri, Tahoma, Arial}
                         .TabControl{ width:297px; overflow:hidden; height:450px;}
                         .TabControl #header{ width:100%; border: overflow:hidden; cursor:hand;  }
-                        .TabControl #content{ width:100%; border: solid 1px;overflow:hidden; height:100%; }
+                        .TabControl #content{ width:100%; overflow:hidden; height:100%; }
                         .TabControl .abas{display:inline;}
                         .TabControl .abas li{float:left}
                         .aba{   
@@ -117,6 +117,9 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                         .TabControl .conteudo{width:100%; background:#E5DEE2;display:none; height:100%;color:#fff}
                         .selected{width:50px; height:0px;
                                   text-align:center; padding-top:5px;}
+                        .ubs{height:80px; border-style: solid; border-bottom-width: 1px; border-top-width: 0;
+border-right-width: 0; border-left-width: 0; text-align:center; 
+                        }
                         }
                     </style>
 
@@ -187,7 +190,13 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                             <?php 
                             for($i=0;$i<count($topFiveArray);$i++)
                             {
+                            ?>
+                                <div class="ubs">
+                            <?php
                                 echo $topFiveArray[$i]."<br>";
+                            ?>
+                                </div>
+                            <?php
                             }
                             ?>
                             </div>

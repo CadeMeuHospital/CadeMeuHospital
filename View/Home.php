@@ -14,7 +14,6 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
         <link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
-        <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <title> Cadê Meu Hospital - Home</title>
@@ -98,13 +97,14 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                         .Outline1{background:#25536b; width:297px; }
                         .Outline1 #text{font-size: 28px; text-align: right; color: #c9e4d3; position:relative; top:10px; right:10px;}
                         .Outline2{background:#827ad0; width:297px; position:relative; top:20px;                      
-         }                        body{font-family:Calibri, Tahoma, Arial}
+         }
                         .TabControl{ width:297px; overflow:hidden; height:450px;}
                         .TabControl #header{ width:100%; border: overflow:hidden; cursor:hand;  }
                         .TabControl #content{ width:100%; overflow:hidden; height:100%; }
                         .TabControl .abas{display:inline;}
                         .TabControl .abas li{float:left}
-                        .aba{   
+                        .aba{  
+                                font-family:Calibri, Tahoma, Arial;
                                 width:50px; height:0px;           
                         	border-bottom: 30px solid #E5DEE2;
                                 border-right: 50px solid transparent;               
@@ -124,10 +124,7 @@ border-right-width: 0; border-left-width: 0; text-align:center;
                         .ubs a:hover{color:#282828; 	text-decoration: none;}
                         .ubs a:link{color:#282828; 	text-decoration: none;}
                         .ubs a:visited{color:#282828; 	text-decoration: none;} 
-                        
-                        .star,
-                        .star a {background: url(../view/shared/img/cmhRankTitle.png) no-repeat 0 0px;}
-                        .star a { display: block; width: 100%; height: 100%; background-position: 0 0px; }
+                          
                         }
                     </style>
 
@@ -166,7 +163,7 @@ border-right-width: 0; border-left-width: 0; text-align:center;
                         echo 'Não há UBSs avaliadas. <br><br>';
                     }
                     ?>
-                    
+<right>
             <div class="Outline1">
                 <div id="text">Classificacao &nbsp <img src="../view/shared/img/cmhRankTitle.png" align="right" /></div>
                 <div class="Outline2">  
@@ -234,10 +231,12 @@ border-right-width: 0; border-left-width: 0; text-align:center;
                 </div>
             </div>
 
-
+</right>
 
                 </div>        
             </div>
+            <br>
+            <br>
             <?php require '../view/shared/footer.php'; ?>
         </div>
     </body>

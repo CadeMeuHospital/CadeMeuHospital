@@ -96,24 +96,27 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
 
                     <style>
                         .Outline1{background:#25536b; width:297px; }
-                        .Outline1 #text{font-size: 28px; text-align: right; color: #c9e4d3; position:relative; top:20px; right:10px;}
-                        .Outline2{background:#25536b; width:297px; }
-                        body{font-family:Calibri, Tahoma, Arial}
+                        .Outline1 #text{font-size: 28px; text-align: right; color: #c9e4d3; position:relative; top:10px; right:10px;}
+                        .Outline2{background:#827ad0; width:297px; position:relative; top:20px;                      
+         }                        body{font-family:Calibri, Tahoma, Arial}
                         .TabControl{ width:297px; overflow:hidden; height:450px;}
-                        .TabControl #header{ width:100%; border: overflow:hidden; cursor:hand}
+                        .TabControl #header{ width:100%; border: overflow:hidden; cursor:hand;  }
                         .TabControl #content{ width:100%; border: solid 1px;overflow:hidden; height:100%; }
                         .TabControl .abas{display:inline;}
                         .TabControl .abas li{float:left}
-                        .aba{width:100px; height:30px; border:solid 1px; border-radius:5px 5px 0 0;
-                             text-align:center; padding-top:5px; background:#3A5FCD}
-                        .ativa{width:100px; height:30px; border:solid 1 px; border-radius:5px 5px 0 0;
-                               text-align:center; padding-top:5px; background:#27408B;}
+                        .aba{   
+                                width:50px; height:0px;           
+                        	border-bottom: 30px solid #E5DEE2;
+                                border-right: 50px solid transparent;               
+                        }
+                        .ativa{width:100px; height:30px;
+                               text-align:center; padding-top:5px;}
                         .ativa span,
                         .selected span{color:#fff}
                         .TabControl #content{background:#E5DEE2}
                         .TabControl .conteudo{width:100%; background:#E5DEE2;display:none; height:100%;color:#fff}
-                        .selected{width:100px; height:30px; border:solid 1 px; border-radius:5px 5px 0 0;
-                                  text-align:center; padding-top:5px; background:#E5DEE2}
+                        .selected{width:50px; height:0px;
+                                  text-align:center; padding-top:5px;}
                         }
                     </style>
 
@@ -153,12 +156,13 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                     
             <div class="Outline1">
                 <div id="text">Classificacao &nbsp <img src="../view/shared/img/cmhRankTitle.png" align="right" /></div>
-                    <div class="TabControl">
+                <div class="Outline2">  
+                <div class="TabControl">
                         <div id="header">
                             <ul class="abas">
                                 <li>
                                     <div class="aba">
-                                        <span>Geral</span>
+                                        <span style="position: relative; top: 80 px; left: 100 px;"> Geral</span>
                                     </div>
                                 </li>
 <!--                                <li>
@@ -206,6 +210,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                             <div class="conteudo"> Conteúdo da aba 4 </div>
                         </div>
                     </div>
+                </div>
             </div>
 
 

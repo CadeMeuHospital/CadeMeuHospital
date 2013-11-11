@@ -117,9 +117,17 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                         .TabControl .conteudo{width:100%; background:#E5DEE2;display:none; height:100%;color:#fff}
                         .selected{width:50px; height:0px;
                                   text-align:center; padding-top:5px;}
-                        .ubs{height:80px; border-style: solid; border-bottom-width: 1px; border-top-width: 0;
+                        .ubs{height: 80px; border-style: solid; border-bottom-width: 1px; border-top-width: 0;
 border-right-width: 0; border-left-width: 0; text-align:center; 
                         }
+                        .ubs #h1{color:#282828; text-justify:   text-align: left; font-size: 20px;}
+                        .ubs a:hover{color:#282828; 	text-decoration: none;}
+                        .ubs a:link{color:#282828; 	text-decoration: none;}
+                        .ubs a:visited{color:#282828; 	text-decoration: none;} 
+                        
+                        .star,
+                        .star a {background: url(../view/shared/img/cmhRankTitle.png) no-repeat 0 0px;}
+                        .star a { display: block; width: 100%; height: 100%; background-position: 0 0px; }
                         }
                     </style>
 
@@ -150,6 +158,8 @@ border-right-width: 0; border-left-width: 0; text-align:center;
                             $path = "../view/Profile.php?id=" . $idUBS . "";
                             $completePath = "<a href=" . $path . "> " . $nameUBS . " </a> - " . $average . "<br>";
                             array_push($topFiveArray, $completePath);
+                  
+                                         
                         }
                         echo '<br><br>';
                     } else {
@@ -192,9 +202,11 @@ border-right-width: 0; border-left-width: 0; text-align:center;
                             {
                             ?>
                                 <div class="ubs">
+                                    <div id= "h1">
                             <?php
                                 echo $topFiveArray[$i]."<br>";
                             ?>
+                                    </div>
                                 </div>
                             <?php
                             }

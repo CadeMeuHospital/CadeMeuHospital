@@ -86,6 +86,16 @@
                      for ($i = 1; $i < $currentPage+6; $i++) {
                         $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
 
+                        
+                        if($i == $quantityPage) {
+                            if($currentPage == $i) {
+                                echo "<strong>".($i)."</strong>";  // Write only the number of the page without any action
+                            } else {
+                                echo "<a href=" . $pathPage . "> " . ($i) . " </a>";
+                            }
+                            break;
+                        }
+                        
                         if($currentPage == $i) {
                             echo "<strong>".($i)."</strong> "; 
                         } else {

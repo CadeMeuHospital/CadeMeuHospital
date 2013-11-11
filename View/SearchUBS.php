@@ -58,31 +58,32 @@
                 if($currentPage >= 6) {
                     
                     for ($i = $currentPage-6; $i < $currentPage+5; $i++) {
-                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                         $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                         $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                         if($i == $currentPage-6) {
                             echo "<a href=" . $prevPage . ">  [<]  </a>"; 
                         }
-                        if($i == ($quantityPage-1)) {
+                        
+                        if($i == $quantityPage-1) {
                             if($currentPage == $i+1) {
-                                echo $i+1;  // Write only the number of the page without any action
+                                echo "<strong>".($i+1)."</strong>";  // Write only the number of the page without any action
                             } else {
                                 echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
                             }
-                        } else {
-                            if($currentPage == $i+1) {
-                                echo "<strong>".($i+1)."</strong> ";
-                            } else {
-                                echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
-                            }
+                            break;
                         }
-                       
+                        
+                        if($currentPage == $i+1) {
+                            echo "<strong>".($i+1)."</strong>";
+                        } else {
+                            echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
+                        }                                           
                     }
                     echo "<a href=" . $nextPage . ">  [>]  </a>";
                     
                 } else {
-                     for ($i = 1; $i < 6; $i++) {
+                     for ($i = 1; $i < 7; $i++) {
                         $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                         $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                         $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
@@ -90,18 +91,11 @@
                         if($i == 1) {
                             echo "<a href=" . $prevPage . ">  [<]  </a>"; 
                         }
-                        if($i == ($quantityPage-1)) {
-                            if($currentPage == $i) {
-                                echo "<strong>".($i)."</strong> "; // Write only the number of the page without any action
-                            } else {
-                                echo "<a href=" . $pathPage . "> " . ($i) . " </a>";
-                            }
+                        
+                        if($currentPage == $i) {
+                            echo "<strong>".($i)."</strong> "; 
                         } else {
-                            if($currentPage == $i) {
-                               echo "<strong>".($i)."</strong> ";
-                            } else {
-                                echo "<a href=" . $pathPage . "> " . ($i) . " </a>";
-                            }
+                            echo "<a href=" . $pathPage . "> " . ($i) . " </a>";
                         }
                     }
                     echo "<a href=" . $nextPage . ">  [>]  </a>";

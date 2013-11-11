@@ -8,7 +8,6 @@
         } else {
             document.getElementById('states').style.display = 'none';
             document.getElementById('search').style.display = 'block';
-            document.getElementById('search').value = '';
         }
     }
     function verifyUF(){

@@ -106,7 +106,7 @@ class ControllerProfileUBS {
     public function getDistanceBetweenTwoLatLon($from_lat, $from_lon, $to_lat, $to_lon) {
         return DistanceLatLon::compute_distance($from_lat, $from_lon, $to_lat, $to_lon);
     }
-
+    
 }
 
 ?>

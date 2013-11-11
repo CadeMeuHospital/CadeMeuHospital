@@ -5,7 +5,6 @@
         if(option==4){
             document.getElementById('states').style.display = 'block';
             document.getElementById('search').style.display = 'none';
-            document.getElementById('search').value = 'blank';
         } else {
             document.getElementById('states').style.display = 'none';
             document.getElementById('search').style.display = 'block';
@@ -32,7 +31,7 @@
                 <tr>
                     <td><label> Buscar UBS:</label></td>
                     <td id="states">
-                    <select id='optionUF' name="SearchUBSbyState">
+                        <select id='optionUF' name="SearchUBSbyState" onchange=" document.getElementById('search').value = (this.value);">
                         <option value="vazio">Selecione UF</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>

@@ -9,6 +9,27 @@
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>#prev{display:none;}</style>
+        
+        <style>#list{margin-left: 300px;margin-right: 300px; }</style>
+        
+        <style>#first-tr { border-top: 1px solid #000000;
+                   border-left: 1px solid #000000; 
+                   border-right: 1px solid #000000; 
+                   display: block; }</style>
+        <style>#second-tr { border-bottom: 1px solid #000000;
+                   border-left: 1px solid #000000; 
+                   border-right: 1px solid #000000; 
+                   display: block; }</style>
+        <style>#pagination{position:absolute;
+                    left:50%;
+                    width:300px;
+                    height:300px;
+                    margin-left:-150px;
+                    text-align:center; }
+        </style>
+        <style>#results{position:absolute;
+                    text-align:center; 
+                    border: 1;}</style>
         <title> Cadê Meu Hospital - Busca</title>
 
     </head>
@@ -33,10 +54,13 @@
             $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
             ?>
 
-            <div class="profile">
-
+            <div id="list">
+        
+            <table>
                 <?php
+                
                 $quantityUBS = count($arrayUBS);
+                echo "Sua pesquisa retornou ".$quantityUBS ." resultados.<br><br>"; 
                 $quantityPage = ceil($quantityUBS / 10);
                 $currentPage = $_GET['page'];
                 $page = $currentPage * 10;
@@ -45,12 +69,32 @@
 
                     if (isset($arrayUBS[$i])) {
                         $nameUBS = $arrayUBS[$i]->getNameUBS();
+                        $cityUBS = $arrayUBS[$i]->getDscCidade();
+                        $stateUBS = $controllerProfileUBS->takeState(($arrayUBS[$i]->getCodMunic()));
                         $idUBS = $arrayUBS[$i]->getIdUBS();
+                        $average = $controllerProfileUBS->takeAverageUBS($idUBS);
+                        
                         $path = "../view/Profile.php?id=" . $idUBS . "";
-                        echo "<a href=" . $path . "> " . $nameUBS . " </a><br>";
+                  
+                        echo "<tr id='first-tr'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
+                        echo "<td>".$cityUBS."-";
+                        echo $stateUBS[0]."</td></tr>";
+                        if($average[0] != null){
+                        echo "<tr id='second-tr'><td>Média das avaliações:</td><td>".$average[0]."</td></tr>";
+                        }else{
+                        echo "<tr id='second-tr'><td>UBS ainda não avaliada.</td></tr>";    
+                        }
+                        echo "<tr><td>&nbsp</td></tr>";
+                        
                     }
                 }
                 
+                ?>
+                </table>
+            </div>
+                <div id="pagination">
+                <?php
+                           
                 $firstPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=1&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                 $lastPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=".$quantityPage."&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                 $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
@@ -109,8 +153,8 @@
                 }
 
                 ?>
-
-            </div>
+                </div>
+        </div>
         </div>
         <br /><br /><br /><br /><br /><br /><br />
         <?php require '../view/shared/footer.php'; ?>

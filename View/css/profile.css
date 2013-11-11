@@ -18,7 +18,7 @@ div.profile #right {
 }
 
 div.profile #center {
-    align = "center";
+    text-align : center;
     float: center;
     margin: 0 auto;
 }

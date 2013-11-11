@@ -8,7 +8,7 @@
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
-
+        <style>#prev{display:none;}</style>
         <title> Cadê Meu Hospital - Busca</title>
 
     </head>
@@ -53,18 +53,20 @@
                 
                 $firstPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=1&BuscaUBS=".$buscaUBS."&searchType=".$value."";
                 $lastPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=".$quantityPage."&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                echo "<a href=" . $firstPage . ">  [<<]  </a>"; 
+                $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+               if($currentPage > 1){
+                   echo "<a href=" . $firstPage . ">  [<<]  </a>"; 
+                   echo "<a href=" . $prevPage . ">  [<]  </a>"; 
+               } else {
+                   //Nothing to do.
+               }
 
                 if($currentPage >= 6) {
                     
                     for ($i = $currentPage-6; $i < $currentPage+5; $i++) {
                         $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                        $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                        $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                        if($i == $currentPage-6) {
-                            echo "<a href=" . $prevPage . ">  [<]  </a>"; 
-                        }
-                        
+
                         if($i == $quantityPage-1) {
                             if($currentPage == $i+1) {
                                 echo "<strong>".($i+1)."</strong>";  // Write only the number of the page without any action
@@ -80,27 +82,21 @@
                             echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
                         }                                           
                     }
-                    echo "<a href=" . $nextPage . ">  [>]  </a>";
-                    
                 } else {
-                     for ($i = 1; $i < 7; $i++) {
+                     for ($i = 1; $i < $currentPage+6; $i++) {
                         $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                        $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                        $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
 
-                        if($i == 1) {
-                            echo "<a href=" . $prevPage . ">  [<]  </a>"; 
-                        }
-                        
                         if($currentPage == $i) {
                             echo "<strong>".($i)."</strong> "; 
                         } else {
                             echo "<a href=" . $pathPage . "> " . ($i) . " </a>";
                         }
                     }
-                    echo "<a href=" . $nextPage . ">  [>]  </a>";
                 }
-                echo "<a href=" . $lastPage . "> [>>] </a>";
+                if( $currentPage < $quantityPage ) {
+                    echo "<a href=" . $nextPage . ">  [>]  </a>";
+                    echo "<a href=" . $lastPage . "> [>>] </a>";
+                }
 
                 ?>
 

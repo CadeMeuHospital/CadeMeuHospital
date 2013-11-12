@@ -23,5 +23,10 @@ class ControllerUserTest extends PHPUnit_Framework_TestCase {
         $resultCity = $this->object-> takeCity("-10.91123700141880","-37.062077522277");
         $this->assertEquals("Aracaju",$resultCity);
     }
+    
+    public function testTakeCityWrongCity() {      
+        $resultCity = $this->object-> takeCity("-1054.911237001418804521","-5745.4562077522277");
+        $this->assertFalse($resultCity);
+    }
 
 }

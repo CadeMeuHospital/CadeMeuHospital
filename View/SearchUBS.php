@@ -69,10 +69,10 @@
                         echo "<tr id='first-tr'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
                         echo "<td>".$cityUBS."-";
                         echo $stateUBS[0]."</td></tr>";
-                        if($average[0] != null){
-                        echo "<tr id='second-tr'><td>Média das avaliações:</td><td>".$average[0]."</td></tr>";
+                        if($average[0] != 0){
+                            echo "<tr id='second-tr'><td>Média das avaliações:</td><td>".$average[0]."</td></tr>";
                         }else{
-                        echo "<tr id='second-tr'><td>UBS ainda não avaliada.</td></tr>";    
+                            echo "<tr id='second-tr'><td>UBS ainda não avaliada.</td></tr>";    
                         }
                         echo "<tr><td>&nbsp</td></tr>";
                         

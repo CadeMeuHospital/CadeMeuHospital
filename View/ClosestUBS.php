@@ -46,7 +46,7 @@
                 $userLat = $_REQUEST['lat'];
                 $userLon = $_REQUEST['lon'];
                 $userCity = $controllerUser->takeCity($userLat,$userLon );
-                $closestUBSs = $controllerProfileUBS->searchUBS($userCity, 2);
+                $closestUBSs = $controllerProfileUBS->searchUBS($userCity->getCity(), 2);
                 $menor = 20000;
                 for ($i = 0; $i < count($closestUBSs); $i++) {
                     $currentUBS = $closestUBSs[$i];

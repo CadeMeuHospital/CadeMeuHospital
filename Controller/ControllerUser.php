@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../Model/User.php'; 
+include_once '../Model/User.php'; 
 
 class ControllerUser {
     
@@ -19,7 +19,7 @@ class ControllerUser {
         return self::$instanceControllerUser;
     }
 
-    public function makeObejctUser ($city){
+    public function makeObjectUser ($city){
         $user = new User($city);    
         return $user;
     }

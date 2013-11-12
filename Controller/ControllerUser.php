@@ -19,7 +19,6 @@ class ControllerUser {
     
     public function takeCity($latUser, $lonUser) {
         $xml = simplexml_load_file("http://maps.google.com/maps/api/geocode/xml?address=".$latUser.",".$lonUser."&sensor=false");
-        var_dump($xml);
         $result = $xml->result;
         $vector_address = $result->address_component;
         

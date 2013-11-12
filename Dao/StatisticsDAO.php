@@ -36,11 +36,6 @@ class StatisticsDAO {
 
         return $return;
     }
-
-//    public function getQUantityOfUBSByState(){
-//        $sql = "SELECT FROM ";
-//        return ;
-//    }
     
 }
 

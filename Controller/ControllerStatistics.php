@@ -30,12 +30,6 @@ class ControllerStatistics {
         
         return $evaluatesUBS;
     }
-    
-//    public function searchQuantityOfUBSByState(){
-//        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
-//        $numberOfUBSByState = $statisticsDAO->getQUantityOfUBSByState();
-//        return $numberOfUBSByState;
-//    }
 }
 
 ?>

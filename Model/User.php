@@ -5,11 +5,15 @@ class User {
     private $city;
     
     function __construct($city) {
-        $this->city = $city;
+        $this->setCity($city);
     }
     public function getCity() {
         return $this->city;
     }
+    public function setCity($city) {
+        $this->city = $city;
+    }
+
 
 
 }

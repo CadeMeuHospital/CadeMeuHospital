@@ -22,9 +22,11 @@ class UserTest extends PHPUnit_Framework_TestCase {
         unset($this->user);
     }
     
-    public function testgetCity() {
+    public function testGetCity() {
         $resultEquals = $this->user->getCity();
         $this->assertEquals("Aracaju", $resultEquals);
     }
+    
+    
 }
 ?>

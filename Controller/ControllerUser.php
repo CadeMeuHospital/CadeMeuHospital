@@ -33,7 +33,8 @@ class ControllerUser {
             if ($vector_address[$i]->type == "locality") {
                 //-15.658971399999999,-47.8080235
                 $city = $vector_address[$i]->long_name;
-                return $city;        
+                $user = self::$instanceControllerUser->makeObjectUser($city);                
+                return $user;        
             }
         } 
         return false;        

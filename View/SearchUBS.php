@@ -9,9 +9,7 @@
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>#prev{display:none;}</style>
-        
         <style>#list{margin-left: 300px;margin-right: 300px; }</style>
-        
         <style>#first-tr { border-top: 1px solid #000000;
                    border-left: 1px solid #000000; 
                    border-right: 1px solid #000000; 
@@ -25,9 +23,7 @@
                     text-align:center; 
                     border: 1;}</style>
         <title> Cadê Meu Hospital - Busca</title>
-
     </head>
-
 <body>
 
     <div class="root">

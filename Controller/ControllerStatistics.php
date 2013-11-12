@@ -13,8 +13,6 @@ class ControllerStatistics {
     public static function getInstanceControllerStatistics() {
         if (!isset(self::$instanceControllerStatistics)) {
             self::$instanceControllerStatistics = new ControllerStatistics();
-        } else {
-            //No action
         }
         return self::$instanceControllerStatistics;
     }
@@ -32,6 +30,12 @@ class ControllerStatistics {
         
         return $evaluatesUBS;
     }
+    
+//    public function searchQuantityOfUBSByState(){
+//        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
+//        $numberOfUBSByState = $statisticsDAO->getQUantityOfUBSByState();
+//        return $numberOfUBSByState;
+//    }
 }
 
 ?>

@@ -13,13 +13,23 @@
     <body align="center">
         <div class="root">
             <?php
-            require '../view/shared/header.php';
-            require '../view/shared/navigation_bar.php';
-            require '../Controller/ControllerStatistics.php';
+                require '../view/shared/header.php';
+                require '../view/shared/navigation_bar.php';
+                require '../Controller/ControllerStatistics.php';
+                require '../Controller/ControllerProfileUBS.php';
 
-            $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
-
-            $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
+                $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
+                $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+                $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
+                $arrayStates = ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA",
+                                "MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN",
+                                "RS","RO","RR","SC","SP","SE","TO"];//MELHORAR ISSO FUTURAMENTE!!
+                
+                $numberOfUBSByState = array();
+                for($i = 0; $i < count($arrayStates); $i++){
+                    $arrayUBS = $controllerProfileUBS->searchUBS($arrayStates[$i], 4);
+                    array_push($numberOfUBSByState, count($arrayUBS));
+                }
             ?>
 
             <div id="center">
@@ -82,7 +92,6 @@
                         }
                     </script>
 
-
                     <script>
 
                         google.load('visualization', '1', {packages: ['geochart']});
@@ -91,88 +100,88 @@
                             data.addRows(28);
 
                             data.addColumn('string', 'Country');
-                            data.addColumn('number', 'Media');
+                            data.addColumn('number', '#UBS');
 
-                            data.setValue(0, 0, 'Alagoas');
-                            data.setValue(0, 1, 100);
+                            data.setValue(0, 0, 'Acre');
+                            data.setValue(0, 1, <?php echo $numberOfUBSByState[0]; ?>);
 
-                            data.setValue(1, 0, 'Amapa');
-                            data.setValue(1, 1, 100);
+                            data.setValue(1, 0, 'Alagoas');
+                            data.setValue(1, 1, <?php echo $numberOfUBSByState[1]; ?>);
 
-                            data.setValue(2, 0, 'Acre');
-                            data.setValue(2, 1, 100);
+                            data.setValue(2, 0, 'Amapá');
+                            data.setValue(2, 1, <?php echo $numberOfUBSByState[2]; ?>);
 
                             data.setValue(3, 0, 'Amazonas');
-                            data.setValue(3, 1, 100);
+                            data.setValue(3, 1, <?php echo $numberOfUBSByState[3]; ?>);
 
                             data.setValue(4, 0, 'Bahia');
-                            data.setValue(4, 1, 100);
+                            data.setValue(4, 1, <?php echo $numberOfUBSByState[4]; ?>);
 
-                            data.setValue(5, 0, 'Ceara');
-                            data.setValue(5, 1, 100);
+                            data.setValue(5, 0, 'Ceará');
+                            data.setValue(5, 1, <?php echo $numberOfUBSByState[5]; ?>);
 
                             data.setValue(6, 0, 'Distrito Federal');
-                            data.setValue(6, 1, 600);
+                            data.setValue(6, 1, <?php echo $numberOfUBSByState[6]; ?>);
 
-                            data.setValue(7, 0, 'Espirito Santo');
-                            data.setValue(7, 1, 100);
+                            data.setValue(7, 0, 'Espírito Santo');
+                            data.setValue(7, 1, <?php echo $numberOfUBSByState[7]; ?>);
 
                             data.setValue(8, 0, 'Goias');
-                            data.setValue(8, 1, 100);
+                            data.setValue(8, 1, <?php echo $numberOfUBSByState[8]; ?>);
 
-                            data.setValue(9, 0, 'Maranhao');
-                            data.setValue(9, 1, 100);
+                            data.setValue(9, 0, 'Maranhão');
+                            data.setValue(9, 1, <?php echo $numberOfUBSByState[9]; ?>);
 
-                            data.setValue(10, 0, 'Minas Gerais');
-                            data.setValue(10, 1, 100);
+                            data.setValue(10, 0, 'Mato Grosso');
+                            data.setValue(10, 1, <?php echo $numberOfUBSByState[10]; ?>);
 
-                            data.setValue(11, 0, 'Mato Grosso');
-                            data.setValue(11, 1, 100);
+                            data.setValue(11, 0, 'Mato Grosso do Sul');
+                            data.setValue(11, 1, <?php echo $numberOfUBSByState[11]; ?>);
 
-                            data.setValue(12, 0, 'Mato Grosso do Sul');
-                            data.setValue(12, 1, 100);
+                            data.setValue(12, 0, 'Minas Gerais');
+                            data.setValue(12, 1, <?php echo $numberOfUBSByState[12]; ?>);
                             
-                            data.setValue(13, 0, 'Parana');
-                            data.setValue(13, 1, 100);
+                            data.setValue(13, 0, 'Pará');
+                            data.setValue(13, 1, <?php echo $numberOfUBSByState[13]; ?>);
 
-                            data.setValue(14, 0, 'Pernambuco');
-                            data.setValue(14, 1, 100);
+                            data.setValue(14, 0, 'Paraíba');
+                            data.setValue(14, 1, <?php echo $numberOfUBSByState[14]; ?>);
 
-                            data.setValue(15, 0, 'Piaui');
-                            data.setValue(15, 1, 100);
+                            data.setValue(15, 0, 'Paraná');
+                            data.setValue(15, 1, <?php echo $numberOfUBSByState[15]; ?>);
 
-                            data.setValue(16, 0, 'Para');
-                            data.setValue(16, 1, 100);
+                            data.setValue(16, 0, 'Pernambuco');
+                            data.setValue(16, 1, <?php echo $numberOfUBSByState[16]; ?>);
 
-                            data.setValue(17, 0, 'Paraiba');
-                            data.setValue(17, 1, 100);
+                            data.setValue(17, 0, 'Piaui');
+                            data.setValue(17, 1, <?php echo $numberOfUBSByState[17]; ?>);
 
-                            data.setValue(18, 0, 'Roraima');
-                            data.setValue(18, 1, 100);
+                            data.setValue(18, 0, 'Rio de Janeiro');
+                            data.setValue(18, 1, <?php echo $numberOfUBSByState[18]; ?>);
 
-                            data.setValue(19, 0, 'Rondonia');
-                            data.setValue(19, 1, 100);
+                            data.setValue(19, 0, 'Rio Grande do Norte');
+                            data.setValue(19, 1, <?php echo $numberOfUBSByState[19]; ?>);
 
-                            data.setValue(20, 0, 'Rio de Janeiro');
-                            data.setValue(20, 1, 100);
+                            data.setValue(20, 0, 'Rio Grande do Sul');
+                            data.setValue(20, 1, <?php echo $numberOfUBSByState[20]; ?>);
                             
-                            data.setValue(21, 0, 'Rio Grande do Sul');
-                            data.setValue(21, 1, 500);
+                            data.setValue(21, 0, 'Rondônia');
+                            data.setValue(21, 1, <?php echo $numberOfUBSByState[21]; ?>);
 
-                            data.setValue(22, 0, 'Rio Grande do Norte');
-                            data.setValue(22, 1, 300);
+                            data.setValue(22, 0, 'Roraima');
+                            data.setValue(22, 1, <?php echo $numberOfUBSByState[22]; ?>);
 
-                            data.setValue(23, 0, 'Sao Paulo');
-                            data.setValue(23, 1, 100);
+                            data.setValue(23, 0, 'Santa Catarina');
+                            data.setValue(23, 1, <?php echo $numberOfUBSByState[23]; ?>);
 
-                            data.setValue(24, 0, 'Santa Catarina');
-                            data.setValue(24, 1, 100);
+                            data.setValue(24, 0, 'São Paulo');
+                            data.setValue(24, 1, <?php echo $numberOfUBSByState[24]; ?>);
 
                             data.setValue(25, 0, 'Sergipe');
-                            data.setValue(25, 1, 100);
+                            data.setValue(25, 1, <?php echo $numberOfUBSByState[25]; ?>);
 
                             data.setValue(26, 0, 'Tocantins');
-                            data.setValue(26, 1, 100);
+                            data.setValue(26, 1, <?php echo $numberOfUBSByState[26]; ?>);
 
                             var options = {};
                             options['region'] = 'BR';

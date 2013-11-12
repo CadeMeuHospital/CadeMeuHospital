@@ -20,13 +20,7 @@
                    border-left: 1px solid #000000; 
                    border-right: 1px solid #000000; 
                    display: block; }</style>
-        <style>#pagination{position:absolute;
-                    left:50%;
-                    width:300px;
-                    height:300px;
-                    margin-left:-150px;
-                    text-align:center; }
-        </style>
+        <style>#pagination{text-align:center; } </style>
         <style>#results{position:absolute;
                     text-align:center; 
                     border: 1;}</style>
@@ -94,11 +88,11 @@
             </div>
                 <div id="pagination">
                 <?php
-                           
-                $firstPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=1&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                $lastPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=".$quantityPage."&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
-                $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                $buscaUBSEncode = urlencode($buscaUBS);
+                $firstPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=1&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
+                $lastPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=".$quantityPage."&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
+                $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
+                $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
                if($currentPage > 1){
                    echo "<a href=" . $firstPage . ">  [<<]  </a>"; 
                    echo "<a href=" . $prevPage . ">  [<]  </a>"; 
@@ -109,7 +103,7 @@
                 if($currentPage >= 6) {
                     
                     for ($i = $currentPage-6; $i < $currentPage+5; $i++) {
-                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
 
                         if($i == $quantityPage-1) {
                             if($currentPage == $i+1) {
@@ -128,7 +122,7 @@
                     }
                 } else {
                      for ($i = 1; $i < $currentPage+6; $i++) {
-                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i) . "&BuscaUBS=".$buscaUBS."&searchType=".$value."";
+                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i) . "&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
 
                         
                         if($i == $quantityPage) {
@@ -153,7 +147,9 @@
                 }
 
                 ?>
+                        
                 </div>
+            
         </div>
         </div>
         <br /><br /><br /><br /><br /><br /><br />

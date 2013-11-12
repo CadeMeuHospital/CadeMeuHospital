@@ -18,6 +18,10 @@ class UserTest extends PHPUnit_Framework_TestCase {
         $this->tearDownUser();
     }
     
+    protected function tearDownUser() {
+        unset($this->user);
+    }
+    
     public function testgetCity() {
         $resultEquals = $this->user->getCity();
         $this->assertEquals("Aracaju", $resultEquals);

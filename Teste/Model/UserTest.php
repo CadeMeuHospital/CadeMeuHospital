@@ -25,8 +25,6 @@ class UserTest extends PHPUnit_Framework_TestCase {
     public function testGetCity() {
         $resultEquals = $this->user->getCity();
         $this->assertEquals("Aracaju", $resultEquals);
-    }
-    
-    
+    }   
 }
 ?>

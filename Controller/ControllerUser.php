@@ -1,8 +1,11 @@
 <?php
+
+require_once dirname(__FILE__) . '/../../Model/User.php'; 
+
 class ControllerUser {
     
     private static $instanceControllerUser;
-
+            
     private function __construct() {
         
     }
@@ -16,6 +19,10 @@ class ControllerUser {
         return self::$instanceControllerUser;
     }
 
+    public function makeObejctUser ($city){
+        $user = new User($city);    
+        return $user;
+    }
     
     public function takeCity($latUser, $lonUser) {
         $xml = simplexml_load_file("http://maps.google.com/maps/api/geocode/xml?address=".$latUser.",".$lonUser."&sensor=false");

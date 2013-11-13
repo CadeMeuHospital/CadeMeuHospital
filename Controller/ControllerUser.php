@@ -5,7 +5,8 @@ include_once '../Model/User.php';
 class ControllerUser {
     
     private static $instanceControllerUser;
-            
+    protected $objectUser;            
+    
     private function __construct() {
         
     }

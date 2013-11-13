@@ -19,39 +19,10 @@
 
             $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
             $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
-//                $statisticsOfQuantityAverage = $controllerStatistics->generateStatisticsOfQuantityAverage();
-//                $numberOfUBSByState = $statisticsOfQuantityAverage[0];
-//                $averageOfUBSByState = $statisticsOfQuantityAverage[1];
-            $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-            $arrayStates = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
-                "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
-                "RS", "RO", "RR", "SC", "SP", "SE", "TO"]; //MELHORAR ISSO FUTURAMENTE!!
+            $statisticsOfQuantityAverage = $controllerStatistics->generateStatisticsOfQuantityAverage();
+            $numberOfUBSByState = $statisticsOfQuantityAverage[0];
+            $averageOfUBSByState = $statisticsOfQuantityAverage[1];
 
-            $numberOfUBSByState = array();
-            $averageOfUBSByState = array();
-            for ($i = 0; $i < count($arrayStates); $i++) {
-                $arrayUBS = $controllerProfileUBS->searchUBS($arrayStates[$i], 4);
-                $quantityOfUBSByState = count($arrayUBS);
-                $soma = array();
-                $quantityOfValidUBSByState = 0;
-
-                for ($j = 0; $j < $quantityOfUBSByState; $j++) {
-                    $ubs = $arrayUBS[$j];
-                    $average = $ubs->getAverage();
-                    if ($average != 0) {
-                        $quantityOfValidUBSByState++;
-                        array_push($soma, $average);
-                    }
-                }
-
-                if ($quantityOfValidUBSByState == 0) {
-                    $quantityOfValidUBSByState = 1;
-                }
-
-                $averageByState = array_sum($soma) / $quantityOfValidUBSByState;
-                array_push($numberOfUBSByState, $quantityOfUBSByState);
-                array_push($averageOfUBSByState, $averageByState);
-            }
             ?>
 
             <div id="center">

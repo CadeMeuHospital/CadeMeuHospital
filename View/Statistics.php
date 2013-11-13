@@ -56,18 +56,11 @@
                 <div class="content">
 
                     <script type="text/javascript">
-                        // Load the Visualization API and the controls package.
                         google.load('visualization', '1.0', {'packages': ['controls']});
-
-                        // Set a callback to run when the Google Visualization API is loaded.
                         google.setOnLoadCallback(drawDashboard);
 
-                        // Callback that creates and populates a data table,
-                        // instantiates a dashboard, a range slider and a pie chart,
-                        // passes in the data and draws it.
                         function drawDashboard() {
 
-                            // Create our data table.
                             var data = google.visualization.arrayToDataTable([
                                 ['Nota', 'Percentual'],
                                 ['Ruim', <?php echo $arrayStatistics[0]; ?>],
@@ -77,11 +70,8 @@
                                 ['Excelente', <?php echo $arrayStatistics[4]; ?>],
                             ]);
 
-                            // Create a dashboard.
-                            var dashboard = new google.visualization.Dashboard(
-                                    document.getElementById('dashboard_div'));
+                            var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
 
-                            // Create a range slider, passing some options
                             var donutRangeSlider = new google.visualization.ControlWrapper({
                                 'controlType': 'NumberRangeFilter',
                                 'containerId': 'filter_div',
@@ -90,24 +80,18 @@
                                 }
                             });
 
-                            // Create a pie chart, passing some options
                             var pieChart = new google.visualization.ChartWrapper({
                                 'chartType': 'PieChart',
                                 'containerId': 'chart_div',
                                 'options': {
-                                    'width': 300,
-                                    'height': 300,
+                                    'width': 500,
+                                    'height': 500,
                                     'pieSliceText': 'value',
                                     'legend': 'right'
                                 }
                             });
-
-                            // Establish dependencies, declaring that 'filter' drives 'pieChart',
-                            // so that the pie chart will only display entries that are let through
-                            // given the chosen slider range.
+                            
                             dashboard.bind(donutRangeSlider, pieChart);
-
-                            // Draw the dashboard.
                             dashboard.draw(data);
                         }
                     </script>
@@ -234,13 +218,12 @@
                             var options = {};
                             options['region'] = 'BR';
                             options['resolution'] = 'provinces';
-                            options['width'] = 556;
-                            options['height'] = 347;
+                            options['width'] = 800;
+                            options['height'] = 800;
                             options['colorAxis'] = {colors: ['#E5DEE2', '#990000']};
 
 
-                            var geochart = new google.visualization.GeoChart(
-                                    document.getElementById('visualization'));
+                            var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
                             geochart.draw(data, options);
                         }
 

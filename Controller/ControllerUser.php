@@ -20,8 +20,9 @@ class ControllerUser {
         return self::$instanceControllerUser;
     }
 
-    public function makeObjectUser ($city){
-        $user = new User($city);    
+    public function makeObjectUser ($latUser,$lonUser){
+        $city = self::$instanceControllerUser->takeCity($latUser,$lonUser);
+        $user = new User($latUser,$lonUser,$city);    
         return $user;
     }
     
@@ -33,9 +34,7 @@ class ControllerUser {
         for ($i = 0; $i < sizeof($vector_address); $i++) {
             if ($vector_address[$i]->type == "locality") {
                 //-15.658971399999999,-47.8080235
-                $city = $vector_address[$i]->long_name;
-                $user = self::$instanceControllerUser->makeObjectUser($city);                
-                return $user;        
+                return $vector_address[$i]->long_name;
             }
         } 
         return false;        

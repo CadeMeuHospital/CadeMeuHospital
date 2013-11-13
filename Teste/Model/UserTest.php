@@ -11,7 +11,7 @@ class UserTest extends PHPUnit_Framework_TestCase {
     }
     
     protected function setUpUser(){
-        $this->user = new User("Aracaju");
+        $this->user = new User("-10.91123700141880","-37.062077522277","Aracaju");
     }
     
     protected function tearDown(){
@@ -23,8 +23,18 @@ class UserTest extends PHPUnit_Framework_TestCase {
     }
     
     public function testGetCity() {
-        $resultEquals = $this->user->getCity();
-        $this->assertEquals("Aracaju", $resultEquals);
+        $resultCity = $this->user->getCity();
+        $this->assertEquals("Aracaju", $resultCity);
+    }   
+    
+    public function testGetLatitude() {
+        $resultLatitude = $this->user->getLatitude();
+        $this->assertEquals("-10.91123700141880", $resultLatitude);
+    }   
+    
+    public function testGetLongitude() {
+        $resultLongitude = $this->user->getLongitude();
+        $this->assertEquals("-37.062077522277", $resultLongitude);
     }   
 }
 ?>

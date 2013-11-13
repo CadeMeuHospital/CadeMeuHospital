@@ -1,6 +1,7 @@
 <?php
 
 include_once dirname(__FILE__) . '/../../Controller/ControllerUser.php';
+include_once dirname(__FILE__) . '/../../Model/User.php';
 
 class ControllerUserTest extends PHPUnit_Framework_TestCase {
 
@@ -11,6 +12,7 @@ class ControllerUserTest extends PHPUnit_Framework_TestCase {
     
     protected function setUp() {
         $this->setupControllerUser();
+        $this->setUpObjectUser();
     }
 
     protected function setUpControllerUser() {
@@ -18,7 +20,7 @@ class ControllerUserTest extends PHPUnit_Framework_TestCase {
     }
     
     protected function setUpObjectUser() {
-        $this->objectUser = $this->controllerUser->makeObjectUser("Aracaju");
+        $this->objectUser = $this->controllerUser->makeObjectUser("-10.91123700141880","-37.062077522277");
     }
     
     protected function tearDownControllerUser() {
@@ -26,13 +28,13 @@ class ControllerUserTest extends PHPUnit_Framework_TestCase {
     }
  
     public function testTakeCity() {      
-        $resultUser = $this->controllerUser->takeCity("-10.91123700141880","-37.062077522277");
-        $this->assertEquals("Aracaju",$resultUser->getCity());
+        $resultCity = $this->objectUser->getCity();
+        $this->assertEquals("Aracaju",$resultCity);
     }
     
     public function testTakeCityWrongCity() {      
-        $resultUser= $this->controllerUser->takeCity("-1054.911237001418804521","-5745.4562077522277");
-        $this->assertFalse($resultUser);
+        $result= $this->controllerUser->takeCity("-1054.911237001418804521","-5745.4562077522277");
+        $this->assertFalse($result);
     }
     
     

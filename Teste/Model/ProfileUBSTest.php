@@ -11,7 +11,7 @@ class ProfileUBSTest extends PHPUnit_Framework_TestCase {
     }
 
     protected function setUpProfileUBS() {
-        $this->profileUBS = new profileUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom");
+        $this->profileUBS = new profileUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom", 1);
     }
     
     protected function tearDown(){
@@ -77,6 +77,10 @@ class ProfileUBSTest extends PHPUnit_Framework_TestCase {
     public function testGetDescMedicine(){
         $resultEquals = $this->profileUBS->getDescMedicine();
         $this->assertEquals("bom", $resultEquals);
+    }
+    public function testGetAvarageUBS(){
+        $resultEquals = $this->profileUBS->getAverage();
+        $this->assertEquals(1, $resultEquals);
     }
 }
 

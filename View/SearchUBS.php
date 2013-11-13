@@ -10,8 +10,6 @@
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>#prev{display:none;}</style>
         
-        <style>#list{margin-left: 300px;margin-right: 300px; }</style>
-        
         <style>#first-tr { border-top: 1px solid #000000;
                    border-left: 1px solid #000000; 
                    border-right: 1px solid #000000; 
@@ -20,10 +18,16 @@
                    border-left: 1px solid #000000; 
                    border-right: 1px solid #000000; 
                    display: block; }</style>
-        <style>#pagination{text-align:center; } </style>
-        <style>#results{position:absolute;
-                    text-align:center; 
-                    border: 1;}</style>
+        <style>#pagination{text-align:center;}</style>
+        
+        <style>.center {
+                        margin:auto;
+                        width:70%;
+                        min-height: 300px;
+                        padding-top: 20px;
+                        } 
+        </style>
+        
         <title> Cadê Meu Hospital - Busca</title>
 
     </head>
@@ -35,7 +39,7 @@
         <?php require '../view/shared/header.php'; ?>
         <?php require '../view/shared/navigation_bar.php'; ?>
 
-        <div class="content"> 
+            <div class="center">
 
             <?php
            
@@ -48,8 +52,6 @@
             $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
             ?>
 
-            <div id="list">
-        
             <table>
                 <?php
                 
@@ -86,7 +88,7 @@
                 ?>
                 </table>
             </div>
-                <div id="pagination">
+            <div id="pagination">
                 <?php
                 $buscaUBSEncode = urlencode($buscaUBS);
                 $firstPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=1&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
@@ -148,10 +150,7 @@
 
                 ?>
                         
-                </div>
-            
-        </div>
-        </div>
+            </div>
         <br /><br /><br /><br /><br /><br /><br />
         <?php require '../view/shared/footer.php'; ?>
     </div>

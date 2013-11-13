@@ -28,7 +28,7 @@
 
             $idUBS = $_REQUEST['id'];
             $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-            $average = $controllerProfileUBS->takeAverageUBS($idUBS);
+            //$average = $controllerProfileUBS->takeAverageUBS($idUBS);
             $profileUBS = $controllerProfileUBS->returnUBS($idUBS);
 
             $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
@@ -92,7 +92,7 @@
                         </tr>
                         <tr>
                             <th>Média das avaliações:</th>
-                            <td class="align-left"><?php echo $average[0]; ?></td>
+                            <td class="align-left"><?php echo $profileUBS->getAverage(); ?></td>
                         </tr>
                     </table>
                     <br />

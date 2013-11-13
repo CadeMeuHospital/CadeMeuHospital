@@ -100,11 +100,6 @@ class ControllerProfileUBS {
         $profileUBSDAO = new ProfileUBSDAO();
         return $profileUBSDAO->saveEvaluationUBS($evaluate, $idUBS);
     }
-
-//    public function takeAverageUBS($idUBS) {
-//        $profileUBSDAO = new ProfileUBSDAO();
-//        return $profileUBSDAO->takeAverageUBS($idUBS);
-//    }
     
     public function getDistanceBetweenTwoLatLon($from_lat, $from_lon, $to_lat, $to_lon) {
         return DistanceLatLon::compute_distance($from_lat, $from_lon, $to_lat, $to_lon);

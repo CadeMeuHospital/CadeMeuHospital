@@ -119,10 +119,10 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
 
     /* Method TakeAverageUBS suit test case */
 
-    public function testTakeAverageUBSNotNull() {
-        $resultNotNull = $this->controllerProfileUBS->takeAverageUBS(1);
-        $this->assertNotNull($resultNotNull);
-    }
+//    public function testTakeAverageUBSNotNull() {
+//        $resultNotNull = $this->controllerProfileUBS->takeAverageUBS(1);
+//        $this->assertNotNull($resultNotNull);
+//    }
     
     public function testGetDistanceBetweenTwoLatLon() {
         $distance = $this->controllerProfileUBS->getDistanceBetweenTwoLatLon("-15.780147999999999","-47.92917","-10.91123700141880","-37.062077522277");

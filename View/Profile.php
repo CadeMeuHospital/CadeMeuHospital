@@ -28,7 +28,7 @@
 
             $idUBS = $_REQUEST['id'];
             $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-            $average = $controllerProfileUBS->takeAverageUBS($idUBS);
+            //$average = $controllerProfileUBS->takeAverageUBS($idUBS);
             $profileUBS = $controllerProfileUBS->returnUBS($idUBS);
 
             $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
@@ -92,7 +92,7 @@
                         </tr>
                         <tr>
                             <th>Média das avaliações:</th>
-                            <td class="align-left"><?php echo $average[0]; ?></td>
+                            <td class="align-left"><?php echo $profileUBS->getAverage(); ?></td>
                         </tr>
                     </table>
                     <br />
@@ -141,18 +141,11 @@
                     </form>
 
                     <script type="text/javascript">
-                        // Load the Visualization API and the controls package.
                         google.load('visualization', '1.0', {'packages': ['controls']});
-
-                        // Set a callback to run when the Google Visualization API is loaded.
                         google.setOnLoadCallback(drawDashboard);
 
-                        // Callback that creates and populates a data table,
-                        // instantiates a dashboard, a range slider and a pie chart,
-                        // passes in the data and draws it.
                         function drawDashboard() {
 
-                            //Create our data table.
                             var data = google.visualization.arrayToDataTable([
                                 ['Nota', 'Percentual'],
                                 ['Ruim', <?php echo $evaluatesUBS[0]; ?>],
@@ -161,19 +154,10 @@
                                 ['Muito bom', <?php echo $evaluatesUBS[3]; ?>],
                                 ['Excelente', <?php echo $evaluatesUBS[4]; ?>]
                             ]);
-//                            var data = google.visualization.arrayToDataTable([
-//                                ['Nota', 'Percentual'],
-//                                ['Ruim', 2],
-//                                ['Regular', 3],
-//                                ['Bom', 3],
-//                                ['Muito bom', 3],
-//                                ['Excelente', 2]
-//                            ]);
-                            // Create a dashboard.
-                            var dashboard = new google.visualization.Dashboard(
-                                    document.getElementById('dashboard_div'));
 
-                            // Create a range slider, passing some options
+                            var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
+
+
                             var donutRangeSlider = new google.visualization.ControlWrapper({
                                 'controlType': 'NumberRangeFilter',
                                 'containerId': 'filter_div',
@@ -187,23 +171,17 @@
                                 'chartType': 'PieChart',
                                 'containerId': 'chart_div',
                                 'options': {
-                                    'width': 300,
-                                    'height': 300,
+                                    'width': 500,
+                                    'height': 500,
                                     'pieSliceText': 'value',
                                     'legend': 'right'
                                 }
                             });
 
-                            // Establish dependencies, declaring that 'filter' drives 'pieChart',
-                            // so that the pie chart will only display entries that are let through
-                            // given the chosen slider range.
                             dashboard.bind(donutRangeSlider, pieChart);
-
-                            // Draw the dashboard.
                             dashboard.draw(data);
                         }
                     </script>
-
 
                 </div>
                 <!--Div that will hold the dashboard-->
@@ -212,8 +190,6 @@
                     <div id="filter_div"></div>
                     <div id="chart_div"></div>
                 </div>
-
-                <br><br><br><br>
 
                 <h2>Mapa</h2>
                 <div id="mapholder" ></div>

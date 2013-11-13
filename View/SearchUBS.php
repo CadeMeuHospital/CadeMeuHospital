@@ -9,7 +9,7 @@
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>#prev{display:none;}</style>
-        
+        <style>#list{margin-left: 300px;margin-right: 300px; }</style>
         <style>#first-tr { border-top: 1px solid #000000;
                    border-left: 1px solid #000000; 
                    border-right: 1px solid #000000; 
@@ -29,9 +29,7 @@
         </style>
         
         <title> Cadê Meu Hospital - Busca</title>
-
     </head>
-
 <body>
 
     <div class="root">
@@ -68,17 +66,17 @@
                         $cityUBS = $arrayUBS[$i]->getDscCidade();
                         $stateUBS = $controllerProfileUBS->takeState(($arrayUBS[$i]->getCodMunic()));
                         $idUBS = $arrayUBS[$i]->getIdUBS();
-                        $average = $controllerProfileUBS->takeAverageUBS($idUBS);
+                        //$average = $controllerProfileUBS->takeAverageUBS($idUBS);
                         
                         $path = "../view/Profile.php?id=" . $idUBS . "";
                   
                         echo "<tr id='first-tr'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
                         echo "<td>".$cityUBS."-";
                         echo $stateUBS[0]."</td></tr>";
-                        if($average[0] != null){
-                        echo "<tr id='second-tr'><td>Média das avaliações:</td><td>".$average[0]."</td></tr>";
+                        if($arrayUBS[$i]->getAverage() != 0){
+                            echo "<tr id='second-tr'><td>Média das avaliações:</td><td>".$arrayUBS[$i]->getAverage()."</td></tr>";
                         }else{
-                        echo "<tr id='second-tr'><td>UBS ainda não avaliada.</td></tr>";    
+                            echo "<tr id='second-tr'><td>UBS ainda não avaliada.</td></tr>";    
                         }
                         echo "<tr><td>&nbsp</td></tr>";
                         

@@ -13,43 +13,45 @@
     <body align="center">
         <div class="root">
             <?php
-                require '../view/shared/header.php';
-                require '../view/shared/navigation_bar.php';
-                require '../Controller/ControllerStatistics.php';
-                require '../Controller/ControllerProfileUBS.php';
+            require '../view/shared/header.php';
+            require '../view/shared/navigation_bar.php';
+            require '../Controller/ControllerStatistics.php';
 
-                $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
-                $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-                $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
-                $arrayStates = ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA",
-                                "MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN",
-                                "RS","RO","RR","SC","SP","SE","TO"];//MELHORAR ISSO FUTURAMENTE!!
-                
-                $numberOfUBSByState = array();
-                $averageOfUBSByState = array();
-                for($i = 0; $i < count($arrayStates); $i++){
-                    $arrayUBS = $controllerProfileUBS->searchUBS($arrayStates[$i], 4);
-                    $quantityOfUBSByState = count($arrayUBS);
-                    $soma = array();
-                    $quantityOfValidUBSByState = 0;
-                    
-                    for($j = 0; $j < $quantityOfUBSByState; $j++){
-                        $ubs = $arrayUBS[$j];    
-                        $average = $ubs->getAverage();
-                        if($average != 0){   
-                            $quantityOfValidUBSByState++;
-                            array_push($soma, $average); 
-                        }
+            $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
+            $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
+//                $statisticsOfQuantityAverage = $controllerStatistics->generateStatisticsOfQuantityAverage();
+//                $numberOfUBSByState = $statisticsOfQuantityAverage[0];
+//                $averageOfUBSByState = $statisticsOfQuantityAverage[1];
+            $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+            $arrayStates = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
+                "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
+                "RS", "RO", "RR", "SC", "SP", "SE", "TO"]; //MELHORAR ISSO FUTURAMENTE!!
+
+            $numberOfUBSByState = array();
+            $averageOfUBSByState = array();
+            for ($i = 0; $i < count($arrayStates); $i++) {
+                $arrayUBS = $controllerProfileUBS->searchUBS($arrayStates[$i], 4);
+                $quantityOfUBSByState = count($arrayUBS);
+                $soma = array();
+                $quantityOfValidUBSByState = 0;
+
+                for ($j = 0; $j < $quantityOfUBSByState; $j++) {
+                    $ubs = $arrayUBS[$j];
+                    $average = $ubs->getAverage();
+                    if ($average != 0) {
+                        $quantityOfValidUBSByState++;
+                        array_push($soma, $average);
                     }
-                    
-                    if($quantityOfValidUBSByState == 0){
-                       $quantityOfValidUBSByState = 1; 
-                    }
-                    
-                    $averageByState = array_sum($soma) / $quantityOfValidUBSByState;
-                    array_push($numberOfUBSByState, $quantityOfUBSByState);
-                    array_push($averageOfUBSByState, $averageByState);
                 }
+
+                if ($quantityOfValidUBSByState == 0) {
+                    $quantityOfValidUBSByState = 1;
+                }
+
+                $averageByState = array_sum($soma) / $quantityOfValidUBSByState;
+                array_push($numberOfUBSByState, $quantityOfUBSByState);
+                array_push($averageOfUBSByState, $averageByState);
+            }
             ?>
 
             <div id="center">
@@ -90,7 +92,7 @@
                                     'legend': 'right'
                                 }
                             });
-                            
+
                             dashboard.bind(donutRangeSlider, pieChart);
                             dashboard.draw(data);
                         }
@@ -114,11 +116,11 @@
                             data.setValue(1, 0, 'Alagoas');
                             data.setValue(1, 1, <?php echo $numberOfUBSByState[1]; ?>);
                             data.setValue(1, 2, <?php echo $averageOfUBSByState[1]; ?>);
-                            
+
                             data.setValue(2, 0, 'Amapá');
                             data.setValue(2, 1, <?php echo $numberOfUBSByState[2]; ?>);
                             data.setValue(2, 2, <?php echo $averageOfUBSByState[2]; ?>);
-                            
+
                             data.setValue(3, 0, 'Amazonas');
                             data.setValue(3, 1, <?php echo $numberOfUBSByState[3]; ?>);
                             data.setValue(3, 2, <?php echo $averageOfUBSByState[3]; ?>);
@@ -158,7 +160,7 @@
                             data.setValue(12, 0, 'Minas Gerais');
                             data.setValue(12, 1, <?php echo $numberOfUBSByState[12]; ?>);
                             data.setValue(12, 2, <?php echo $averageOfUBSByState[12]; ?>);
-                            
+
                             data.setValue(13, 0, 'Pará');
                             data.setValue(13, 1, <?php echo $numberOfUBSByState[13]; ?>);
                             data.setValue(13, 2, <?php echo $averageOfUBSByState[13]; ?>);
@@ -190,7 +192,7 @@
                             data.setValue(20, 0, 'Rio Grande do Sul');
                             data.setValue(20, 1, <?php echo $numberOfUBSByState[20]; ?>);
                             data.setValue(20, 2, <?php echo $averageOfUBSByState[20]; ?>);
-                            
+
                             data.setValue(21, 0, 'Rondônia');
                             data.setValue(21, 1, <?php echo $numberOfUBSByState[21]; ?>);
                             data.setValue(21, 2, <?php echo $averageOfUBSByState[21]; ?>);

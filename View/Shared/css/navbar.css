@@ -32,7 +32,7 @@ div.navbar #left {
 
 div.navbar #right,#left {
     display: inline-block;
-    height: 30px;
+    height: 100%;
 }
 
 div.navbar ul {
@@ -44,7 +44,7 @@ div.navbar ul {
 div.navbar li {
     display: inline-block;
     border: none;
-    width: 170px;
+    width: 18%;
     height: 300px;
     line-height: 40px;
 }

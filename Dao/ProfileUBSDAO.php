@@ -17,7 +17,7 @@ class ProfileUBSDAO {
     public function searchUBSinDatabase($field, $searchType) {
         $field = trim($field);
         DataValidation::throwTextFieldException($field);
-  
+
         switch ($searchType) {
             case NOME :
                 $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '%" . $field . "%'";

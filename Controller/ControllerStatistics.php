@@ -14,6 +14,8 @@ class ControllerStatistics {
     public static function getInstanceControllerStatistics() {
         if (!isset(self::$instanceControllerStatistics)) {
             self::$instanceControllerStatistics = new ControllerStatistics();
+        } else {
+            //No action
         }
         return self::$instanceControllerStatistics;
     }
@@ -36,7 +38,7 @@ class ControllerStatistics {
         $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
         $arrayStates = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
             "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
-            "RS", "RO", "RR", "SC", "SP", "SE", "TO"]; //MELHORAR ISSO FUTURAMENTE!!
+            "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
 
         $numberOfUBSByState = array();
         $averageOfUBSByState = array();
@@ -52,11 +54,15 @@ class ControllerStatistics {
                 if ($average != 0) {
                     $quantityOfValidUBSByState++;
                     array_push($soma, $average);
+                } else {
+                    //No action
                 }
             }
 
             if ($quantityOfValidUBSByState == 0) {
                 $quantityOfValidUBSByState = 1;
+            } else {
+                //No action
             }
 
             $averageByState = array_sum($soma) / $quantityOfValidUBSByState;

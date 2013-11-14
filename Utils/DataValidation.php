@@ -35,6 +35,8 @@ class DataValidation {
             $character = stripos($validChars, $name[$i]);
             if (!$character) {
                 $result = 1;
+            }else{
+                //No action
             }
         }
         return $result;

@@ -21,7 +21,7 @@
 </script>
 <div class="header">
     <div id="left">
-        <a href="home.php"><img src="../view/shared/img/LogoCMH.png" align="center" /></a>
+        <a href="home.php"><img src="../view/shared/img/LogoCMH.png" align="center" width="100%" height="100%"/></a>
     </div>
     <div id ="right">
 

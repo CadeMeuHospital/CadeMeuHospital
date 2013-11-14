@@ -13,6 +13,8 @@ class StatisticsDAO {
     public static function getInstanceStatisticsDAO() {
         if (!isset(self::$instanceStatisticsDAO)) {
             self::$instanceStatisticsDAO = new StatisticsDAO();
+        }else{
+            //No action
         }
         return self::$instanceStatisticsDAO;
     }

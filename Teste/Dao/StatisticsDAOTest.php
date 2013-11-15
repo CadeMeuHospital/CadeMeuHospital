@@ -7,21 +7,11 @@ class StatisticsDAOTest extends PHPUnit_Framework_TestCase {
     protected $statisticsDao;
 
     protected function setUp() {
-        $this->statisticsDao = StatisticsDAO::getInstanceStatisticsDAO();
+        $this->statisticsDao = new StatisticsDAO();
     }
 
     protected function tearDown() {
         unset($this->statisticsDao);
-    }
-
-    public function testGetInstanceStatisticsDAONotNull() {
-        $resultNotNull = $this->statisticsDao->getInstanceStatisticsDAO();
-        $this->assertNotNull($resultNotNull);
-    }
-
-    public function testGetInstanceStatisticsDAOInstanceOf() {
-        $resultInstanceOf = $this->statisticsDao->getInstanceStatisticsDAO();
-        $this->assertInstanceOf('StatisticsDAO', $resultInstanceOf);
     }
 
     public function testGetValuesToChartAverageEvaluate() {
@@ -36,6 +26,11 @@ class StatisticsDAOTest extends PHPUnit_Framework_TestCase {
 
     public function testGetValuesToChartAverageEvaluateSigleUBSNotNull() {
         $resultNotNull = $this->statisticsDao->getValuesToChartAverageEvaluateSigleUBS(4);
+        $this->assertNotNull($resultNotNull);
+    }
+    
+    public function testGetStatisticsByState() {
+        $resultNotNull = $this->statisticsDao->getStatisticsByState();
         $this->assertNotNull($resultNotNull);
     }
 

@@ -73,9 +73,4 @@ class StateDAOTest extends PHPUnit_Framework_TestCase {
         
     }
     
-    public function testSaveAverageEvaluationStateDAOTrueBA() {
-        $resultTrue = $this->stateDao->saveAverageEvaluationStateDAO(2,["BA"]);
-        $this->assertTrue($resultTrue);
-        
-    }
 }

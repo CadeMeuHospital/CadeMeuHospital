@@ -15,8 +15,8 @@ class ControllerStateTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testSaveAverageEvaluationState() {
-        $resultFalse = $this->controllerState->saveAverageEvaluationState('5',['LV']);
-        $this->assertFalse($resultFalse);
+        $result = $this->controllerState->saveAverageEvaluationState(5,['KY']);
+        $this->assertTrue($result);
     }
 
 }

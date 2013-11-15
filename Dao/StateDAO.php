@@ -17,10 +17,11 @@ class StateDAO {
         
         $resultAvgCount = mysql_query($sqlAvgCount);
         $arrayAvgCount = mysql_fetch_row($resultAvgCount);
-        if ($arrayAvgCount[0] == null){
-            return false;
-        }
-
+        
+//        if ($arrayAvgCount[0] == null){
+//            return false;
+//        }
+        
         if ($arrayAvgCount[1] > 0) {  
             $average = ($arrayAvgCount[0])/($arrayAvgCount[1]);
             $sql = "UPDATE state SET average = '" . $average . "' WHERE acronym = '" . $stateAcronym[0] . "'";

@@ -8,27 +8,15 @@
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
-        <style>#prev{display:none;}</style>
-        <style>#list{margin-left: 300px;margin-right: 300px; }</style>
-        <style>#first-tr {margin-left: 0px;
-                   background-color: #B94E4F;
-                   min-height: 50px;
-                   display: block; }</style>
-        <style>#first-tr2 { margin-left: 0px;
-                     background-color: #CB7C7C;
-                     min-height: 50px;
-                     display: block; }</style>
-        <style>#pagination{text-align:center;}</style>
-
-        <style>.center {
-                text-align:center;
-                margin:auto;
-                width:760px;
-                min-height: 300px;
-                padding-top: 20px;
-            } 
+        <style>
+           #first-tr{background-color:#B22222;
+           text-align:center;
+           } 
+           #first-tr2{background-color:#FFFFFF;
+           text-align:center;
+           }
         </style>
-
+        
         <title> Cadê Meu Hospital - Busca</title>
     </head>
     <body>
@@ -53,7 +41,7 @@
                 <table>
                     <?php
                     $quantityUBS = count($arrayUBS);
-                    echo "Sua pesquisa retornou " . $quantityUBS . " resultados.<br><br>";
+                    echo "<br><p align = 'center'>Sua pesquisa retornou " . $quantityUBS . " resultados.</p><br><br>";
                     $quantityPage = ceil($quantityUBS / 10);
                     $currentPage = $_GET['page'];
                     $page = $currentPage * 10;
@@ -70,22 +58,20 @@
 
                             $path = "../view/Profile.php?id=" . $idUBS . "";
                             if ($i % 2 == 0) {
-                                echo "<tr id='first-tr'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
-                                echo "<td>" . $cityUBS . "-";
-                                echo $stateUBS[0] . "</td>";
+                                echo "<tr id='first-tr'><td><a href=" . $path . " class = 'linkBranco'> " . $nameUBS . " </a></td>";
+                                echo "<td class = 'linkBranco'><font color = 'white'>" . $cityUBS . "-" . $stateUBS[0] . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
-                                    echo "<td>Média das avaliações:</td><td>" . $arrayUBS[$i]->getAverage() . "</td>";
+                                    echo "<td><font color = 'white'>Média das avaliações:" . $arrayUBS[$i]->getAverage() . "</font></td>";
                                 } else {
-                                    echo "<td>UBS ainda não avaliada.</td></tr>";
+                                    echo "<td><font color = 'white'>UBS ainda não avaliada.</font></td></tr>";
                                 }
                             } else {
-                                echo "<tr id='first-tr2'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
-                                echo "<td>" . $cityUBS . "-";
-                                echo $stateUBS[0] . "</td>";
+                                echo "<tr id='first-tr2'><td><a href=" . $path . " class = 'linkPreto'> " . $nameUBS . " </a></td>";
+                                echo "<td class = 'linkPreto'><font color = 'black'>" . $cityUBS . "-" . $stateUBS[0] . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
-                                    echo "<td>Média das avaliações:</td><td>" . $arrayUBS[$i]->getAverage() . "</td>";
+                                    echo "<td><font color = 'black'>Média das avaliações:" . $arrayUBS[$i]->getAverage() . "</font></td>";
                                 } else {
-                                    echo "<td>UBS ainda não avaliada.</td></tr>";
+                                    echo "<td><font color = 'black' align = 'center'>UBS ainda não avaliada.</font></td></tr>";
                                 }
                             }
                          //   echo "<tr><td>&nbsp</td></tr>";

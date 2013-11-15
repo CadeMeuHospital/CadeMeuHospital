@@ -102,3 +102,12 @@ botaoComoChegar{
     min-height: 200px;
     
 }
+a.linkBranco{
+    color:#FFFFFF;
+}
+a.linkPreto{
+    color:#000000;
+}
+#pagination{
+    text-align : center;
+}

@@ -94,3 +94,9 @@ label {
      text-align: left;
     
 }
+a.linkBranco{
+    color:#FFFFFF;
+}
+a.linkVermelho{
+    color:#7d0000;
+}

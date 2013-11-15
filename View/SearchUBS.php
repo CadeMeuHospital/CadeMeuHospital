@@ -37,7 +37,7 @@
                 <table>
                     <?php
                     $quantityUBS = count($arrayUBS);
-                    echo "Sua pesquisa retornou " . $quantityUBS . " resultados.<br><br>";
+                    echo "<br><p align = 'center'>Sua pesquisa retornou " . $quantityUBS . " resultados.</p><br><br>";
                     $quantityPage = ceil($quantityUBS / 10);
                     $currentPage = $_GET['page'];
                     $page = $currentPage * 10;

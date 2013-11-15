@@ -9,8 +9,12 @@
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>
-           #first-tr{background-color:#B22222;} 
-           #first-tr2{background-color:#FFFFFF;}
+           #first-tr{background-color:#B22222;
+           text-align:center;
+           } 
+           #first-tr2{background-color:#FFFFFF;
+           text-align:center;
+           }
         </style>
         
         <title> Cadê Meu Hospital - Busca</title>
@@ -67,7 +71,7 @@
                                 if ($arrayUBS[$i]->getAverage() != 0) {
                                     echo "<td><font color = 'black'>Média das avaliações:" . $arrayUBS[$i]->getAverage() . "</font></td>";
                                 } else {
-                                    echo "<td><font color = 'black'>UBS ainda não avaliada.</font></td></tr>";
+                                    echo "<td><font color = 'black' align = 'center'>UBS ainda não avaliada.</font></td></tr>";
                                 }
                             }
                          //   echo "<tr><td>&nbsp</td></tr>";

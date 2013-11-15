@@ -10,148 +10,156 @@
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>#prev{display:none;}</style>
         <style>#list{margin-left: 300px;margin-right: 300px; }</style>
-        <style>#first-tr { border-top: 1px solid #000000;
-                   border-left: 1px solid #000000; 
-                   border-right: 1px solid #000000; 
+        <style>#first-tr {margin-left: 0px;
+                   background-color: #B94E4F;
+                   min-height: 50px;
                    display: block; }</style>
-        <style>#second-tr { border-bottom: 1px solid #000000;
-                   border-left: 1px solid #000000; 
-                   border-right: 1px solid #000000; 
-                   display: block; }</style>
+        <style>#first-tr2 { margin-left: 0px;
+                     background-color: #CB7C7C;
+                     min-height: 50px;
+                     display: block; }</style>
         <style>#pagination{text-align:center;}</style>
-        
+
         <style>.center {
-                        margin:auto;
-                        width:70%;
-                        min-height: 300px;
-                        padding-top: 20px;
-                        } 
+                text-align:center;
+                margin:auto;
+                width:760px;
+                min-height: 300px;
+                padding-top: 20px;
+            } 
         </style>
-        
+
         <title> Cadê Meu Hospital - Busca</title>
     </head>
-<body>
+    <body>
 
-    <div class="root">
+        <div class="root">
 
-        <?php require '../view/shared/header.php'; ?>
-        <?php require '../view/shared/navigation_bar.php'; ?>
+            <?php require '../view/shared/header.php'; ?>
+            <?php require '../view/shared/navigation_bar.php'; ?>
 
             <div class="center">
 
-            <?php
-           
-            $value = $_REQUEST['searchType'];
-            $buscaUBS = $_REQUEST['BuscaUBS'];
-            
-            require_once '../Controller/ControllerProfileUBS.php';
-
-            $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-            $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
-            ?>
-
-            <table>
                 <?php
-                
-                $quantityUBS = count($arrayUBS);
-                echo "Sua pesquisa retornou ".$quantityUBS ." resultados.<br><br>"; 
-                $quantityPage = ceil($quantityUBS / 10);
-                $currentPage = $_GET['page'];
-                $page = $currentPage * 10;
+                $value = $_REQUEST['searchType'];
+                $buscaUBS = $_REQUEST['BuscaUBS'];
 
-                for ($i = ($page - 10); $i < $page; $i++) {
+                require_once '../Controller/ControllerProfileUBS.php';
 
-                    if (isset($arrayUBS[$i])) {
-                        $nameUBS = $arrayUBS[$i]->getNameUBS();
-                        $cityUBS = $arrayUBS[$i]->getDscCidade();
-                        $stateUBS = $controllerProfileUBS->takeState(($arrayUBS[$i]->getCodMunic()));
-                        $idUBS = $arrayUBS[$i]->getIdUBS();
-                        //$average = $controllerProfileUBS->takeAverageUBS($idUBS);
-                        
-                        $path = "../view/Profile.php?id=" . $idUBS . "";
-                  
-                        echo "<tr id='first-tr'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
-                        echo "<td>".$cityUBS."-";
-                        echo $stateUBS[0]."</td></tr>";
-                        if($arrayUBS[$i]->getAverage() != 0){
-                            echo "<tr id='second-tr'><td>Média das avaliações:</td><td>".$arrayUBS[$i]->getAverage()."</td></tr>";
-                        }else{
-                            echo "<tr id='second-tr'><td>UBS ainda não avaliada.</td></tr>";    
-                        }
-                        echo "<tr><td>&nbsp</td></tr>";
-                        
-                    }
-                }
-                
+                $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
+                $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
                 ?>
+
+                <table>
+                    <?php
+                    $quantityUBS = count($arrayUBS);
+                    echo "Sua pesquisa retornou " . $quantityUBS . " resultados.<br><br>";
+                    $quantityPage = ceil($quantityUBS / 10);
+                    $currentPage = $_GET['page'];
+                    $page = $currentPage * 10;
+
+                    for ($i = ($page - 10); $i < $page; $i++) {
+
+
+                        if (isset($arrayUBS[$i])) {
+                            $nameUBS = $arrayUBS[$i]->getNameUBS();
+                            $cityUBS = $arrayUBS[$i]->getDscCidade();
+                            $stateUBS = $controllerProfileUBS->takeState(($arrayUBS[$i]->getCodMunic()));
+                            $idUBS = $arrayUBS[$i]->getIdUBS();
+                            //$average = $controllerProfileUBS->takeAverageUBS($idUBS);
+
+                            $path = "../view/Profile.php?id=" . $idUBS . "";
+                            if ($i % 2 == 0) {
+                                echo "<tr id='first-tr'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
+                                echo "<td>" . $cityUBS . "-";
+                                echo $stateUBS[0] . "</td>";
+                                if ($arrayUBS[$i]->getAverage() != 0) {
+                                    echo "<td>Média das avaliações:</td><td>" . $arrayUBS[$i]->getAverage() . "</td>";
+                                } else {
+                                    echo "<td>UBS ainda não avaliada.</td></tr>";
+                                }
+                            } else {
+                                echo "<tr id='first-tr2'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
+                                echo "<td>" . $cityUBS . "-";
+                                echo $stateUBS[0] . "</td>";
+                                if ($arrayUBS[$i]->getAverage() != 0) {
+                                    echo "<td>Média das avaliações:</td><td>" . $arrayUBS[$i]->getAverage() . "</td>";
+                                } else {
+                                    echo "<td>UBS ainda não avaliada.</td></tr>";
+                                }
+                            }
+                         //   echo "<tr><td>&nbsp</td></tr>";
+                            echo "</div>";
+                        }
+                    }
+                    ?>
                 </table>
             </div>
             <div id="pagination">
-                <?php
-                $buscaUBSEncode = urlencode($buscaUBS);
-                $firstPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=1&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
-                $lastPage= "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=".$quantityPage."&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
-                $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
-                $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
-               if($currentPage > 1){
-                   echo "<a href=" . $firstPage . ">  [<<]  </a>"; 
-                   echo "<a href=" . $prevPage . ">  [<]  </a>"; 
-               } else {
-                   //Nothing to do.
-               }
+                    <?php
+                    $buscaUBSEncode = urlencode($buscaUBS);
+                    $firstPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=1&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
+                    $lastPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . $quantityPage . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
+                    $nextPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage + 1) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
+                    $prevPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($currentPage - 1) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
+                    if ($currentPage > 1) {
+                        echo "<a href=" . $firstPage . ">  [<<]  </a>";
+                        echo "<a href=" . $prevPage . ">  [<]  </a>";
+                    } else {
+                        //Nothing to do.
+                    }
 
-                if($currentPage >= 6) {
-                    
-                    for ($i = $currentPage-6; $i < $currentPage+5; $i++) {
-                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
+                    if ($currentPage >= 6) {
 
-                        if($i == $quantityPage-1) {
-                            if($currentPage == $i+1) {
-                                echo "<strong>".($i+1)."</strong>";  // Write only the number of the page without any action
+                        for ($i = $currentPage - 6; $i < $currentPage + 5; $i++) {
+                            $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
+
+                            if ($i == $quantityPage - 1) {
+                                if ($currentPage == $i + 1) {
+                                    echo "<strong>" . ($i + 1) . "</strong>";  // Write only the number of the page without any action
+                                } else {
+                                    echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
+                                }
+                                break;
+                            }
+
+                            if ($currentPage == $i + 1) {
+                                echo "<strong>" . ($i + 1) . "</strong>";
                             } else {
                                 echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
                             }
-                            break;
                         }
-                        
-                        if($currentPage == $i+1) {
-                            echo "<strong>".($i+1)."</strong>";
-                        } else {
-                            echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
-                        }                                           
-                    }
-                } else {
-                     for ($i = 1; $i < $currentPage+6; $i++) {
-                        $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i) . "&BuscaUBS=".$buscaUBSEncode."&searchType=".$value."";
+                    } else {
+                        for ($i = 1; $i < $currentPage + 6; $i++) {
+                            $pathPage = "http://localhost/CadeMeuHospital/view/SearchUBS.php?page=" . ($i) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
 
-                        
-                        if($i == $quantityPage) {
-                            if($currentPage == $i) {
-                                echo "<strong>".($i)."</strong>";  // Write only the number of the page without any action
+
+                            if ($i == $quantityPage) {
+                                if ($currentPage == $i) {
+                                    echo "<strong>" . ($i) . "</strong>";  // Write only the number of the page without any action
+                                } else {
+                                    echo "<a href=" . $pathPage . "> " . ($i) . " </a>";
+                                }
+                                break;
+                            }
+
+                            if ($currentPage == $i) {
+                                echo "<strong>" . ($i) . "</strong> ";
                             } else {
                                 echo "<a href=" . $pathPage . "> " . ($i) . " </a>";
                             }
-                            break;
-                        }
-                        
-                        if($currentPage == $i) {
-                            echo "<strong>".($i)."</strong> "; 
-                        } else {
-                            echo "<a href=" . $pathPage . "> " . ($i) . " </a>";
                         }
                     }
-                }
-                if( $currentPage < $quantityPage ) {
-                    echo "<a href=" . $nextPage . ">  [>]  </a>";
-                    echo "<a href=" . $lastPage . "> [>>] </a>";
-                }
+                    if ($currentPage < $quantityPage) {
+                        echo "<a href=" . $nextPage . ">  [>]  </a>";
+                        echo "<a href=" . $lastPage . "> [>>] </a>";
+                    }
+                    ?>
 
-                ?>
-                        
             </div>
-        <br /><br /><br /><br /><br /><br /><br />
-        <?php require '../view/shared/footer.php'; ?>
-    </div>
+            <br /><br /><br /><br /><br /><br /><br />
+                <?php require '../view/shared/footer.php'; ?>
+        </div>
 
-</body>
+    </body>
 </html>

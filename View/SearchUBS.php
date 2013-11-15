@@ -65,9 +65,9 @@
                                 echo "<tr id='first-tr2'><td><a href=" . $path . " class = 'linkPreto'> " . $nameUBS . " </a></td>";
                                 echo "<td class = 'linkPreto'><font color = 'black'>" . $cityUBS . "-" . $stateUBS[0] . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
-                                    echo "<td>Média das avaliações:</td><td>" . $arrayUBS[$i]->getAverage() . "</td>";
+                                    echo "<td><font color = 'black'>Média das avaliações:</font></td><td>" . $arrayUBS[$i]->getAverage() . "</td>";
                                 } else {
-                                    echo "<td>UBS ainda não avaliada.</td></tr>";
+                                    echo "<td><font color = 'black'>UBS ainda não avaliada.</font></td></tr>";
                                 }
                             }
                          //   echo "<tr><td>&nbsp</td></tr>";

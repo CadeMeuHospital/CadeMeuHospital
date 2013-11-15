@@ -249,20 +249,20 @@
 
                     </script>
 
-                    <div id="googleMap" style="width:900px; height:380px; text-align: center;" ></div>
+                    <div id="googleMap" style="width:760px; height:380px; text-align: center;" ></div>
                     <form action="javascript: void(0);" method="post" onSubmit="calcRoute();">
                         <div onload="getLocation();">
                             <?php
                             if (!isset($_REQUEST['latlon'])) {
                                 ?>
                                 <script>
-                        navigator.geolocation.getCurrentPosition(showposUBS);
-                        function showposUBS(position) {
-                            var lat = position.coords.latitude;
-                            var lon = position.coords.longitude;
-                            var latlon = lat + ',' + lon;
-                            window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
-                        }
+                            navigator.geolocation.getCurrentPosition(showposUBS);
+                            function showposUBS(position) {
+                                var lat = position.coords.latitude;
+                                var lon = position.coords.longitude;
+                                var latlon = lat + ',' + lon;
+                                window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
+                            }
                                 </script> 
                                 <?php
                             } else {
@@ -272,20 +272,22 @@
                             <?php } ?>
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
-                        <input type="submit" name="localizacao" value="Como chegar?" />
+                        <input align="center" type="submit" name="localizacao" value="Como chegar?" />
                     </form>
 
                     <div id="mapview">
                         <!--  <div id="map_canvas" style="float: left; width: 900px; height: 380px;"></div> -->
-                        <div class="direcao" style="float: left; width: 900px; height: 380px; overflow: scroll;">
-                            <div id="directionsPanel" style="width: 480px; height: 100px"></div>
+                        <div class="direcao" style="float: center; width: 760px; height: 380px; overflow: scroll;">
+                            <div id="directionsPanel" style="width: 100%; height: 100px"></div>
                         </div>
-                    </div>   
+                    </div>
+
 
                     <br><br>
 
-                    <h2>Deixe a sua Opinião</h2>
 
+                    <br /><br />
+                    <h2>Deixe sua Opinião</h2>
                     <script>(function(d, s, id) {
                             var js, fjs = d.getElementsByTagName(s)[0];
                             if (d.getElementById(id))
@@ -297,12 +299,10 @@
                         }(document, 'script', 'facebook-jssdk'));</script>
                     <div id="fb-root"></div>
                     <div class="fb-comments" data-href="Profile.php?id=<?php echo $_REQUEST['id'] ?>" data-numposts="4" data-width="600"></div>
-                    </h2>
-
-                    <br /><br /><br /><br /><br /><br /><br />
-                    <?php require '../view/shared/footer.php'; ?>
                 </div>
-            </div>
+                <?php require '../view/shared/footer.php'; ?>
 
+            </div>
+        </div>
     </body>
 </html>

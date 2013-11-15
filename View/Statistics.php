@@ -111,8 +111,8 @@
                                 'chartType': 'PieChart',
                                 'containerId': 'chart_div',
                                 'options': {
-                                    'width': 500,
-                                    'height': 500,
+                                    'width': 760,
+                                    'height': 760,
                                     'pieSliceText': 'value',
                                     'legend': 'left',
                                 }
@@ -134,15 +134,15 @@
                             data.addColumn('number', 'Quantidade de UBS');
                             data.addColumn('number', '<?php echo $title;?>');
 
-<?php
-for ($i = 0; $i < 27; $i++) {
-    ?>
+                            <?php 
+                            for ($i = 0; $i < 27; $i++){
+                            ?>
                                 data.setValue(<?php echo $i; ?>, 0, '<?php echo $namesOfStates[$i]; ?>');
                                 data.setValue(<?php echo $i; ?>, 1, <?php echo $amountUBS[$i]; ?>);
                                 data.setValue(<?php echo $i; ?>, 2, <?php echo $opitionToBeCrossed[$i]; ?>);
-    <?php
-}
-?>
+                            <?php
+                            }
+                            ?>
 
                             var options = {};
                             options['region'] = 'BR';
@@ -166,7 +166,12 @@ for ($i = 0; $i < 27; $i++) {
                          border-left: 1px double #990000; border-right: 1px double #990000;">
                     </div>            
                     <!--Div that will hold the dashboard-->
-                    <div id="dashboard_div">
+
+                    <br>
+                    <br>
+                    <h1>Número de votos de todas as UBS</h1>
+                    <div id="dashboard_div"  style=" border-bottom: 1px double #990000; border-top: 1px double #990000;
+                         border-left: 1px double #990000; border-right: 1px double #990000;">
                         <!--Divs that will hold each control and chart-->
                         <div id="filter_div" style=" display:none;"></div>
                         <div id="chart_div"></div>

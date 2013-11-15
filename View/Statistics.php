@@ -66,8 +66,8 @@
                                 'chartType': 'PieChart',
                                 'containerId': 'chart_div',
                                 'options': {
-                                    'width': 500,
-                                    'height': 500,
+                                    'width': 760,
+                                    'height': 760,
                                     'pieSliceText': 'value',
                                     'legend': 'left',
                                 }
@@ -88,6 +88,7 @@
                             data.addColumn('string', 'Brasil');
                             data.addColumn('number', 'Quantidade de UBS');
                             data.addColumn('number', 'Média de Notas');
+
                             
                             <?php 
                             for ($i = 0; $i < 27; $i++){
@@ -122,7 +123,12 @@
                          border-left: 1px double #990000; border-right: 1px double #990000;">
                     </div>            
                     <!--Div that will hold the dashboard-->
-                    <div id="dashboard_div">
+
+                    <br>
+                    <br>
+                    <h1>Número de votos de todas as UBS</h1>
+                    <div id="dashboard_div"  style=" border-bottom: 1px double #990000; border-top: 1px double #990000;
+                         border-left: 1px double #990000; border-right: 1px double #990000;">
                         <!--Divs that will hold each control and chart-->
                         <div id="filter_div" style=" display:none;"></div>
                         <div id="chart_div"></div>

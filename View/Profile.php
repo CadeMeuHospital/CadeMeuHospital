@@ -28,7 +28,6 @@
 
             $idUBS = $_REQUEST['id'];
             $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-            //$average = $controllerProfileUBS->takeAverageUBS($idUBS);
             $profileUBS = $controllerProfileUBS->returnUBS($idUBS);
 
             $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
@@ -43,14 +42,6 @@
                 <div class="content">
 
                     <table id="tabela-dados-UBS" style="text-align: left; width:700px;">
-<!--                        <tr>
-                            <th>Código do Municipio</th>
-                            <td class="align-left"><?php echo $profileUBS->getCodMunic(); ?></td>
-                        </tr>
-                        <tr>
-                            <th>Código CNES:</th>
-                            <td class="align-left"><?php echo $profileUBS->getCodCNES(); ?></td>
-                        </tr>-->
                         <tr>
                             <th>Descrição do Endereço:</th>
                             <td class="align-left"><?php echo $profileUBS->getDescEnder(); ?></td>

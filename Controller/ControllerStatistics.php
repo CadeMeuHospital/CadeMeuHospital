@@ -21,60 +21,23 @@ class ControllerStatistics {
     }
 
     public function generateValuesToChartAverageEvaluate() {
-        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
+        $statisticsDAO = new StatisticsDAO();
         $allEvaluates = $statisticsDAO->getValuesToChartAverageEvaluate();
 
         return $allEvaluates;
     }
 
     public function generateValuesToChartAverageEvaluateSingleUBS($idUBS) {
-        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
+        $statisticsDAO = new StatisticsDAO();
         $evaluatesUBS = $statisticsDAO->getValuesToChartAverageEvaluateSigleUBS($idUBS);
-
         return $evaluatesUBS;
     }
 
     public function generateStatisticsOfQuantityAverage() {
-        $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
-        $arrayStates = ["AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA",
-            "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN",
-            "RS", "RO", "RR", "SC", "SP", "SE", "TO"];
-
-        $numberOfUBSByState = array();
-        $averageOfUBSByState = array();
-        for ($i = 0; $i < count($arrayStates); $i++) {
-            $arrayUBS = $controllerProfileUBS->searchUBS($arrayStates[$i], 4);
-            $quantityOfUBSByState = count($arrayUBS);
-            $soma = array();
-            $quantityOfValidUBSByState = 0;
-
-            for ($j = 0; $j < $quantityOfUBSByState; $j++) {
-                $ubs = $arrayUBS[$j];
-                $average = $ubs->getAverage();
-                if ($average != 0) {
-                    $quantityOfValidUBSByState++;
-                    array_push($soma, $average);
-                } else {
-                    //No action
-                }
-            }
-
-            if ($quantityOfValidUBSByState == 0) {
-                $quantityOfValidUBSByState = 1;
-            } else {
-                //No action
-            }
-
-            $averageByState = array_sum($soma) / $quantityOfValidUBSByState;
-            array_push($numberOfUBSByState, $quantityOfUBSByState);
-            array_push($averageOfUBSByState, $averageByState);
-        }
-        $result = array();
-        array_push($result, $numberOfUBSByState);
-        array_push($result, $averageOfUBSByState);
-        return $result;
+        $statisticsDAO = new StatisticsDAO();
+        $statistics = $statisticsDAO->getStatisticsByState();
+        return $statistics;
     }
-
 }
 
 ?>

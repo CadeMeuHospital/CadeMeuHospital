@@ -28,5 +28,10 @@ class StatisticsDAOTest extends PHPUnit_Framework_TestCase {
         $resultNotNull = $this->statisticsDao->getValuesToChartAverageEvaluateSigleUBS(4);
         $this->assertNotNull($resultNotNull);
     }
+    
+    public function testGetStatisticsByState() {
+        $resultNotNull = $this->statisticsDao->getStatisticsByState();
+        $this->assertNotNull($resultNotNull);
+    }
 
 }

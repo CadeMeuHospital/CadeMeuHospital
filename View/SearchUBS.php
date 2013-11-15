@@ -57,7 +57,7 @@
                                 echo "<tr id='first-tr'><td><a href=" . $path . " class = 'linkBranco'> " . $nameUBS . " </a></td>";
                                 echo "<td class = 'linkBranco'><font color = 'white'>" . $cityUBS . "-" . $stateUBS[0] . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
-                                    echo "<td><font color = 'white'>Média das avaliações:</font></td><td>" . $arrayUBS[$i]->getAverage() . "</td>";
+                                    echo "<td><font color = 'white'>Média das avaliações:" . $arrayUBS[$i]->getAverage() . "</font></td>";
                                 } else {
                                     echo "<td><font color = 'white'>UBS ainda não avaliada.</font></td></tr>";
                                 }
@@ -65,7 +65,7 @@
                                 echo "<tr id='first-tr2'><td><a href=" . $path . " class = 'linkPreto'> " . $nameUBS . " </a></td>";
                                 echo "<td class = 'linkPreto'><font color = 'black'>" . $cityUBS . "-" . $stateUBS[0] . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
-                                    echo "<td><font color = 'black'>Média das avaliações:</font></td><td>" . $arrayUBS[$i]->getAverage() . "</td>";
+                                    echo "<td><font color = 'black'>Média das avaliações:" . $arrayUBS[$i]->getAverage() . "</font></td>";
                                 } else {
                                     echo "<td><font color = 'black'>UBS ainda não avaliada.</font></td></tr>";
                                 }

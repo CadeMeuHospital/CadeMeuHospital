@@ -74,7 +74,7 @@
                             <option value=3>Bairro</option>
                         </select>
                     </td>
-                    <td><input class="button" type = "submit" value="Enviar" name="Enviar" onclick="return verifyUF();" /></td>
+                    <td><input type = "submit" value="Enviar" name="Enviar" onclick="return verifyUF();" /></td>
                 </tr>
             </table>
         </form>

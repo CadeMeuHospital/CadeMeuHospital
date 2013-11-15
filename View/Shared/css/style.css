@@ -23,7 +23,7 @@ div.box {
 }
 
 div.root {
-    width: 1000px;
+    width: 760px;
     margin: 0 auto;
 }
 
@@ -32,7 +32,11 @@ div.header {
 }
 
 div.header #left {
+    margin-left: 25px;
+    margin-top: 25px;
     float: left;
+    width: 340px;
+    height: 88px;
 }
 
 div.header #center {

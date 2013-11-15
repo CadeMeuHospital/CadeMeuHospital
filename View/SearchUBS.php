@@ -8,8 +8,11 @@
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
-
-
+        <style>
+           #first-tr{background-color:#7d0000;} 
+           #first-tr2{background-color:#FFFFFF;}
+        </style>
+        
         <title> Cadê Meu Hospital - Busca</title>
     </head>
     <body>
@@ -51,7 +54,7 @@
 
                             $path = "../view/Profile.php?id=" . $idUBS . "";
                             if ($i % 2 == 0) {
-                                echo "<tr id='first-tr'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
+                                echo "<tr id='first-tr'><td><a href=" . $path . " class = 'linkBranco'> " . $nameUBS . " </a></td>";
                                 echo "<td>" . $cityUBS . "-";
                                 echo $stateUBS[0] . "</td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
@@ -60,7 +63,7 @@
                                     echo "<td>UBS ainda não avaliada.</td></tr>";
                                 }
                             } else {
-                                echo "<tr id='first-tr2'><td><a href=" . $path . "> " . $nameUBS . " </a></td>";
+                                echo "<tr id='first-tr2'><td><a href=" . $path . " class = 'linkVermelho'> " . $nameUBS . " </a></td>";
                                 echo "<td>" . $cityUBS . "-";
                                 echo $stateUBS[0] . "</td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {

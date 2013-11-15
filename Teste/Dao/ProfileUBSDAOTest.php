@@ -31,7 +31,7 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     protected function tearDown() {
         $this->tearDownDataBase();
         $this->tearDownProfileUBS();
-        $this->tearDownUBSEvaluate();
+       // $this->tearDownUBSEvaluate();
     }
 
     protected function tearDownProfileUBS() {
@@ -43,11 +43,6 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         mysql_query($sqlDeleteRowEvaluate);
     }
 
-    protected function tearDownUBSEvaluate(){
-        $sqlDeleteRowEvaluate = "DELETE FROM evaluate WHERE id_cod_unico='999999999'";
-        mysql_query($sqlDeleteRowEvaluate);
-    }
-    
     /* Method insertUBSInDatabase suit test case */
 
     protected function insertUBSInDataBase() {

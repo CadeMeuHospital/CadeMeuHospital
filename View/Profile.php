@@ -247,13 +247,13 @@
                             if (!isset($_REQUEST['latlon'])) {
                                 ?>
                                 <script>
-                            navigator.geolocation.getCurrentPosition(showposUBS);
-                            function showposUBS(position) {
-                                var lat = position.coords.latitude;
-                                var lon = position.coords.longitude;
-                                var latlon = lat + ',' + lon;
-                                window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
-                            }
+                        navigator.geolocation.getCurrentPosition(showposUBS);
+                        function showposUBS(position) {
+                            var lat = position.coords.latitude;
+                            var lon = position.coords.longitude;
+                            var latlon = lat + ',' + lon;
+                            window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
+                        }
                                 </script> 
                                 <?php
                             } else {
@@ -263,7 +263,9 @@
                             <?php } ?>
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
-                        <input align="center" type="submit" name="localizacao" value="Como chegar?" />
+                        <div class ="botao">
+                            <input align="center" type="submit" name="localizacao" value="Como chegar?" />
+                        </div>
                     </form>
 
                     <div id="mapview">

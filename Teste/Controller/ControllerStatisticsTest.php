@@ -32,13 +32,16 @@ class ControllerStatisticsTest extends PHPUnit_Framework_TestCase {
     public function testGenerateValuesToChartAverageEvaluateSingleUBS() {
         $resultNotNull = $this->controllerStatistics->generateValuesToChartAverageEvaluateSingleUBS(4);
         $this->assertNotNULL($resultNotNull);
-       
     }
-    
+
     public function testGenerateValuesToChartAverageEvaluateSingleUBSFalse() {
         $resultFalse = $this->controllerStatistics->generateValuesToChartAverageEvaluateSingleUBS(44564887);
         $this->assertFalse($resultFalse);
-       
     }
 
+    public function testGenerateStatisticsOfQuantityAverage() {
+        $resultNotNull = $this->controllerStatistics->generateStatisticsOfQuantityAverage();
+        $this->assertNotNull($resultNotNull);
+    }
 }
+    ?>

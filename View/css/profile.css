@@ -91,6 +91,14 @@ label {
      width: 150px;
      float: right;
    /*  margin: 2px 4px 5px 4px;*/
-     text-align: left;
+     text-align: left;    
+}
+
+botaoComoChegar{
+    position: absolute;
+    margin-left: 250px;
+    min-width: 760px;
+    background-color: #2b2b2b;
+    min-height: 200px;
     
 }

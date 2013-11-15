@@ -263,9 +263,7 @@
                             <?php } ?>
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
-                        <div class ="botao">
-                            <input align="center" type="submit" name="localizacao" value="Como chegar?" />
-                        </div>
+                        <input align="center" type="submit" name="localizacao" value="Como chegar?" />
                     </form>
 
                     <div id="mapview">

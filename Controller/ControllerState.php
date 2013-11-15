@@ -1,5 +1,7 @@
 <?php
 
+include_once '/../Dao/StateDAO.php';
+
 class ControllerState {
 
     private static $instanceControllerState;
@@ -20,7 +22,7 @@ class ControllerState {
     
     public function saveAverageEvaluationState($evaluate, $stateAcronym) {
         $stateDAO = new StateDAO();
-        $stateDAO->saveAverageEvaluationStateDAO($evaluate, $stateAcronym);
+        return $stateDAO->saveAverageEvaluationStateDAO($evaluate, $stateAcronym);
     }
 
 }

@@ -261,10 +261,10 @@
                                 ?>
                                 <input type="hidden" size="50" value="<?php echo $latlon2; ?>" id="endereco" />
                             <?php } ?>
+                            <label>&nbsp;</label>
+                            <input class="button" type="submit" name="localizacao" value="Como chegar?" />
                             <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
                         </div>
-                        <label>&nbsp;</label>
-                        <input class="button" type="submit" name="localizacao" value="Como chegar?" />
                     </form>
 
                     <div id="mapview">

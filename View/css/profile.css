@@ -89,8 +89,8 @@ div.evaluate{
 label {
     display: block;
      width: 150px;
-     float: left;
-     margin: 2px 4px 5px 4px;
-     text-align: right;
+     float: right;
+   /*  margin: 2px 4px 5px 4px;*/
+     text-align: left;
     
 }

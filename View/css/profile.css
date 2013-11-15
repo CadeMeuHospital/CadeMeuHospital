@@ -77,33 +77,20 @@ div.evaluate{
     font-size: 5pt;
     text-decoration: none;
 }
-div.botao{
-    alignment-adjust: center;
 
+.impult{
+    border:1px solid #006;
+   
 }
-.botao  {
-    position:absolute;
-    top:20px;
-    left:50px;
-    margin:0px;
-    padding:0px;
+.button {
+    border: 1px solid #006;
+    
 }
-
-.botao a, .botao a:visited {  
-    font: bold 12px/24px arial, helvetica, sans-aerif;	
-    padding:0px;
-    text-decoration: none;
-    text-align:center;	
-    color:#fff;
-    background: #666 url('botao_link.gif') no-repeat 
-        center center;	
-    width:120px;  
-    height:24px;	
-    display:block;	
-}
-
-.botao a:hover { 
-    background: #666 url('botao_hover.gif') no-repeat 
-        center center;
-    color:#999;
+label {
+    display: block;
+     width: 150px;
+     float: left;
+     margin: 2px 4px 5px 4px;
+     text-align: right;
+    
 }

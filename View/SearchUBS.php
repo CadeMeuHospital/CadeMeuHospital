@@ -8,26 +8,7 @@
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
-        <style>#prev{display:none;}</style>
-        <style>#list{margin-left: 300px;margin-right: 300px; }</style>
-        <style>#first-tr {margin-left: 0px;
-                   background-color: #B94E4F;
-                   min-height: 50px;
-                   display: block; }</style>
-        <style>#first-tr2 { margin-left: 0px;
-                     background-color: #CB7C7C;
-                     min-height: 50px;
-                     display: block; }</style>
-        <style>#pagination{text-align:center;}</style>
 
-        <style>.center {
-                text-align:center;
-                margin:auto;
-                width:760px;
-                min-height: 300px;
-                padding-top: 20px;
-            } 
-        </style>
 
         <title> Cadê Meu Hospital - Busca</title>
     </head>

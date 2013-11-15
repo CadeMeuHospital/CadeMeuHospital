@@ -77,3 +77,20 @@ div.evaluate{
     font-size: 5pt;
     text-decoration: none;
 }
+
+.impult{
+    border:1px solid #006;
+   
+}
+.button {
+    border: 1px solid #006;
+    
+}
+label {
+    display: block;
+     width: 150px;
+     float: right;
+   /*  margin: 2px 4px 5px 4px;*/
+     text-align: left;
+    
+}

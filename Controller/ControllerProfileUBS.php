@@ -2,6 +2,8 @@
 
 include_once '/../Model/profileUBS.php';
 include_once '/../DAO/profileUBSDAO.php';
+include_once '/../DAO/StateDAO.php';
+include_once 'ControllerState.php';
 include_once '/../Utils/DataValidation.php';
 include_once '/../Utils/DistanceLatLon.php';
 
@@ -54,7 +56,7 @@ class ControllerProfileUBS {
     
     public function takeState($codMunic) {
         $profileUBSDAO = new ProfileUBSDAO();
-        return $state = $profileUBSDAO->takeStateUBS($codMunic);
+        return $stateAcronym = $profileUBSDAO->takeStateUBS($codMunic);
     }
 
     public function searchUBS($field, $searchType) {
@@ -98,7 +100,12 @@ class ControllerProfileUBS {
 
     public function evaluateUBS($evaluate, $idUBS) {
         $profileUBSDAO = new ProfileUBSDAO();
-        return $profileUBSDAO->saveEvaluationUBS($evaluate, $idUBS);
+        $controllerState = ControllerState::getInstanceControllerState();
+        $ubs = self::$instanceControllerProfileUBS->returnUBS($idUBS);
+        $stateAcronym = self::$instanceControllerProfileUBS->takeState($ubs->getCodMunic());
+        $resultEvaluation = $profileUBSDAO->saveEvaluationUBS($evaluate, $idUBS);
+        $controllerState->saveAverageEvaluationState($evaluate, $stateAcronym);
+        return $resultEvaluation; 
     }
     
     public function getDistanceBetweenTwoLatLon($from_lat, $from_lon, $to_lat, $to_lon) {

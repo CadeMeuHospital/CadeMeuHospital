@@ -20,19 +20,64 @@
     <body align="center">
         <div class="root">
             <?php
-            require '../view/shared/header.php';
-            require '../view/shared/navigation_bar.php';
-            require '../Controller/ControllerStatistics.php';
+                require '../view/shared/header.php';
+                require '../view/shared/navigation_bar.php';
+                require '../Controller/ControllerStatistics.php';
 
-            $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
-            $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
-            $statistics = $controllerStatistics->generateStatisticsOfQuantityAverage();
-            $namesOfStates = $statistics[0];
-            $averages = $statistics[1];
-            $amountUBS = $statistics[2];
-            $populations = $statistics[3];
-            $areas = $statistics[4];
+                $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
+                $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
+                $statistics = $controllerStatistics->generateStatisticsOfQuantityAverage();
+                $namesOfStates = $statistics[0];
+                $amountUBS = $statistics[2];
+                
+                if (!isset($_POST['option1'])) {
+                    $option = "population";
+                } else {
+                    $option = $_POST['option1'];
+                }
+                
+                switch($option){
+                    case "average":
+                        $opitionToBeCrossed = $statistics[1];
+                        $title = "Média das Avaliações das UBS do Estado";
+                        break;
+                    case "population":
+                        $opitionToBeCrossed = $statistics[3];
+                        $title = "População do Estado";
+                        break;
+                    case "area":
+                        $opitionToBeCrossed = $statistics[4];
+                        $title = "Área do Estado";
+                        break;
+                }
+
             ?>
+
+            <h2>Estatísticas</h2>
+            <h1> Escolha as informações a serem cruzadas no mapa:</h1><br><br>
+            <form name="Statistics" onsubmit="verifyRadio();" method="post">
+                <table id="Tabela" >
+                    <tr>
+                        <th>População por Estado</th>
+                        <td class="align-left">
+                            <input type="radio" name="option1" value="population" checked/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Média das Avaliações por Estado</th>
+                        <td class="align-left">
+                            <input type="radio" name="option1" value="average"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Área do Estado</th>
+                        <td class="align-left">
+                            <input type="radio" name="option1" value="area"/>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" name="submitCross" value="Cruzar Informações!"/>
+            </form>
 
             <div id="center">
                 <div class="content">
@@ -87,19 +132,18 @@
 
                             data.addColumn('string', 'Brasil');
                             data.addColumn('number', 'Quantidade de UBS');
-                            data.addColumn('number', 'Média de Notas');
+                            data.addColumn('number', '<?php echo $title;?>');
 
-                            
                             <?php 
                             for ($i = 0; $i < 27; $i++){
                             ?>
                                 data.setValue(<?php echo $i; ?>, 0, '<?php echo $namesOfStates[$i]; ?>');
                                 data.setValue(<?php echo $i; ?>, 1, <?php echo $amountUBS[$i]; ?>);
-                                data.setValue(<?php echo $i; ?>, 2, <?php echo $averages[$i];?>);
+                                data.setValue(<?php echo $i; ?>, 2, <?php echo $opitionToBeCrossed[$i]; ?>);
                             <?php
                             }
                             ?>
-     
+
                             var options = {};
                             options['region'] = 'BR';
                             options['resolution'] = 'provinces';
@@ -116,7 +160,6 @@
 
                         google.setOnLoadCallback(drawVisualization);
                     </script>
-                    <h2>Estatísticas</h2>
 
                     <h1>Concentração de UBS por estado no Brasil</h1>
                     <div id="visualization" style=" border-bottom: 1px double #990000; border-top: 1px double #990000;

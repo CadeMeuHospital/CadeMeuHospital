@@ -1,7 +1,7 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../Controller/ControllerUser.php';
-include_once dirname(__FILE__) . '/../../Model/User.php';
+include_once dirname(__FILE__) . '/../../src/Controller/ControllerUser.php';
+include_once dirname(__FILE__) . '/../../src/Model/User.php';
 
 class ControllerUserTest extends PHPUnit_Framework_TestCase {
 

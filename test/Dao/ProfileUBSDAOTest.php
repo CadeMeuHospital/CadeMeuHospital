@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../Dao/ProfileUBSDAO.php';
+require_once dirname(__FILE__) . '/../../src/Dao/ProfileUBSDAO.php';
 
 define("IDEVALUATE", "999999");
 

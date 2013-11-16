@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../Controller/ControllerStatistics.php';
+require_once dirname(__FILE__) . '/../../src/Controller/ControllerStatistics.php';
 
 class ControllerStatisticsTest extends PHPUnit_Framework_TestCase {
 

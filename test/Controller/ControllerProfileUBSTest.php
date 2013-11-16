@@ -1,7 +1,7 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../Controller/ControllerProfileUBS.php';
-require_once dirname(__FILE__) . '/../../Utils/Exception/TextFieldException.php';
+require_once dirname(__FILE__) . '/../../src/Controller/ControllerProfileUBS.php';
+require_once dirname(__FILE__) . '/../../src/Utils/Exception/TextFieldException.php';
 
 class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
 

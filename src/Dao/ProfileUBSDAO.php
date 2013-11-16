@@ -17,7 +17,7 @@ class ProfileUBSDAO {
     public function searchUBSinDatabase($field, $searchType) {
         $field = trim($field);
         DataValidation::throwTextFieldException($field);
-        
+
         switch ($searchType) {
             case NOME :
                 //DataValidation::anti_sql_injection($field);
@@ -76,12 +76,8 @@ class ProfileUBSDAO {
     public function executeComandSQL($sql, $idUBS) {
         $execute = mysql_query($sql);
         $evaluateAverage = ProfileUBSDAO::updateEvaluateAverage($idUBS);
-
-        if ($evaluateAverage) {
-            return $evaluateAverage;
-        } else {
-            return $execute;
-        }
+        
+        return $evaluateAverage;
     }
 
     public function updateEvaluateAverage($idUBS) {

@@ -17,7 +17,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
         <script type="text/javascript" src="../view/shared/js/jquery-1.7.2.min.js"></script>
 
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <title> Cadê Meu Hospital - Home</title>
+        <title> CMH - Home</title>
     </head>
 
     <body align="center">

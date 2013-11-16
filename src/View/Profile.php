@@ -11,7 +11,7 @@
         <script type="text/javascript" src="../View/shared/js/location.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <style>#mapview{display:none;}</style>
-        <title> Cadê Meu Hospital - Perfil UBS </title>
+        <title> CMH - Perfil UBS </title>
     </head>
 
     <body>

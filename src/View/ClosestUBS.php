@@ -30,7 +30,7 @@ require_once '../Controller/ControllerUser.php';
         } else {
             ?>
             <style>#mapview{display:none;}</style>
-            <title> Cadê Meu Hospital - Perfil UBS </title>
+            <title> CMH - UBS Mais Próxima</title>
         </head>
 
         <body>

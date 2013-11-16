@@ -2,8 +2,6 @@
 
 require_once dirname(__FILE__) . '/../../src/Dao/ProfileUBSDAO.php';
 
-define("IDEVALUATE", "999999");
-
 class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
 
     protected $profileUBSDao;
@@ -51,7 +49,13 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     /* Method insertUBSInDatabase suit test case */
 
     protected function insertUBSInDataBase() {
-        $queryInsertUBS = "INSERT INTO ubs (cod_unico, vlr_latitude, vlr_longitude, cod_munic, cod_cnes, nom_estab, dsc_endereco, dsc_bairro, dsc_cidade, dsc_telefone, dsc_estrut_fisic_ambiencia, dsc_adap_defic_fisic_idosos, dsc_equipamentos, dsc_medicamentos, average) VALUES (37798, -99.9999999999999, -99.9999999999999, 999999, 99999, 'testeNome','testeEndereco', 'testeBairro', 'descBairro', 99999999999,  'testeDescEstFisiAmb', 'testDescAdaptIdoso', 'testeDescEquip', 'testeDescEquip', 9999999)";
+        $queryInsertUBS = "INSERT INTO ubs (cod_unico, vlr_latitude, vlr_longitude, cod_munic,
+            cod_cnes, nom_estab, dsc_endereco, dsc_bairro, dsc_cidade, dsc_telefone, 
+            dsc_estrut_fisic_ambiencia, dsc_adap_defic_fisic_idosos, dsc_equipamentos, 
+            dsc_medicamentos, average) VALUES (37798, -99.9999999999999, -99.9999999999999, 
+            999999, 99999, 'testeNome','testeEndereco', 'testeBairro', 'descBairro', 
+            99999999999,  'testeDescEstFisiAmb', 'testDescAdaptIdoso', 'testeDescEquip', 
+            'testeDescEquip', 9999999)";
         $executeQuery = mysql_query($queryInsertUBS);
         $this->assertTrue($executeQuery);
     }
@@ -94,18 +98,18 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
 
     /* Method saveEvaluationUBS suit test case */
 
-    public function testeSaveEvaluationUBSInsert() {
-        $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(NULL, IDEVALUATE);
+    public function testeSaveEvaluationUBS() {
+        $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(NULL, 999999999);
         $this->assertNotNull($resultNotNull);
     }
-
-    public function testeSaveEvaluationUBS() {
-        $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(NULL, IDEVALUATE);
+    
+    public function testeSaveEvaluationUBSInsert() {
+        $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(NULL, 999999999);
         $this->assertNotNull($resultNotNull);
     }
 
     public function testSaveEvaluationUBSNotNULL() {
-        $resultNotNULL = $this->profileUBSDao->saveEvaluationUBS(5, IDEVALUATE);
+        $resultNotNULL = $this->profileUBSDao->saveEvaluationUBS(5, 999999999);
         $this->assertNotNULL($resultNotNULL);
     }
 

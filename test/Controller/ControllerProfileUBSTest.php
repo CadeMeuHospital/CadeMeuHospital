@@ -111,18 +111,17 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     }
     
     /* Method EvaluateUBS suit test case */
-
-    public function testEvaluateUBSNotNull() {
-        $resultNotNull = $this->controllerProfileUBS->evaluateUBS(3, 4);
-        $this->assertNotNull($resultNotNull);
+    
+    public function tearDownEvaluate(){
+        $queryDel = "DELETE FROM evaluate WHERE id_cod_unico=1234567";
+        mysql_query($queryDel);
     }
 
-    /* Method TakeAverageUBS suit test case */
-
-//    public function testTakeAverageUBSNotNull() {
-//        $resultNotNull = $this->controllerProfileUBS->takeAverageUBS(1);
-//        $this->assertNotNull($resultNotNull);
-//    }
+    public function testEvaluateUBSNotNull() {
+        $resultNotNull = $this->controllerProfileUBS->evaluateUBS(3, 1234567);
+        $this->assertNotNull($resultNotNull);
+        $this->tearDownEvaluate();
+    }
     
     public function testGetDistanceBetweenTwoLatLon() {
         $distance = $this->controllerProfileUBS->getDistanceBetweenTwoLatLon("-15.780147999999999","-47.92917","-10.91123700141880","-37.062077522277");

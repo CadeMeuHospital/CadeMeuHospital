@@ -53,6 +53,11 @@ div.content {
     display:inline-table;
 }
 
+div.banner {
+    min-width: 463px;
+    min-height: 429px;
+}
+
 div.footer {
     height: 40px;
     font-size: 9pt;

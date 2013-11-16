@@ -67,7 +67,7 @@
 
             <h2>Estatísticas</h2>
             <h1> Escolha as informações a serem cruzadas no mapa:</h1><br><br>
-            <form name="Statistics" onsubmit="verifyRadio();" method="post">
+            <form name="Statistics" " method="post">
                 <table id="Tabela" >
                     <tr>
                         <th>População por Estado</th>
@@ -178,7 +178,6 @@
                          border-left: 1px double #990000; border-right: 1px double #990000;">
                     </div>            
                     <!--Div that will hold the dashboard-->
-
                     <br>
                     <br>
                     <h1>Número de votos de todas as UBS</h1>

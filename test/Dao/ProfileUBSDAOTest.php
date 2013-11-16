@@ -31,7 +31,7 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     protected function tearDown() {
         $this->tearDownDataBase();
         $this->tearDownProfileUBS();
-       // $this->tearDownUBSEvaluate();
+        $this->tearDownUBSEvaluate();
     }
 
     protected function tearDownProfileUBS() {
@@ -39,7 +39,12 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     protected function tearDownDataBase() {
-        $sqlDeleteRowEvaluate = "DELETE FROM evaluate WHERE id_cod_unico='999999'";
+        $sqlDeleteRowEvaluate = "DELETE FROM evaluate WHERE id_cod_unico=999999";
+        mysql_query($sqlDeleteRowEvaluate);
+    }
+
+    protected function tearDownUBSEvaluate() {
+        $sqlDeleteRowEvaluate = "DELETE FROM evaluate WHERE id_cod_unico=999999999";
         mysql_query($sqlDeleteRowEvaluate);
     }
 
@@ -67,6 +72,7 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("gama", 3);
         $this->assertNotNULL($resultNotNULL);
     }
+
     public function testSearchUBSinDatabaseByState() {
         $resultNotNULL = $this->profileUBSDao->searchUBSinDatabase("GO", 4);
         $this->assertNotNULL($resultNotNULL);
@@ -93,12 +99,11 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertNotNull($resultNotNull);
     }
 
-    public function testeSaveEvaluationUBS(){
-        $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(2, IDEVALUATE);
+    public function testeSaveEvaluationUBS() {
+        $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(NULL, IDEVALUATE);
         $this->assertNotNull($resultNotNull);
-       
     }
-    
+
     public function testSaveEvaluationUBSNotNULL() {
         $resultNotNULL = $this->profileUBSDao->saveEvaluationUBS(5, IDEVALUATE);
         $this->assertNotNULL($resultNotNULL);
@@ -117,22 +122,24 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     // Method updateEvaluateAverage suit test case
-    public function testUpdateEvaluateAverage(){
+    public function testUpdateEvaluateAverage() {
         $resultFalse = $this->profileUBSDao->updateEvaluateAverage(8999999);
         $this->assertFalse($resultFalse);
-    } 
-    
-    public function testUpdateEvaluateAverageNotNull(){
+    }
+
+    public function testUpdateEvaluateAverageNotNull() {
         $resultNotNull = $this->profileUBSDao->updateEvaluateAverage(1);
         $this->assertNotNull($resultNotNull);
     }
-    
-    public function testTakeStateUBS(){
-       $resultNotNull = $this->profileUBSDao->takeStateUBS(280030);
-        $this->assertNotNull($resultNotNull); 
+
+    public function testTakeStateUBS() {
+        $resultNotNull = $this->profileUBSDao->takeStateUBS(280030);
+        $this->assertNotNull($resultNotNull);
     }
-    public function testTakeStateUBSFalse(){
-       $resultFalse = $this->profileUBSDao->takeStateUBS(28003012);
-        $this->assertFalse($resultFalse); 
+
+    public function testTakeStateUBSFalse() {
+        $resultFalse = $this->profileUBSDao->takeStateUBS(28003012);
+        $this->assertFalse($resultFalse);
     }
+
 }

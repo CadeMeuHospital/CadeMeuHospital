@@ -163,7 +163,7 @@
                                 'containerId': 'chart_div',
                                 'options': {
                                     'width': 500,
-                                    'height': 500,
+                                    'height': 200,
                                     'pieSliceText': 'value',
                                     'legend': 'right'
                                 }
@@ -178,7 +178,7 @@
                 <!--Div that will hold the dashboard-->
                 <div id="dashboard_div">
                     <!--Divs that will hold each control and chart-->
-                    <div id="filter_div"></div>
+                    <div id="filter_div" style=" display:none;"></div>
                     <div id="chart_div"></div>
                 </div>
 
@@ -247,13 +247,13 @@
                             if (!isset($_REQUEST['latlon'])) {
                                 ?>
                                 <script>
-                        navigator.geolocation.getCurrentPosition(showposUBS);
-                        function showposUBS(position) {
-                            var lat = position.coords.latitude;
-                            var lon = position.coords.longitude;
-                            var latlon = lat + ',' + lon;
-                            window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
-                        }
+                                    navigator.geolocation.getCurrentPosition(showposUBS);
+                                    function showposUBS(position) {
+                                        var lat = position.coords.latitude;
+                                        var lon = position.coords.longitude;
+                                        var latlon = lat + ',' + lon;
+                                        window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
+                                    }
                                 </script> 
                                 <?php
                             } else {
@@ -263,8 +263,8 @@
                             <?php } ?>
                             <label>&nbsp;</label>
                             <br>
-                                <input class="button" type="submit" name="localizacao" value="Como chegar?" />
-                                <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
+                            <input class="button" type="submit" name="localizacao" value="Como chegar?" />
+                            <input type="hidden" size="50" value="<?php echo $latlon; ?>" id="destino" />
 
                         </div>
                     </form>

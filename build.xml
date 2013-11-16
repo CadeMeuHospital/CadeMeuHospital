@@ -1,0 +1,46 @@
+<project name="CadeMeuHosptal" default="build">
+  <property name="basedir" value="C:\xampp\htdocs\CadeMeuHospital" override="true" />
+<target name="build" depends="alltests">
+    <!--  deploy your project here -->
+ </target>
+
+<target name="alltests" depends="prepare">
+  <phpunit haltonfailure="true" haltonerror="true" printsummary="true">
+   <formatter todir="${basedir}/log/test-report" type="xml"/>
+   <batchtest classpath="${basedir}/test/">
+      <fileset dir="${basedir}/test">
+              <include name="*.php"/>
+            </fileset>
+         </batchtest>
+     </phpunit>
+ </target>
+
+ <target name="clean" description="Cleanup build artifacts">
+  <delete dir="${basedir}/log/test-report"/>
+ <delete dir="${basedir}/log/pdepend"/>
+ </target>
+
+
+ <target name="prepare" depends="clean" description="Prepare for build">
+  <mkdir dir="${basedir}/log/test-report"/>
+  <mkdir dir="${basedir}/log/pdepend"/>
+ </target>
+
+
+    <target name="pdepend" description="Calcula metricas de software">
+        <phpdepend>
+            <fileset dir="${basedir}">
+                <include name="**/*.php" />
+            </fileset>
+            <logger type="jdepend-xml"
+                outfile="${basedir}/log/jdepend.xml"/>
+            <logger type="jdepend-chart"
+                outfile="${basedir}/log/pdepend/dependencies.svg"/>
+            <logger type="overview-pyramid"
+                outfile="${basedir}/log/pdepend/overview-pyramid.svg"/>
+            <analyzer type="coderank-mode" value="method"/>
+        </phpdepend>
+    </target>
+
+
+</project>

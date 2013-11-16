@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="." tests="56" assertions="54" failures="0" errors="0" time="15.875906">
+    <testsuite name="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" tests="14" assertions="12" failures="0" errors="0" time="2.462139">
+      <testcase name="testSingletonNotNull" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="43" assertions="1" time="0.007000"/>
+      <testcase name="testSingletonInstanceOf" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="48" assertions="1" time="0.004001"/>
+      <testcase name="testMakeObjectUBSNotNull" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="55" assertions="1" time="0.002000"/>
+      <testcase name="testMakeObjectUBSInstanceOf" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="60" assertions="1" time="0.002000"/>
+      <testcase name="testSearchUBSInstanceOf" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="67" assertions="1" time="0.537031"/>
+      <testcase name="testSearchUBSException" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="76" assertions="0" time="0.011000"/>
+      <testcase name="testReturnUBSNotNull" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="83" assertions="1" time="0.259014"/>
+      <testcase name="testReturnUBSEqualsId" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="88" assertions="1" time="0.300017"/>
+      <testcase name="testReturnUBSInvalidId" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="94" assertions="1" time="0.149009"/>
+      <testcase name="testReturnUBSCatch" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="99" assertions="0" time="0.117006"/>
+      <testcase name="testEvaluateUBSNotNull" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="110" assertions="1" time="1.014058"/>
+      <testcase name="testTakeAverageUBSNotNull" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="117" assertions="1" time="0.049002"/>
+      <testcase name="testGetDistanceBetweenTwoLatLon" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="122" assertions="1" time="0.006001"/>
+      <testcase name="testGetDistanceBetweenTwoLatLonEquals" class="ControllerProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerProfileUBSTest.php" line="127" assertions="1" time="0.005000"/>
+    </testsuite>
+    <testsuite name="ControllerRankingTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerRankingTest.php" tests="5" assertions="5" failures="0" errors="0" time="0.280015">
+      <testcase name="testMakeRankNotNull" class="ControllerRankingTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerRankingTest.php" line="25" assertions="1" time="0.267015"/>
+      <testcase name="testMakeRankByCityNotNull" class="ControllerRankingTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerRankingTest.php" line="30" assertions="1" time="0.003000"/>
+      <testcase name="testMakeRankByCityFalse" class="ControllerRankingTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerRankingTest.php" line="35" assertions="1" time="0.003000"/>
+      <testcase name="testMakeRankByNeighborhoodNotNull" class="ControllerRankingTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerRankingTest.php" line="41" assertions="1" time="0.004000"/>
+      <testcase name="testMakeRankByNeighborhoodFalse" class="ControllerRankingTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Controller\ControllerRankingTest.php" line="45" assertions="1" time="0.003000"/>
+    </testsuite>
+    <testsuite name="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" tests="11" assertions="11" failures="0" errors="0" time="12.975742">
+      <testcase name="testSearchUBSinDatabaseByName" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="60" assertions="1" time="0.667039"/>
+      <testcase name="testSearchUBSinDatabaseByCity" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="65" assertions="1" time="1.512087"/>
+      <testcase name="testSearchUBSinDatabaseByNeighborhood" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="70" assertions="1" time="2.862164"/>
+      <testcase name="testReturnUBSFalse" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="77" assertions="1" time="0.346020"/>
+      <testcase name="testSearchUBSInTableEvaluateNotNull" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="84" assertions="1" time="0.108006"/>
+      <testcase name="testeSaveEvaluationUBSInsert" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="91" assertions="1" time="1.119064"/>
+      <testcase name="testSaveEvaluationUBSNotNULL" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="96" assertions="1" time="0.959054"/>
+      <testcase name="testTakeAverageUBSFalse" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="103" assertions="1" time="2.797160"/>
+      <testcase name="testTakeAverageUBSNotNull" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="108" assertions="1" time="0.377021"/>
+      <testcase name="testUpdateEvaluateAverage" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="114" assertions="1" time="0.350020"/>
+      <testcase name="testUpdateEvaluateAverageNotNull" class="ProfileUBSDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\ProfileUBSDAOTest.php" line="119" assertions="1" time="1.878107"/>
+    </testsuite>
+    <testsuite name="RankingDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\RankingDAOTest.php" tests="5" assertions="5" failures="0" errors="0" time="0.021001">
+      <testcase name="testGetRankNotNull" class="RankingDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\RankingDAOTest.php" line="25" assertions="1" time="0.004000"/>
+      <testcase name="testGetRankByCityNotNull" class="RankingDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\RankingDAOTest.php" line="30" assertions="1" time="0.005001"/>
+      <testcase name="testGetRankByCityFalse" class="RankingDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\RankingDAOTest.php" line="34" assertions="1" time="0.004000"/>
+      <testcase name="testGetRankByNeighborhoodNotNull" class="RankingDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\RankingDAOTest.php" line="40" assertions="1" time="0.004000"/>
+      <testcase name="testGetRankByNeighborhoodFalse" class="RankingDAOTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Dao\RankingDAOTest.php" line="44" assertions="1" time="0.004000"/>
+    </testsuite>
+    <testsuite name="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" tests="14" assertions="14" failures="0" errors="0" time="0.068005">
+      <testcase name="testGetIdUBS" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="25" assertions="1" time="0.004000"/>
+      <testcase name="testGetLatitudeUBS" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="29" assertions="1" time="0.003000"/>
+      <testcase name="testGetLongitudeUBS" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="33" assertions="1" time="0.003000"/>
+      <testcase name="testGetCodMunic" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="37" assertions="1" time="0.005001"/>
+      <testcase name="testGetCodCNES" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="41" assertions="1" time="0.004000"/>
+      <testcase name="testGetNameUBS" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="45" assertions="1" time="0.015001"/>
+      <testcase name="testGetDescEnder" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="49" assertions="1" time="0.004000"/>
+      <testcase name="testGetDscCidade" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="53" assertions="1" time="0.004001"/>
+      <testcase name="testGetDescBairro" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="57" assertions="1" time="0.004000"/>
+      <testcase name="testGetPhoneUBS" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="61" assertions="1" time="0.006001"/>
+      <testcase name="testGetPhysicStructure" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="65" assertions="1" time="0.004000"/>
+      <testcase name="testGetAdapOldPeople" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="69" assertions="1" time="0.004000"/>
+      <testcase name="testGetDescriTools" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="73" assertions="1" time="0.004001"/>
+      <testcase name="testGetDescMedicine" class="ProfileUBSTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Model\ProfileUBSTest.php" line="77" assertions="1" time="0.004000"/>
+    </testsuite>
+    <testsuite name="DataValidationTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" tests="7" assertions="7" failures="0" errors="0" time="0.069004">
+      <testcase name="testThrowTextFieldExceptionThrowException" class="DataValidationTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" line="34" assertions="1" time="0.040002"/>
+      <testcase name="testThrowTextFieldExceptionInvalidChar" class="DataValidationTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" line="41" assertions="1" time="0.006001"/>
+      <testcase name="testThrowTextFieldExceptionTrue" class="DataValidationTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" line="45" assertions="1" time="0.004000"/>
+      <testcase name="testValidateNullFieldsFalse" class="DataValidationTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" line="52" assertions="1" time="0.004000"/>
+      <testcase name="testValidateNullFieldsTrue" class="DataValidationTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" line="57" assertions="1" time="0.003001"/>
+      <testcase name="testValidadeTextFieldInvalid" class="DataValidationTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" line="62" assertions="1" time="0.004000"/>
+      <testcase name="testValidadeTextFieldValidate" class="DataValidationTest" file="C:\xampp\htdocs\CadeMeuHospital\Teste\Utils\DataValidationTest.php" line="67" assertions="1" time="0.008000"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -42,15 +42,15 @@ require_once '../Controller/ControllerUser.php';
                 require '../view/shared/navigation_bar.php';
 
                 $controllerUser = ControllerUser::getInstanceControllerUser();
-                $currentUser = $controllerUser->makeObjectUser($_REQUEST['lat'],$_REQUEST['lon']);
+                $currentUser = $controllerUser->makeObjectUser($_REQUEST['lat'], $_REQUEST['lon']);
                 $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
                 $closestUBSs = $controllerProfileUBS->searchUBS($currentUser->getCity(), CIDADE);
                 $menor = 20000;
                 for ($i = 0; $i < count($closestUBSs); $i++) {
                     $currentUBS = $closestUBSs[$i];
 
-                    $distance =  $controllerProfileUBS->getDistanceBetweenTwoLatLon($currentUser->getLatitude(), $currentUser->getLongitude(), $currentUBS->getLatitudeUBS(), $currentUBS->getLongitudeUBS());  
-       
+                    $distance = $controllerProfileUBS->getDistanceBetweenTwoLatLon($currentUser->getLatitude(), $currentUser->getLongitude(), $currentUBS->getLatitudeUBS(), $currentUBS->getLongitudeUBS());
+
                     if ($distance < $menor) {
                         $menor = $distance;
                         $closestUBS = $currentUBS;

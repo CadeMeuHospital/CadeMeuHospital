@@ -29,7 +29,7 @@
                 $statistics = $controllerStatistics->generateStatisticsOfQuantityAverage();
                 $namesOfStates = $statistics[0];
                 $amountUBS = $statistics[2];
-                
+
                 if (!isset($_POST['option1'])) {
                     $option = "population";
                 } else {
@@ -37,17 +37,29 @@
                 }
                 
                 switch($option){
+                    case "population":
+                        $populations = $statistics[3];
+                        $opitionToBeCrossed = array();
+                        
+                        for($i = 0; $i < 27;$i++){
+                            $result = $populations[$i]/$amountUBS[$i];
+                            array_push($opitionToBeCrossed, $result);
+                        }
+                        $title = "Quantidade de Pessoas por UBS";
+                        break;
                     case "average":
                         $opitionToBeCrossed = $statistics[1];
                         $title = "Média das Avaliações das UBS do Estado";
                         break;
-                    case "population":
-                        $opitionToBeCrossed = $statistics[3];
-                        $title = "População do Estado";
-                        break;
-                    case "area":
-                        $opitionToBeCrossed = $statistics[4];
-                        $title = "Área do Estado";
+                    case "area":    
+                        $areas = $statistics[4];
+                        $opitionToBeCrossed = array();
+                        
+                        for($i = 0; $i < 27;$i++){
+                            $result = $areas[$i]/$amountUBS[$i];
+                            array_push($opitionToBeCrossed, $result);
+                        }
+                        $title = "Uma UBS a cada (Km²)";
                         break;
                 }
 
@@ -176,8 +188,6 @@
                         <div id="filter_div" style=" display:none;"></div>
                         <div id="chart_div"></div>
                     </div>
-
-
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../Model/User.php';
+require_once dirname(__FILE__) . '/../../src/Model/User.php';
 
 class UserTest extends PHPUnit_Framework_TestCase {
 

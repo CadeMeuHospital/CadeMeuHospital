@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../Model/profileUBS.php';
+require_once dirname(__FILE__) . '/../../src/Model/profileUBS.php';
 
 class ProfileUBSTest extends PHPUnit_Framework_TestCase {
 

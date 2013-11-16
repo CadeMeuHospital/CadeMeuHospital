@@ -1,6 +1,6 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../Controller/ControllerRanking.php';
+include_once dirname(__FILE__) . '/../../src/Controller/ControllerRanking.php';
 
 class ControllerRankingTest extends PHPUnit_Framework_TestCase {
 

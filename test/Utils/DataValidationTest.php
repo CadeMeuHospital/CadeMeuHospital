@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../Utils/DataValidation.php';
+require_once dirname(__FILE__) . '/../../src/Utils/DataValidation.php';
 
 class DataValidationTest extends PHPUnit_Framework_TestCase {
 

@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/../../Dao/StatisticsDAO.php';
+require_once dirname(__FILE__) . '/../../src/Dao/StatisticsDAO.php';
 
 class StatisticsDAOTest extends PHPUnit_Framework_TestCase {
 

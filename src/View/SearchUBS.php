@@ -3,17 +3,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../view//shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>
-           #first-tr{background-color:#B22222;
-           text-align:center;
+           #first-tr{
+               background-color:#B22222;
+               text-align:center;
            } 
-           #first-tr2{background-color:#FFFFFF;
-           text-align:center;
+           #first-tr2{
+               background-color:#FFFFFF;
+               text-align:center;   
+               
            }
         </style>
         
@@ -26,7 +29,7 @@
             <?php require '../view/shared/header.php'; ?>
             <?php require '../view/shared/navigation_bar.php'; ?>
 
-            <div class="center">
+            <div class="center" >
 
                 <?php
                 $value = $_REQUEST['searchType'];
@@ -38,7 +41,7 @@
                 $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
                 ?>
 
-                <table>
+                <table style="min-width:760px;">
                     <?php
                     $quantityUBS = count($arrayUBS);
                     echo "<br><p align = 'center'>Sua pesquisa retornou " . $quantityUBS . " resultados.</p><br><br>";
@@ -55,7 +58,6 @@
                             $stateUBS = $controllerProfileUBS->takeState(($arrayUBS[$i]->getCodMunic()));
                             $idUBS = $arrayUBS[$i]->getIdUBS();
                             //$average = $controllerProfileUBS->takeAverageUBS($idUBS);
-
                             $path = "../view/Profile.php?id=" . $idUBS . "";
                             if ($i % 2 == 0) {
                                 echo "<tr id='first-tr'><td><a href=" . $path . " class = 'linkBranco'> " . $nameUBS . " </a></td>";

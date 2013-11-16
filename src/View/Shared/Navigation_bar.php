@@ -2,7 +2,7 @@
     <div id= "center">
         <center>
             <ul>
-                <li><a href="../index.php">Home</a></li>
+                <li><a href="../../index.php">Home</a></li>
 
                 <li><a href="../View/ClosestUBS.php">UBS mais próxima</a></li>
 

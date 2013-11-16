@@ -4,6 +4,14 @@
     <!--  deploy your project here -->
  </target>
 
+<target name="init">
+		<mkdir dir="${basedir}"/>
+		<mkdir dir="${basedir}/pdepend/"/>
+	</target>
+
+	<target name="build" depends="init, pdepend">
+	</target>
+
 <target name="alltests" depends="prepare">
   <phpunit haltonfailure="true" haltonerror="true" printsummary="true">
    <formatter todir="${basedir}/log/test-report" type="xml"/>
@@ -25,7 +33,7 @@
   <mkdir dir="${basedir}/log/test-report"/>
   <mkdir dir="${basedir}/log/pdepend"/>
  </target>
-
+ <!--
 
     <target name="pdepend" description="Calcula metricas de software">
         <phpdepend>
@@ -41,6 +49,18 @@
             <analyzer type="coderank-mode" value="method"/>
         </phpdepend>
     </target>
+-->
 
+	<target name="pdepend">
+		<exec executable="pdepend">
+			<arg line="
+				--jdepend-xml=${basedir}/pdepend/jdepend.xml
+				--jdepend-chart=${basedir}/pdepend/dependencies.svg
+				--overview-pyramid=${basedir}/pdepend/overview-pyramid.svg
+				--ignore=test/
+				.
+			" />
+		</exec>
+	</target>
 
 </project>

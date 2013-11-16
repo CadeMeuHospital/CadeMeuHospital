@@ -41,7 +41,7 @@
                 </h2>
                 <div class="content">
 
-                    <table id="tabela-dados-UBS" style="text-align: left; width:700px;">
+                    <table id="tabela-dados-UBS" style="text-align: left; width:760px;">
                         <tr>
                             <th>Descrição do Endereço:</th>
                             <td class="align-left"><?php echo $profileUBS->getDescEnder(); ?></td>
@@ -90,96 +90,100 @@
                 </div>
                 <div class="evaluate" style="text-align: center">
                     <h2>Avalie esta UBS!!</h2>
-                    <form name="Evaluate" action="EvaluateUBS.php" method="post">
-                        <table id="Tabela" >
-                            <tr>
-                                <th>Ruim!!! D=</th>
-                                <td class="align-left">
-                                    <input type="radio" name="evaluate" value="1" checked/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Regular! )=</th>
-                                <td class="align-left">
-                                    <input type="radio" name="evaluate" value="2"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Bom .-.</th>
-                                <td class="align-left">
-                                    <input type="radio" name="evaluate" value="3"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Muito Bom! =D</th>
-                                <td class="align-left">
-                                    <input type="radio" name="evaluate" value="4"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Excelente!!!*.*</th>
-                                <td class="align-left">
-                                    <input type="radio" name="evaluate" value="5"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="align-left">
-                                    <input type="submit" name="submitEvaluate" value="Avaliar"/>
-                                </td>
-                            </tr>
-                        </table>
-                        <input type="hidden" name="idUBS" value="<?php echo $idUBS; ?>" >
-                    </form>
+                    <table>
+                        <tr>
+                            <td class="align-left">
+                                <form name="Evaluate" action="EvaluateUBS.php" method="post">
+                                    <table id="Tabela" >
+                                        <tr>
+                                            <th>Ruim!!! D=</th>
+                                            <td class="align-left">
+                                                <input type="radio" name="evaluate" value="1" checked/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Regular! )=</th>
+                                            <td class="align-left">
+                                                <input type="radio" name="evaluate" value="2"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Bom .-.</th>
+                                            <td class="align-left">
+                                                <input type="radio" name="evaluate" value="3"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Muito Bom! =D</th>
+                                            <td class="align-left">
+                                                <input type="radio" name="evaluate" value="4"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Excelente!!!*.*</th>
+                                            <td class="align-left">
+                                                <input type="radio" name="evaluate" value="5"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="align-left">
+                                                <input class="button" type="submit" name="submitEvaluate" value="Avaliar"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <input type="hidden" name="idUBS" value="<?php echo $idUBS; ?>" >
+                                </form>
+                            </td>
+                            <td style="background-color: #FFFFFF;">
+                                <script type="text/javascript">
+                                    google.load('visualization', '1.0', {'packages': ['controls']});
+                                    google.setOnLoadCallback(drawDashboard);
 
-                    <script type="text/javascript">
-                        google.load('visualization', '1.0', {'packages': ['controls']});
-                        google.setOnLoadCallback(drawDashboard);
+                                    function drawDashboard() {
 
-                        function drawDashboard() {
+                                        var data = google.visualization.arrayToDataTable([
+                                            ['Nota', 'Percentual'],
+                                            ['Ruim', <?php echo $evaluatesUBS[0]; ?>],
+                                            ['Regular', <?php echo $evaluatesUBS[1]; ?>],
+                                            ['Bom', <?php echo $evaluatesUBS[2]; ?>],
+                                            ['Muito bom', <?php echo $evaluatesUBS[3]; ?>],
+                                            ['Excelente', <?php echo $evaluatesUBS[4]; ?>]
+                                        ]);
 
-                            var data = google.visualization.arrayToDataTable([
-                                ['Nota', 'Percentual'],
-                                ['Ruim', <?php echo $evaluatesUBS[0]; ?>],
-                                ['Regular', <?php echo $evaluatesUBS[1]; ?>],
-                                ['Bom', <?php echo $evaluatesUBS[2]; ?>],
-                                ['Muito bom', <?php echo $evaluatesUBS[3]; ?>],
-                                ['Excelente', <?php echo $evaluatesUBS[4]; ?>]
-                            ]);
-
-                            var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
+                                        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
 
 
-                            var donutRangeSlider = new google.visualization.ControlWrapper({
-                                'controlType': 'NumberRangeFilter',
-                                'containerId': 'filter_div',
-                                'options': {
-                                    'filterColumnLabel': 'Percentual'
-                                }
-                            });
+                                        var donutRangeSlider = new google.visualization.ControlWrapper({
+                                            'controlType': 'NumberRangeFilter',
+                                            'containerId': 'filter_div',
+                                            'options': {
+                                                'filterColumnLabel': 'Percentual'
+                                            }
+                                        });
 
-                            // Create a pie chart, passing some options
-                            var pieChart = new google.visualization.ChartWrapper({
-                                'chartType': 'PieChart',
-                                'containerId': 'chart_div',
-                                'options': {
-                                    'width': 500,
-                                    'height': 200,
-                                    'pieSliceText': 'value',
-                                    'legend': 'right'
-                                }
-                            });
+                                        // Create a pie chart, passing some options
+                                        var pieChart = new google.visualization.ChartWrapper({
+                                            'chartType': 'PieChart',
+                                            'containerId': 'chart_div',
+                                            'options': {
+                                                'width': 370,
+                                                'height': 200,
+                                                'pieSliceText': 'value',
+                                                'legend': 'right'
+                                            }
+                                        });
 
-                            dashboard.bind(donutRangeSlider, pieChart);
-                            dashboard.draw(data);
-                        }
-                    </script>
-
-                </div>
-                <!--Div that will hold the dashboard-->
-                <div id="dashboard_div">
-                    <!--Divs that will hold each control and chart-->
-                    <div id="filter_div" style=" display:none;"></div>
-                    <div id="chart_div"></div>
+                                        dashboard.bind(donutRangeSlider, pieChart);
+                                        dashboard.draw(data);
+                                    }
+                                </script>
+                                <div id="dashboard_div">
+                                    <div id="filter_div" style=" display:none;"></div>
+                                    <div id="chart_div"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
 
                 <h2>Mapa</h2>
@@ -187,56 +191,56 @@
                 <div class="content">
                     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>			
                     <script>
-                        var directionDisplay;
-                        var directionsService = new google.maps.DirectionsService();
+                                    var directionDisplay;
+                                    var directionsService = new google.maps.DirectionsService();
 
 <?php $latlon = $profileUBS->getLatitudeUBS() . "," . $profileUBS->getLongitudeUBS(); ?>;
-                        var myCenter = new google.maps.LatLng(<?php echo $latlon; ?>);
-                        function initialize()
-                        {
-                            directionsDisplay = new google.maps.DirectionsRenderer();
-                            var myLatlng = new google.maps.LatLng();
+                                    var myCenter = new google.maps.LatLng(<?php echo $latlon; ?>);
+                                    function initialize()
+                                    {
+                                        directionsDisplay = new google.maps.DirectionsRenderer();
+                                        var myLatlng = new google.maps.LatLng();
 
-                            var mapProp = {
-                                center: new google.maps.LatLng(<?php echo $latlon ?>),
-                                zoom: 16,
-                                mapTypeId: google.maps.MapTypeId.ROADMAP
-                            };
-                            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-                            directionsDisplay.setMap(map);
-                            directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+                                        var mapProp = {
+                                            center: new google.maps.LatLng(<?php echo $latlon ?>),
+                                            zoom: 16,
+                                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                                        };
+                                        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                                        directionsDisplay.setMap(map);
+                                        directionsDisplay.setPanel(document.getElementById("directionsPanel"));
 
-                            var marker = new google.maps.Marker({
-                                position: myCenter,
-                                icon: 'Shared/img/cmh.png',
-                                animation: google.maps.Animation.BOUNCE
-                            });
+                                        var marker = new google.maps.Marker({
+                                            position: myCenter,
+                                            icon: 'Shared/img/cmh.png',
+                                            animation: google.maps.Animation.BOUNCE
+                                        });
 
-                            marker.setMap(map);
+                                        marker.setMap(map);
 
-                        }
+                                    }
 
-                        function calcRoute() {
-                            var start = document.getElementById("endereco").value;
-                            var end = document.getElementById("destino").value;
-                            var request = {
-                                origin: start,
-                                destination: end,
-                                travelMode: google.maps.DirectionsTravelMode.DRIVING
-                            };
+                                    function calcRoute() {
+                                        var start = document.getElementById("endereco").value;
+                                        var end = document.getElementById("destino").value;
+                                        var request = {
+                                            origin: start,
+                                            destination: end,
+                                            travelMode: google.maps.DirectionsTravelMode.DRIVING
+                                        };
 
-                            directionsService.route(request, function(response, status) {
-                                if (status === google.maps.DirectionsStatus.OK) {
-                                    directionsDisplay.setDirections(response);
-                                } else {
-                                    alert(status);
-                                }
-                                document.getElementById('mapview').style.display = 'block';
-                                document.getElementById('mapview').style.visibility = 'visible';
-                            });
-                        }
+                                        directionsService.route(request, function(response, status) {
+                                            if (status === google.maps.DirectionsStatus.OK) {
+                                                directionsDisplay.setDirections(response);
+                                            } else {
+                                                alert(status);
+                                            }
+                                            document.getElementById('mapview').style.display = 'block';
+                                            document.getElementById('mapview').style.visibility = 'visible';
+                                        });
+                                    }
 
-                        google.maps.event.addDomListener(window, 'load', initialize);
+                                    google.maps.event.addDomListener(window, 'load', initialize);
 
                     </script>
 
@@ -276,9 +280,7 @@
                         </div>
                     </div>
 
-
                     <br><br>
-
 
                     <br /><br />
                     <h2>Deixe sua Opinião</h2>
@@ -292,7 +294,7 @@
                             fjs.parentNode.insertBefore(js, fjs);
                         }(document, 'script', 'facebook-jssdk'));</script>
                     <div id="fb-root"></div>
-                    <div class="fb-comments" data-href="Profile.php?id=<?php echo $_REQUEST['id'] ?>" data-numposts="4" data-width="600"></div>
+                    <div class="fb-comments" data-href="Profile.php?id=<?php echo $_REQUEST['id'] ?>" data-numposts="4" data-width="760"></div>
                 </div>
                 <?php require '../view/shared/footer.php'; ?>
 

@@ -5,37 +5,46 @@ class ProfileUBS {
     private $idUBS;
     private $latitudeUBS;
     private $longitudeUBS;
-    private $codMunic;
     private $codCNES;
     private $nameUBS;
     private $descEnder;
-    private $descBairro;
-    private $dscCidade;
     private $phoneUBS;
     private $physicStructureUBS;
     private $adapOldPeople;
     private $descriTools;
     private $descMedicine;
     private $average;
+    
+    private $city;
 
-    function __construct($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average) {
+    function __construct($idUBS, $latitudeUBS, $longitudeUBS, $codCNES,
+            $nameUBS, $descEnder, $phoneUBS,$physicStructureUBS, 
+            $adapOldPeople, $descriTools, $descMedicine, 
+            $average, $city) {
         $this->setIdUBS($idUBS);
         $this->setLatitudeUBS($latitudeUBS);
         $this->setLongitudeUBS($longitudeUBS);
-        $this->setCodMunic($codMunic);
         $this->setCodCNES($codCNES);
         $this->setNameUBS($nameUBS);
         $this->setDescEnder($descEnder);
-        $this->setDescBairro($descBairro);
-        $this->setDscCidade($descCidade);
         $this->setPhoneUBS($phoneUBS);
         $this->setPhysicStructureUBS($physicStructureUBS);
         $this->setAdapOldPeople($adapOldPeople);
         $this->setDescriTools($descriTools);
         $this->setDescMedicine($descMedicine);
         $this->setAverage($average);
+        
+        $this->setCity($city);
+    }
+    
+    public function getCity() {
+        return $this->city;
     }
 
+    public function setCity($city) {
+        $this->city = $city;
+    }
+    
     public function getIdUBS() {
         return $this->idUBS;
     }
@@ -60,14 +69,6 @@ class ProfileUBS {
         $this->longitudeUBS = $longitudeUBS;
     }
 
-    public function getCodMunic() {
-        return $this->codMunic;
-    }
-
-    public function setCodMunic($codMunic) {
-        $this->codMunic = $codMunic;
-    }
-
     public function getCodCNES() {
         return $this->codCNES;
     }
@@ -90,22 +91,6 @@ class ProfileUBS {
 
     public function setDescEnder($descEnder) {
         $this->descEnder = $descEnder;
-    }
-
-    public function getDescBairro() {
-        return $this->descBairro;
-    }
-
-    public function setDescBairro($descBairro) {
-        $this->descBairro = $descBairro;
-    }
-
-    public function getDscCidade() {
-        return $this->dscCidade;
-    }
-
-    public function setDscCidade($dscCidade) {
-        $this->dscCidade = $dscCidade;
     }
 
     public function getPhoneUBS() {

@@ -110,7 +110,36 @@ class ProfileUBSDAO {
         $state = mysql_fetch_row($result);
         return $state;
     }
-
+    
+    //Novo metodo de busca
+    public function searchUBSDatabaseOO($field,$searchType){
+        $field = trim($field);
+        DataValidation::throwTextFieldException($field);
+        
+        switch ($searchType) {
+            case NOME :
+                //DataValidation::anti_sql_injection($field);
+                $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '%" . $field . "%'";
+                break;
+            case ESTADO :
+                //DataValidation::anti_sql_injection($field);
+                $sql = "SELECT * FROM ubs INNER JOIN municipios_ibge 
+                    ON ubs.cod_munic = municipios_ibge.codigo 
+                    WHERE municipios_ibge.uf LIKE '%" . $field . "%'";
+                break;
+            case CIDADE :
+                //DataValidation::anti_sql_injection($field);
+                $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '%" . $field . "%'";
+                break;
+            case BAIRRO :
+                //DataValidation::anti_sql_injection($field);
+                $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '%" . $field . "%'";
+                break;
+        }
+        $selUBS = mysql_query($sql);
+        
+        return $selUBS;
+    }
 }
 
 ?>

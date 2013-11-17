@@ -1,7 +1,7 @@
 <?php
 
-include_once '../DAO/CityDAO.php';
-include_once '../Model/City.php';
+include_once '/../Dao/CityDAO.php';
+include_once '/../Model/City.php';
 
 class ControllerCity {
     

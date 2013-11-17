@@ -45,6 +45,7 @@
                     <?php
                     $quantityUBS = count($arrayUBS);
                     echo "<br><p align = 'center'>Sua pesquisa retornou " . $quantityUBS . " resultados.</p><br><br>";
+                    
                     $quantityPage = ceil($quantityUBS / 10);
                     $currentPage = $_GET['page'];
                     $page = $currentPage * 10;
@@ -54,14 +55,16 @@
 
                         if (isset($arrayUBS[$i])) {
                             $nameUBS = $arrayUBS[$i]->getNameUBS();
-                            $cityUBS = $arrayUBS[$i]->getDscCidade();
-                            $stateUBS = $controllerProfileUBS->takeState(($arrayUBS[$i]->getCodMunic()));
+                            //$cityUBS = $arrayUBS[$i]->getDscCidade();
+                            //$stateUBS = $controllerProfileUBS->takeState(($arrayUBS[$i]->getCodMunic()));
+                            $cityUBS = $arrayUBS[$i]->getCity()->getDscCidade();
+                            $stateUBS = $arrayUBS[$i]->getCity()->getState()->getAcronym();
                             $idUBS = $arrayUBS[$i]->getIdUBS();
                             //$average = $controllerProfileUBS->takeAverageUBS($idUBS);
                             $path = "../view/Profile.php?id=" . $idUBS . "";
                             if ($i % 2 == 0) {
                                 echo "<tr id='first-tr'><td><a href=" . $path . " class = 'linkBranco'> " . $nameUBS . " </a></td>";
-                                echo "<td class = 'linkBranco'><font color = 'white'>" . $cityUBS . "-" . $stateUBS[0] . "</font></td>";
+                                echo "<td class = 'linkBranco'><font color = 'white'>" . $cityUBS . "-" . $stateUBS . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
                                     echo "<td><font color = 'white'>Média das avaliações:" . $arrayUBS[$i]->getAverage() . "</font></td>";
                                 } else {
@@ -69,7 +72,7 @@
                                 }
                             } else {
                                 echo "<tr id='first-tr2'><td><a href=" . $path . " class = 'linkPreto'> " . $nameUBS . " </a></td>";
-                                echo "<td class = 'linkPreto'><font color = 'black'>" . $cityUBS . "-" . $stateUBS[0] . "</font></td>";
+                                echo "<td class = 'linkPreto'><font color = 'black'>" . $cityUBS . "-" . $stateUBS . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
                                     echo "<td><font color = 'black'>Média das avaliações:" . $arrayUBS[$i]->getAverage() . "</font></td>";
                                 } else {
@@ -83,6 +86,7 @@
                     ?>
                 </table>
             </div>
+            <br>
             <div id="pagination">
                     <?php
                     $buscaUBSEncode = urlencode($buscaUBS);

@@ -22,7 +22,7 @@ class ControllerCity {
         return self::$instanceControllerCity;
     }
     
-    public function makeObjectCityOO($codMunic, $state){
+    public function makeObjectCity($codMunic, $state){
         $cityDao = CityDAO::getInstanceCityDAO();
         $attributeCity = $cityDao->takeCityDatabase($codMunic);
         

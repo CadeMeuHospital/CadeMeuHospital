@@ -11,8 +11,8 @@
         $field = "taguatinga";
         
         $controllerProfile = ControllerProfileUBS::getInstanceControllerProfileUBS();
-        $arrayUBS = $controllerProfile->searchUBSOO($field,$searchType);
-        var_dump($arrayUBS[0]);
+        $arrayUBS = $controllerProfile->searchUBS($field,$searchType);
+        var_dump($arrayUBS[0]->getCity()->getState());
         
         ?>
 

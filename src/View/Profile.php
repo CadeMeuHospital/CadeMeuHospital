@@ -47,18 +47,14 @@
                             <td class="align-left"><?php echo $profileUBS->getDescEnder(); ?></td>
                         </tr>
                         <tr>
-                            <th>Bairro: </th>
-                            <td class="align-left"><?php echo $profileUBS->getDescBairro(); ?></td>
-                        </tr>
-                        <tr>
                             <th>Cidade:</th>
-                            <td class="align-left"><?php echo $profileUBS->getDscCidade(); ?></td>
+                            <td class="align-left"><?php echo $profileUBS->getCity()->getDscCidade(); ?></td>
                         </tr>
                         <tr>
                             <th>Estado:</th>
                             <td class="align-left"><?php
-                                $state = $controllerProfileUBS->takeState($profileUBS->getCodMunic());
-                                echo $state[0]
+                                //$state = $controllerProfileUBS->takeState($profileUBS->getCodMunic());
+                                echo $profileUBS->getCity()->getState()->getNameState()." (".$profileUBS->getCity()->getState()->getAcronym().")";
                                 ?></td>
                         </tr>
                         <tr>

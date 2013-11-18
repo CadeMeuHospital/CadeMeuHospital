@@ -29,15 +29,12 @@ class ControllerProfileUBS {
         $profileUBSDAO = new ProfileUBSDAO();
 
         $attributesUBS = $profileUBSDAO->returnUBS($id);
-        $quantity = (count($attributesUBS) - 1);
-
-        for ($i = 0; $i < $quantity; $i++) {
-            if ($attributesUBS[$i] == NULL) {
-                $attributesUBS[$i] = "Indisponível";
-            }
+        $attributesUBS2 = $attributesUBS;
+        if(mysql_fetch_row($attributesUBS2) == NULL){
+            return false;
         }
 
-        $profileUBS = self::$instanceControllerProfileUBS->makeObjectLoop($attributesUBS,0);
+        $profileUBS = self::$instanceControllerProfileUBS->makeObjectLoop($attributesUBS, 0);
         return $profileUBS;
     }
 
@@ -45,7 +42,7 @@ class ControllerProfileUBS {
         $profileUBSDAO = new ProfileUBSDAO();
         $controllerState = ControllerState::getInstanceControllerState();
         $ubs = self::$instanceControllerProfileUBS->returnUBS($idUBS);
-        if($ubs == NULL){
+        if(!$ubs){
             return false;
         }
         $stateAcronym = $ubs->getCity()->getState()->getAcronym();
@@ -60,8 +57,10 @@ class ControllerProfileUBS {
 
     //Novo metodo de procura
 
-    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, $nameUBS, $descEnder, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average, $city) {
-        $ubs = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, $nameUBS, $descEnder, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average, $city);
+    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, $nameUBS, $descEnder, 
+            $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average, $city) {
+        $ubs = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, $nameUBS, $descEnder, 
+                $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average, $city);
 
         return $ubs;
     }

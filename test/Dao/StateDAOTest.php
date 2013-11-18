@@ -72,5 +72,13 @@ class StateDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($resultTrue);
         
     }
-    
+    public function testTakeUfStateUBS() {
+        $resultNotNull = $this->stateDao->takeUfStateUBS(280030);
+        $this->assertNotNull($resultNotNull);
+    }
+
+    public function testTakeUfStateUBSFalse() {
+        $resultFalse = $this->stateDao->takeUfStateUBS(28003012);
+        $this->assertFalse($resultFalse);
+    }    
 }

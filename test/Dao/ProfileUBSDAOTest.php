@@ -138,14 +138,4 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertNotNull($resultNotNull);
     }
 
-    public function testTakeStateUBS() {
-        $resultNotNull = $this->profileUBSDao->takeStateUBS(280030);
-        $this->assertNotNull($resultNotNull);
-    }
-
-    public function testTakeStateUBSFalse() {
-        $resultFalse = $this->profileUBSDao->takeStateUBS(28003012);
-        $this->assertFalse($resultFalse);
-    }
-
 }

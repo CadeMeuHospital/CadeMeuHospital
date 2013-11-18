@@ -25,11 +25,6 @@ class ControllerProfileUBS {
         return self::$instanceControllerProfileUBS;
     }
     
-    public function takeState($codMunic) {
-        $profileUBSDAO = new ProfileUBSDAO();
-        return $stateAcronym = $profileUBSDAO->takeStateUBS($codMunic);
-    }
-    
     public function returnUBS($id) {
         $profileUBSDAO = new ProfileUBSDAO();
 

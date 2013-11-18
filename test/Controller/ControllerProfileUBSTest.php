@@ -139,6 +139,11 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(3, $result);
     }
     
+    public function testEvaluateUBSInvalidId() {
+        $result = $this->controllerProfileUBS->evaluateUBS(3, 413264);
+        $this->assertFalse($result);
+    }
+    
     public function testGetDistanceBetweenTwoLatLon() {
         $distance = $this->controllerProfileUBS->getDistanceBetweenTwoLatLon("-15.780147999999999","-47.92917","-10.91123700141880","-37.062077522277");
         $this->assertTrue($distance > 1250 && $distance < 1300);

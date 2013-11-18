@@ -1,6 +1,6 @@
 <?php
 
-include_once '../Model/User.php'; 
+include_once '/../Model/User.php'; 
 
 class ControllerUser {
     

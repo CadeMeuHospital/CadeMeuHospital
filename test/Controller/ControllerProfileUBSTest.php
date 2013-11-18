@@ -74,7 +74,7 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
      * @expectedExceptionMessage "Campo não pode ser nulo!"
      */
     public function testSearchUBSException() {
-        $this->controllerProfileUBS->searchUBS("", 1);
+        $this->controllerProfileUBS->searchUBS(NULL, 1);
     }
 
     /* Method ReturnUBS suit test case */
@@ -97,7 +97,7 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     
     public function testReturnUBSInvalidId() {
         $resultInvalidId = $this->controllerProfileUBS->returnUBS(9999999997);
-        $this->assertNotNull($resultInvalidId);
+        $this->assertFalse($resultInvalidId);
     }
     
     public function testReturnUBSCatch(){
@@ -118,7 +118,7 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
 
     public function testEvaluateUBSNotNull() {
         $resultNotNull = $this->controllerProfileUBS->evaluateUBS(3, 1234567);
-        $this->assertNotNull($resultNotNull);
+        $this->assertFalse($resultNotNull);
         $this->tearDownEvaluate();
     }
     

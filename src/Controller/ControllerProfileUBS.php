@@ -50,7 +50,9 @@ class ControllerProfileUBS {
         $profileUBSDAO = new ProfileUBSDAO();
         $controllerState = ControllerState::getInstanceControllerState();
         $ubs = self::$instanceControllerProfileUBS->returnUBS($idUBS);
-        //$stateAcronym = self::$instanceControllerProfileUBS->takeState($ubs->getCodMunic());
+        if($ubs == NULL){
+            return false;
+        }
         $stateAcronym = $ubs->getCity()->getState()->getAcronym();
         $resultEvaluation = $profileUBSDAO->saveEvaluationUBS($evaluate, $idUBS);
         $controllerState->saveAverageEvaluationState($evaluate, $stateAcronym);

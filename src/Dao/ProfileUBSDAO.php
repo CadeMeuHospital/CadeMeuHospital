@@ -74,13 +74,6 @@ class ProfileUBSDAO {
         $average = mysql_fetch_row($result);
         return $average;
     }
-
-    public function takeStateUBS($codMunic) {
-        $sql = "SELECT uf FROM municipios_ibge WHERE codigo LIKE '" . $codMunic . "'";
-        $result = mysql_query($sql);
-        $state = mysql_fetch_row($result);
-        return $state;
-    }
     
     //Novo metodo de busca
     public function searchUBSinDatabase($field,$searchType){

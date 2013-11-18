@@ -131,14 +131,6 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $distance = $this->controllerProfileUBS->getDistanceBetweenTwoLatLon("-15.780147999999999","-47.92917","-15.780147999999999","-47.92917");
         $this->assertEquals($distance, 0.0);
     }
-    public function testTakeState() {
-        $result = $this->controllerProfileUBS->takeState(123456);
-        $this->assertNotNull($result);
-    }
-    public function testTakeStateFalse() {
-        $resultFalse = $this->controllerProfileUBS->takeState(16);
-        $this->assertFalse($resultFalse);
-    }
 
 }
 

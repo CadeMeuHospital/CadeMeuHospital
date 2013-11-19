@@ -59,14 +59,14 @@
         </phpdepend>
     </target>
  
-<!--    <target name="phpmd" description="Detecção de bagunça de código">
+   <target name="phpmd" description="Detecção de bagunça de código">
         <phpmd rulesets="${application.builddir}/phpmd.xml">
             <fileset dir="${application.library}">
                 <include name="**/*.php" />
             </fileset>
-            <formatter type="xml" outfile="${application.builddir}/logs/pmd.xml"/>
+            <formatter type="xml" outfile="c:/xampp/htdocs/CadeMeuHospital/pmd.xml"/>
         </phpmd>
-    </target>-->
+    </target>
  
 <!--   <target name="phpcs" description="Testa o padrão de codificação">
        <phpcodesniffer

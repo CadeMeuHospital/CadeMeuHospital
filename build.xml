@@ -1,66 +1,150 @@
-<project name="CadeMeuHosptal" default="build">
-  <property name="basedir" value="C:\xampp\htdocs\CadeMeuHospital" override="true" />
-<target name="build" depends="alltests">
-    <!--  deploy your project here -->
- </target>
-
-<target name="init">
-		<mkdir dir="${basedir}"/>
-		<mkdir dir="${basedir}/pdepend/"/>
-	</target>
-
-	<target name="build" depends="init, pdepend">
-	</target>
-
-<target name="alltests" depends="prepare">
-  <phpunit haltonfailure="true" haltonerror="true" printsummary="true">
-   <formatter todir="${basedir}/log/test-report" type="xml"/>
-   <batchtest classpath="${basedir}/test/">
-      <fileset dir="${basedir}/test">
-              <include name="*.php"/>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+ 
+<project name="CadeMeuHospital" default="build" basedir=".">
+ 
+    <property name="application.library" value="${project.basedir}/src"/>
+    <property name="application.tests" value="${project.basedir}/test"/>
+    <property name="application.builddir" value="${project.basedir}/build"/>
+ 
+    <target name="build"
+        depends="prepare,lint,phploc,pdepend,phpcpd,phpdoc,phpunit,phpcb"/>
+ 
+    <target name="clean" description="Limpa os diretórios de artefatos">
+        <delete dir="${application.builddir}/api"/>
+        <delete dir="${application.builddir}/code-browser"/>
+        <delete dir="${application.builddir}/coverage"/>
+        <delete dir="${application.builddir}/logs"/>
+        <delete dir="${application.builddir}/pdepend"/>
+    </target>
+ 
+    <target name="prepare" depends="clean" description="Cria os diretórios de artefatos">
+        <mkdir dir="${application.builddir}/api"/>
+        <mkdir dir="${application.builddir}/code-browser"/>
+        <mkdir dir="${application.builddir}/coverage"/>
+        <mkdir dir="${application.builddir}/logs"/>
+        <mkdir dir="${application.builddir}/pdepend"/>
+    </target>
+ 
+    <target name="lint">
+        <phplint>
+            <fileset dir="${application.library}">
+                <include name="**/*.php" />
             </fileset>
-         </batchtest>
-     </phpunit>
- </target>
-
- <target name="clean" description="Cleanup build artifacts">
-  <delete dir="${basedir}/log/test-report"/>
- <delete dir="${basedir}/log/pdepend"/>
- </target>
-
-
- <target name="prepare" depends="clean" description="Prepare for build">
-  <mkdir dir="${basedir}/log/test-report"/>
-  <mkdir dir="${basedir}/log/pdepend"/>
- </target>
- <!--
-
-    <target name="pdepend" description="Calcula metricas de software">
+            <fileset dir="${application.tests}">
+                <include name="**/*.php" />
+            </fileset>
+        </phplint>
+    </target>
+ 
+    <target name="phploc" description="Mede o tamanho da aplicação">
+        <exec executable="phploc">
+            <arg value="--log-csv" />
+            <arg value="${application.builddir}/logs/phploc.csv" />
+            <arg path="${application.library}" />
+            </exec>
+    </target>
+ 
+    <target name="pdepend" description="Calcula métricas de software">
         <phpdepend>
-            <fileset dir="${basedir}">
+            <fileset dir="${application.library}">
                 <include name="**/*.php" />
             </fileset>
             <logger type="jdepend-xml"
-                outfile="${basedir}/log/jdepend.xml"/>
+                outfile="${application.builddir}/logs/jdepend.xml"/>
             <logger type="jdepend-chart"
-                outfile="${basedir}/log/pdepend/dependencies.svg"/>
+                outfile="${application.builddir}/pdepend/dependencies.svg"/>
             <logger type="overview-pyramid"
-                outfile="${basedir}/log/pdepend/overview-pyramid.svg"/>
+                outfile="${application.builddir}/pdepend/overview-pyramid.svg"/>
             <analyzer type="coderank-mode" value="method"/>
         </phpdepend>
     </target>
--->
-
-	<target name="pdepend">
-		<exec executable="pdepend">
-			<arg line="
-				--jdepend-xml=${basedir}/pdepend/jdepend.xml
-				--jdepend-chart=${basedir}/pdepend/dependencies.svg
-				--overview-pyramid=${basedir}/pdepend/overview-pyramid.svg
-				--ignore=test/
-				.
-			" />
-		</exec>
-	</target>
-
+ 
+   <target name="phpmd" description="Detecção de bagunça de código">
+        <phpmd rulesets="${application.builddir}/phpmd.xml">
+            <fileset dir="${application.library}">
+                <include name="**/*.php" />
+            </fileset>
+            <formatter type="xml" outfile="c:/xampp/htdocs/CadeMeuHospital/pmd.xml"/>
+        </phpmd>
+    </target>
+ 
+<!--   <target name="phpcs" description="Testa o padrão de codificação">
+       <phpcodesniffer
+            standard="PEAR"
+            showSniffs="true"
+            showWarnings="true">
+            <fileset dir="${application.library}">
+                <include name="**/*.php"/>
+            </fileset>
+            <formatter type="default" usefile="false"/>
+            <formatter type="checkstyle" outfile="${application.builddir}/logs/checkstyle.xml"/>
+        </phpcodesniffer>
+   </target>-->
+ 
+    <target name="phpcpd" description="Testa duplicação de código">
+        <phpcpd>
+            <fileset dir="${application.library}">
+                <include name="**/*.php" />
+            </fileset>
+            <formatter type="pmd" outfile="${application.builddir}/logs/pmd-cpd.xml"/>
+        </phpcpd>
+    </target>
+ 
+    <target name="phpdoc" description="Documentação de API">
+        <phpdoc title="Leviathan API Documentation"
+            destdir="build/api"
+            sourcecode="false"
+            output="HTML:Smarty:PHP">
+            <fileset dir="${application.library}">
+                <include name="**/*.php" />
+            </fileset>
+        </phpdoc>
+    </target>
+ 
+    <target name="phpunit" description="Testes Unitários">
+        <php expression="ini_set('memory_limit', -1);"/>
+        <php expression="extension_loaded('xdebug');" returnProperty="xdebug"/>
+        <if><istrue value="${xdebug}"/><then>
+            <coverage-setup database="${application.builddir}/coverage/coverage.db">
+                <fileset dir="${application.tests}" id="tests">
+                    <include name="**/*Test.php"/>
+                </fileset>
+            </coverage-setup>
+            <phpunit codecoverage="true" bootstrap="${application.tests}/bootstrap.php">
+                <batchtest>
+                    <fileset dir="${application.tests}">
+                        <include name="**/*Test.php"/>
+                    </fileset>
+                </batchtest>
+                <formatter type="clover" todir="${application.builddir}/logs" outfile="clover.xml"/>
+                <formatter type="xml" todir="${application.builddir}/logs" outfile="junit.xml"/>
+            </phpunit>
+            <coverage-report outfile="${application.builddir}/coverage/coverage.xml">
+                <report todir="${application.builddir}/coverage"/>
+            </coverage-report>
+        </then><else>
+            <phpunit codecoverage="false" bootstrap="${application.tests}/bootstrap.php">
+                <batchtest>
+                    <fileset dir="${application.tests}">
+                        <include name="**/*Test.php"/>
+                    </fileset>
+                </batchtest>
+                <formatter type="clover" todir="${application.builddir}/logs" outfile="clover.xml"/>
+                <formatter type="xml" todir="${application.builddir}/logs" outfile="junit.xml"/>
+            </phpunit>
+        </else></if>
+        <phpunitreport infile="${application.tests}/phpunit.xml"
+            todir="${application.builddir}/logs"/>
+    </target>
+ 
+    <target name="phpcb" description="Cria a navegação de código">
+        <exec executable="phpcb">
+            <arg value="--log" />
+            <arg path="${application.builddir}/logs" />
+            <arg value="--source" />
+            <arg path="${application.library}" />
+            <arg value="--output" />
+            <arg path="${application.builddir}/code-browser" />
+        </exec>
+    </target>
 </project>

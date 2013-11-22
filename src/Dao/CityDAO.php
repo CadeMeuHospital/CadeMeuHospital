@@ -1,6 +1,6 @@
 <?php
 
-include_once "/../Utils/dataBaseConnection.php";
+require_once "/../Utils/dataBaseConnection.php";
 
 class CityDAO{
     

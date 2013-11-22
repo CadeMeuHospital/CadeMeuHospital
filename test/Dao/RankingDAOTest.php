@@ -1,6 +1,6 @@
 <?php
 
-include_once dirname(__FILE__) . "/../../src/Dao/RankingDAO.php";
+require_once dirname(__FILE__) . "/../../src/Dao/RankingDAO.php";
 
 class RankingDAOTest extends PHPUnit_Framework_TestCase {
 

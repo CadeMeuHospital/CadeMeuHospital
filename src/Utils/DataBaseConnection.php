@@ -10,19 +10,13 @@ if (!$db_connection) {
     print"<script>alert('Falha na conexão ao SGBD.')</script>
     <script> window.location='http://localhost/CadeMeuHospital/view/home.php'</script>";
     die;
-} else {
-    //No action
-}
-
+} 
 $db_selected = mysql_select_db("cademeuhospital");
 if (!$db_selected) {
     print"<script>alert('Falha na conexão ao banco de dados \"cademeuhospital\".')</script>
     <script>  window.location='http://localhost/CadeMeuHospital/view/home.php'</script>";
     die;
-} else {
-    //No action
-}
-
+} 
 mysql_query("SET NAMES 'utf8'");
 mysql_query('SET character_set_connection=utf8');
 mysql_query('SET character_set_client=utf8');

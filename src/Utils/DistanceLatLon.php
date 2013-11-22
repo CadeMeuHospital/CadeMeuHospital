@@ -19,7 +19,8 @@ class DistanceLatLon {
 
         // COMPUTE THE DISTANCE WITH THE HAVERSINE FORMULA
         $distanceRad = acos
-                (sin(deg2rad($from_lat)) * sin(deg2rad($to_lat)) + cos(deg2rad($from_lat)) * cos(deg2rad($to_lat)) * cos(deg2rad($from_lon - $to_lon))
+                (sin(deg2rad($from_lat)) * sin(deg2rad($to_lat)) + cos(deg2rad($from_lat)) * 
+                cos(deg2rad($to_lat)) * cos(deg2rad($from_lon - $to_lon))
                 )
         ;
 

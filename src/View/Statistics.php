@@ -109,7 +109,8 @@
                                 ['Excelente', <?php echo $arrayStatistics[4]; ?>],
                             ]);
 
-                            var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
+                            var dashboard = new google.visualization.Dashboard
+                            (document.getElementById('dashboard_div'));
 
                             var donutRangeSlider = new google.visualization.ControlWrapper({
                                 'controlType': 'NumberRangeFilter',

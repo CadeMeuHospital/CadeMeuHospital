@@ -6,7 +6,8 @@
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <link rel="stylesheet" href="css/profile.css" type="text/css">
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+        <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" 
+              rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <script type="text/javascript" src="../View/shared/js/location.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
@@ -53,8 +54,8 @@
                         <tr>
                             <th>Estado:</th>
                             <td class="align-left"><?php
-                                //$state = $controllerProfileUBS->takeState($profileUBS->getCodMunic());
-                                echo $profileUBS->getCity()->getState()->getNameState()." (".$profileUBS->getCity()->getState()->getAcronym().")";
+                                echo $profileUBS->getCity()->getState()->getNameState()." 
+                                    (".$profileUBS->getCity()->getState()->getAcronym().")";
                                 ?></td>
                         </tr>
                         <tr>
@@ -123,7 +124,8 @@
                                         </tr>
                                         <tr>
                                             <td class="align-left">
-                                                <input class="button" type="submit" name="submitEvaluate" value="Avaliar"/>
+                                               
+                                             <input class="button" type="submit" name="submitEvaluate" value="Avaliar"/>
                                             </td>
                                         </tr>
                                     </table>
@@ -146,7 +148,8 @@
                                             ['Excelente', <?php echo $evaluatesUBS[4]; ?>]
                                         ]);
 
-                                        var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
+                                        var dashboard = new google.visualization.Dashboard(document.
+                                                getElementById('dashboard_div'));
 
 
                                         var donutRangeSlider = new google.visualization.ControlWrapper({
@@ -185,7 +188,7 @@
                 <h2>Mapa</h2>
                 <div id="mapholder" ></div>
                 <div class="content">
-                    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>			
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>			
                     <script>
                                     var directionDisplay;
                                     var directionsService = new google.maps.DirectionsService();
@@ -290,7 +293,8 @@
                             fjs.parentNode.insertBefore(js, fjs);
                         }(document, 'script', 'facebook-jssdk'));</script>
                     <div id="fb-root"></div>
-                    <div class="fb-comments" data-href="Profile.php?id=<?php echo $_REQUEST['id'] ?>" data-numposts="4" data-width="760"></div>
+                    <div class="fb-comments" data-href="Profile.php?id=<?php echo $_REQUEST['id'] ?>" 
+                         data-numposts="4" data-width="760"></div>
                 </div>
                 <?php require '../view/shared/footer.php'; ?>
 

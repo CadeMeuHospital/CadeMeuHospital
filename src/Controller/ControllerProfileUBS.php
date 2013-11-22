@@ -1,12 +1,12 @@
 <?php
 
-include_once 'ControllerState.php';
-include_once 'ControllerCity.php';
-include_once '/../Model/profileUBS.php';
-include_once '/../DAO/profileUBSDAO.php';
-include_once '/../DAO/StateDAO.php';
-include_once '/../Utils/DataValidation.php';
-include_once '/../Utils/DistanceLatLon.php';
+require_once 'ControllerState.php';
+require_once 'ControllerCity.php';
+require_once '/../Model/profileUBS.php';
+require_once '/../DAO/profileUBSDAO.php';
+require_once '/../DAO/StateDAO.php';
+require_once '/../Utils/DataValidation.php';
+require_once '/../Utils/DistanceLatLon.php';
 
 class ControllerProfileUBS {
 
@@ -19,9 +19,7 @@ class ControllerProfileUBS {
     public static function getInstanceControllerProfileUBS() {
         if (!isset(self::$instanceControllerProfileUBS)) {
             self::$instanceControllerProfileUBS = new ControllerProfileUBS();
-        } else {
-            //No action
-        }
+        } 
         return self::$instanceControllerProfileUBS;
     }
     
@@ -88,7 +86,9 @@ class ControllerProfileUBS {
         $controllerCity = ControllerCity::getInstanceControllerCity();
         $cityUBS = $controllerCity->makeObjectCity($codMunic, $stateUBS);
 
-        $ubs = self::$instanceControllerProfileUBS->makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, $nameUBS, $dscEnder, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average, $cityUBS);
+        $ubs = self::$instanceControllerProfileUBS->makeObjectUBS($idUBS, $latitudeUBS,
+                $longitudeUBS, $codCNES, $nameUBS, $dscEnder, $phoneUBS, $physicStructureUBS,
+                $adapOldPeople, $descriTools, $descMedicine, $average, $cityUBS);
 
         return $ubs;
     }

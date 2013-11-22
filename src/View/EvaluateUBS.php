@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>    
     <?php
-        include_once '../Controller/ControllerProfileUBS.php';
+        require_once '../Controller/ControllerProfileUBS.php';
 
         $evaluate = $_POST['evaluate'];
         $idUBS = $_POST['idUBS'];

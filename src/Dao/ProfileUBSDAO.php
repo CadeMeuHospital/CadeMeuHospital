@@ -1,7 +1,7 @@
 <?php
 
-include_once "/../Utils/dataBaseConnection.php";
-include_once "/../Utils/DataValidation.php";
+require_once "/../Utils/dataBaseConnection.php";
+require_once "/../Utils/DataValidation.php";
 
 define('NOME', 1);
 define('CIDADE', 2);
@@ -38,7 +38,8 @@ class ProfileUBSDAO {
             $value_vote = $returnConsult[3] + $evaluate;
             $amount_people_x = $returnConsult[$evaluate + 3] + 1;
             $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "',
-                    amount_people_" . $evaluate . "='" . $amount_people_x . "' WHERE id_evaluate='" . $returnConsult[0] . "'";
+                    amount_people_" . $evaluate . "='" . $amount_people_x . 
+                    "' WHERE id_evaluate='" . $returnConsult[0] . "'";
         }
 
         return ProfileUBSDAO::executeComandSQL($sql, $idUBS);
@@ -82,21 +83,17 @@ class ProfileUBSDAO {
         
         switch ($searchType) {
             case NOME :
-                //DataValidation::anti_sql_injection($field);
                 $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '%" . $field . "%'";
                 break;
             case ESTADO :
-                //DataValidation::anti_sql_injection($field);
                 $sql = "SELECT * FROM ubs INNER JOIN municipios_ibge 
                     ON ubs.cod_munic = municipios_ibge.codigo 
                     WHERE municipios_ibge.uf LIKE '%" . $field . "%'";
                 break;
             case CIDADE :
-                //DataValidation::anti_sql_injection($field);
                 $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '%" . $field . "%'";
                 break;
             case BAIRRO :
-                //DataValidation::anti_sql_injection($field);
                 $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '%" . $field . "%'";
                 break;
         }

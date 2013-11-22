@@ -1,7 +1,7 @@
-<?php
+    <?php
 
-include_once '/../Dao/CityDAO.php';
-include_once '/../Model/City.php';
+require_once '/../Dao/CityDAO.php';
+require_once '/../Model/City.php';
 
 class ControllerCity {
     
@@ -15,10 +15,7 @@ class ControllerCity {
         
         if (!isset(self::$instanceControllerCity)) {
             self::$instanceControllerCity = new ControllerCity();
-        } else {
-            //No action
         }
-        
         return self::$instanceControllerCity;
     }
     

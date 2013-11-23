@@ -112,25 +112,25 @@ class ControllerProfileUBS {
 
         $i = 0;
         $arrayUBS = array();
-        try{
-            $attributesUBS = $profileUBSDAO->searchUBSinDatabase($field,$searchType);
-        }catch(TextFieldException $e){
-            print "<script>alert('".$e->getMessage()."')</script>";
+        try {
+            $attributesUBS = $profileUBSDAO->searchUBSinDatabase($field, $searchType);
+            $lines = mysql_num_rows($attributesUBS);
+            while ($i < $lines) {
+
+                $UBS = self::$instanceControllerProfileUBS->
+                        makeObjectLoop($attributesUBS, $i);
+
+                array_push($arrayUBS, $UBS);
+
+                $i++;
+            }
+        } catch (TextFieldException $e) {
+            print "<script>alert('" . $e->getMessage() . "')</script>";
             print "<script>window.location='../View/Home.php'</script>";
         }
 
-        $lines = mysql_num_rows($attributesUBS);
 
-        while ($i < $lines) {
 
-            $UBS = self::$instanceControllerProfileUBS->
-                    makeObjectLoop($attributesUBS, $i);
-
-            array_push($arrayUBS, $UBS);
-
-            $i++;
-        }
-        
         return $arrayUBS;
     }
 

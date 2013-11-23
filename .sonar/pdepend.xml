@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2013-11-23T21:03:36" pdepend="1.1.0" ahh="0.11111111111111" andc="0" calls="105" ccn="135" ccn2="136" cloc="12" clsa="0" clsc="18" eloc="766" fanout="14" leafs="17" lloc="491" loc="1050" maxDIT="2" ncloc="1038" noc="18" nof="0" noi="0" nom="111" nop="1" roots="1">
+<metrics generated="2013-11-23T21:42:00" pdepend="1.1.0" ahh="0.11111111111111" andc="0" calls="105" ccn="135" ccn2="136" cloc="11" clsa="0" clsc="18" eloc="767" fanout="14" leafs="17" lloc="493" loc="1052" maxDIT="2" ncloc="1041" noc="18" nof="0" noi="0" nom="111" nop="1" roots="1">
   <files>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerCity.php" cloc="0" eloc="22" lloc="14" loc="35" ncloc="35"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" cloc="1" eloc="102" lloc="67" loc="135" ncloc="134"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" cloc="0" eloc="26" lloc="16" loc="37" ncloc="37"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php" cloc="1" eloc="39" lloc="26" loc="56" ncloc="55"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerStatistics.php" cloc="0" eloc="31" lloc="20" loc="43" ncloc="43"/>
-    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" cloc="0" eloc="32" lloc="21" loc="42" ncloc="42"/>
-    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\CityDAO.php" cloc="1" eloc="22" lloc="12" loc="35" ncloc="34"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" cloc="0" eloc="33" lloc="22" loc="44" ncloc="44"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\CityDAO.php" cloc="0" eloc="21" lloc="12" loc="33" ncloc="33"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\ProfileUBSDAO.php" cloc="1" eloc="87" lloc="58" loc="110" ncloc="109"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\RankingDAO.php" cloc="0" eloc="30" lloc="14" loc="43" ncloc="43"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\StateDAO.php" cloc="1" eloc="41" lloc="23" loc="57" ncloc="56"/>
@@ -16,7 +16,7 @@
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Model\ProfileUBS.php" cloc="0" eloc="113" lloc="79" loc="147" ncloc="147"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Model\State.php" cloc="0" eloc="54" lloc="37" loc="72" ncloc="72"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Model\User.php" cloc="0" eloc="30" lloc="19" loc="42" ncloc="42"/>
-    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DataValidation.php" cloc="0" eloc="34" lloc="21" loc="45" ncloc="45"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DataValidation.php" cloc="0" eloc="35" lloc="22" loc="47" ncloc="47"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DistanceLatLon.php" cloc="7" eloc="22" lloc="12" loc="39" ncloc="32"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\Exception\TextFieldException.php" cloc="0" eloc="7" lloc="2" loc="10" ncloc="10"/>
   </files>
@@ -62,17 +62,17 @@
       <method name="generateValuesToChartAverageEvaluateSingleUBS" ccn="1" ccn2="1" cloc="0" eloc="6" lloc="3" loc="6" ncloc="6" npath="1"/>
       <method name="generateStatisticsOfQuantityAverage" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
     </class>
-    <class name="ControllerUser" ca="0" cbo="1" ce="1" cis="3" cloc="0" cr="0.15" csz="6" dit="0" eloc="25" impl="0" lloc="14" loc="36" ncloc="36" noam="0" nocc="0" nom="4" noom="0" npm="3" rcr="0.15" vars="2" varsi="2" varsnp="0" wmc="7" wmci="7" wmcnp="6">
+    <class name="ControllerUser" ca="0" cbo="1" ce="1" cis="3" cloc="0" cr="0.15" csz="6" dit="0" eloc="26" impl="0" lloc="15" loc="38" ncloc="38" noam="0" nocc="0" nom="4" noom="0" npm="3" rcr="0.15" vars="2" varsi="2" varsnp="0" wmc="7" wmci="7" wmcnp="6">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php"/>
       <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="3" ncloc="3" npath="1"/>
       <method name="getInstanceControllerUser" ccn="2" ccn2="2" cloc="0" eloc="6" lloc="3" loc="6" ncloc="6" npath="2"/>
       <method name="makeObjectUser" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
-      <method name="takeCity" ccn="3" ccn2="3" cloc="0" eloc="12" lloc="8" loc="13" ncloc="13" npath="3"/>
+      <method name="takeCity" ccn="3" ccn2="3" cloc="0" eloc="13" lloc="9" loc="15" ncloc="15" npath="3"/>
     </class>
-    <class name="CityDAO" ca="1" cbo="0" ce="0" cis="2" cloc="1" cr="0.15" csz="4" dit="0" eloc="16" impl="0" lloc="7" loc="28" ncloc="27" noam="0" nocc="0" nom="3" noom="0" npm="2" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="4" wmci="4" wmcnp="3">
+    <class name="CityDAO" ca="1" cbo="0" ce="0" cis="2" cloc="0" cr="0.15" csz="4" dit="0" eloc="15" impl="0" lloc="7" loc="26" ncloc="26" noam="0" nocc="0" nom="3" noom="0" npm="2" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="4" wmci="4" wmcnp="3">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\CityDAO.php"/>
       <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="3" ncloc="3" npath="1"/>
-      <method name="getInstanceCityDAO" ccn="2" ccn2="2" cloc="1" eloc="7" lloc="3" loc="10" ncloc="9" npath="2"/>
+      <method name="getInstanceCityDAO" ccn="2" ccn2="2" cloc="0" eloc="6" lloc="3" loc="8" ncloc="8" npath="2"/>
       <method name="takeCityDatabase" ccn="1" ccn2="1" cloc="0" eloc="7" lloc="4" loc="8" ncloc="8" npath="1"/>
     </class>
     <class name="ProfileUBSDAO" ca="1" cbo="1" ce="1" cis="8" cloc="1" cr="0.15" csz="8" dit="0" eloc="78" impl="0" lloc="45" loc="99" ncloc="98" noam="0" nocc="0" nom="8" noom="0" npm="8" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="13" wmci="13" wmcnp="13">
@@ -172,11 +172,11 @@
       <method name="getLongitude" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
       <method name="setLongitude" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
     </class>
-    <class name="DataValidation" ca="1" cbo="1" ce="1" cis="3" cloc="0" cr="0.15" csz="3" dit="0" eloc="28" impl="0" lloc="16" loc="37" ncloc="37" noam="0" nocc="0" nom="3" noom="0" npm="3" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="7" wmci="7" wmcnp="7">
+    <class name="DataValidation" ca="1" cbo="1" ce="1" cis="3" cloc="0" cr="0.15" csz="3" dit="0" eloc="29" impl="0" lloc="17" loc="39" ncloc="39" noam="0" nocc="0" nom="3" noom="0" npm="3" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="7" wmci="7" wmcnp="7">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DataValidation.php"/>
       <method name="throwTextFieldException" ccn="3" ccn2="3" cloc="0" eloc="13" lloc="7" loc="15" ncloc="15" npath="3"/>
       <method name="validateNullFields" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
-      <method name="validateTextField" ccn="3" ccn2="3" cloc="0" eloc="11" lloc="7" loc="12" ncloc="12" npath="3"/>
+      <method name="validateTextField" ccn="3" ccn2="3" cloc="0" eloc="12" lloc="8" loc="14" ncloc="14" npath="3"/>
     </class>
     <class name="DistanceLatLon" ca="1" cbo="0" ce="0" cis="1" cloc="7" cr="0.15" csz="1" dit="0" eloc="18" impl="0" lloc="11" loc="35" ncloc="28" noam="0" nocc="0" nom="1" noom="0" npm="1" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="3" wmci="3" wmcnp="3">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DistanceLatLon.php"/>

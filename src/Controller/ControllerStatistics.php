@@ -27,7 +27,8 @@ class ControllerStatistics {
 
     public function generateValuesToChartAverageEvaluateSingleUBS($idUBS) {
         $statisticsDAO = new StatisticsDAO();
-        $evaluatesUBS = $statisticsDAO->getValuesToChartAverageEvaluateSigleUBS($idUBS);
+        $evaluatesUBS = $statisticsDAO->
+                getValuesToChartAverageEvaluateSigleUBS($idUBS);
         return $evaluatesUBS;
     }
 

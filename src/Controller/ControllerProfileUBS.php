@@ -32,7 +32,8 @@ class ControllerProfileUBS {
             return false;
         }
 
-        $profileUBS = self::$instanceControllerProfileUBS->makeObjectLoop($attributesUBS, 0);
+        $profileUBS = self::$instanceControllerProfileUBS->
+                makeObjectLoop($attributesUBS, 0);
         return $profileUBS;
     }
 
@@ -44,21 +45,28 @@ class ControllerProfileUBS {
             return false;
         }
         $stateAcronym = $ubs->getCity()->getState()->getAcronym();
-        $resultEvaluation = $profileUBSDAO->saveEvaluationUBS($evaluate, $idUBS);
+        $resultEvaluation = $profileUBSDAO->
+                saveEvaluationUBS($evaluate, $idUBS);
         $controllerState->saveAverageEvaluationState($evaluate, $stateAcronym);
         return $resultEvaluation;
     }
 
-    public function getDistanceBetweenTwoLatLon($from_lat, $from_lon, $to_lat, $to_lon) {
-        return DistanceLatLon::compute_distance($from_lat, $from_lon, $to_lat, $to_lon);
+    public function getDistanceBetweenTwoLatLon($from_lat, $from_lon,
+            $to_lat, $to_lon) {
+        return DistanceLatLon::compute_distance($from_lat, $from_lon, 
+            $to_lat, $to_lon);
     }
 
     //Novo metodo de procura
 
-    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, $nameUBS, $descEnder, 
-            $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average, $city) {
-        $ubs = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, $nameUBS, $descEnder, 
-                $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average, $city);
+    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, 
+            $codCNES, $nameUBS, $descEnder, 
+            $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, 
+            $descMedicine, $average, $city) {
+        $ubs = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, 
+                $nameUBS, $descEnder, 
+                $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, 
+                $descMedicine, $average, $city);
 
         return $ubs;
     }
@@ -72,8 +80,10 @@ class ControllerProfileUBS {
         $nameUBS = mysql_result($attributeUBS, $i, "nom_estab");
         $dscEnder = mysql_result($attributeUBS, $i, "dsc_endereco");
         $phoneUBS = mysql_result($attributeUBS, $i, "dsc_telefone");
-        $physicStructureUBS = mysql_result($attributeUBS, $i, "dsc_estrut_fisic_ambiencia");
-        $adapOldPeople = mysql_result($attributeUBS, $i, "dsc_adap_defic_fisic_idosos");
+        $physicStructureUBS = mysql_result($attributeUBS, $i,
+                "dsc_estrut_fisic_ambiencia");
+        $adapOldPeople = mysql_result($attributeUBS, $i,
+                "dsc_adap_defic_fisic_idosos");
         $descriTools = mysql_result($attributeUBS, $i, "dsc_equipamentos");
         $descMedicine = mysql_result($attributeUBS, $i, "dsc_medicamentos");
         $average = mysql_result($attributeUBS, $i, "average");
@@ -86,9 +96,12 @@ class ControllerProfileUBS {
         $controllerCity = ControllerCity::getInstanceControllerCity();
         $cityUBS = $controllerCity->makeObjectCity($codMunic, $stateUBS);
 
-        $ubs = self::$instanceControllerProfileUBS->makeObjectUBS($idUBS, $latitudeUBS,
-                $longitudeUBS, $codCNES, $nameUBS, $dscEnder, $phoneUBS, $physicStructureUBS,
-                $adapOldPeople, $descriTools, $descMedicine, $average, $cityUBS);
+        $ubs = self::$instanceControllerProfileUBS->makeObjectUBS($idUBS, 
+                $latitudeUBS,
+                $longitudeUBS, $codCNES, $nameUBS, $dscEnder, $phoneUBS,
+                $physicStructureUBS,
+                $adapOldPeople, $descriTools, $descMedicine, $average,
+                $cityUBS);
 
         return $ubs;
     }
@@ -99,12 +112,14 @@ class ControllerProfileUBS {
 
         $i = 0;
         $arrayUBS = array();
-        $attributesUBS = $profileUBSDAO->searchUBSinDatabase($field, $searchType);
+        $attributesUBS = $profileUBSDAO->searchUBSinDatabase($field,
+                $searchType);
         $lines = mysql_num_rows($attributesUBS);
 
         while ($i < $lines) {
 
-            $UBS = self::$instanceControllerProfileUBS->makeObjectLoop($attributesUBS, $i);
+            $UBS = self::$instanceControllerProfileUBS->
+                    makeObjectLoop($attributesUBS, $i);
 
             array_push($arrayUBS, $UBS);
 

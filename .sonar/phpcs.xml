@@ -17,7 +17,8 @@
  </file>
  <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php">
   <error line="1" column="1" severity="error" message="End of line character is invalid; expected &quot;\n&quot; but found &quot;\r\n&quot;" source="Generic.Files.LineEndings.InvalidEOLChar"/>
-  <error line="34" column="9" severity="warning" message="Avoid function calls in a FOR loop test part" source="Generic.CodeAnalysis.ForLoopWithTestFunctionCall.NotAllowed"/>
+  <error line="28" column="109" severity="warning" message="Line exceeds 80 characters; contains 108 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="33" column="9" severity="warning" message="Avoid function calls in a FOR loop test part" source="Generic.CodeAnalysis.ForLoopWithTestFunctionCall.NotAllowed"/>
  </file>
  <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\CityDAO.php">
   <error line="1" column="1" severity="error" message="End of line character is invalid; expected &quot;\n&quot; but found &quot;\r\n&quot;" source="Generic.Files.LineEndings.InvalidEOLChar"/>

@@ -188,7 +188,7 @@
                 <h2>Mapa</h2>
                 <div id="mapholder" ></div>
                 <div class="content">
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>			
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
                     <script>
                                     var directionDisplay;
                                     var directionsService = new google.maps.DirectionsService();

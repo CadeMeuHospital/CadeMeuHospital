@@ -3,7 +3,7 @@
 class DistanceLatLon {
 
     //COMPUTE THE DISTANCE BETWEEN TWO LAT/LON PAIRS
-    // MAN PAGE: http://en.wikipedia.org/wiki/Haversine_formula
+    //Haversine_formula
     public static function compute_distance($from_lat, $from_lon, $to_lat, $to_lon) {
 
         // ENSURE THAT ALL ARE FLOATING POINT VALUES

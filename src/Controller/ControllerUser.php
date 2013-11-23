@@ -30,7 +30,9 @@ class ControllerUser {
         $result = $xml->result;
         $vector_address = $result->address_component;
         
-        for ($i = 0; $i < sizeof($vector_address); $i++) {
+        $sizeVector = sizeof($vector_address);
+        
+        for ($i = 0; $i < $sizeVector; $i++) {
             if ($vector_address[$i]->type == "locality") {
                 return $vector_address[$i]->long_name;
             }

@@ -10,10 +10,10 @@ class DataValidation {
 
         $result = FALSE;
 
-        if (DataValidation::validateNullFields($textField)) {
+        if (self::validateNullFields($textField)) {
             throw new TextFieldException("Campo não pode ser nulo!");
         } else {
-            if (DataValidation::validateTextField($textField) == 1) {
+            if (self::validateTextField($textField) == 1) {
                 throw new TextFieldException("Campo contém caracteres invalidos!");
             } else {
                 $result = TRUE;

@@ -36,20 +36,12 @@
   <rule ref="Generic.ControlStructures.InlineControlStructure.Discouraged">
     <severity>6</severity>
   </rule>
-  <rule ref="Generic.Files.LineEndings.InvalidEOLChar">
-    <severity>7</severity>
-  </rule>
-  <rule ref="Generic.Files.LineEndings">
-    <properties>
-      <property name="eolChar" value="\n" />
-    </properties>
-  </rule>
   <rule ref="Generic.Files.LineLength.TooLong">
     <severity>7</severity>
   </rule>
   <rule ref="Generic.Files.LineLength">
     <properties>
-      <property name="lineLimit" value="80" />
+      <property name="lineLimit" value="120" />
     </properties>
   </rule>
   <rule ref="Generic.Files.LineLength.MaxExceeded">

@@ -103,12 +103,12 @@
                         ($currentPage + 1) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
                 $prevPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" .
                         ($currentPage - 1) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
-                if ($currentPage > 1) {
+                if ($currentPage > 1 && $quantityUBS != 0) {
                     echo "<a href=" . $firstPage . ">  [<<]  </a>";
                     echo "<a href=" . $prevPage . ">  [<]  </a>";
                 }
 
-                if ($currentPage >= 6) {
+                if ($currentPage >= 6 && $quantityUBS != 0) {
 
                     for ($i = $currentPage - 6; $i < $currentPage + 5; $i++) {
                         $pathPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" . ($i + 1) .
@@ -130,7 +130,7 @@
                             echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
                         }
                     }
-                } else {
+                } else if($quantityUBS != 0){
                     for ($i = 1; $i < $currentPage + 6; $i++) {
                         $pathPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" .
                                 ($i) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
@@ -153,7 +153,7 @@
                         }
                     }
                 }
-                if ($currentPage < $quantityPage) {
+                if ($currentPage < $quantityPage && $quantityUBS != 0) {
                     echo "<a href=" . $nextPage . ">  [>]  </a>";
                     echo "<a href=" . $lastPage . "> [>>] </a>";
                 }

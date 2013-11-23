@@ -27,7 +27,8 @@ class ControllerState {
     
     public function takeState($codMunic) {
         $stateDAO = new StateDAO();
-        return $stateAcronym = $stateDAO->takeUfStateUBS($codMunic);
+        $stateAcronym = $stateDAO->takeUfStateUBS($codMunic);
+        return $stateAcronym;
     }
     
     //Novo metodo de busca

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="1.4.1" timestamp="2013-11-23T21:42:03+01:00">
+  <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php">
+    <violation beginline="62" endline="72" rule="ExcessiveParameterList" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveparameterlist" class="ControllerProfileUBS" method="makeObjectUBS" priority="1">
+      The method makeObjectUBS has 13 parameters. Consider to reduce parameter number under 10.
+    </violation>
+  </file>
+  <file name="C:\xampp\htdocs\CadeMeuHospital\src\Model\ProfileUBS.php">
+    <violation beginline="20" endline="38" rule="ExcessiveParameterList" ruleset="Code Size Rules" package="+global" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveparameterlist" class="ProfileUBS" method="__construct" priority="1">
+      The method __construct has 13 parameters. Consider to reduce parameter number under 10.
+    </violation>
+  </file>
+</pmd>

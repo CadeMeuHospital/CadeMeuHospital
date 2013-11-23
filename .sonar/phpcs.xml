@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="1.3.3">
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php">
+  <error line="28" column="109" severity="warning" message="Line exceeds 80 characters; contains 108 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\StateDAO.php">
+  <error line="38" column="87" severity="warning" message="Line exceeds 80 characters; contains 86 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\Model\ProfileUBS.php">
+  <error line="136" column="4" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 3" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="136" column="11" severity="error" message="Line indented incorrectly; expected 4 spaces, found 3" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\Model\State.php">
+  <error line="12" column="92" severity="warning" message="Line exceeds 80 characters; contains 91 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DataBaseConnection.php">
+  <error line="8" column="18" severity="warning" message="Silencing errors is discouraged" source="Generic.PHP.NoSilencedErrors.Discouraged"/>
+  <error line="11" column="89" severity="warning" message="Line exceeds 80 characters; contains 88 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="16" column="10" severity="warning" message="Line exceeds 80 characters; contains 92 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="17" column="90" severity="warning" message="Line exceeds 80 characters; contains 89 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DataValidation.php">
+  <error line="17" column="85" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DistanceLatLon.php">
+  <error line="7" column="86" severity="warning" message="Line exceeds 80 characters; contains 85 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="22" column="93" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\Exception\TextFieldException.php">
+  <error line="5" column="5" severity="warning" message="Useless method overriding detected" source="Generic.CodeAnalysis.UselessOverridingMethod.Found"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\ClosestUBS.php">
+  <error line="5" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="9" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="12" column="1" severity="warning" message="Line exceeds 80 characters; contains 103 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="13" column="1" severity="warning" message="Line exceeds 80 characters; contains 82 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="15" column="1" severity="warning" message="Line exceeds 80 characters; contains 100 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="19" column="9" severity="error" message="Line indented incorrectly; expected 0 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="27" column="1" severity="warning" message="Line exceeds 80 characters; contains 82 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="31" column="11" severity="error" message="Line indented incorrectly; expected 0 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="46" column="100" severity="warning" message="Line exceeds 80 characters; contains 99 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="47" column="97" severity="warning" message="Line exceeds 80 characters; contains 96 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="48" column="98" severity="warning" message="Line exceeds 80 characters; contains 97 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="53" column="17" severity="error" message="Line indented incorrectly; expected 4 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="56" column="112" severity="warning" message="Line exceeds 80 characters; contains 111 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="57" column="120" severity="warning" message="Line exceeds 80 characters; contains 119 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="59" column="21" severity="error" message="Line indented incorrectly; expected 8 spaces, found 20" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="67" column="93" severity="warning" message="Line exceeds 80 characters; contains 94 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="72" column="1" severity="error" message="Line indented incorrectly; expected at least 4 spaces, found 0" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Contact.php">
+  <error line="1" column="1" severity="warning" message="Line exceeds 80 characters; contains 105 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="6" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="8" column="1" severity="warning" message="Line exceeds 80 characters; contains 104 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\EvaluateUBS.php">
+  <error line="1" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="12" column="89" severity="warning" message="Line exceeds 80 characters; contains 88 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="16" column="9" severity="error" message="Line indented incorrectly; expected 0 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="19" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="22" column="10" severity="error" message="Line indented incorrectly; expected 0 spaces, found 8" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="25" column="1" severity="warning" message="Line exceeds 80 characters; contains 92 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Home.php">
+  <error line="10" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="15" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="17" column="1" severity="warning" message="Line exceeds 80 characters; contains 92 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="19" column="1" severity="warning" message="Line exceeds 80 characters; contains 97 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="20" column="1" severity="warning" message="Line exceeds 80 characters; contains 86 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="21" column="1" severity="warning" message="Line exceeds 80 characters; contains 92 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="49" column="1" severity="warning" message="Line exceeds 80 characters; contains 120 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="50" column="1" severity="warning" message="Line exceeds 80 characters; contains 120 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="51" column="1" severity="warning" message="Line exceeds 80 characters; contains 120 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="52" column="1" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="53" column="1" severity="warning" message="Line exceeds 80 characters; contains 98 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="55" column="1" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="56" column="1" severity="warning" message="Line exceeds 80 characters; contains 117 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="58" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="59" column="1" severity="warning" message="Line exceeds 80 characters; contains 103 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="77" column="1" severity="warning" message="Line exceeds 80 characters; contains 87 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="86" column="1" severity="warning" message="Line exceeds 80 characters; contains 110 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="88" column="1" severity="warning" message="Line exceeds 80 characters; contains 106 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="95" column="96" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="97" column="25" severity="error" message="Line indented incorrectly; expected 0 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="98" column="29" severity="error" message="Line indented incorrectly; expected 4 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="102" column="29" severity="error" message="Line indented incorrectly; expected 4 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="103" column="94" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="106" column="29" severity="error" message="Line indented incorrectly; expected 4 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="107" column="102" severity="warning" message="Line exceeds 80 characters; contains 101 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="112" column="25" severity="error" message="Line indented incorrectly; expected 0 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="113" column="29" severity="error" message="Line indented incorrectly; expected 4 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="114" column="87" severity="warning" message="Line exceeds 80 characters; contains 86 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="115" column="85" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="116" column="85" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="119" column="119" severity="warning" message="Line exceeds 80 characters; contains 118 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="123" column="27" severity="error" message="Line indented incorrectly; expected 0 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="130" column="1" severity="warning" message="Line exceeds 80 characters; contains 104 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="137" column="1" severity="warning" message="Line exceeds 80 characters; contains 99 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="138" column="1" severity="warning" message="Line exceeds 80 characters; contains 90 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="146" column="84" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="147" column="49" severity="error" message="Line indented incorrectly; expected 0 spaces, found 48" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="147" column="87" severity="warning" message="Line exceeds 80 characters; contains 86 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="150" column="85" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Map.php">
+  <error line="1" column="1" severity="warning" message="Line exceeds 80 characters; contains 105 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="6" column="1" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="8" column="1" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Profile.php">
+  <error line="1" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="5" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="9" column="1" severity="warning" message="Line exceeds 80 characters; contains 100 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="11" column="1" severity="warning" message="Line exceeds 80 characters; contains 103 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="12" column="1" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="13" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="26" column="13" severity="error" message="Line indented incorrectly; expected 0 spaces, found 12" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="31" column="93" severity="warning" message="Line exceeds 80 characters; contains 92 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="34" column="93" severity="warning" message="Line exceeds 80 characters; contains 92 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="35" column="106" severity="warning" message="Line exceeds 80 characters; contains 105 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="45" column="1" severity="warning" message="Line exceeds 80 characters; contains 88 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="48" column="94" severity="warning" message="Line exceeds 80 characters; contains 98 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="52" column="105" severity="warning" message="Line exceeds 80 characters; contains 109 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="57" column="89" severity="warning" message="Line exceeds 80 characters; contains 90 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="58" column="93" severity="warning" message="Line exceeds 80 characters; contains 92 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="63" column="93" severity="warning" message="Line exceeds 80 characters; contains 97 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="67" column="103" severity="warning" message="Line exceeds 80 characters; contains 107 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="71" column="98" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="75" column="96" severity="warning" message="Line exceeds 80 characters; contains 100 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="79" column="97" severity="warning" message="Line exceeds 80 characters; contains 101 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="83" column="92" severity="warning" message="Line exceeds 80 characters; contains 96 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="93" column="1" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="98" column="1" severity="warning" message="Line exceeds 80 characters; contains 103 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="104" column="1" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="110" column="1" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="116" column="1" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="122" column="1" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="128" column="1" severity="warning" message="Line exceeds 80 characters; contains 120 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="132" column="99" severity="warning" message="Line exceeds 80 characters; contains 101 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="137" column="1" severity="warning" message="Line exceeds 80 characters; contains 100 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="142" column="1" severity="warning" message="Line exceeds 80 characters; contains 90 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="144" column="85" severity="warning" message="Line exceeds 80 characters; contains 86 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="145" column="88" severity="warning" message="Line exceeds 80 characters; contains 89 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="146" column="84" severity="warning" message="Line exceeds 80 characters; contains 85 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="147" column="90" severity="warning" message="Line exceeds 80 characters; contains 91 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="148" column="90" severity="warning" message="Line exceeds 80 characters; contains 90 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="151" column="1" severity="warning" message="Line exceeds 80 characters; contains 100 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="152" column="1" severity="warning" message="Line exceeds 80 characters; contains 81 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="155" column="1" severity="warning" message="Line exceeds 80 characters; contains 104 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="159" column="1" severity="warning" message="Line exceeds 80 characters; contains 81 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="163" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="164" column="1" severity="warning" message="Line exceeds 80 characters; contains 94 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="175" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="180" column="1" severity="warning" message="Line exceeds 80 characters; contains 86 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="191" column="1" severity="warning" message="Line exceeds 80 characters; contains 119 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="194" column="1" severity="warning" message="Line exceeds 80 characters; contains 96 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="196" column="89" severity="warning" message="Line exceeds 80 characters; contains 89 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="197" column="97" severity="warning" message="Line exceeds 80 characters; contains 98 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="200" column="1" severity="warning" message="Line exceeds 80 characters; contains 97 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="204" column="97" severity="warning" message="Line exceeds 80 characters; contains 98 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="206" column="1" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="208" column="1" severity="warning" message="Line exceeds 80 characters; contains 117 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="210" column="1" severity="warning" message="Line exceeds 80 characters; contains 111 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="215" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="223" column="1" severity="warning" message="Line exceeds 80 characters; contains 94 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="224" column="1" severity="warning" message="Line exceeds 80 characters; contains 91 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="228" column="1" severity="warning" message="Line exceeds 80 characters; contains 96 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="231" column="1" severity="warning" message="Line exceeds 80 characters; contains 101 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="232" column="1" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="233" column="1" severity="warning" message="Line exceeds 80 characters; contains 90 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="237" column="1" severity="warning" message="Line exceeds 80 characters; contains 103 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="238" column="1" severity="warning" message="Line exceeds 80 characters; contains 108 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="242" column="1" severity="warning" message="Line exceeds 80 characters; contains 97 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="246" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="247" column="1" severity="warning" message="Line exceeds 80 characters; contains 94 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="250" column="29" severity="error" message="Line indented incorrectly; expected 0 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="253" column="1" severity="warning" message="Line exceeds 80 characters; contains 89 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="258" column="95" severity="warning" message="Line exceeds 80 characters; contains 113 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="262" column="31" severity="error" message="Line indented incorrectly; expected 0 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="265" column="94" severity="warning" message="Line exceeds 80 characters; contains 111 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="269" column="1" severity="warning" message="Line exceeds 80 characters; contains 106 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="270" column="89" severity="warning" message="Line exceeds 80 characters; contains 105 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="276" column="1" severity="warning" message="Line exceeds 80 characters; contains 111 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="277" column="1" severity="warning" message="Line exceeds 80 characters; contains 115 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="278" column="1" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="292" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="296" column="101" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\SearchUBS.php">
+  <error line="1" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="6" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="8" column="1" severity="warning" message="Line exceeds 80 characters; contains 103 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="40" column="97" severity="warning" message="Line exceeds 80 characters; contains 96 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="47" column="119" severity="warning" message="Line exceeds 80 characters; contains 118 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="53" column="21" severity="error" message="Line indented incorrectly; expected 0 spaces, found 20" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="56" column="25" severity="error" message="Line indented incorrectly; expected 4 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="59" column="92" severity="warning" message="Line exceeds 80 characters; contains 91 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="63" column="29" severity="error" message="Line indented incorrectly; expected 8 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="64" column="81" severity="warning" message="Line exceeds 80 characters; contains 90 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="66" column="89" severity="warning" message="Line exceeds 80 characters; contains 88 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="68" column="33" severity="error" message="Line indented incorrectly; expected 12 spaces, found 32" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="69" column="96" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="70" column="82" severity="warning" message="Line exceeds 80 characters; contains 81 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="71" column="35" severity="error" message="Line indented incorrectly; expected 12 spaces, found 32" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="72" column="112" severity="warning" message="Line exceeds 80 characters; contains 111 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="74" column="31" severity="error" message="Line indented incorrectly; expected 8 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="75" column="108" severity="warning" message="Line exceeds 80 characters; contains 107 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="77" column="99" severity="warning" message="Line exceeds 80 characters; contains 98 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="79" column="33" severity="error" message="Line indented incorrectly; expected 12 spaces, found 32" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="80" column="96" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="81" column="82" severity="warning" message="Line exceeds 80 characters; contains 81 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="82" column="35" severity="error" message="Line indented incorrectly; expected 12 spaces, found 32" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="83" column="42" severity="warning" message="Line exceeds 80 characters; contains 85 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="84" column="84" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="98" column="30" severity="warning" message="Line exceeds 80 characters; contains 82 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="99" column="96" severity="warning" message="Line exceeds 80 characters; contains 95 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="100" column="94" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="101" column="103" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="102" column="94" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="103" column="108" severity="warning" message="Line exceeds 80 characters; contains 107 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="104" column="94" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="105" column="108" severity="warning" message="Line exceeds 80 characters; contains 107 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="106" column="17" severity="error" message="Line indented incorrectly; expected 0 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="111" column="17" severity="error" message="Line indented incorrectly; expected 0 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="113" column="21" severity="error" message="Line indented incorrectly; expected 4 spaces, found 20" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="114" column="113" severity="warning" message="Line exceeds 80 characters; contains 112 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="115" column="95" severity="warning" message="Line exceeds 80 characters; contains 94 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="117" column="25" severity="error" message="Line indented incorrectly; expected 8 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="118" column="29" severity="error" message="Line indented incorrectly; expected 12 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="119" column="33" severity="warning" message="Line exceeds 80 characters; contains 87 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="121" column="31" severity="error" message="Line indented incorrectly; expected 12 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="122" column="89" severity="warning" message="Line exceeds 80 characters; contains 88 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="127" column="25" severity="error" message="Line indented incorrectly; expected 8 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="129" column="27" severity="error" message="Line indented incorrectly; expected 8 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="130" column="85" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="133" column="19" severity="error" message="Line indented incorrectly; expected 0 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="134" column="21" severity="error" message="Line indented incorrectly; expected 4 spaces, found 20" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="135" column="102" severity="warning" message="Line exceeds 80 characters; contains 101 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="136" column="102" severity="warning" message="Line exceeds 80 characters; contains 101 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="139" column="25" severity="error" message="Line indented incorrectly; expected 8 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="140" column="29" severity="error" message="Line indented incorrectly; expected 12 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="141" column="33" severity="warning" message="Line exceeds 80 characters; contains 87 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="143" column="31" severity="error" message="Line indented incorrectly; expected 12 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="144" column="85" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="149" column="25" severity="error" message="Line indented incorrectly; expected 8 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="151" column="27" severity="error" message="Line indented incorrectly; expected 8 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="156" column="17" severity="error" message="Line indented incorrectly; expected 0 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Shared\Footer.php">
+  <error line="1" column="1" severity="warning" message="No PHP code was found in this file and short open tags are not allowed by this install of PHP. This file may be using short open tags but PHP does not allow them." source="Internal.NoCodeFound"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Shared\Getlocation.php">
+  <error line="1" column="1" severity="warning" message="No PHP code was found in this file and short open tags are not allowed by this install of PHP. This file may be using short open tags but PHP does not allow them." source="Internal.NoCodeFound"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Shared\Header.php">
+  <error line="1" column="1" severity="warning" message="No PHP code was found in this file and short open tags are not allowed by this install of PHP. This file may be using short open tags but PHP does not allow them." source="Internal.NoCodeFound"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Shared\Navigation_bar.php">
+  <error line="1" column="1" severity="warning" message="No PHP code was found in this file and short open tags are not allowed by this install of PHP. This file may be using short open tags but PHP does not allow them." source="Internal.NoCodeFound"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\Statistics.php">
+  <error line="1" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="5" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="8" column="1" severity="warning" message="Line exceeds 80 characters; contains 104 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="9" column="1" severity="warning" message="Line exceeds 80 characters; contains 83 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="27" column="97" severity="warning" message="Line exceeds 80 characters; contains 96 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="28" column="98" severity="warning" message="Line exceeds 80 characters; contains 97 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="29" column="92" severity="warning" message="Line exceeds 80 characters; contains 91 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="33" column="17" severity="error" message="Line indented incorrectly; expected 0 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="35" column="19" severity="error" message="Line indented incorrectly; expected 0 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="39" column="17" severity="error" message="Line indented incorrectly; expected 0 spaces, found 16" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="40" column="21" severity="error" message="Line indented incorrectly; expected 4 spaces, found 20" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="44" column="25" severity="error" message="Line indented incorrectly; expected 8 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="50" column="21" severity="error" message="Line indented incorrectly; expected 4 spaces, found 20" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="54" column="21" severity="error" message="Line indented incorrectly; expected 4 spaces, found 20" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="58" column="25" severity="error" message="Line indented incorrectly; expected 8 spaces, found 24" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="75" column="1" severity="warning" message="Line exceeds 80 characters; contains 91 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="91" column="1" severity="warning" message="Line exceeds 80 characters; contains 102 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="98" column="1" severity="warning" message="Line exceeds 80 characters; contains 88 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="108" column="81" severity="warning" message="Line exceeds 80 characters; contains 82 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="109" column="81" severity="warning" message="Line exceeds 80 characters; contains 82 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="115" column="1" severity="warning" message="Line exceeds 80 characters; contains 92 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="123" column="1" severity="warning" message="Line exceeds 80 characters; contains 82 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="141" column="1" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="151" column="29" severity="error" message="Line indented incorrectly; expected 0 spaces, found 28" source="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+  <error line="168" column="1" severity="warning" message="Line exceeds 80 characters; contains 84 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="173" column="1" severity="warning" message="Line exceeds 80 characters; contains 119 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="181" column="1" severity="warning" message="Line exceeds 80 characters; contains 118 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="182" column="1" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="188" column="1" severity="warning" message="Line exceeds 80 characters; contains 119 characters" source="Generic.Files.LineLength.TooLong"/>
+  <error line="189" column="1" severity="warning" message="Line exceeds 80 characters; contains 93 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+ <file name="C:\xampp\htdocs\CadeMeuHospital\src\View\teste.php">
+  <error line="13" column="86" severity="warning" message="Line exceeds 80 characters; contains 85 characters" source="Generic.Files.LineLength.TooLong"/>
+ </file>
+</checkstyle>

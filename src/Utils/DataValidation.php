@@ -31,7 +31,9 @@ class DataValidation {
         $result = 0;
         $validChars = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
 
-        for ($i = 0; $i < strlen($name); $i++) {
+        $lengthName = strlen($name);
+        
+        for ($i = 0; $i < $lengthName; $i++) {
             $character = stripos($validChars, $name[$i]);
             if (!$character) {
                 $result = 1;

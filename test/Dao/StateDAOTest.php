@@ -14,6 +14,10 @@ class StateDAOTest extends PHPUnit_Framework_TestCase {
     public function setupCreationDB() {
         $sqlInsertState = "INSERT INTO state (id_state, acronym,amount_ubs,average,name,population,area) VALUES (888, 'LV', 100, 4.5,'Levilandia do Sul', 1000, 1000)";
         $sqlInsertState2 = "INSERT INTO state (id_state, acronym,amount_ubs,average,name,population,area) VALUES (777, 'JW', 100, 0,'Levilandia do Norte', 1000, 1000)";
+        $sqlInsert = "INSERT INTO `municipios_ibge`(`codigo`, `municipio`, `uf`, `id_estado`) VALUES (999999, 'Levilandia','LV',888)";
+        $sqlInsertUBS = "INSERT INTO `ubs`(`cod_unico`, `vlr_latitude`, `vlr_longitude`, `cod_munic`, `average`) VALUES (99999999,-2344.34343,-3434.32323,999999,3);";
+        mysql_query($sqlInsert);
+        mysql_query($sqlInsertUBS);
         mysql_query($sqlInsertState);
         mysql_query($sqlInsertState2);
     }    
@@ -30,29 +34,18 @@ class StateDAOTest extends PHPUnit_Framework_TestCase {
     protected function tearDownStateDB() {
         $tearDownDB = "DELETE FROM state WHERE acronym='LV'";
         $tearDownDB2 = "DELETE FROM state WHERE acronym='JW'";
+        $sqlDelete = "DELETE FROM municipios_ibge WHERE `municipios_ibge`.`codigo`='999999' LIMIT 1";
+        $sqlDeleteUBS = "DELETE FROM ubs WHERE `ubs`.`cod_unico` = 99999999 LIMIT 1";
         mysql_query($tearDownDB);
         mysql_query($tearDownDB2);
-        
-        
+        mysql_query($sqlDelete);
+        mysql_query($sqlDeleteUBS);
     }
-
-//    public function testSaveAverageEvaluationStateDAOFalse() {
-//        $resultFalse = $this->stateDao->saveAverageEvaluationStateDAO(3,"ALSKJDLAK");
-//        $this->assertFalse($resultFalse);
-//    }
-
+    
     public function testSaveAverageEvaluationStateDAOTrue() {
-        $sqlInsert = "INSERT INTO `municipios_ibge`(`codigo`, `municipio`, `uf`, `id_estado`) VALUES (999999, 'Levilandia','LV',888)";
-        $sqlInsertUBS = "INSERT INTO `ubs`(`cod_unico`, `vlr_latitude`, `vlr_longitude`, `cod_munic`, `average`) VALUES (99999999,-2344.34343,-3434.32323,999999,3);";
-        mysql_query($sqlInsert);
-        mysql_query($sqlInsertUBS);
         
         $resultTrue = $this->stateDao->saveAverageEvaluationStateDAO(5,["LV"]);
         
-        $sqlDelete = "DELETE FROM `cademeuhospital`.`municipios_ibge` WHERE `municipios_ibge`.`codigo`='LV' LIMIT 1)";
-        $sqlDeleteUBS = "DELETE FROM `cademeuhospital`.`ubs` WHERE `ubs`.`cod_unico` = 99999999 LIMIT 1)";
-        mysql_query($sqlDelete);
-        mysql_query($sqlDeleteUBS);
         
         $this->assertTrue($resultTrue);
     }
@@ -72,5 +65,13 @@ class StateDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($resultTrue);
         
     }
-    
+    public function testTakeUfStateUBS() {
+        $resultNotNull = $this->stateDao->takeUfStateUBS(280030);
+        $this->assertNotNull($resultNotNull);
+    }
+
+    public function testTakeUfStateUBSFalse() {
+        $resultFalse = $this->stateDao->takeUfStateUBS(28003012);
+        $this->assertFalse($resultFalse);
+    }    
 }

@@ -85,8 +85,8 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     /* Method returnUBS suit test case */
 
     public function testReturnUBSFalse() {
-        $resultFalse = $this->profileUBSDao->returnUBS(40000);
-        $this->assertFalse($resultFalse);
+        $resultFalse = $this->profileUBSDao->returnUBS(1597856);
+        $this->assertNotNull($resultFalse);
     }
 
     /* Method searchUBSInTableEvaluate suit test case */
@@ -103,9 +103,11 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertNotNull($resultNotNull);
     }
     
-    public function testeSaveEvaluationUBSInsert() {
-        $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(NULL, 999999999);
+    public function testeSaveEvaluationUBSInsertFalse() {
+        $resultNotNull = $this->profileUBSDao->saveEvaluationUBS(4, 879999999);
         $this->assertNotNull($resultNotNull);
+        $sqlRemove = "DELETE FROM evaluate WHERE id_cod_unico = 879999999";
+        mysql_query($sqlRemove);
     }
 
     public function testSaveEvaluationUBSNotNULL() {
@@ -134,16 +136,6 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     public function testUpdateEvaluateAverageNotNull() {
         $resultNotNull = $this->profileUBSDao->updateEvaluateAverage(1);
         $this->assertNotNull($resultNotNull);
-    }
-
-    public function testTakeStateUBS() {
-        $resultNotNull = $this->profileUBSDao->takeStateUBS(280030);
-        $this->assertNotNull($resultNotNull);
-    }
-
-    public function testTakeStateUBSFalse() {
-        $resultFalse = $this->profileUBSDao->takeStateUBS(28003012);
-        $this->assertFalse($resultFalse);
     }
 
 }

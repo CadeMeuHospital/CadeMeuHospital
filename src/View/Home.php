@@ -21,12 +21,12 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
         <link rel="stylesheet" type="text/css" media="screen" href="Shared/css/estilo.css"/>
         <script type="text/javascript">
                 $(window).load(function() {
-                    $('#slider').chocoslider({
+                    $('#banner').chocoslider({
                         autoPause: true,
                         controlNavigation: true,
                         numberStrips: 10,
                         speedStrip: 1000,
-                        sliderDelay: 2000,
+                        sliderDelay: 4000,
                         transparencytitle: 0.6
                     });
                 });
@@ -45,7 +45,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
             <table>
                 <tr>
                     <td>
-                        <div class="banner" id="slider" >
+                        <div class="banner" id="banner" >
                             <a href="#"><img src="Shared/img/banner1.jpg" alt="Imagem 1" title="Texto da imagem 1"/></a>
                             <a href="#"><img src="Shared/img/banner2.jpg" alt="Imagem 2" title="Texto da imagem 2"/></a>
                             <a href="#"><img src="Shared/img/banner4.jpg" alt="Imagem 4" title="Texto da imagem 4"/></a>

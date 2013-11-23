@@ -31,7 +31,8 @@
                     <tr>
                         <td><label> Buscar UBS:</label></td>
                         <td id="states">
-                            <select id='optionUF' name="SearchUBSbyState" onchange=" document.getElementById('search').value = (this.value);">
+                            <select id='optionUF' name="SearchUBSbyState" onchange=" document.getElementById('search').
+                                        value = (this.value);">
                             <option value="vazio">Selecione UF</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>

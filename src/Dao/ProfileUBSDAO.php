@@ -40,7 +40,7 @@ class ProfileUBSDAO {
             $amount_people_x = $returnConsult[$evaluate + 3] + 1;
             $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "',
                     value_vote='" . $value_vote . "',
-                    amount_people_" . $evaluate . "='" . $amount_people_x . 
+                    amount_people_" . $evaluate . "='" . $amount_people_x .
                     "' WHERE id_evaluate='" . $returnConsult[0] . "'";
         }
 
@@ -50,7 +50,7 @@ class ProfileUBSDAO {
     public function executeComandSQL($sql, $idUBS) {
         mysql_query($sql);
         $evaluateAverage = self::updateEvaluateAverage($idUBS);
-        
+
         return $evaluateAverage;
     }
 
@@ -80,12 +80,14 @@ class ProfileUBSDAO {
         $average = mysql_fetch_row($result);
         return $average;
     }
-    
-    //Novo metodo de busca
-    public function searchUBSinDatabase($field,$searchType){
+
+//Novo metodo de busca
+    public function searchUBSinDatabase($field, $searchType) {
         $field = trim($field);
+        
         DataValidation::throwTextFieldException($field);
         
+
         switch ($searchType) {
             case NOME :
                 $sql = "SELECT * FROM ubs WHERE nom_estab 
@@ -102,9 +104,10 @@ class ProfileUBSDAO {
                 break;
         }
         $selUBS = mysql_query($sql);
-        
+
         return $selUBS;
     }
+
 }
 
 ?>

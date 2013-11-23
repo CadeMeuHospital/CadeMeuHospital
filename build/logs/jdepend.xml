@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PDepend>
+  <Packages>
+    <Package name="+global">
+      <Stats>
+        <TotalClasses>18</TotalClasses>
+        <ConcreteClasses>18</ConcreteClasses>
+        <AbstractClasses>0</AbstractClasses>
+        <Ca>0</Ca>
+        <Ce>1</Ce>
+        <A>0</A>
+        <I>1</I>
+        <D>0</D>
+      </Stats>
+      <ConcreteClasses>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerCity.php">ControllerCity</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php">ControllerProfileUBS</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php">ControllerRanking</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php">ControllerState</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerStatistics.php">ControllerStatistics</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php">ControllerUser</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Dao\CityDAO.php">CityDAO</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Dao\ProfileUBSDAO.php">ProfileUBSDAO</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Dao\RankingDAO.php">RankingDAO</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Dao\StateDAO.php">StateDAO</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Dao\StatisticsDAO.php">StatisticsDAO</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Model\City.php">City</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Model\ProfileUBS.php">ProfileUBS</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Model\State.php">State</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Model\User.php">User</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DataValidation.php">DataValidation</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DistanceLatLon.php">DistanceLatLon</Class>
+        <Class sourceFile="C:\xampp\htdocs\CadeMeuHospital\src\Utils\Exception\TextFieldException.php">TextFieldException</Class>
+      </ConcreteClasses>
+      <AbstractClasses/>
+      <DependsUpon>
+        <Package>+core</Package>
+      </DependsUpon>
+      <UsedBy/>
+    </Package>
+  </Packages>
+  <Cycles/>
+</PDepend>

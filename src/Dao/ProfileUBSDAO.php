@@ -29,7 +29,7 @@ class ProfileUBSDAO {
 
     public function saveEvaluationUBS($evaluate, $idUBS) {
 
-        $returnConsult = ProfileUBSDAO::searchUBSInTableEvaluate($idUBS);
+        $returnConsult = self::searchUBSInTableEvaluate($idUBS);
         if (!$returnConsult) {
             $sql = "INSERT INTO evaluate (id_cod_unico, amount_people,
                     value_vote, amount_people_" . $evaluate . ")
@@ -44,12 +44,12 @@ class ProfileUBSDAO {
                     "' WHERE id_evaluate='" . $returnConsult[0] . "'";
         }
 
-        return ProfileUBSDAO::executeComandSQL($sql, $idUBS);
+        return self::executeComandSQL($sql, $idUBS);
     }
 
     public function executeComandSQL($sql, $idUBS) {
-        $execute = mysql_query($sql);
-        $evaluateAverage = ProfileUBSDAO::updateEvaluateAverage($idUBS);
+        mysql_query($sql);
+        $evaluateAverage = self::updateEvaluateAverage($idUBS);
         
         return $evaluateAverage;
     }

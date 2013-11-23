@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+  <duplication lines="2" tokens="15">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="27"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="30"/>
+    <codefragment>    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, &#13;
+            $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average) {&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="1" tokens="15">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="27"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Model\ProfileUBS.php" line="21"/>
+    <codefragment>    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, &#13;
+</codefragment>
+  </duplication>
+  <duplication lines="4" tokens="18">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\View\SearchUBS.php" line="106"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\View\SearchUBS.php" line="114"/>
+    <codefragment>                                if ($currentPage == $i + 1) {&#13;
+                                    echo "&lt;strong&gt;" . ($i + 1) . "&lt;/strong&gt;";  // Write only the number of the page without any action&#13;
+                                } else {&#13;
+                                    echo "&lt;a href=" . $pathPage . "&gt; " . ($i + 1) . " &lt;/a&gt;";&#13;
+</codefragment>
+  </duplication>
+</pmd-cpd>

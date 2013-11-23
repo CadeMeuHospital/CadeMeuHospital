@@ -39,15 +39,18 @@ require_once '../Controller/ControllerUser.php';
             <div class="root">  
 
                 <?php
-                require '../view/shared/header.php';
-                require '../view/shared/navigation_bar.php';
+                include_once '../view/shared/header.php';
+                include_once '../view/shared/navigation_bar.php';
 
                 $controllerUser = ControllerUser::getInstanceControllerUser();
                 $currentUser = $controllerUser->makeObjectUser($_REQUEST['lat'], $_REQUEST['lon']);
                 $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
                 $closestUBSs = $controllerProfileUBS->searchUBS($currentUser->getCity(), CIDADE);
                 $menor = 20000;
-                for ($i = 0; $i < count($closestUBSs); $i++) {
+                
+                $countUBS = count($closestUBSs);
+                
+                for ($i = 0; $i < $countUBS; $i++) {
                     $currentUBS = $closestUBSs[$i];
 
                     $distance = $controllerProfileUBS->getDistanceBetweenTwoLatLon($currentUser->getLatitude(),

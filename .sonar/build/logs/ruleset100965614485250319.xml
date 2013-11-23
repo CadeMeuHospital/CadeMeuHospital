@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="Sonar Way">
+  <rule ref="Generic.Classes.DuplicateClassName.Found">
+    <severity>10</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.EmptyStatement.NotAllowed">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.EmptyStatement.NotAllowedWarning">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop.CanSimplify">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall.NotAllowed">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.JumbledIncrementer.Found">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement.Found">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier.Found">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter.Found">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.CodeAnalysis.UselessOverridingMethod.Found">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Generic.ControlStructures.InlineControlStructure.NotAllowed">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.ControlStructures.InlineControlStructure.Discouraged">
+    <severity>6</severity>
+  </rule>
+  <rule ref="Generic.Files.LineEndings.InvalidEOLChar">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Generic.Files.LineEndings">
+    <properties>
+      <property name="eolChar" value="\n" />
+    </properties>
+  </rule>
+  <rule ref="Generic.Files.LineLength.TooLong">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="80" />
+    </properties>
+  </rule>
+  <rule ref="Generic.Files.LineLength.MaxExceeded">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.Files.LineLength">
+    <properties>
+      <property name="absoluteLineLimit" value="120" />
+    </properties>
+  </rule>
+  <rule ref="Generic.Formatting.DisallowMultipleStatements.SameLine">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.Functions.CallTimePassByReference.NotAllowed">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.Metrics.CyclomaticComplexity.MaxExceeded">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.Metrics.CyclomaticComplexity">
+    <properties>
+      <property name="absoluteComplexity" value="20" />
+    </properties>
+  </rule>
+  <rule ref="Generic.Metrics.CyclomaticComplexity.TooHigh">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Generic.Metrics.CyclomaticComplexity">
+    <properties>
+      <property name="complexity" value="10" />
+    </properties>
+  </rule>
+  <rule ref="Generic.Metrics.NestingLevel.MaxExceeded">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.Metrics.NestingLevel">
+    <properties>
+      <property name="absoluteNestingLevel" value="10" />
+    </properties>
+  </rule>
+  <rule ref="Generic.Metrics.NestingLevel.TooHigh">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Generic.Metrics.NestingLevel">
+    <properties>
+      <property name="nestingLevel" value="5" />
+    </properties>
+  </rule>
+  <rule ref="Generic.NamingConventions.ConstructorName.OldStyle">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.NamingConventions.ConstructorName.OldStyleCall">
+    <severity>6</severity>
+  </rule>
+  <rule ref="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase">
+    <severity>6</severity>
+  </rule>
+  <rule ref="Generic.NamingConventions.UpperCaseConstantName.ConstantNotUpperCase">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.PHP.NoSilencedErrors.Forbidden">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.Strings.UnnecessaryStringConcat.Found">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Generic.WhiteSpace.DisallowTabIndent.TabsUsed">
+    <severity>6</severity>
+  </rule>
+  <rule ref="Generic.WhiteSpace.ScopeIndent.Incorrect">
+    <severity>6</severity>
+  </rule>
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+      <property name="indent" value="4" />
+      <property name="exact" value="false" />
+    </properties>
+  </rule>
+  <rule ref="PEAR.Files.IncludingFile.BracketsNotRequired">
+    <severity>6</severity>
+  </rule>
+  <rule ref="PEAR.Files.IncludingFile.UseIncludeOnce">
+    <severity>8</severity>
+  </rule>
+  <rule ref="PEAR.Files.IncludingFile.UseInclude">
+    <severity>8</severity>
+  </rule>
+  <rule ref="PEAR.Files.IncludingFile.UseRequireOnce">
+    <severity>8</severity>
+  </rule>
+  <rule ref="PEAR.Files.IncludingFile.UseRequire">
+    <severity>8</severity>
+  </rule>
+  <rule ref="PEAR.Functions.ValidDefaultValue.NotAtEnd">
+    <severity>10</severity>
+  </rule>
+  <rule ref="Squiz.Classes.DuplicateProperty.Found">
+    <severity>9</severity>
+  </rule>
+  <rule ref="Squiz.Classes.SelfMemberReference.IncorrectCase">
+    <severity>6</severity>
+  </rule>
+  <rule ref="Squiz.Classes.SelfMemberReference.NotUsed">
+    <severity>7</severity>
+  </rule>
+  <rule ref="Squiz.Classes.SelfMemberReference.SpaceBefore">
+    <severity>6</severity>
+  </rule>
+  <rule ref="Squiz.Classes.SelfMemberReference.SpaceAfter">
+    <severity>6</severity>
+  </rule>
+  <rule ref="Squiz.Functions.FunctionDuplicateArgument.Found">
+    <severity>10</severity>
+  </rule>
+  <rule ref="Squiz.Objects.ObjectInstantiation.NotAssigned">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Squiz.PHP.CommentedOutCode.Found">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Squiz.PHP.GlobalKeyword.NotAllowed">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Squiz.PHP.NonExecutableCode.Unreachable">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Squiz.PHP.NonExecutableCode.ReturnNotRequired">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Squiz.Scope.MemberVarScope.Missing">
+    <severity>8</severity>
+  </rule>
+  <rule ref="Squiz.Scope.StaticThisUsage.Found">
+    <severity>10</severity>
+  </rule>
+</ruleset>
+

@@ -150,9 +150,12 @@
                             <?php 
                             for ($i = 0; $i < 27; $i++){
                             ?>
-                                data.setValue(<?php echo $i; ?>, 0, '<?php echo $namesOfStates[$i]; ?>');
-                                data.setValue(<?php echo $i; ?>, 1, <?php echo $amountUBS[$i]; ?>);
-                                data.setValue(<?php echo $i; ?>, 2, <?php echo $opitionToBeCrossed[$i]; ?>);
+                                data.setValue(<?php echo $i; ?>, 0, 
+                                '<?php echo $namesOfStates[$i]; ?>');
+                                data.setValue(<?php echo $i; ?>, 1, 
+                                <?php echo $amountUBS[$i]; ?>);
+                                data.setValue(<?php echo $i; ?>, 2, 
+                                <?php echo $opitionToBeCrossed[$i]; ?>);
                             <?php
                             }
                             ?>

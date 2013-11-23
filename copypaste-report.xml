@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+  <duplication lines="2" tokens="15">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="27"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="30"/>
+    <codefragment>    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, &#13;
+            $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average) {&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="1" tokens="7">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="27"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="53"/>
+    <codefragment>    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, &#13;
+</codefragment>
+  </duplication>
+  <duplication lines="5" tokens="10">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="28"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="53"/>
+    <codefragment>            $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average) {&#13;
+&#13;
+        $profileUBS = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $descEnder, &#13;
+                $descBairro, $descCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average);&#13;
+        return $profileUBS;&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="1" tokens="5">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="53"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="72"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="97"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="104"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="105"/>
+    <codefragment>        $profileUBS = self::$instanceControllerProfileUBS-&gt;makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, $codMunic, $codCNES, $nameUBS, $dscEnder, $dscBairro, $dscCidade, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average);&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="4" tokens="4">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="32"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="98"/>
+    <codefragment>        return $profileUBS;&#13;
+    }&#13;
+&#13;
+    public function makeObjectUBSLoop($attributeUBS, $i) {&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="1" tokens="4">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="111"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="112"/>
+    <codefragment>    public function getDistanceBetweenTwoLatLon($from_lat, $from_lon, $to_lat, $to_lon) {&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="5" tokens="6">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="14"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" line="9"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php" line="9"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerStatistics.php" line="10"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" line="10"/>
+    <codefragment>    private function __construct() {&#13;
+        &#13;
+    }&#13;
+&#13;
+    public static function getInstanceControllerProfileUBS() {&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="1" tokens="4">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="19"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" line="14"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php" line="14"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerStatistics.php" line="15"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" line="15"/>
+    <codefragment>        if (!isset(self::$instanceControllerProfileUBS)) {&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="4" tokens="4">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="21"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" line="16"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php" line="16"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerStatistics.php" line="17"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" line="17"/>
+    <codefragment>        } else {&#13;
+            //No action&#13;
+        }&#13;
+        return self::$instanceControllerProfileUBS;&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="2" tokens="6">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" line="23"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" line="28"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" line="33"/>
+    <codefragment>        $rankingDAO = new RankingDAO();&#13;
+        return $rankingDAO-&gt;getRank();&#13;
+</codefragment>
+  </duplication>
+  <duplication lines="1" tokens="4">
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" line="91"/>
+    <file path="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" line="34"/>
+    <codefragment>        for($i = 0; $i &lt; $quantity; $i++){&#13;
+</codefragment>
+  </duplication>
+</pmd-cpd>

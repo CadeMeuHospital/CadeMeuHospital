@@ -1,9 +1,0 @@
-PHPMD:
-
->phpmd ./CadeMeuHospital xml codesze, unusedcode, naming --reportfile
-
-
-
-PHP Code Sniff
-
->phpcs --report=xml ./CadeMeuHospital

@@ -4,7 +4,7 @@
 <style>#search{display:block;}</style>
 <script>
     function verifyOption(option){
-        if(option==4){
+        if(option==3){
             document.getElementById('states').style.display = 'block';
             document.getElementById('search').style.display = 'none';
         } else {
@@ -69,9 +69,8 @@
                         <td>
                             <select id="searchType" name="searchType" onchange='verifyOption(this.value);'>
                                 <option value=1>Nome</option>
-                                <option value=4>Estado</option>
                                 <option value=2>Cidade</option>
-                                <option value=3>Bairro</option>
+                                <option value=3>Estado</option>
                             </select>
                         </td>
                         <td><input type = "submit" value="Enviar" name="Enviar" onclick="return verifyUF();" /></td>

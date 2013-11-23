@@ -39,8 +39,8 @@ require_once '../Controller/ControllerUser.php';
             <div class="root">  
 
                 <?php
-                require '../view/shared/header.php';
-                require '../view/shared/navigation_bar.php';
+                require_once '../view/shared/header.php';
+                require_once '../view/shared/navigation_bar.php';
 
                 $controllerUser = ControllerUser::getInstanceControllerUser();
                 $currentUser = $controllerUser->makeObjectUser($_REQUEST['lat'], $_REQUEST['lon']);

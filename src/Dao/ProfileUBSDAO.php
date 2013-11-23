@@ -5,8 +5,7 @@ require_once "/../Utils/DataValidation.php";
 
 define('NOME', 1);
 define('CIDADE', 2);
-define('BAIRRO', 3);
-define('ESTADO', 4);
+define('ESTADO', 3);
 
 class ProfileUBSDAO {
 
@@ -99,10 +98,6 @@ class ProfileUBSDAO {
                 break;
             case CIDADE :
                 $sql = "SELECT * FROM ubs WHERE dsc_cidade 
-                        LIKE '%" . $field . "%'";
-                break;
-            case BAIRRO :
-                $sql = "SELECT * FROM ubs WHERE dsc_bairro 
                         LIKE '%" . $field . "%'";
                 break;
         }

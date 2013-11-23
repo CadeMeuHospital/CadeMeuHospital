@@ -48,7 +48,7 @@ class ProfileUBSDAO {
     }
 
     public function executeComandSQL($sql, $idUBS) {
-        $execute = mysql_query($sql);
+        mysql_query($sql);
         $evaluateAverage = ProfileUBSDAO::updateEvaluateAverage($idUBS);
         
         return $evaluateAverage;

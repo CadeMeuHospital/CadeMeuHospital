@@ -29,7 +29,7 @@ class DataValidation {
 
     public static function validateTextField($name) {
         $result = 0;
-        $validChars = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù';
+        $validChars = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù0123456789';
 
         $lengthName = strlen($name);
         

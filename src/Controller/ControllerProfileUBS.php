@@ -112,8 +112,14 @@ class ControllerProfileUBS {
 
         $i = 0;
         $arrayUBS = array();
-        $attributesUBS = $profileUBSDAO->searchUBSinDatabase($field,
-                $searchType);
+        try{
+            $attributesUBS = $profileUBSDAO->searchUBSinDatabase($field,$searchType);
+        }catch(TextFieldException $e){
+            print "<script>alert('".$e->getMessage()."')</script>";
+            print "<script>window.location='../View/Home.php'</script>";
+            exit;
+        }
+
         $lines = mysql_num_rows($attributesUBS);
 
         while ($i < $lines) {

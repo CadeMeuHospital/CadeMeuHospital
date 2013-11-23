@@ -79,9 +79,11 @@
                                 echo "<td class = 'linkPreto'><font color = 'black'>" . $cityUBS .
                                         "-" . $stateUBS . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
-                                    echo "<td><font color = 'black'>Média das avaliações:" . $arrayUBS[$i]->getAverage() . "</font></td>";
+                                    echo "<td><font color = 'black'>Média das avaliações:" .
+                                            $arrayUBS[$i]->getAverage() . "</font></td>";
                                 } else {
-                                    echo "<td><font color = 'black' align = 'center'>UBS ainda não avaliada.</font></td></tr>";
+                                    echo "<td><font color = 'black' align = 'center'>
+                                        UBS ainda não avaliada.</font></td></tr>";
                                 }
                             }
                          //   echo "<tr><td>&nbsp</td></tr>";
@@ -111,11 +113,13 @@
                     if ($currentPage >= 6) {
 
                         for ($i = $currentPage - 6; $i < $currentPage + 5; $i++) {
-                            $pathPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" . ($i + 1) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
+                            $pathPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" . ($i + 1) . 
+                                    "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
 
                             if ($i == $quantityPage - 1) {
                                 if ($currentPage == $i + 1) {
-                                    echo "<strong>" . ($i + 1) . "</strong>";  // Write only the number of the page without any action
+                                    // Write only the number of the page without any action
+                                    echo "<strong>" . ($i + 1) . "</strong>";
                                 } else {
                                     echo "<a href=" . $pathPage . "> " . ($i + 1) . " </a>";
                                 }

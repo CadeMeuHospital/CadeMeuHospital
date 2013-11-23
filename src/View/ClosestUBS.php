@@ -50,8 +50,8 @@ require_once '../Controller/ControllerUser.php';
                 for ($i = 0; $i < count($closestUBSs); $i++) {
                     $currentUBS = $closestUBSs[$i];
 
-                    $distance = $controllerProfileUBS->getDistanceBetweenTwoLatLon($currentUser->getLatitude(), 
-                            $currentUser->getLongitude(), $currentUBS->getLatitudeUBS(), $currentUBS->getLongitudeUBS());
+                    $distance = $controllerProfileUBS->getDistanceBetweenTwoLatLon($currentUser->getLatitude(),
+                            $currentUser->getLongitude(),$currentUBS->getLatitudeUBS(),$currentUBS->getLongitudeUBS());
 
                     if ($distance < $menor) {
                         $menor = $distance;

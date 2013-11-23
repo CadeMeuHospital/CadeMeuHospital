@@ -49,12 +49,14 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                             <a href="#"><img src="Shared/img/banner1.jpg" alt="Imagem 1" title="Texto da imagem 1"/></a>
                             <a href="#"><img src="Shared/img/banner2.jpg" alt="Imagem 2" title="Texto da imagem 2"/></a>
                             <a href="#"><img src="Shared/img/banner4.jpg" alt="Imagem 4" title="Texto da imagem 4"/></a>
-                            <a href="http://cnes.datasus.gov.br/" target =" _blank"><img src="Shared/img/cnesdatasus.jpg" 
-                                                                                         alt="Imagem 4" title="CNES"/></a>
-                            <a href="http://www.saudeparatodosdf.com.br/" target =" _blank2"><img src="Shared/img/saudeparatodosdf.jpg" 
-                                                                                                  alt="Imagem 4" title="Saúde para Todos!"/></a>
-                            <a href="http://www2.datasus.gov.br/DATASUS/index.php" target =" _blank1"><img src="Shared/img/datasus.jpg" 
-                                                                                                           alt="Imagem 4" title="Data SUS"/></a>
+                            <a href="http://cnes.datasus.gov.br/" target =" _blank">
+                                <img src="Shared/img/cnesdatasus.jpg"alt="Imagem 4" title="CNES"/>
+                            </a>
+                            <a href="http://www.saudeparatodosdf.com.br/" target =" _blank2">
+                                <img src="Shared/img/saudeparatodosdf.jpg"alt="Imagem 4" title="Saúde para Todos!"/>
+                            </a>
+                            <a href="http://www2.datasus.gov.br/DATASUS/index.php" target =" _blank1">
+                                <img src="Shared/img/datasus.jpg" alt="Imagem 4" title="Data SUS"/></a>
                         </div>
                     </td>
                     <td>

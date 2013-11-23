@@ -21,7 +21,8 @@ class ControllerState {
     public function saveAverageEvaluationState(
             $evaluate, $stateAcronym) {
         $stateDAO = new StateDAO();
-        return $stateDAO->saveAverageEvaluationStateDAO($evaluate, $stateAcronym);
+        return $stateDAO->
+                saveAverageEvaluationStateDAO($evaluate, $stateAcronym);
     }
     
     public function takeState($codMunic) {
@@ -43,7 +44,8 @@ class ControllerState {
         $population = $attributeState[5];
         $area = $attributeState[6];
         
-        $newState = new State($acronym, $amountUBS, $average, $name, $population, $area);
+        $newState = new State($acronym, $amountUBS,
+                $average, $name, $population, $area);
         
         return $newState;
     }

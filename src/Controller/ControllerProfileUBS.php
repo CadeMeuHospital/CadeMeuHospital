@@ -117,7 +117,6 @@ class ControllerProfileUBS {
         }catch(TextFieldException $e){
             print "<script>alert('".$e->getMessage()."')</script>";
             print "<script>window.location='../View/Home.php'</script>";
-            exit;
         }
 
         $lines = mysql_num_rows($attributesUBS);

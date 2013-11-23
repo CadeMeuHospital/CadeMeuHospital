@@ -21,7 +21,8 @@ class ProfileUBSDAO {
     }
 
     public function searchUBSInTableEvaluate($idUBS) {
-        $sql = "SELECT * FROM evaluate WHERE id_cod_unico LIKE '" . $idUBS . "'";
+        $sql = "SELECT * FROM evaluate WHERE id_cod_unico 
+                LIKE '" . $idUBS . "'";
         $execute = mysql_query($sql);
         $result = mysql_fetch_row($execute);
         return $result;
@@ -31,13 +32,15 @@ class ProfileUBSDAO {
 
         $returnConsult = ProfileUBSDAO::searchUBSInTableEvaluate($idUBS);
         if (!$returnConsult) {
-            $sql = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote, amount_people_" . $evaluate . ")
-                        VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1)";
+            $sql = "INSERT INTO evaluate (id_cod_unico, amount_people,
+                    value_vote, amount_people_" . $evaluate . ")
+                    VALUES ('" . $idUBS . "', 1, '" . $evaluate . "', 1)";
         } else {
             $amount_people = $returnConsult[2] + 1;
             $value_vote = $returnConsult[3] + $evaluate;
             $amount_people_x = $returnConsult[$evaluate + 3] + 1;
-            $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "', value_vote='" . $value_vote . "',
+            $sql = "UPDATE evaluate SET  amount_people='" . $amount_people . "',
+                    value_vote='" . $value_vote . "',
                     amount_people_" . $evaluate . "='" . $amount_people_x . 
                     "' WHERE id_evaluate='" . $returnConsult[0] . "'";
         }
@@ -54,7 +57,8 @@ class ProfileUBSDAO {
 
     public function updateEvaluateAverage($idUBS) {
 
-        $sql = "SELECT * FROM evaluate WHERE id_cod_unico LIKE '" . $idUBS . "'";
+        $sql = "SELECT * FROM evaluate WHERE id_cod_unico 
+                LIKE '" . $idUBS . "'";
         $result = mysql_query($sql);
         $resultAverage = mysql_fetch_row($result);
 
@@ -64,13 +68,15 @@ class ProfileUBSDAO {
 
         $evaluateAverage = $resultAverage[3] / $resultAverage[2];
 
-        $sql = "UPDATE ubs SET average= '" . $evaluateAverage . "' WHERE cod_unico LIKE '" . $idUBS . "'";
+        $sql = "UPDATE ubs SET average= '" . $evaluateAverage . "' 
+                WHERE cod_unico LIKE '" . $idUBS . "'";
         mysql_query($sql);
         return $evaluateAverage;
     }
 
     public function takeAverageUBS($idUBS) {
-        $sql = "SELECT (average) FROM ubs WHERE cod_unico LIKE '" . $idUBS . "'";
+        $sql = "SELECT (average) FROM ubs WHERE cod_unico 
+                LIKE '" . $idUBS . "'";
         $result = mysql_query($sql);
         $average = mysql_fetch_row($result);
         return $average;
@@ -83,18 +89,21 @@ class ProfileUBSDAO {
         
         switch ($searchType) {
             case NOME :
-                $sql = "SELECT * FROM ubs WHERE nom_estab LIKE '%" . $field . "%'";
+                $sql = "SELECT * FROM ubs WHERE nom_estab 
+                        LIKE '%" . $field . "%'";
                 break;
             case ESTADO :
                 $sql = "SELECT * FROM ubs INNER JOIN municipios_ibge 
-                    ON ubs.cod_munic = municipios_ibge.codigo 
-                    WHERE municipios_ibge.uf LIKE '%" . $field . "%'";
+                        ON ubs.cod_munic = municipios_ibge.codigo 
+                        WHERE municipios_ibge.uf LIKE '%" . $field . "%'";
                 break;
             case CIDADE :
-                $sql = "SELECT * FROM ubs WHERE dsc_cidade LIKE '%" . $field . "%'";
+                $sql = "SELECT * FROM ubs WHERE dsc_cidade 
+                        LIKE '%" . $field . "%'";
                 break;
             case BAIRRO :
-                $sql = "SELECT * FROM ubs WHERE dsc_bairro LIKE '%" . $field . "%'";
+                $sql = "SELECT * FROM ubs WHERE dsc_bairro 
+                        LIKE '%" . $field . "%'";
                 break;
         }
         $selUBS = mysql_query($sql);

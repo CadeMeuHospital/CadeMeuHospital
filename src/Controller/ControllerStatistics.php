@@ -1,7 +1,7 @@
 <?php
 
-include_once '/../DAO/StatisticsDAO.php';
-include_once 'ControllerProfileUBS.php';
+require_once '/../DAO/StatisticsDAO.php';
+require_once 'ControllerProfileUBS.php';
 
 class ControllerStatistics {
 
@@ -14,9 +14,7 @@ class ControllerStatistics {
     public static function getInstanceControllerStatistics() {
         if (!isset(self::$instanceControllerStatistics)) {
             self::$instanceControllerStatistics = new ControllerStatistics();
-        } else {
-            //No action
-        }
+        } 
         return self::$instanceControllerStatistics;
     }
 

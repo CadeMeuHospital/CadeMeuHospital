@@ -1,7 +1,7 @@
 <?php
 
-include_once '/../Dao/StateDAO.php';
-include_once '/../Model/State.php';
+require_once '/../Dao/StateDAO.php';
+require_once '/../Model/State.php';
 
 class ControllerState {
 
@@ -14,9 +14,7 @@ class ControllerState {
     public static function getInstanceControllerState() {
         if (!isset(self::$instanceControllerState)) {
             self::$instanceControllerState = new ControllerState();
-        } else {
-            //No action
-        }
+        } 
         return self::$instanceControllerState;
     }
     

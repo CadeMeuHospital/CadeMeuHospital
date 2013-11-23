@@ -1,6 +1,6 @@
 <?php
 
-include_once '/../DAO/RankingDAO.php';
+require_once '/../DAO/RankingDAO.php';
 
 class ControllerRanking {
 
@@ -13,8 +13,6 @@ class ControllerRanking {
     public static function getInstanceControllerRanking() {
         if (!isset(self::$instanceControllerRanking)) {
             self::$instanceControllerRanking = new ControllerRanking();
-        } else {
-            //No action
         }
         return self::$instanceControllerRanking;
     }

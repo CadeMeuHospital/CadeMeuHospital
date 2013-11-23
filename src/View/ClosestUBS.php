@@ -12,7 +12,8 @@ require_once '../Controller/ControllerUser.php';
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <script type="text/javascript" src="//j.maxmind.com/js/geoip.js"></script>
         <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+        <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" 
+              rel="stylesheet" type="text/css" />
 
         <?php
         if (!isset($_REQUEST['lat'])) {
@@ -49,7 +50,8 @@ require_once '../Controller/ControllerUser.php';
                 for ($i = 0; $i < count($closestUBSs); $i++) {
                     $currentUBS = $closestUBSs[$i];
 
-                    $distance = $controllerProfileUBS->getDistanceBetweenTwoLatLon($currentUser->getLatitude(), $currentUser->getLongitude(), $currentUBS->getLatitudeUBS(), $currentUBS->getLongitudeUBS());
+                    $distance = $controllerProfileUBS->getDistanceBetweenTwoLatLon($currentUser->getLatitude(), 
+                            $currentUser->getLongitude(), $currentUBS->getLatitudeUBS(), $currentUBS->getLongitudeUBS());
 
                     if ($distance < $menor) {
                         $menor = $distance;

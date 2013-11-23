@@ -1,6 +1,6 @@
 <?php
 
-include_once '/../Utils/Exception/TextFieldException.php';
+require_once '/../Utils/Exception/TextFieldException.php';
 
 define('SIZECODMUNIC', 6);
 
@@ -35,9 +35,7 @@ class DataValidation {
             $character = stripos($validChars, $name[$i]);
             if (!$character) {
                 $result = 1;
-            } else {
-                //No action
-            }
+            } 
         }
         return $result;
     }

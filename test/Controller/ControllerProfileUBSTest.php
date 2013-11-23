@@ -75,9 +75,9 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     /**
      * expectedExceptionMessage "Campo não pode ser nulo!"
      */
-//    public function testSearchUBSException() {
-//        $this->controllerProfileUBS->searchUBS(NULL, 1);
-//    }
+    public function testSearchUBSException() {
+        $this->controllerProfileUBS->searchUBS(NULL, 1);
+    }
 
     /* Method ReturnUBS suit test case */
 

@@ -47,7 +47,10 @@ require_once '../Controller/ControllerUser.php';
                 $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
                 $closestUBSs = $controllerProfileUBS->searchUBS($currentUser->getCity(), CIDADE);
                 $menor = 20000;
-                for ($i = 0; $i < count($closestUBSs); $i++) {
+                
+                $countUBS = count($closestUBSs);
+                
+                for ($i = 0; $i < $countUBS; $i++) {
                     $currentUBS = $closestUBSs[$i];
 
                     $distance = $controllerProfileUBS->getDistanceBetweenTwoLatLon($currentUser->getLatitude(),

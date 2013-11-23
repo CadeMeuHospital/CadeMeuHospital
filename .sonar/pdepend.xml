@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2013-11-23T20:42:20" pdepend="1.1.0" ahh="0.11111111111111" andc="0" calls="105" ccn="135" ccn2="136" cloc="12" clsa="0" clsc="18" eloc="766" fanout="14" leafs="17" lloc="489" loc="1050" maxDIT="2" ncloc="1038" noc="18" nof="0" noi="0" nom="111" nop="1" roots="1">
+<metrics generated="2013-11-23T21:03:36" pdepend="1.1.0" ahh="0.11111111111111" andc="0" calls="105" ccn="135" ccn2="136" cloc="12" clsa="0" clsc="18" eloc="766" fanout="14" leafs="17" lloc="491" loc="1050" maxDIT="2" ncloc="1038" noc="18" nof="0" noi="0" nom="111" nop="1" roots="1">
   <files>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerCity.php" cloc="0" eloc="22" lloc="14" loc="35" ncloc="35"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" cloc="1" eloc="102" lloc="67" loc="135" ncloc="134"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" cloc="0" eloc="26" lloc="16" loc="37" ncloc="37"/>
-    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php" cloc="1" eloc="38" lloc="25" loc="55" ncloc="54"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php" cloc="1" eloc="39" lloc="26" loc="56" ncloc="55"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerStatistics.php" cloc="0" eloc="31" lloc="20" loc="43" ncloc="43"/>
-    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" cloc="0" eloc="33" lloc="20" loc="43" ncloc="43"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" cloc="0" eloc="32" lloc="21" loc="42" ncloc="42"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\CityDAO.php" cloc="1" eloc="22" lloc="12" loc="35" ncloc="34"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\ProfileUBSDAO.php" cloc="1" eloc="87" lloc="58" loc="110" ncloc="109"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\RankingDAO.php" cloc="0" eloc="30" lloc="14" loc="43" ncloc="43"/>
@@ -46,12 +46,12 @@
       <method name="makeRankByCity" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
       <method name="makeRankByNeighborhood" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
     </class>
-    <class name="ControllerState" ca="1" cbo="2" ce="2" cis="4" cloc="1" cr="0.15" csz="6" dit="0" eloc="30" impl="0" lloc="17" loc="48" ncloc="47" noam="0" nocc="0" nom="5" noom="0" npm="4" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="6" wmci="6" wmcnp="5">
+    <class name="ControllerState" ca="1" cbo="2" ce="2" cis="4" cloc="1" cr="0.15" csz="6" dit="0" eloc="31" impl="0" lloc="18" loc="49" ncloc="48" noam="0" nocc="0" nom="5" noom="0" npm="4" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="6" wmci="6" wmcnp="5">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php"/>
       <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="3" ncloc="3" npath="1"/>
       <method name="getInstanceControllerState" ccn="2" ccn2="2" cloc="0" eloc="6" lloc="3" loc="6" ncloc="6" npath="2"/>
       <method name="saveAverageEvaluationState" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="2" loc="6" ncloc="6" npath="1"/>
-      <method name="takeState" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="2" loc="4" ncloc="4" npath="1"/>
+      <method name="takeState" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
       <method name="makeObjectState" ccn="1" ccn2="1" cloc="0" eloc="13" lloc="10" loc="17" ncloc="17" npath="1"/>
     </class>
     <class name="ControllerStatistics" ca="0" cbo="1" ce="1" cis="4" cloc="0" cr="0.15" csz="6" dit="0" eloc="24" impl="0" lloc="12" loc="35" ncloc="35" noam="0" nocc="0" nom="5" noom="0" npm="4" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="6" wmci="6" wmcnp="5">
@@ -62,12 +62,12 @@
       <method name="generateValuesToChartAverageEvaluateSingleUBS" ccn="1" ccn2="1" cloc="0" eloc="6" lloc="3" loc="6" ncloc="6" npath="1"/>
       <method name="generateStatisticsOfQuantityAverage" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
     </class>
-    <class name="ControllerUser" ca="0" cbo="1" ce="1" cis="3" cloc="0" cr="0.15" csz="6" dit="0" eloc="26" impl="0" lloc="13" loc="37" ncloc="37" noam="0" nocc="0" nom="4" noom="0" npm="3" rcr="0.15" vars="2" varsi="2" varsnp="0" wmc="7" wmci="7" wmcnp="6">
+    <class name="ControllerUser" ca="0" cbo="1" ce="1" cis="3" cloc="0" cr="0.15" csz="6" dit="0" eloc="25" impl="0" lloc="14" loc="36" ncloc="36" noam="0" nocc="0" nom="4" noom="0" npm="3" rcr="0.15" vars="2" varsi="2" varsnp="0" wmc="7" wmci="7" wmcnp="6">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php"/>
       <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="3" ncloc="3" npath="1"/>
       <method name="getInstanceControllerUser" ccn="2" ccn2="2" cloc="0" eloc="6" lloc="3" loc="6" ncloc="6" npath="2"/>
       <method name="makeObjectUser" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
-      <method name="takeCity" ccn="3" ccn2="3" cloc="0" eloc="13" lloc="7" loc="14" ncloc="14" npath="3"/>
+      <method name="takeCity" ccn="3" ccn2="3" cloc="0" eloc="12" lloc="8" loc="13" ncloc="13" npath="3"/>
     </class>
     <class name="CityDAO" ca="1" cbo="0" ce="0" cis="2" cloc="1" cr="0.15" csz="4" dit="0" eloc="16" impl="0" lloc="7" loc="28" ncloc="27" noam="0" nocc="0" nom="3" noom="0" npm="2" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="4" wmci="4" wmcnp="3">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\CityDAO.php"/>

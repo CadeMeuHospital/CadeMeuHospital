@@ -1,3 +1,5 @@
+/* FALTAR TERMINAR ESSE TESTE */
+
 <?php
 class Example extends PHPUnit_Extensions_SeleniumTestCase
 {

@@ -133,7 +133,7 @@ class ProfileUBS {
         $this->descMedicine = $descMedicine;
     }
 
-   public function setAverage($average){
+    public function setAverage($average){
         $this->average = $average;
     }
 

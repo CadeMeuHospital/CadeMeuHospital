@@ -19,3 +19,6 @@ class Example extends PHPUnit_Extensions_SeleniumTestCase
   }
 }
 ?>
+
+
+/* AQUI ACABA O TESTE */

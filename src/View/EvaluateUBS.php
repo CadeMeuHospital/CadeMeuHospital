@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>CMH - Perfil UBS</title>
     </head>    
     <?php
         require_once '../Controller/ControllerProfileUBS.php';

@@ -125,7 +125,7 @@
                                 'containerId': 'chart_div',
                                 'options': {
                                     'width': 760,
-                                    'height': 760,
+                                    'height': 400,
                                     'pieSliceText': 'value',
                                     'legend': 'left',
                                 }

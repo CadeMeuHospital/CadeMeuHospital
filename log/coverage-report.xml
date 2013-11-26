@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1385251833">
+  <project timestamp="1385251833">
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Controller/ControllerCity.php">
+      <class name="ControllerCity" namespace="global">
+        <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="13" coveredelements="13"/>
+      </class>
+      <line num="10" type="method" name="__construct" crap="1" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="14" type="method" name="getInstanceControllerCity" crap="2" count="5"/>
+      <line num="16" type="stmt" count="5"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="5"/>
+      <line num="22" type="method" name="makeObjectCity" crap="1" count="5"/>
+      <line num="23" type="stmt" count="5"/>
+      <line num="24" type="stmt" count="5"/>
+      <line num="26" type="stmt" count="5"/>
+      <line num="28" type="stmt" count="5"/>
+      <line num="30" type="stmt" count="5"/>
+      <metrics loc="34" ncloc="34" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="13" coveredelements="13"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Controller/ControllerProfileUBS.php">
+      <class name="ControllerProfileUBS" namespace="global">
+        <metrics methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="70" elements="78" coveredelements="78"/>
+      </class>
+      <line num="15" type="method" name="__construct" crap="1" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="19" type="method" name="getInstanceControllerProfileUBS" crap="2" count="15"/>
+      <line num="20" type="stmt" count="15"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="15"/>
+      <line num="26" type="method" name="returnUBS" crap="2" count="7"/>
+      <line num="27" type="stmt" count="7"/>
+      <line num="29" type="stmt" count="7"/>
+      <line num="30" type="stmt" count="7"/>
+      <line num="31" type="stmt" count="7"/>
+      <line num="32" type="stmt" count="3"/>
+      <line num="35" type="stmt" count="4"/>
+      <line num="36" type="stmt" count="4"/>
+      <line num="37" type="stmt" count="4"/>
+      <line num="40" type="method" name="evaluateUBS" crap="2" count="2"/>
+      <line num="41" type="stmt" count="2"/>
+      <line num="42" type="stmt" count="2"/>
+      <line num="43" type="stmt" count="2"/>
+      <line num="44" type="stmt" count="2"/>
+      <line num="45" type="stmt" count="1"/>
+      <line num="47" type="stmt" count="1"/>
+      <line num="49" type="stmt" count="1"/>
+      <line num="50" type="stmt" count="1"/>
+      <line num="51" type="stmt" count="1"/>
+      <line num="54" type="method" name="getDistanceBetweenTwoLatLon" crap="1" count="2"/>
+      <line num="56" type="stmt" count="2"/>
+      <line num="57" type="stmt" count="2"/>
+      <line num="62" type="method" name="makeObjectUBS" crap="1" count="15"/>
+      <line num="66" type="stmt" count="15"/>
+      <line num="67" type="stmt" count="15"/>
+      <line num="68" type="stmt" count="15"/>
+      <line num="69" type="stmt" count="15"/>
+      <line num="71" type="stmt" count="15"/>
+      <line num="74" type="method" name="makeObjectLoop" crap="1" count="5"/>
+      <line num="76" type="stmt" count="5"/>
+      <line num="77" type="stmt" count="5"/>
+      <line num="78" type="stmt" count="5"/>
+      <line num="79" type="stmt" count="5"/>
+      <line num="80" type="stmt" count="5"/>
+      <line num="81" type="stmt" count="5"/>
+      <line num="82" type="stmt" count="5"/>
+      <line num="83" type="stmt" count="5"/>
+      <line num="84" type="stmt" count="5"/>
+      <line num="85" type="stmt" count="5"/>
+      <line num="86" type="stmt" count="5"/>
+      <line num="87" type="stmt" count="5"/>
+      <line num="88" type="stmt" count="5"/>
+      <line num="89" type="stmt" count="5"/>
+      <line num="91" type="stmt" count="5"/>
+      <line num="93" type="stmt" count="5"/>
+      <line num="94" type="stmt" count="5"/>
+      <line num="96" type="stmt" count="5"/>
+      <line num="97" type="stmt" count="5"/>
+      <line num="99" type="stmt" count="5"/>
+      <line num="100" type="stmt" count="5"/>
+      <line num="101" type="stmt" count="5"/>
+      <line num="102" type="stmt" count="5"/>
+      <line num="103" type="stmt" count="5"/>
+      <line num="104" type="stmt" count="5"/>
+      <line num="106" type="stmt" count="5"/>
+      <line num="109" type="method" name="searchUBS" crap="3" count="2"/>
+      <line num="111" type="stmt" count="2"/>
+      <line num="113" type="stmt" count="2"/>
+      <line num="114" type="stmt" count="2"/>
+      <line num="116" type="stmt" count="2"/>
+      <line num="117" type="stmt" count="1"/>
+      <line num="118" type="stmt" count="1"/>
+      <line num="120" type="stmt" count="1"/>
+      <line num="121" type="stmt" count="1"/>
+      <line num="123" type="stmt" count="1"/>
+      <line num="125" type="stmt" count="1"/>
+      <line num="126" type="stmt" count="1"/>
+      <line num="127" type="stmt" count="2"/>
+      <line num="128" type="stmt" count="1"/>
+      <line num="129" type="stmt" count="1"/>
+      <line num="134" type="stmt" count="2"/>
+      <metrics loc="139" ncloc="137" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="70" coveredstatements="70" elements="78" coveredelements="78"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Controller/ControllerRanking.php">
+      <class name="ControllerRanking" namespace="global">
+        <metrics methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="16" coveredelements="16"/>
+      </class>
+      <line num="9" type="method" name="__construct" crap="1" count="1"/>
+      <line num="11" type="stmt" count="1"/>
+      <line num="13" type="method" name="getInstanceControllerRanking" crap="2" count="5"/>
+      <line num="14" type="stmt" count="5"/>
+      <line num="15" type="stmt" count="1"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="5"/>
+      <line num="20" type="method" name="makeRank" crap="1" count="1"/>
+      <line num="21" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="25" type="method" name="makeRankByCity" crap="1" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="2"/>
+      <line num="30" type="method" name="makeRankByNeighborhood" crap="1" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="32" type="stmt" count="2"/>
+      <metrics loc="36" ncloc="36" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="16" coveredelements="16"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Controller/ControllerState.php">
+      <class name="ControllerState" namespace="global">
+        <metrics methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="26" coveredelements="26"/>
+      </class>
+      <line num="10" type="method" name="__construct" crap="1" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="14" type="method" name="getInstanceControllerState" crap="2" count="9"/>
+      <line num="15" type="stmt" count="9"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="9"/>
+      <line num="21" type="method" name="saveAverageEvaluationState" crap="1" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="25" type="stmt" count="2"/>
+      <line num="28" type="method" name="takeState" crap="1" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="30" type="stmt" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="36" type="method" name="makeObjectState" crap="1" count="5"/>
+      <line num="37" type="stmt" count="5"/>
+      <line num="39" type="stmt" count="5"/>
+      <line num="41" type="stmt" count="5"/>
+      <line num="42" type="stmt" count="5"/>
+      <line num="43" type="stmt" count="5"/>
+      <line num="44" type="stmt" count="5"/>
+      <line num="45" type="stmt" count="5"/>
+      <line num="46" type="stmt" count="5"/>
+      <line num="48" type="stmt" count="5"/>
+      <line num="49" type="stmt" count="5"/>
+      <line num="51" type="stmt" count="5"/>
+      <metrics loc="55" ncloc="53" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="21" coveredstatements="21" elements="26" coveredelements="26"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Controller/ControllerStatistics.php">
+      <class name="ControllerStatistics" namespace="global">
+        <metrics methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="19" coveredelements="19"/>
+      </class>
+      <line num="10" type="method" name="__construct" crap="1" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="14" type="method" name="getInstanceControllerStatistics" crap="2" count="6"/>
+      <line num="15" type="stmt" count="6"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="6"/>
+      <line num="21" type="method" name="generateValuesToChartAverageEvaluate" crap="1" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="28" type="method" name="generateValuesToChartAverageEvaluateSingleUBS" crap="1" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="32" type="stmt" count="2"/>
+      <line num="35" type="method" name="generateStatisticsOfQuantityAverage" crap="1" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <metrics loc="42" ncloc="42" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="19" coveredelements="19"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Controller/ControllerUser.php">
+      <class name="ControllerUser" namespace="global">
+        <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="22" coveredelements="22"/>
+      </class>
+      <line num="10" type="method" name="__construct" crap="1" count="1"/>
+      <line num="12" type="stmt" count="1"/>
+      <line num="14" type="method" name="getInstanceControllerUser" crap="2" count="2"/>
+      <line num="15" type="stmt" count="2"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="21" type="method" name="makeObjectUser" crap="1" count="2"/>
+      <line num="22" type="stmt" count="2"/>
+      <line num="23" type="stmt" count="2"/>
+      <line num="24" type="stmt" count="2"/>
+      <line num="27" type="method" name="takeCity" crap="3" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="30" type="stmt" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="33" type="stmt" count="2"/>
+      <line num="35" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="2"/>
+      <line num="37" type="stmt" count="2"/>
+      <line num="39" type="stmt" count="2"/>
+      <line num="40" type="stmt" count="1"/>
+      <metrics loc="43" ncloc="43" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="22" coveredelements="22"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Dao/CityDAO.php">
+      <class name="CityDAO" namespace="global">
+        <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="12" coveredelements="12"/>
+      </class>
+      <line num="9" type="method" name="__construct" crap="1" count="1"/>
+      <line num="11" type="stmt" count="1"/>
+      <line num="13" type="method" name="getInstanceCityDAO" crap="2" count="5"/>
+      <line num="15" type="stmt" count="5"/>
+      <line num="16" type="stmt" count="1"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="5"/>
+      <line num="22" type="method" name="takeCityDatabase" crap="1" count="5"/>
+      <line num="24" type="stmt" count="5"/>
+      <line num="25" type="stmt" count="5"/>
+      <line num="26" type="stmt" count="5"/>
+      <line num="28" type="stmt" count="5"/>
+      <metrics loc="32" ncloc="32" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="12" coveredelements="12"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Dao/ProfileUBSDAO.php">
+      <class name="ProfileUBSDAO" namespace="global">
+        <metrics methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="51" elements="59" coveredelements="59"/>
+      </class>
+      <line num="12" type="method" name="__construct" crap="1" count="21"/>
+      <line num="14" type="stmt" count="21"/>
+      <line num="16" type="method" name="returnUBS" crap="1" count="8"/>
+      <line num="17" type="stmt" count="8"/>
+      <line num="18" type="stmt" count="8"/>
+      <line num="19" type="stmt" count="8"/>
+      <line num="22" type="method" name="searchUBSInTableEvaluate" crap="1" count="5"/>
+      <line num="24" type="stmt" count="5"/>
+      <line num="25" type="stmt" count="5"/>
+      <line num="26" type="stmt" count="5"/>
+      <line num="27" type="stmt" count="5"/>
+      <line num="30" type="method" name="saveEvaluationUBS" crap="2" count="4"/>
+      <line num="32" type="stmt" count="4"/>
+      <line num="33" type="stmt" count="4"/>
+      <line num="35" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="2"/>
+      <line num="37" type="stmt" count="2"/>
+      <line num="38" type="stmt" count="2"/>
+      <line num="39" type="stmt" count="2"/>
+      <line num="40" type="stmt" count="2"/>
+      <line num="41" type="stmt" count="2"/>
+      <line num="42" type="stmt" count="2"/>
+      <line num="43" type="stmt" count="2"/>
+      <line num="44" type="stmt" count="2"/>
+      <line num="47" type="stmt" count="4"/>
+      <line num="50" type="method" name="executeComandSQL" crap="1" count="4"/>
+      <line num="51" type="stmt" count="4"/>
+      <line num="52" type="stmt" count="4"/>
+      <line num="54" type="stmt" count="4"/>
+      <line num="57" type="method" name="updateEvaluateAverage" crap="2" count="6"/>
+      <line num="60" type="stmt" count="6"/>
+      <line num="61" type="stmt" count="6"/>
+      <line num="62" type="stmt" count="6"/>
+      <line num="64" type="stmt" count="6"/>
+      <line num="65" type="stmt" count="2"/>
+      <line num="68" type="stmt" count="4"/>
+      <line num="70" type="stmt" count="4"/>
+      <line num="71" type="stmt" count="4"/>
+      <line num="72" type="stmt" count="4"/>
+      <line num="73" type="stmt" count="4"/>
+      <line num="76" type="method" name="takeAverageUBS" crap="1" count="2"/>
+      <line num="78" type="stmt" count="2"/>
+      <line num="79" type="stmt" count="2"/>
+      <line num="80" type="stmt" count="2"/>
+      <line num="81" type="stmt" count="2"/>
+      <line num="85" type="method" name="searchUBSinDatabase" crap="4" count="5"/>
+      <line num="86" type="stmt" count="5"/>
+      <line num="88" type="stmt" count="5"/>
+      <line num="92" type="stmt" count="4"/>
+      <line num="94" type="stmt" count="1"/>
+      <line num="95" type="stmt" count="1"/>
+      <line num="96" type="stmt" count="3"/>
+      <line num="99" type="stmt" count="1"/>
+      <line num="100" type="stmt" count="1"/>
+      <line num="101" type="stmt" count="2"/>
+      <line num="103" type="stmt" count="2"/>
+      <line num="104" type="stmt" count="2"/>
+      <line num="106" type="stmt" count="4"/>
+      <line num="108" type="stmt" count="4"/>
+      <metrics loc="112" ncloc="110" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="51" coveredstatements="51" elements="59" coveredelements="59"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Dao/RankingDAO.php">
+      <class name="RankingDAO" namespace="global">
+        <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
+      </class>
+      <line num="7" type="method" name="__construct" crap="1" count="10"/>
+      <line num="9" type="stmt" count="10"/>
+      <line num="11" type="method" name="getRank" crap="1" count="2"/>
+      <line num="14" type="stmt" count="2"/>
+      <line num="15" type="stmt" count="2"/>
+      <line num="16" type="stmt" count="2"/>
+      <line num="20" type="method" name="getRankByCity" crap="1" count="4"/>
+      <line num="23" type="stmt" count="4"/>
+      <line num="24" type="stmt" count="4"/>
+      <line num="25" type="stmt" count="4"/>
+      <line num="27" type="stmt" count="4"/>
+      <line num="30" type="method" name="getRankByNeighborhood" crap="1" count="4"/>
+      <line num="33" type="stmt" count="4"/>
+      <line num="34" type="stmt" count="4"/>
+      <line num="35" type="stmt" count="4"/>
+      <line num="37" type="stmt" count="4"/>
+      <metrics loc="42" ncloc="42" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="16" coveredelements="16"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Dao/StateDAO.php">
+      <class name="StateDAO" namespace="global">
+        <metrics methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="27" coveredelements="27"/>
+      </class>
+      <line num="7" type="method" name="__construct" crap="1" count="12"/>
+      <line num="9" type="stmt" count="12"/>
+      <line num="11" type="method" name="saveAverageEvaluationStateDAO" crap="2" count="4"/>
+      <line num="17" type="stmt" count="4"/>
+      <line num="19" type="stmt" count="4"/>
+      <line num="21" type="stmt" count="4"/>
+      <line num="22" type="stmt" count="4"/>
+      <line num="24" type="stmt" count="4"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="29" type="stmt" count="3"/>
+      <line num="30" type="stmt" count="3"/>
+      <line num="33" type="stmt" count="4"/>
+      <line num="34" type="stmt" count="4"/>
+      <line num="37" type="method" name="takeUfStateUBS" crap="1" count="9"/>
+      <line num="38" type="stmt" count="9"/>
+      <line num="39" type="stmt" count="9"/>
+      <line num="40" type="stmt" count="9"/>
+      <line num="41" type="stmt" count="9"/>
+      <line num="45" type="method" name="takeStateUBSOO" crap="1" count="5"/>
+      <line num="46" type="stmt" count="5"/>
+      <line num="48" type="stmt" count="5"/>
+      <line num="49" type="stmt" count="5"/>
+      <line num="50" type="stmt" count="5"/>
+      <line num="51" type="stmt" count="5"/>
+      <metrics loc="56" ncloc="54" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="23" coveredstatements="23" elements="27" coveredelements="27"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Dao/StatisticsDAO.php">
+      <class name="StatisticsDAO" namespace="global">
+        <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="28" elements="31" coveredelements="31"/>
+      </class>
+      <line num="7" type="method" name="getValuesToChartAverageEvaluate" crap="1" count="2"/>
+      <line num="11" type="stmt" count="2"/>
+      <line num="12" type="stmt" count="2"/>
+      <line num="13" type="stmt" count="2"/>
+      <line num="16" type="method" name="getValuesToChartAverageEvaluateSigleUBS" crap="1" count="4"/>
+      <line num="20" type="stmt" count="4"/>
+      <line num="21" type="stmt" count="4"/>
+      <line num="22" type="stmt" count="4"/>
+      <line num="25" type="method" name="getStatisticsByState" crap="2" count="2"/>
+      <line num="27" type="stmt" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="30" type="stmt" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="32" type="stmt" count="2"/>
+      <line num="34" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="2"/>
+      <line num="37" type="stmt" count="2"/>
+      <line num="38" type="stmt" count="2"/>
+      <line num="39" type="stmt" count="2"/>
+      <line num="40" type="stmt" count="2"/>
+      <line num="41" type="stmt" count="2"/>
+      <line num="42" type="stmt" count="2"/>
+      <line num="43" type="stmt" count="2"/>
+      <line num="44" type="stmt" count="2"/>
+      <line num="45" type="stmt" count="2"/>
+      <line num="46" type="stmt" count="2"/>
+      <line num="47" type="stmt" count="2"/>
+      <line num="48" type="stmt" count="2"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="51" type="stmt" count="2"/>
+      <metrics loc="56" ncloc="56" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="28" elements="31" coveredelements="31"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Model/City.php">
+      <class name="City" namespace="global">
+        <metrics methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="20" coveredelements="20"/>
+      </class>
+      <line num="10" type="method" name="__construct" crap="1" count="24"/>
+      <line num="11" type="stmt" count="24"/>
+      <line num="12" type="stmt" count="24"/>
+      <line num="14" type="stmt" count="24"/>
+      <line num="15" type="stmt" count="24"/>
+      <line num="17" type="method" name="getState" crap="1" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="21" type="method" name="setState" crap="1" count="24"/>
+      <line num="22" type="stmt" count="24"/>
+      <line num="23" type="stmt" count="24"/>
+      <line num="25" type="method" name="getCodMunic" crap="1" count="1"/>
+      <line num="26" type="stmt" count="1"/>
+      <line num="29" type="method" name="setCodMunic" crap="1" count="24"/>
+      <line num="30" type="stmt" count="24"/>
+      <line num="31" type="stmt" count="24"/>
+      <line num="33" type="method" name="getDscCidade" crap="1" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <line num="37" type="method" name="setDscCidade" crap="1" count="24"/>
+      <line num="38" type="stmt" count="24"/>
+      <line num="39" type="stmt" count="24"/>
+      <metrics loc="44" ncloc="44" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="20" coveredelements="20"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Model/ProfileUBS.php">
+      <class name="ProfileUBS" namespace="global">
+        <metrics methods="27" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="53" elements="80" coveredelements="80"/>
+      </class>
+      <line num="20" type="method" name="__construct" crap="1" count="28"/>
+      <line num="24" type="stmt" count="28"/>
+      <line num="25" type="stmt" count="28"/>
+      <line num="26" type="stmt" count="28"/>
+      <line num="27" type="stmt" count="28"/>
+      <line num="28" type="stmt" count="28"/>
+      <line num="29" type="stmt" count="28"/>
+      <line num="30" type="stmt" count="28"/>
+      <line num="31" type="stmt" count="28"/>
+      <line num="32" type="stmt" count="28"/>
+      <line num="33" type="stmt" count="28"/>
+      <line num="34" type="stmt" count="28"/>
+      <line num="35" type="stmt" count="28"/>
+      <line num="37" type="stmt" count="28"/>
+      <line num="38" type="stmt" count="28"/>
+      <line num="40" type="method" name="getCity" crap="1" count="2"/>
+      <line num="41" type="stmt" count="2"/>
+      <line num="44" type="method" name="setCity" crap="1" count="28"/>
+      <line num="45" type="stmt" count="28"/>
+      <line num="46" type="stmt" count="28"/>
+      <line num="48" type="method" name="getIdUBS" crap="1" count="2"/>
+      <line num="49" type="stmt" count="2"/>
+      <line num="52" type="method" name="setIdUBS" crap="1" count="28"/>
+      <line num="53" type="stmt" count="28"/>
+      <line num="54" type="stmt" count="28"/>
+      <line num="56" type="method" name="getLatitudeUBS" crap="1" count="1"/>
+      <line num="57" type="stmt" count="1"/>
+      <line num="60" type="method" name="setLatitudeUBS" crap="1" count="28"/>
+      <line num="61" type="stmt" count="28"/>
+      <line num="62" type="stmt" count="28"/>
+      <line num="64" type="method" name="getLongitudeUBS" crap="1" count="1"/>
+      <line num="65" type="stmt" count="1"/>
+      <line num="68" type="method" name="setLongitudeUBS" crap="1" count="28"/>
+      <line num="69" type="stmt" count="28"/>
+      <line num="70" type="stmt" count="28"/>
+      <line num="72" type="method" name="getCodCNES" crap="1" count="1"/>
+      <line num="73" type="stmt" count="1"/>
+      <line num="76" type="method" name="setCodCNES" crap="1" count="28"/>
+      <line num="77" type="stmt" count="28"/>
+      <line num="78" type="stmt" count="28"/>
+      <line num="80" type="method" name="getNameUBS" crap="1" count="1"/>
+      <line num="81" type="stmt" count="1"/>
+      <line num="84" type="method" name="setNameUBS" crap="1" count="28"/>
+      <line num="85" type="stmt" count="28"/>
+      <line num="86" type="stmt" count="28"/>
+      <line num="88" type="method" name="getDescEnder" crap="1" count="1"/>
+      <line num="89" type="stmt" count="1"/>
+      <line num="92" type="method" name="setDescEnder" crap="1" count="28"/>
+      <line num="93" type="stmt" count="28"/>
+      <line num="94" type="stmt" count="28"/>
+      <line num="96" type="method" name="getPhoneUBS" crap="1" count="1"/>
+      <line num="97" type="stmt" count="1"/>
+      <line num="100" type="method" name="setPhoneUBS" crap="1" count="28"/>
+      <line num="101" type="stmt" count="28"/>
+      <line num="102" type="stmt" count="28"/>
+      <line num="104" type="method" name="getPhysicStructureUBS" crap="1" count="1"/>
+      <line num="105" type="stmt" count="1"/>
+      <line num="108" type="method" name="setPhysicStructureUBS" crap="1" count="28"/>
+      <line num="109" type="stmt" count="28"/>
+      <line num="110" type="stmt" count="28"/>
+      <line num="112" type="method" name="getAdapOldPeople" crap="1" count="1"/>
+      <line num="113" type="stmt" count="1"/>
+      <line num="116" type="method" name="setAdapOldPeople" crap="1" count="28"/>
+      <line num="117" type="stmt" count="28"/>
+      <line num="118" type="stmt" count="28"/>
+      <line num="120" type="method" name="getDescriTools" crap="1" count="1"/>
+      <line num="121" type="stmt" count="1"/>
+      <line num="124" type="method" name="setDescriTools" crap="1" count="28"/>
+      <line num="125" type="stmt" count="28"/>
+      <line num="126" type="stmt" count="28"/>
+      <line num="128" type="method" name="getDescMedicine" crap="1" count="1"/>
+      <line num="129" type="stmt" count="1"/>
+      <line num="132" type="method" name="setDescMedicine" crap="1" count="28"/>
+      <line num="133" type="stmt" count="28"/>
+      <line num="134" type="stmt" count="28"/>
+      <line num="136" type="method" name="setAverage" crap="1" count="28"/>
+      <line num="137" type="stmt" count="28"/>
+      <line num="138" type="stmt" count="28"/>
+      <line num="140" type="method" name="getAverage" crap="1" count="1"/>
+      <line num="141" type="stmt" count="1"/>
+      <metrics loc="146" ncloc="146" classes="1" methods="27" coveredmethods="27" conditionals="0" coveredconditionals="0" statements="53" coveredstatements="53" elements="80" coveredelements="80"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Model/State.php">
+      <class name="State" namespace="global">
+        <metrics methods="13" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="38" coveredelements="38"/>
+      </class>
+      <line num="12" type="method" name="__construct" crap="1" count="36"/>
+      <line num="13" type="stmt" count="36"/>
+      <line num="14" type="stmt" count="36"/>
+      <line num="15" type="stmt" count="36"/>
+      <line num="16" type="stmt" count="36"/>
+      <line num="17" type="stmt" count="36"/>
+      <line num="18" type="stmt" count="36"/>
+      <line num="19" type="stmt" count="36"/>
+      <line num="21" type="method" name="getAcronym" crap="1" count="2"/>
+      <line num="22" type="stmt" count="2"/>
+      <line num="25" type="method" name="setAcronym" crap="1" count="36"/>
+      <line num="26" type="stmt" count="36"/>
+      <line num="27" type="stmt" count="36"/>
+      <line num="29" type="method" name="getAmount_ubs" crap="1" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="33" type="method" name="setAmount_ubs" crap="1" count="36"/>
+      <line num="34" type="stmt" count="36"/>
+      <line num="35" type="stmt" count="36"/>
+      <line num="37" type="method" name="getAvarage" crap="1" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="41" type="method" name="setAvarage" crap="1" count="36"/>
+      <line num="42" type="stmt" count="36"/>
+      <line num="43" type="stmt" count="36"/>
+      <line num="45" type="method" name="getNameState" crap="1" count="1"/>
+      <line num="46" type="stmt" count="1"/>
+      <line num="49" type="method" name="setNameState" crap="1" count="36"/>
+      <line num="50" type="stmt" count="36"/>
+      <line num="51" type="stmt" count="36"/>
+      <line num="53" type="method" name="getPopulation" crap="1" count="1"/>
+      <line num="54" type="stmt" count="1"/>
+      <line num="57" type="method" name="setPopulation" crap="1" count="36"/>
+      <line num="58" type="stmt" count="36"/>
+      <line num="59" type="stmt" count="36"/>
+      <line num="61" type="method" name="getArea" crap="1" count="1"/>
+      <line num="62" type="stmt" count="1"/>
+      <line num="65" type="method" name="setArea" crap="1" count="36"/>
+      <line num="66" type="stmt" count="36"/>
+      <line num="67" type="stmt" count="36"/>
+      <metrics loc="71" ncloc="71" classes="1" methods="13" coveredmethods="13" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="38" coveredelements="38"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Model/User.php">
+      <class name="User" namespace="global">
+        <metrics methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="20" coveredelements="20"/>
+      </class>
+      <line num="10" type="method" name="__construct" crap="1" count="5"/>
+      <line num="11" type="stmt" count="5"/>
+      <line num="12" type="stmt" count="5"/>
+      <line num="13" type="stmt" count="5"/>
+      <line num="14" type="stmt" count="5"/>
+      <line num="16" type="method" name="getCity" crap="1" count="2"/>
+      <line num="17" type="stmt" count="2"/>
+      <line num="19" type="method" name="setCity" crap="1" count="5"/>
+      <line num="20" type="stmt" count="5"/>
+      <line num="21" type="stmt" count="5"/>
+      <line num="23" type="method" name="getLatitude" crap="1" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="27" type="method" name="setLatitude" crap="1" count="5"/>
+      <line num="28" type="stmt" count="5"/>
+      <line num="29" type="stmt" count="5"/>
+      <line num="31" type="method" name="getLongitude" crap="1" count="1"/>
+      <line num="32" type="stmt" count="1"/>
+      <line num="35" type="method" name="setLongitude" crap="1" count="5"/>
+      <line num="36" type="stmt" count="5"/>
+      <line num="37" type="stmt" count="5"/>
+      <metrics loc="41" ncloc="41" classes="1" methods="7" coveredmethods="7" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="13" elements="20" coveredelements="20"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Utils/DataValidation.php">
+      <class name="DataValidation" namespace="global">
+        <metrics methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="22" coveredelements="22"/>
+      </class>
+      <line num="9" type="method" name="throwTextFieldException" crap="3" count="8"/>
+      <line num="11" type="stmt" count="8"/>
+      <line num="13" type="stmt" count="8"/>
+      <line num="14" type="stmt" count="2"/>
+      <line num="16" type="stmt" count="6"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="19" type="stmt" count="5"/>
+      <line num="22" type="stmt" count="5"/>
+      <line num="25" type="method" name="validateNullFields" crap="1" count="10"/>
+      <line num="26" type="stmt" count="10"/>
+      <line num="27" type="stmt" count="10"/>
+      <line num="30" type="method" name="validateTextField" crap="3" count="8"/>
+      <line num="31" type="stmt" count="8"/>
+      <line num="32" type="stmt" count="8"/>
+      <line num="34" type="stmt" count="8"/>
+      <line num="36" type="stmt" count="8"/>
+      <line num="37" type="stmt" count="8"/>
+      <line num="38" type="stmt" count="8"/>
+      <line num="39" type="stmt" count="2"/>
+      <line num="40" type="stmt" count="2"/>
+      <line num="41" type="stmt" count="8"/>
+      <line num="42" type="stmt" count="8"/>
+      <metrics loc="46" ncloc="46" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="19" coveredstatements="19" elements="22" coveredelements="22"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Utils/DistanceLatLon.php">
+      <class name="DistanceLatLon" namespace="global">
+        <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="15" coveredelements="15"/>
+      </class>
+      <line num="7" type="method" name="compute_distance" crap="3" count="2"/>
+      <line num="10" type="stmt" count="2"/>
+      <line num="11" type="stmt" count="2"/>
+      <line num="12" type="stmt" count="2"/>
+      <line num="13" type="stmt" count="2"/>
+      <line num="16" type="stmt" count="2"/>
+      <line num="17" type="stmt" count="1"/>
+      <line num="22" type="stmt" count="1"/>
+      <line num="23" type="stmt" count="1"/>
+      <line num="24" type="stmt" count="1"/>
+      <line num="25" type="stmt" count="1"/>
+      <line num="27" type="stmt" count="1"/>
+      <line num="30" type="stmt" count="1"/>
+      <line num="31" type="stmt" count="1"/>
+      <line num="34" type="stmt" count="1"/>
+      <metrics loc="38" ncloc="24" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="15" coveredelements="15"/>
+    </file>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src/Utils/Exception/TextFieldException.php">
+      <class name="TextFieldException" namespace="global">
+        <metrics methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+      </class>
+      <line num="5" type="method" name="__construct" crap="1" count="3"/>
+      <line num="6" type="stmt" count="3"/>
+      <line num="7" type="stmt" count="3"/>
+      <metrics loc="9" ncloc="9" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="2" coveredstatements="2" elements="3" coveredelements="3"/>
+    </file>
+    <metrics files="18" loc="1042" ncloc="1020" classes="18" methods="111" coveredmethods="111" conditionals="0" coveredconditionals="0" statements="406" coveredstatements="406" elements="517" coveredelements="517"/>
+  </project>
+</coverage>

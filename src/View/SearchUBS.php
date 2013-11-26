@@ -163,6 +163,5 @@
             <br /><br /><br /><br /><br /><br /><br />
             <?php require '../view/shared/footer.php'; ?>
         </div>
-
     </body>
 </html>

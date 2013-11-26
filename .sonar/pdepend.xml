@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metrics generated="2013-11-23T21:42:00" pdepend="1.1.0" ahh="0.11111111111111" andc="0" calls="105" ccn="135" ccn2="136" cloc="11" clsa="0" clsc="18" eloc="767" fanout="14" leafs="17" lloc="493" loc="1052" maxDIT="2" ncloc="1041" noc="18" nof="0" noi="0" nom="111" nop="1" roots="1">
+<metrics generated="2013-11-26T14:19:49" pdepend="1.1.1" ahh="0.11111111111111" andc="0" calls="106" ccn="136" ccn2="137" cloc="11" clsa="0" clsc="18" eloc="771" fanout="15" leafs="17" lloc="497" loc="1060" maxDIT="2" ncloc="1049" noc="18" nof="0" noi="0" nom="111" nop="1" roots="1">
   <files>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerCity.php" cloc="0" eloc="22" lloc="14" loc="35" ncloc="35"/>
-    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" cloc="1" eloc="102" lloc="67" loc="135" ncloc="134"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php" cloc="1" eloc="106" lloc="71" loc="140" ncloc="139"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php" cloc="0" eloc="26" lloc="16" loc="37" ncloc="37"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerState.php" cloc="1" eloc="39" lloc="26" loc="56" ncloc="55"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerStatistics.php" cloc="0" eloc="31" lloc="20" loc="43" ncloc="43"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerUser.php" cloc="0" eloc="33" lloc="22" loc="44" ncloc="44"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\CityDAO.php" cloc="0" eloc="21" lloc="12" loc="33" ncloc="33"/>
-    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\ProfileUBSDAO.php" cloc="1" eloc="87" lloc="58" loc="110" ncloc="109"/>
+    <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\ProfileUBSDAO.php" cloc="1" eloc="87" lloc="58" loc="113" ncloc="112"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\RankingDAO.php" cloc="0" eloc="30" lloc="14" loc="43" ncloc="43"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\StateDAO.php" cloc="1" eloc="41" lloc="23" loc="57" ncloc="56"/>
     <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\StatisticsDAO.php" cloc="0" eloc="44" lloc="31" loc="57" ncloc="57"/>
@@ -27,7 +27,7 @@
       <method name="getInstanceControllerCity" ccn="2" ccn2="2" cloc="0" eloc="6" lloc="3" loc="7" ncloc="7" npath="2"/>
       <method name="makeObjectCity" ccn="1" ccn2="1" cloc="0" eloc="7" lloc="5" loc="10" ncloc="10" npath="1"/>
     </class>
-    <class name="ControllerProfileUBS" ca="0" cbo="5" ce="5" cis="7" cloc="1" cr="0.15" csz="9" dit="0" eloc="86" impl="0" lloc="51" loc="122" ncloc="121" noam="0" nocc="0" nom="8" noom="0" npm="7" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="12" wmci="12" wmcnp="11">
+    <class name="ControllerProfileUBS" ca="0" cbo="6" ce="6" cis="7" cloc="1" cr="0.15" csz="9" dit="0" eloc="90" impl="0" lloc="55" loc="127" ncloc="126" noam="0" nocc="0" nom="8" noom="0" npm="7" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="13" wmci="13" wmcnp="12">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerProfileUBS.php"/>
       <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="3" ncloc="3" npath="1"/>
       <method name="getInstanceControllerProfileUBS" ccn="2" ccn2="2" cloc="0" eloc="6" lloc="3" loc="6" ncloc="6" npath="2"/>
@@ -36,7 +36,7 @@
       <method name="getDistanceBetweenTwoLatLon" ccn="1" ccn2="1" cloc="0" eloc="4" lloc="1" loc="5" ncloc="5" npath="1"/>
       <method name="makeObjectUBS" ccn="1" ccn2="1" cloc="0" eloc="7" lloc="2" loc="11" ncloc="11" npath="1"/>
       <method name="makeObjectLoop" ccn="1" ccn2="1" cloc="0" eloc="28" lloc="19" loc="34" ncloc="34" npath="1"/>
-      <method name="searchUBS" ccn="2" ccn2="2" cloc="0" eloc="15" lloc="10" loc="22" ncloc="22" npath="2"/>
+      <method name="searchUBS" ccn="3" ccn2="3" cloc="0" eloc="19" lloc="14" loc="27" ncloc="27" npath="3"/>
     </class>
     <class name="ControllerRanking" ca="0" cbo="1" ce="1" cis="4" cloc="0" cr="0.15" csz="6" dit="0" eloc="20" impl="0" lloc="9" loc="30" ncloc="30" noam="0" nocc="0" nom="5" noom="0" npm="4" rcr="0.15" vars="1" varsi="1" varsnp="0" wmc="6" wmci="6" wmcnp="5">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Controller\ControllerRanking.php"/>
@@ -75,7 +75,7 @@
       <method name="getInstanceCityDAO" ccn="2" ccn2="2" cloc="0" eloc="6" lloc="3" loc="8" ncloc="8" npath="2"/>
       <method name="takeCityDatabase" ccn="1" ccn2="1" cloc="0" eloc="7" lloc="4" loc="8" ncloc="8" npath="1"/>
     </class>
-    <class name="ProfileUBSDAO" ca="1" cbo="1" ce="1" cis="8" cloc="1" cr="0.15" csz="8" dit="0" eloc="78" impl="0" lloc="45" loc="99" ncloc="98" noam="0" nocc="0" nom="8" noom="0" npm="8" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="13" wmci="13" wmcnp="13">
+    <class name="ProfileUBSDAO" ca="1" cbo="1" ce="1" cis="8" cloc="1" cr="0.15" csz="8" dit="0" eloc="78" impl="0" lloc="45" loc="102" ncloc="101" noam="0" nocc="0" nom="8" noom="0" npm="8" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="13" wmci="13" wmcnp="13">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\ProfileUBSDAO.php"/>
       <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="2" lloc="0" loc="3" ncloc="3" npath="1"/>
       <method name="returnUBS" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="5" ncloc="5" npath="1"/>
@@ -84,7 +84,7 @@
       <method name="executeComandSQL" ccn="1" ccn2="1" cloc="0" eloc="5" lloc="3" loc="6" ncloc="6" npath="1"/>
       <method name="updateEvaluateAverage" ccn="2" ccn2="2" cloc="0" eloc="14" lloc="9" loc="18" ncloc="18" npath="2"/>
       <method name="takeAverageUBS" ccn="1" ccn2="1" cloc="0" eloc="7" lloc="4" loc="7" ncloc="7" npath="1"/>
-      <method name="searchUBSinDatabase" ccn="4" ccn2="4" cloc="0" eloc="21" lloc="14" loc="23" ncloc="23" npath="3"/>
+      <method name="searchUBSinDatabase" ccn="4" ccn2="4" cloc="0" eloc="21" lloc="14" loc="25" ncloc="25" npath="3"/>
     </class>
     <class name="RankingDAO" ca="1" cbo="0" ce="0" cis="4" cloc="0" cr="0.15" csz="4" dit="0" eloc="25" impl="0" lloc="9" loc="36" ncloc="36" noam="0" nocc="0" nom="4" noom="0" npm="4" rcr="0.15" vars="0" varsi="0" varsnp="0" wmc="4" wmci="4" wmcnp="4">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Dao\RankingDAO.php"/>
@@ -182,7 +182,7 @@
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\DistanceLatLon.php"/>
       <method name="compute_distance" ccn="2" ccn2="3" cloc="5" eloc="18" lloc="11" loc="29" ncloc="24" npath="3"/>
     </class>
-    <class name="TextFieldException" ca="1" cbo="0" ce="0" cis="1" cloc="0" cr="0.15" csz="1" dit="2" eloc="3" impl="0" lloc="1" loc="6" ncloc="6" noam="1" nocc="0" nom="1" noom="0" npm="1" rcr="0.2775" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
+    <class name="TextFieldException" ca="2" cbo="0" ce="0" cis="1" cloc="0" cr="0.15" csz="1" dit="2" eloc="3" impl="0" lloc="1" loc="6" ncloc="6" noam="1" nocc="0" nom="1" noom="0" npm="1" rcr="0.2775" vars="0" varsi="0" varsnp="0" wmc="1" wmci="1" wmcnp="1">
       <file name="C:\xampp\htdocs\CadeMeuHospital\src\Utils\Exception\TextFieldException.php"/>
       <method name="__construct" ccn="1" ccn2="1" cloc="0" eloc="3" lloc="1" loc="3" ncloc="3" npath="1"/>
     </class>

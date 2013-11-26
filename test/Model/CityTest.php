@@ -24,6 +24,10 @@ class CityTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testSetState() {
+        $newState = new State("RO", 1234, 3, "STATE", 1234, 1234);
+        $this->city->setState($newState);
+        $this->assertEquals("RO",$newState->getAcronym());
+        unset($newState);
     }
 
     public function testGetCodMunic() {
@@ -32,6 +36,9 @@ class CityTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testSetCodMunic() {
+        $this->city->setCodMunic(110001);
+        $resultCodMunc = $this->city->getCodMunic();
+        $this->assertEquals(110001,$resultCodMunc);
     }
 
     public function testGetDscCidade() {
@@ -40,6 +47,9 @@ class CityTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testSetDscCidade() {
+        $this->city->setDscCidade("CIDADE");
+        $resultDscCidade = $this->city->getDscCidade();
+        $this->assertEquals("CIDADE",$resultDscCidade);
     }
 
 }

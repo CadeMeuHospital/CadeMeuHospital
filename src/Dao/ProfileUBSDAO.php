@@ -5,7 +5,6 @@ require_once "/../Utils/DataValidation.php";
 
 define('NOME', 1);
 define('CIDADE', 2);
-
 define('ESTADO', 4);
 
 class ProfileUBSDAO {

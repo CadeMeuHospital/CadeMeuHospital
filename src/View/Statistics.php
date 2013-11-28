@@ -193,6 +193,8 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <?php require '../view/shared/footer.php'; ?>
         </div>
     </body>
 </html>

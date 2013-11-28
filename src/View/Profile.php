@@ -93,31 +93,31 @@
                                 <form name="Evaluate" action="EvaluateUBS.php" method="post">
                                     <table id="Tabela" >
                                         <tr>
-                                            <th>Ruim!!! D=</th>
+                                            <th>Ruim</th>
                                             <td class="align-left">
                                                 <input type="radio" name="evaluate" value="1" checked/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Regular! )=</th>
+                                            <th>Regular</th>
                                             <td class="align-left">
                                                 <input type="radio" name="evaluate" value="2"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Bom .-.</th>
+                                            <th>Boa</th>
                                             <td class="align-left">
                                                 <input type="radio" name="evaluate" value="3"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Muito Bom! =D</th>
+                                            <th>Muito Boa</th>
                                             <td class="align-left">
                                                 <input type="radio" name="evaluate" value="4"/>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>Excelente!!!*.*</th>
+                                            <th>Excelente</th>
                                             <td class="align-left">
                                                 <input type="radio" name="evaluate" value="5"/>
                                             </td>

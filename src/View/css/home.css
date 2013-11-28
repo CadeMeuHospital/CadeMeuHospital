@@ -105,7 +105,7 @@ input.button {
 
 .Outline1{
     background:#25536b; 
-    width:297px; 
+    width:290px; 
 }
 
 .Outline1 #text{
@@ -118,11 +118,11 @@ input.button {
 }
 
 .Outline2{
-    background:#827ad0; width:297px; position:relative; top:20px;                      
+    background:#827ad0; width:290px; position:relative; top:20px;                      
 }
 
 .TabControl{
-    width:297px; overflow:hidden; height:400px;
+    width:290px; overflow:hidden; height:400px;
 }
 
 .TabControl #header{

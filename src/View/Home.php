@@ -42,27 +42,10 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
             require '../Controller/ControllerRanking.php';
             ?> 
 
-            <table>
-                <tr>
-                    <td>
-                        <div class="banner" id="banner" >
-                            <a href="#"><img src="Shared/img/banner1.jpg" alt="Imagem 1" title="Texto da imagem 1"/></a>
-                            <a href="#"><img src="Shared/img/banner2.jpg" alt="Imagem 2" title="Texto da imagem 2"/></a>
-                            <a href="#"><img src="Shared/img/banner4.jpg" alt="Imagem 4" title="Texto da imagem 4"/></a>
-                            <a href="http://cnes.datasus.gov.br/" target =" _blank">
-                                <img src="Shared/img/cnesdatasus.jpg"alt="Imagem 4" title="CNES"/>
-                            </a>
-                            <a href="http://www.saudeparatodosdf.com.br/" target =" _blank2">
-                                <img src="Shared/img/saudeparatodosdf.jpg"alt="Imagem 4" title="Saúde para Todos!"/>
-                            </a>
-                            <a href="http://www2.datasus.gov.br/DATASUS/index.php" target =" _blank1">
-                                <img src="Shared/img/datasus.jpg" alt="Imagem 4" title="Data SUS"/></a>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="center">
+           
+                        <div align="center">
                     <div class="content"> 
-                        <br><br><br>
+                        
 
                         <script type="text/javascript">
                             $(document).ready(function() {
@@ -119,11 +102,31 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                                 $completePath = "<a href=" . $path . "> " . $nameUBS . " </a> - " . $average . "<br>";
                                 array_push($topFiveArray, $completePath);
                             }
-                            echo '<br><br>';
+              
                         } else {
-                            echo 'Não há UBSs avaliadas. <br><br>';
+                            echo 'Não há UBSs avaliadas. ';
                         }
                         ?>
+						
+						 <table width="760">
+                <tr>
+                    <td>
+                        <div class="banner" id="banner" >
+                            <a href="http://www.fga.unb.br/"><img src="Shared/img/banner1.png" alt="UnB Gama" title="Visite a WebSite da FGA!"/></a>
+                            <a href="#"><img src="Shared/img/banner2.jpg" alt="Imagem 2" title="Texto da imagem 2"/></a>
+                            <a href="#"><img src="Shared/img/banner4.jpg" alt="Imagem 4" title="Texto da imagem 4"/></a>
+                            <a href="http://cnes.datasus.gov.br/" target =" _blank">
+                                <img src="Shared/img/banner2.png"alt="Imagem 4" title="CNES"/>
+                            </a>
+                            <a href="http://www.saudeparatodosdf.com.br/" target =" _blank2">
+                                <img src="Shared/img/banner4.png"alt="Imagem 4" title="Saúde para Todos!"/>
+                            </a>
+                            <a href="http://www2.datasus.gov.br/DATASUS/index.php" target =" _blank1">
+                                <img src="Shared/img/banner3.png" alt="Imagem 4" title="Data SUS"/></a>
+                        </div>
+                    </td>
+                    <td>
+						
                         <right>
                             <div class="Outline1">
                                 <div id="text">Classificacao &nbsp <img 
@@ -134,7 +137,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
                                             <ul class="abas">
                                                 <li>
                                                     <div class="aba">
-                                                        <span style="position: relative; top: 15px;
+                                                        <span style="position: relative; top: 10px;
                                                               left: 100 px;"> Geral</span>
                                                     </div>
                                                 </li>

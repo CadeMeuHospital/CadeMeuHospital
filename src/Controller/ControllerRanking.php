@@ -23,18 +23,6 @@ class ControllerRanking {
         $rankingDAO = RankingDAO::getInstanceRankingDAO();
         return $rankingDAO->getRank();
     }
-    
-    //Making a Rank By City
-    public function makeRankByCity($city) {
-        $rankingDAO = RankingDAO::getInstanceRankingDAO();
-        return $rankingDAO->getRankByCity($city);
-    }
-
-    //Making a Rank By Neighborhood
-    public function makeRankByNeighborhood($neighborhood){
-        $rankingDAO = RankingDAO::getInstanceRankingDAO();
-        return $rankingDAO->getRankByNeighborhood($neighborhood);
-    }    
 }
 
 ?>

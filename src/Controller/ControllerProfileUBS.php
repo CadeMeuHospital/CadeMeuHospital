@@ -83,7 +83,9 @@ class ControllerProfileUBS {
         $controllerCity = ControllerCity::getInstanceControllerCity();
         $cityUBS = $controllerCity->makeObjectCity($codMunic, $stateUBS);
 
-        $ubs = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, $nameUBS, $dscEnder, $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, $descMedicine, $average, $cityUBS);
+        $ubs = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES,
+                $nameUBS, $dscEnder, $phoneUBS, $physicStructureUBS,
+                $adapOldPeople, $descriTools, $descMedicine, $average, $cityUBS);
 
         return $ubs;
     }

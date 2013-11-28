@@ -57,20 +57,6 @@ class ControllerProfileUBS {
             $to_lat, $to_lon);
     }
 
-    //Novo metodo de procura
-
-    public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, 
-            $codCNES, $nameUBS, $descEnder, 
-            $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, 
-            $descMedicine, $average, $city) {
-        $ubs = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES, 
-                $nameUBS, $descEnder, 
-                $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, 
-                $descMedicine, $average, $city);
-
-        return $ubs;
-    }
-
     public function makeObjectLoop($attributeUBS, $i) {
 
         $idUBS = mysql_result($attributeUBS, $i, "cod_unico");
@@ -96,11 +82,9 @@ class ControllerProfileUBS {
         $controllerCity = ControllerCity::getInstanceControllerCity();
         $cityUBS = $controllerCity->makeObjectCity($codMunic, $stateUBS);
 
-        $ubs = self::$instanceControllerProfileUBS->makeObjectUBS($idUBS, 
-                $latitudeUBS,
-                $longitudeUBS, $codCNES, $nameUBS, $dscEnder, $phoneUBS,
-                $physicStructureUBS,
-                $adapOldPeople, $descriTools, $descMedicine, $average,
+        $ubs = new ProfileUBS($idUBS, $latitudeUBS, $longitudeUBS, $codCNES,
+                $nameUBS, $dscEnder, $phoneUBS, $physicStructureUBS,
+                $adapOldPeople, $descriTools, $descMedicine, $average, 
                 $cityUBS);
 
         return $ubs;

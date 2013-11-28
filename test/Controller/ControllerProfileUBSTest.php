@@ -52,18 +52,6 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('ControllerProfileUBS', $resultInstanceOf);
     }
 
-    /* Method MakeObjectUBS suit test case */
-
-    public function testMakeObjectUBSNotNull() {
-        $resultNotNull = $this->objectProfileUBS;
-        $this->assertNotNULL($resultNotNull);
-    }
-
-    public function testMakeObjectUBSInstanceOf() {
-        $resultInstanceOf = $this->objectProfileUBS;
-        $this->assertInstanceOf('ProfileUBS', $resultInstanceOf);
-    }
-
     /* Method SearchUBS suit test case */
 
     public function testSearchUBSInstanceOf() {

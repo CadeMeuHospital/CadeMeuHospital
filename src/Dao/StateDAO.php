@@ -52,7 +52,6 @@ class StateDAO {
         return $state;
     }
 
-    //Novos metodo de busca
     public function takeStateUBSOO($codMunic) {
         $ufState = $this->takeUfStateUBS($codMunic);
         

@@ -5,7 +5,7 @@ if (!isset($_POST['submit'])) {
     $rankType = $_POST['rank'];
     $textField = $_POST['textField'];
 }
-$mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -35,7 +35,7 @@ $mensagemErro = "Desculpe-nos! Não há UBS avaliadas neste local! D=";
     </head>
 
     <body align="center">
-        <div class="root">                   
+        <div class="root">                       
             <?php
             require '../view/shared/header.php';
             require '../view/shared/navigation_bar.php';

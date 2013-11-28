@@ -23,9 +23,30 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     protected function setUpObjectProfileUBS() {
         $this->objectProfileUBS = $this->controllerProfileUBS->makeObjectUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom", 1);
     }
+    
+    public function setUpEvaluate(){
+        $queryDel = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote,amount_people_1,amount_people_2,amount_people_3,amount_people_4,amount_people_5)
+                    VALUES (1234567, 10,1,2,3,4,5)";
+        mysql_query($queryDel);
+        $queryInsertUBS = "INSERT INTO ubs (cod_unico, vlr_latitude, vlr_longitude, cod_munic,
+            cod_cnes, nom_estab, dsc_endereco, dsc_bairro, dsc_cidade, dsc_telefone, 
+            dsc_estrut_fisic_ambiencia, dsc_adap_defic_fisic_idosos, dsc_equipamentos, 
+            dsc_medicamentos, average) VALUES (1234567, -95549.9999999999999, -99564.9999999999999, 
+            999999, 99999, 'testeNome','testeEndereco', 'testeBairro', 'descBairro', 
+            99999999999,  'testeDescEstFisiAmb', 'testDescAdaptIdoso', 'testeDescEquip', 
+            'testeDescEquip', 9999999)";
+        mysql_query($queryInsertUBS);
+    }
 
     /* TearDown methods to delete the suit case */
-
+    
+    public function tearDownEvaluate(){
+        $queryDel = "DELETE FROM evaluate WHERE id_cod_unico = 1234567";
+        mysql_query($queryDel);
+        $queryDel2 = "DELETE FROM `cademeuhospital`.`ubs` WHERE `ubs`.`cod_unico` = 1234567";
+        mysql_query($queryDel2);
+    }
+    
     protected function tearDown() {
         $this->tearDownControllerProfileUBS();
         $this->tearDownObjectProfileUBS();
@@ -101,26 +122,6 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     
     /* Method EvaluateUBS suit test case */
     
-    public function setUpEvaluate(){
-        $queryDel = "INSERT INTO evaluate (id_cod_unico, amount_people, value_vote,amount_people_1,amount_people_2,amount_people_3,amount_people_4,amount_people_5)
-                    VALUES (1234567, 10,1,2,3,4,5)";
-        mysql_query($queryDel);
-        $queryInsertUBS = "INSERT INTO ubs (cod_unico, vlr_latitude, vlr_longitude, cod_munic,
-            cod_cnes, nom_estab, dsc_endereco, dsc_bairro, dsc_cidade, dsc_telefone, 
-            dsc_estrut_fisic_ambiencia, dsc_adap_defic_fisic_idosos, dsc_equipamentos, 
-            dsc_medicamentos, average) VALUES (1234567, -95549.9999999999999, -99564.9999999999999, 
-            999999, 99999, 'testeNome','testeEndereco', 'testeBairro', 'descBairro', 
-            99999999999,  'testeDescEstFisiAmb', 'testDescAdaptIdoso', 'testeDescEquip', 
-            'testeDescEquip', 9999999)";
-        mysql_query($queryInsertUBS);
-    }
-    
-    public function tearDownEvaluate(){
-        $queryDel = "DELETE FROM evaluate WHERE id_cod_unico = 1234567";
-        mysql_query($queryDel);
-        $queryDel2 = "DELETE FROM `cademeuhospital`.`ubs` WHERE `ubs`.`cod_unico` = 1234567";
-        mysql_query($queryDel2);
-    }
 
     public function testEvaluateUBSNotNull() {
         $result = $this->controllerProfileUBS->evaluateUBS(3, 1234567);
@@ -131,6 +132,8 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
         $result = $this->controllerProfileUBS->evaluateUBS(3, 413264);
         $this->assertFalse($result);
     }
+    
+    /* Method GetDistenceBetwennTwoLatLon sut test case */
     
     public function testGetDistanceBetweenTwoLatLon() {
         $distance = $this->controllerProfileUBS->getDistanceBetweenTwoLatLon("-15.780147999999999","-47.92917","-10.91123700141880","-37.062077522277");

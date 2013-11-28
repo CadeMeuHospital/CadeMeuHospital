@@ -10,10 +10,10 @@ if (!isset($_POST['submit'])) {
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-        <link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../View/Shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
-        <script type="text/javascript" src="../view/shared/js/jquery-1.7.2.min.js"></script>
-        <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <script type="text/javascript" src="../View/Shared/js/jquery-1.7.2.min.js"></script>
+        <link href="../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
         <script src="Shared/js/jquery.chocoslider.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" media="screen" href="Shared/css/estilo.css"/>
@@ -35,8 +35,8 @@ if (!isset($_POST['submit'])) {
     <body align="center">
         <div class="root">                       
             <?php
-            require '../view/shared/header.php';
-            require '../view/shared/navigation_bar.php';
+            require '../View/Shared/Header.php';
+            require '../View/Shared/Navigation_bar.php';
             require '../Controller/ControllerRanking.php';
             ?> 
 
@@ -115,7 +115,7 @@ if (!isset($_POST['submit'])) {
                     </div>
                     <div class="Outline1">
                         <div id="text">Classificacao &nbsp <img 
-                                src="../view/shared/img/cmhRankTitle.png" align="right" /></div>
+                                src="../View/Shared/img/cmhRankTitle.png" align="right" /></div>
                         <div class="Outline2">
                             <div class="TabControl">
                                 <div id="header">
@@ -151,7 +151,7 @@ if (!isset($_POST['submit'])) {
                 <br>
                 <br>
                 <br>
-                <?php require '../view/shared/footer.php'; ?>
+                <?php require '../View/Shared/Footer.php'; ?>
             </div>
         </div>
     </body>

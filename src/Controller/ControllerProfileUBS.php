@@ -128,9 +128,6 @@ class ControllerProfileUBS {
             print "<script>alert('" . $e->getMessage() . "')</script>";
             print "<script>window.location='../View/Home.php'</script>";
         }
-
-
-
         return $arrayUBS;
     }
 

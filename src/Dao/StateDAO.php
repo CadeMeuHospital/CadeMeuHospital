@@ -4,7 +4,7 @@ require_once "/../Utils/dataBaseConnection.php";
 
 class StateDAO {
 
-    private $instanceStateDAO;
+    private static $instanceStateDAO;
     
     private function __construct() {
         

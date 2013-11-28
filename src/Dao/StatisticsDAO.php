@@ -4,7 +4,7 @@ require_once "/../Utils/dataBaseConnection.php";
 
 class StatisticsDAO {
     
-    private $instanceStatisticsDAO;
+    private static $instanceStatisticsDAO;
 
     public static function getInstanceStatisticsDAO() {
 

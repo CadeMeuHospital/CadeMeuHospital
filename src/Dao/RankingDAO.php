@@ -4,7 +4,7 @@ require_once "/../Utils/dataBaseConnection.php";
 
 class RankingDAO {
 
-    private $instanceRankingDAO;
+    private static $instanceRankingDAO;
 
     private function __construct() {
         

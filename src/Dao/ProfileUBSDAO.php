@@ -9,7 +9,7 @@ define('ESTADO', 4);
 
 class ProfileUBSDAO {
 
-    private $instanceProfileUBSDAO;
+    private static $instanceProfileUBSDAO;
 
     private function __construct() {
         

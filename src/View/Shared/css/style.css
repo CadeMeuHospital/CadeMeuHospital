@@ -48,13 +48,14 @@ div.header #right {
 }
 
 div.content {
-    min-height: 300px;
+    min-height: 400px;
     width: 760px;
     padding-top:20px;
     display:inline-table;
 }
 
 div.banner {
+    float: left;
     padding-top: auto;
     min-width: 463px;
     min-height: 300px;

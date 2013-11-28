@@ -2,38 +2,35 @@
 
 class DistanceLatLon {
 
-    //COMPUTE THE DISTANCE BETWEEN TWO LAT/LON PAIRS
+    //Compute the distance between two Lat/Lon Pairs
     //Haversine_formula
-    public static function compute_distance($from_lat, $from_lon, $to_lat, $to_lon) {
+    public static function compute_distance($fromLat, $fromLon, $toLat, $toLon) {
 
-        // ENSURE THAT ALL ARE FLOATING POINT VALUES
-        $from_lat = floatval($from_lat);
-        $from_lon = floatval($from_lon);
-        $to_lat = floatval($to_lat);
-        $to_lon = floatval($to_lon);
+        // Ensure that all are floating pontt values
+        $fromLat = floatval($fromLat);
+        $fromLon = floatval($fromLon);
+        $toLat = floatval($toLat);
+        $toLon = floatval($toLon);
 
-        // IF THE SAME POINT
-        if (($from_lat == $to_lat) && ($from_lon == $to_lon)) {
+        // If the same point
+        if (($fromLat == $toLat) && ($fromLon == $toLon)) {
             return 0.0;
         }
 
-        // COMPUTE THE DISTANCE WITH THE HAVERSINE FORMULA
-        $distanceRad = acos
-                (sin(deg2rad($from_lat)) * sin(deg2rad($to_lat)) + cos(deg2rad($from_lat)) * 
-                cos(deg2rad($to_lat)) * cos(deg2rad($from_lon - $to_lon))
-                )
-        ;
+        // Compute the distance with the haversine formula
+        $distanceRad = acos(sin(deg2rad($fromLat)) * sin(deg2rad($toLat)) +
+                cos(deg2rad($fromLat)) * cos(deg2rad($toLat)) * 
+                cos(deg2rad($fromLon - $toLon)));
 
         $distanceDegree = rad2deg($distanceRad);
 
-        // DISTANCE IN MILES AND KM - ADD OTHERS IF NEEDED
+        // Distance in miles and KM - Add others if needed
         $miles = (float) $distanceDegree * 69.0;
         $km = (float) $miles * 1.61;
 
-        // RETURN KILOMETERS = MILES * 1.61
+        // Return KM = Miles * 1.61
         return round($km, 2);
     }
-
 }
 
 ?>  

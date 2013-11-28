@@ -30,8 +30,6 @@ class ControllerState {
         $stateAcronym = $stateDAO->takeUfStateUBS($codMunic);
         return $stateAcronym;
     }
-    
-    //Novo metodo de busca
 
     public function makeObjectState($codMunic){
         $stateDAO = StateDAO::getInstanceStateDAO();

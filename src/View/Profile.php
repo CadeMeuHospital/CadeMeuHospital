@@ -2,14 +2,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../View/Shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <link rel="stylesheet" href="css/profile.css" type="text/css">
-        <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <link href="../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" 
               rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
-        <script type="text/javascript" src="../View/shared/js/location.js"></script>
+        <script type="text/javascript" src="../View/Shared/js/jquery.price_format.1.8.min.js"></script>
+        <script type="text/javascript" src="../View/Shared/js/location.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <style>#mapview{display:none;}</style>
         <title>CMH - Perfil UBS</title>
@@ -20,8 +20,8 @@
             <?php
             require_once '../Controller/ControllerProfileUBS.php';
             require_once '../Controller/ControllerStatistics.php';
-            require_once '../view/shared/header.php';
-            require_once '../view/shared/navigation_bar.php';
+            require_once '../View/Shared/Header.php';
+            require_once '../View/Shared/Navigation_bar.php';
 
             if (!isset($_GET['id'])) {
                 header("location: ../index.php");
@@ -296,7 +296,7 @@
                     <div class="fb-comments" data-href="Profile.php?id=<?php echo $_REQUEST['id'] ?>" 
                          data-numposts="4" data-width="760"></div>
                 </div>
-                <?php require '../view/shared/footer.php'; ?>
+                <?php require '../View/Shared/Footer.php'; ?>
 
             </div>
         </div>

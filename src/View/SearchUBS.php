@@ -3,10 +3,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../view/shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../View/Shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
-        <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
-        <link href="../shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <script type="text/javascript" src="../View/Shared/js/jquery.price_format.1.8.min.js"></script>
+        <link href="../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>
             #first-tr{
@@ -26,8 +26,8 @@
 
         <div class="root">
 
-            <?php require '../view/shared/header.php'; ?>
-            <?php require '../view/shared/navigation_bar.php'; ?>
+            <?php require '../View/Shared/Header.php'; ?>
+            <?php require '../View/Shared/Navigation_bar.php'; ?>
 
             <div class="center" >
 
@@ -161,7 +161,7 @@
 
             </div>
             <br /><br /><br /><br /><br /><br /><br />
-            <?php require '../view/shared/footer.php'; ?>
+            <?php require '../View/Shared/Footer.php'; ?>
         </div>
     </body>
 </html>

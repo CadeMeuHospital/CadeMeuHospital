@@ -18,17 +18,17 @@ class ControllerRanking {
     }
 
     public function makeRank() {
-        $rankingDAO = self::getInstanceControllerRanking();
+        $rankingDAO = RankingDAO::getInstanceRankingDAO();
         return $rankingDAO->getRank();
     }
     
     public function makeRankByCity($city) {
-        $rankingDAO = self::getInstanceControllerRanking();
+        $rankingDAO = RankingDAO::getInstanceRankingDAO();
         return $rankingDAO->getRankByCity($city);
     }
 
     public function makeRankByNeighborhood($neighborhood){
-        $rankingDAO = self::getInstanceControllerRanking();
+        $rankingDAO = RankingDAO::getInstanceRankingDAO();
         return $rankingDAO->getRankByNeighborhood($neighborhood);
     }    
 }

@@ -24,7 +24,7 @@ class ControllerProfileUBS {
     }
     
     public function returnUBS($id) {
-        $profileUBSDAO = self::getInstanceControllerProfileUBS();
+        $profileUBSDAO = ProfileUBSDAO::getInstanceProfileUBSDAO();
 
         $attributesUBS = $profileUBSDAO->returnUBS($id);
         $attributesUBS2 = $attributesUBS;
@@ -38,7 +38,7 @@ class ControllerProfileUBS {
     }
 
     public function evaluateUBS($evaluate, $idUBS) {
-        $profileUBSDAO = self::getInstanceControllerProfileUBS();
+        $profileUBSDAO = ProfileUBSDAO::getInstanceProfileUBSDAO();
         $controllerState = ControllerState::getInstanceControllerState();
         $ubs = self::$instanceControllerProfileUBS->returnUBS($idUBS);
         if(!$ubs){
@@ -108,7 +108,7 @@ class ControllerProfileUBS {
 
     public function searchUBS($field, $searchType) {
 
-        $profileUBSDAO = self::getInstanceControllerProfileUBS();
+        $profileUBSDAO = ProfileUBSDAO::getInstanceProfileUBSDAO();
 
         $i = 0;
         $arrayUBS = array();

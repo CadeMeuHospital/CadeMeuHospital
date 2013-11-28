@@ -11,6 +11,7 @@ class ControllerCity {
         
     }
 
+    //Singleton pattern
     public static function getInstanceControllerCity() {
         
         if (!isset(self::$instanceControllerCity)) {
@@ -19,6 +20,7 @@ class ControllerCity {
         return self::$instanceControllerCity;
     }
     
+    //Making a City Object
     public function makeObjectCity($codMunic, $state){
         $cityDao = CityDAO::getInstanceCityDAO();
         $attributeCity = $cityDao->takeCityDatabase($codMunic);

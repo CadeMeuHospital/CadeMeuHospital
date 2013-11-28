@@ -16,6 +16,7 @@ class ControllerProfileUBS {
         
     }
 
+    //Singleton Pattern
     public static function getInstanceControllerProfileUBS() {
         if (!isset(self::$instanceControllerProfileUBS)) {
             self::$instanceControllerProfileUBS = new ControllerProfileUBS();
@@ -23,6 +24,8 @@ class ControllerProfileUBS {
         return self::$instanceControllerProfileUBS;
     }
     
+    
+    //Return one UBS with that id
     public function returnUBS($id) {
         $profileUBSDAO = ProfileUBSDAO::getInstanceProfileUBSDAO();
 
@@ -37,6 +40,7 @@ class ControllerProfileUBS {
         return $profileUBS;
     }
 
+    //Evaluate one UBS
     public function evaluateUBS($evaluate, $idUBS) {
         $profileUBSDAO = ProfileUBSDAO::getInstanceProfileUBSDAO();
         $controllerState = ControllerState::getInstanceControllerState();
@@ -51,14 +55,14 @@ class ControllerProfileUBS {
         return $resultEvaluation;
     }
 
+    //get the distance between two latitude and longitude
     public function getDistanceBetweenTwoLatLon($from_lat, $from_lon,
             $to_lat, $to_lon) {
         return DistanceLatLon::compute_distance($from_lat, $from_lon, 
             $to_lat, $to_lon);
     }
 
-    //Novo metodo de procura
-
+    //Making a Ubs object
     public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, 
             $codCNES, $nameUBS, $descEnder, 
             $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, 
@@ -71,6 +75,7 @@ class ControllerProfileUBS {
         return $ubs;
     }
 
+    //Making object in a loop
     public function makeObjectLoop($attributeUBS, $i) {
 
         $idUBS = mysql_result($attributeUBS, $i, "cod_unico");
@@ -106,6 +111,7 @@ class ControllerProfileUBS {
         return $ubs;
     }
 
+    //searching one UBS
     public function searchUBS($field, $searchType) {
 
         $profileUBSDAO = ProfileUBSDAO::getInstanceProfileUBSDAO();

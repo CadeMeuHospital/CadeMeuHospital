@@ -49,13 +49,15 @@ div.header #right {
 
 div.content {
     min-height: 300px;
+	width: 760px;
     padding-top:20px;
     display:inline-table;
 }
 
 div.banner {
+    padding-top: 10px;
     min-width: 463px;
-    min-height: 429px;
+    min-height: 300px;
 }
 
 div.footer {

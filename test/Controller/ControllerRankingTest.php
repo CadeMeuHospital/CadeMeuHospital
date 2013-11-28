@@ -26,27 +26,5 @@ class ControllerRankingTest extends PHPUnit_Framework_TestCase {
         $resultNotNull = $this->object->makeRank();
         $this->assertNotNull($resultNotNull);
     }
-    
-    public function testMakeRankByCityNotNull() {
-        $resultNotNull = $this->object->makeRankByCity("taguatinga");
-         $this->assertNotNull($resultNotNull);
-    }
-
-    public function testMakeRankByCityFalse() {
-        $result = $this->object->makeRankByCity("asdjaidj");
-        $resultFalse = mysql_fetch_row($result);
-        $this->assertFalse($resultFalse);
-    }
-
-    public function testMakeRankByNeighborhoodNotNull(){
-        $resultNotNull = $this->object->makeRankByNeighborhood("centro");
-        $this->assertNotNull($resultNotNull);
-    }
-    public function testMakeRankByNeighborhoodFalse(){
-        $result = $this->object->makeRankByNeighborhood("addssafg");
-        $resultFalse = mysql_fetch_row($result);
-        $this->assertFalse($resultFalse);
-    }
-
 
 }

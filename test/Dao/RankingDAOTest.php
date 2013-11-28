@@ -26,25 +26,4 @@ class RankingDAOTest extends PHPUnit_Framework_TestCase {
         $resultNotNull = $this->rankingDAO->getRank();
         $this->assertNotNull($resultNotNull);
     }
-
-    public function testGetRankByCityNotNull() {
-        $result = $this->rankingDAO->getRankByCity("Aracaju");
-        $this->assertNotNull($result);
-    }
-    public function testGetRankByCityFalse(){
-        $result = $this->rankingDAO->getRankByCity("asdjaidj");
-        $resultFalse = mysql_fetch_row($result);
-        $this->assertFalse($resultFalse);
-    }
-
-    public function testGetRankByNeighborhoodNotNull(){
-        $resultNotNull = $this->rankingDAO->getRankByNeighborhood("centro");
-        $this->assertNotNull($resultNotNull);
-    }
-    public function testGetRankByNeighborhoodFalse(){
-        $result = $this->rankingDAO->getRankByNeighborhood("addssafg");
-        $resultFalse = mysql_fetch_row($result);
-        $this->assertFalse($resultFalse);
-    }
-            
 }

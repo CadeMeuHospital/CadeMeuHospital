@@ -4,14 +4,14 @@ require_once dirname(__FILE__) . "/../../src/Dao/RankingDAO.php";
 
 class RankingDAOTest extends PHPUnit_Framework_TestCase {
 
-    protected $controllerRanking;
+    protected $rankingDAO;
     
     protected function setUp(){
         $this->setUpRankingDAO();
     }
 
     protected function setUpRankingDAO() {
-        $this->controllerRanking = ControllerRanking::getInstanceControllerRanking();
+        $this->rankingDAO = RankingDAO::getInstanceRankingDAO();
     }
     
     protected function tearDown(){
@@ -19,30 +19,30 @@ class RankingDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     protected function tearDownRankingDAO() {
-        unset($this->controllerRanking);
+        unset($this->rankingDAO);
     }
 
     public function testGetRankNotNull() {
-        $resultNotNull = $this->controllerRanking->getRank();
+        $resultNotNull = $this->rankingDAO->getRank();
         $this->assertNotNull($resultNotNull);
     }
 
     public function testGetRankByCityNotNull() {
-        $result = $this->controllerRanking->getRankByCity("Aracaju");
+        $result = $this->rankingDAO->getRankByCity("Aracaju");
         $this->assertNotNull($result);
     }
     public function testGetRankByCityFalse(){
-        $result = $this->controllerRanking->getRankByCity("asdjaidj");
+        $result = $this->rankingDAO->getRankByCity("asdjaidj");
         $resultFalse = mysql_fetch_row($result);
         $this->assertFalse($resultFalse);
     }
 
     public function testGetRankByNeighborhoodNotNull(){
-        $resultNotNull = $this->controllerRanking->getRankByNeighborhood("centro");
+        $resultNotNull = $this->rankingDAO->getRankByNeighborhood("centro");
         $this->assertNotNull($resultNotNull);
     }
     public function testGetRankByNeighborhoodFalse(){
-        $result = $this->controllerRanking->getRankByNeighborhood("addssafg");
+        $result = $this->rankingDAO->getRankByNeighborhood("addssafg");
         $resultFalse = mysql_fetch_row($result);
         $this->assertFalse($resultFalse);
     }

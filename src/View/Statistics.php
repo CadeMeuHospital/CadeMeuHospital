@@ -88,7 +88,8 @@
                         </td>
                     </tr>
                 </table>
-                <input class="button" type="submit" name="submitCross" value="Cruzar Informações!"/>
+                <input class="button" type="submit" name="submitCross" style="width:200px;" value="Cruzar Informações"/>
+                
             </form>
 
             <div id="center">

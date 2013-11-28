@@ -17,13 +17,13 @@
         if($return != FALSE){
             ?>
                 <script language="Javascript" type="text/javascript">
-                    alert("Sua avaliação foi gravada com sucesso!!Obrigado! =D");
+                    alert("Sua avaliação foi gravada com sucesso!!Obrigado!");
                 </script>
             <?php
         }else{
             ?>
                 <script language="Javascript" type="text/javascript">
-                    alert("Sua avaliação não foi gravada com sucesso!!desculpe-nos! D=");
+                    alert("Sua avaliação não foi gravada com sucesso!!desculpe-nos!");
                 </script>
             <?php
         }

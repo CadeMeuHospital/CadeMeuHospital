@@ -4,10 +4,21 @@ require_once "/../Utils/dataBaseConnection.php";
 
 class RankingDAO {
 
-    public function __construct() {
+    private $instanceRankingDAO;
+
+    private function __construct() {
         
     }
 
+    public static function getInstanceRankingDAO() {
+
+        if (!isset(self::$instanceRankingDAO)) {
+            self::$instanceRankingDAO = new RankingDAO();
+        }
+
+        return self::$instanceRankingDAO;
+    }
+    
     public function getRank() {
         $sql = "SELECT nom_estab,cod_unico,average FROM ubs INNER JOIN evaluate 
                 ON ubs.cod_unico = evaluate.id_cod_unico WHERE average > 0 
@@ -15,7 +26,6 @@ class RankingDAO {
         $result = mysql_query($sql);
         return $result;
     }
-
 
     public function getRankByCity($city) {
         $sql = "SELECT nom_estab,cod_unico,average FROM ubs INNER JOIN evaluate 

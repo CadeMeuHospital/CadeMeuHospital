@@ -14,7 +14,7 @@ class ProfileUBSDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     protected function setUpProfileUBS() {
-        $this->profileUBSDao = self::getInstanceControllerProfileUBS();
+        $this->profileUBSDao = ProfileUBSDAO::getInstanceProfileUBSDAO();
     }
 
     protected function setUpUBSEvaluate() {

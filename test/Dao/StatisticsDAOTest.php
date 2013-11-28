@@ -7,7 +7,7 @@ class StatisticsDAOTest extends PHPUnit_Framework_TestCase {
     protected $statisticsDao;
 
     protected function setUp() {
-        $this->statisticsDao = new StatisticsDAO();
+        $this->statisticsDao = StatisticsDAO::getInstanceStatisticsDAO();
     }
 
     protected function tearDown() {

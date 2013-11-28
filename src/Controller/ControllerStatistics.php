@@ -19,21 +19,21 @@ class ControllerStatistics {
     }
 
     public function generateValuesToChartAverageEvaluate() {
-        $statisticsDAO = new StatisticsDAO();
+        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
         $allEvaluates = $statisticsDAO->getValuesToChartAverageEvaluate();
 
         return $allEvaluates;
     }
 
     public function generateValuesToChartAverageEvaluateSingleUBS($idUBS) {
-        $statisticsDAO = new StatisticsDAO();
+        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
         $evaluatesUBS = $statisticsDAO->
                 getValuesToChartAverageEvaluateSigleUBS($idUBS);
         return $evaluatesUBS;
     }
 
     public function generateStatisticsOfQuantityAverage() {
-        $statisticsDAO = new StatisticsDAO();
+        $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
         $statistics = $statisticsDAO->getStatisticsByState();
         return $statistics;
     }

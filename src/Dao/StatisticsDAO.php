@@ -3,6 +3,17 @@
 require_once "/../Utils/dataBaseConnection.php";
 
 class StatisticsDAO {
+    
+    private $instanceStatisticsDAO;
+
+    public static function getInstanceStatisticsDAO() {
+
+        if (!isset(self::$instanceStatisticsDAO)) {
+            self::$instanceStatisticsDAO = new StatisticsDAO();
+        }
+
+        return self::$instanceStatisticsDAO;
+    }
 
     public function getValuesToChartAverageEvaluate() {
 
@@ -30,10 +41,10 @@ class StatisticsDAO {
         $amounts = array();
         $populations = array();
         $areas = array();
-        
-        for($i=1;$i<28;$i++){
+
+        for ($i = 1; $i < 28; $i++) {
             $stats = "SELECT name, amount_ubs, average, 
-                    population, area FROM state WHERE id_state = '".$i."'";
+                    population, area FROM state WHERE id_state = '" . $i . "'";
             $result = mysql_query($stats);
             $return = mysql_fetch_row($result);
             array_push($names, $return[0]);
@@ -42,12 +53,12 @@ class StatisticsDAO {
             array_push($populations, $return[3]);
             array_push($areas, $return[4]);
         }
-            array_push($statistics, $names);
-            array_push($statistics, $amounts);
-            array_push($statistics, $averages);
-            array_push($statistics, $populations);
-            array_push($statistics, $areas);
-            
+        array_push($statistics, $names);
+        array_push($statistics, $amounts);
+        array_push($statistics, $averages);
+        array_push($statistics, $populations);
+        array_push($statistics, $areas);
+
         return $statistics;
     }
 

@@ -9,8 +9,19 @@ define('ESTADO', 4);
 
 class ProfileUBSDAO {
 
-    public function __construct() {
+    private $instanceProfileUBSDAO;
+
+    private function __construct() {
         
+    }
+
+    public static function getInstanceProfileUBSDAO() {
+
+        if (!isset(self::$instanceProfileUBSDAO)) {
+            self::$instanceProfileUBSDAO = new ProfileUBSDAO();
+        }
+
+        return self::$instanceProfileUBSDAO;
     }
 
     public function returnUBS($id) {
@@ -84,9 +95,9 @@ class ProfileUBSDAO {
 //Novo metodo de busca
     public function searchUBSinDatabase($field, $searchType) {
         $field = trim($field);
-        
+
         DataValidation::throwTextFieldException($field);
-        
+
 
         switch ($searchType) {
             case NOME :

@@ -4,10 +4,21 @@ require_once "/../Utils/dataBaseConnection.php";
 
 class StateDAO {
 
-    public function __construct() {
+    private $instanceStateDAO;
+    
+    private function __construct() {
         
     }
 
+    public static function getInstanceStateDAO() {
+
+        if (!isset(self::$instanceStateDAO)) {
+            self::$instanceStateDAO = new StateDAO();
+        }
+
+        return self::$instanceStateDAO;
+    }
+    
     public function saveAverageEvaluationStateDAO($evaluate, $stateAcronym) {
 
         $sqlAvgCount = "SELECT SUM(ubs.average) AS average, 

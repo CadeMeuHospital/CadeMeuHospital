@@ -7,7 +7,7 @@ class StateDAOTest extends PHPUnit_Framework_TestCase {
     protected $stateDao;
 
     protected function setUp() {
-        $this->stateDao = new StateDAO();
+        $this->stateDao = StateDAO::getInstanceStateDAO();
         $this->setupCreationDB();
     }
     

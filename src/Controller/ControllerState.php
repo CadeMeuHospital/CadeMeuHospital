@@ -20,13 +20,13 @@ class ControllerState {
     
     public function saveAverageEvaluationState(
             $evaluate, $stateAcronym) {
-        $stateDAO = new StateDAO();
+        $stateDAO = self::getInstanceControllerState();
         return $stateDAO->
                 saveAverageEvaluationStateDAO($evaluate, $stateAcronym);
     }
     
     public function takeState($codMunic) {
-        $stateDAO = new StateDAO();
+        $stateDAO = self::getInstanceControllerState();
         $stateAcronym = $stateDAO->takeUfStateUBS($codMunic);
         return $stateAcronym;
     }
@@ -34,7 +34,7 @@ class ControllerState {
     //Novo metodo de busca
 
     public function makeObjectState($codMunic){
-        $stateDAO = new StateDAO();
+        $stateDAO = self::getInstanceControllerState();
         
         $attributeState = $stateDAO->takeStateUBSOO($codMunic);
         

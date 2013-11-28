@@ -104,6 +104,7 @@ input.button {
 }
 
 .Outline1{
+    float: right;
     background:#25536b; 
     width:290px; 
 }

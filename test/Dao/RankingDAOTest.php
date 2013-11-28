@@ -4,14 +4,14 @@ require_once dirname(__FILE__) . "/../../src/Dao/RankingDAO.php";
 
 class RankingDAOTest extends PHPUnit_Framework_TestCase {
 
-    protected $object;
+    protected $controllerRanking;
     
     protected function setUp(){
         $this->setUpRankingDAO();
     }
 
     protected function setUpRankingDAO() {
-        $this->object = new RankingDAO();
+        $this->controllerRanking = ControllerRanking::getInstanceControllerRanking();
     }
     
     protected function tearDown(){
@@ -19,30 +19,30 @@ class RankingDAOTest extends PHPUnit_Framework_TestCase {
     }
 
     protected function tearDownRankingDAO() {
-        unset($this->RankingDAO);
+        unset($this->controllerRanking);
     }
 
     public function testGetRankNotNull() {
-        $resultNotNull = $this->object->getRank();
+        $resultNotNull = $this->controllerRanking->getRank();
         $this->assertNotNull($resultNotNull);
     }
 
     public function testGetRankByCityNotNull() {
-        $result = $this->object->getRankByCity("Aracaju");
+        $result = $this->controllerRanking->getRankByCity("Aracaju");
         $this->assertNotNull($result);
     }
     public function testGetRankByCityFalse(){
-        $result = $this->object->getRankByCity("asdjaidj");
+        $result = $this->controllerRanking->getRankByCity("asdjaidj");
         $resultFalse = mysql_fetch_row($result);
         $this->assertFalse($resultFalse);
     }
 
     public function testGetRankByNeighborhoodNotNull(){
-        $resultNotNull = $this->object->getRankByNeighborhood("centro");
+        $resultNotNull = $this->controllerRanking->getRankByNeighborhood("centro");
         $this->assertNotNull($resultNotNull);
     }
     public function testGetRankByNeighborhoodFalse(){
-        $result = $this->object->getRankByNeighborhood("addssafg");
+        $result = $this->controllerRanking->getRankByNeighborhood("addssafg");
         $resultFalse = mysql_fetch_row($result);
         $this->assertFalse($resultFalse);
     }

@@ -9,7 +9,8 @@ class CityDAO{
     private function __construct() {
         
     }
-
+    
+    //Singleton pattern
     public static function getInstanceCityDAO() {
         
         if (!isset(self::$instanceCityDAO)) {
@@ -19,6 +20,7 @@ class CityDAO{
         return self::$instanceCityDAO;
     }
     
+    //Taking a ciy in Data Base
     public function takeCityDatabase($codMunic){
         $querySelCity = "SELECT (municipio) FROM municipios_ibge 
             WHERE codigo = '".$codMunic."'";

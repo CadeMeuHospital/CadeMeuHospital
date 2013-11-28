@@ -15,6 +15,7 @@ class ProfileUBSDAO {
         
     }
 
+    //Singleton Pattern
     public static function getInstanceProfileUBSDAO() {
 
         if (!isset(self::$instanceProfileUBSDAO)) {
@@ -24,12 +25,14 @@ class ProfileUBSDAO {
         return self::$instanceProfileUBSDAO;
     }
 
+    //Returning a UBS with that id
     public function returnUBS($id) {
         $sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $id . "'";
         $result = mysql_query($sql);
         return $result;
     }
 
+    //Searching a UBS in Table evaluate
     public function searchUBSInTableEvaluate($idUBS) {
         $sql = "SELECT * FROM evaluate WHERE id_cod_unico 
                 LIKE '" . $idUBS . "'";

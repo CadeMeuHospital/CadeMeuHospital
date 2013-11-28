@@ -21,13 +21,13 @@
                 </li>
                 
                 <li>
-                    <a href="../view/Statistics.php">
+                    <a href="../View/Statistics.php">
                         Estatísticas
                     </a>
                 </li>
 
                 <li>
-                    <a href="../view/Contact.php">
+                    <a href="../View/Contact.php">
                         Contatos
                     </a>
                 </li>

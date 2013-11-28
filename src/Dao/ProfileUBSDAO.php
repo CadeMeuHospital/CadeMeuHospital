@@ -92,7 +92,6 @@ class ProfileUBSDAO {
         return $average;
     }
 
-//Novo metodo de busca
     public function searchUBSinDatabase($field, $searchType) {
         $field = trim($field);
 

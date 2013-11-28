@@ -57,8 +57,6 @@ class ControllerProfileUBS {
             $to_lat, $to_lon);
     }
 
-    //Novo metodo de procura
-
     public function makeObjectUBS($idUBS, $latitudeUBS, $longitudeUBS, 
             $codCNES, $nameUBS, $descEnder, 
             $phoneUBS, $physicStructureUBS, $adapOldPeople, $descriTools, 

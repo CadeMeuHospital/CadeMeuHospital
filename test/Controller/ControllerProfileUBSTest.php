@@ -21,7 +21,7 @@ class ControllerProfileUBSTest extends PHPUnit_Framework_TestCase {
     }
 
     protected function setUpObjectProfileUBS() {
-        $this->objectProfileUBS = $this->controllerProfileUBS->makeObjectUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom", 1);
+        $this->objectProfileUBS = new ProfileUBS(1, 456, 789, 123456, 224, "nomeUbs", "endereco", "bairro", "cidade", 12312345, "bom", "bom", "bom", "bom", 1);
     }
     
     public function setUpEvaluate(){

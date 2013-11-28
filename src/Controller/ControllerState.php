@@ -11,6 +11,7 @@ class ControllerState {
         
     }
 
+    //Singleton Pattern
     public static function getInstanceControllerState() {
         if (!isset(self::$instanceControllerState)) {
             self::$instanceControllerState = new ControllerState();
@@ -18,6 +19,7 @@ class ControllerState {
         return self::$instanceControllerState;
     }
     
+    //Saving the avarage evaluation
     public function saveAverageEvaluationState(
             $evaluate, $stateAcronym) {
         $stateDAO = StateDAO::getInstanceStateDAO();
@@ -25,12 +27,14 @@ class ControllerState {
                 saveAverageEvaluationStateDAO($evaluate, $stateAcronym);
     }
     
+    //Taking a State
     public function takeState($codMunic) {
         $stateDAO = StateDAO::getInstanceStateDAO();
         $stateAcronym = $stateDAO->takeUfStateUBS($codMunic);
         return $stateAcronym;
     }
 
+    //Making a State Object
     public function makeObjectState($codMunic){
         $stateDAO = StateDAO::getInstanceStateDAO();
         

@@ -11,6 +11,7 @@ class ControllerUser {
         
     }
 
+    //Singleton pattern
     public static function getInstanceControllerUser() {
         if (!isset(self::$instanceControllerUser)) {
             self::$instanceControllerUser = new ControllerUser();
@@ -18,12 +19,14 @@ class ControllerUser {
         return self::$instanceControllerUser;
     }
 
+    //Making a user object
     public function makeObjectUser ($latUser,$lonUser){
         $city = self::$instanceControllerUser->takeCity($latUser,$lonUser);
         $user = new User($latUser,$lonUser,$city);    
         return $user;
     }
     
+    //Taking one city
     public function takeCity($latUser, $lonUser) {
         $url = "http://maps.google.com/maps/api/geocode/xml?address=".$latUser.",".$lonUser."&sensor=false";
         $xml = simplexml_load_file($url);

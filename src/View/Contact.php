@@ -20,7 +20,7 @@
                 <div class="content">
                     <table border = "1">                    
                         <b><font size="6">Equipe de Desenvolvimento</font></b>
-                        <table width="768"border="1">
+                        <table width="760"border="1">
                             <tr>
                                 <td>Atilla Gallio </td>
                                 <td>atilla.gallio@gmail.com</td>
@@ -45,7 +45,7 @@
                         <br /><br /><br />
 
                         <b><font size="6">Equipe de Gerenciamento</font></b>
-                        <table width="768"border="1">
+                        <table width="760"border="1">
                             <tr>
                                 <td>Beatriz Rezener</td>
                                 <td>beatrizrezener@gmail.com</td>

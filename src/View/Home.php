@@ -3,7 +3,6 @@ if (!isset($_POST['submit'])) {
     $rankType = "geral";
 } else {
     $rankType = $_POST['rank'];
-    $textField = $_POST['textField'];
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -79,15 +78,6 @@ if (!isset($_POST['submit'])) {
                     switch ($rankType) {
                         case "geral":
                             $topFiveUBS = $controllerRanking->makeRank();
-                            $topFiveUBSG = $topFiveUBS;
-                            break;
-                        case "cidade":
-                            $topFiveUBS = $controllerRanking->makeRankByCity($textField);
-                            $topFiveUBSC = $topFiveUBS;
-                            break;
-                        case "bairro":
-                            $topFiveUBS = $controllerRanking->makeRankByNeighborhood($textField);
-                            $topFiveUBSB = $topFiveUBS;
                             break;
                     }
                     $numberUBS = mysql_num_rows($topFiveUBS);
@@ -98,7 +88,7 @@ if (!isset($_POST['submit'])) {
                             $average = mysql_result($topFiveUBS, $i, "average");
 
                             $path = "../view/Profile.php?id=" . $idUBS . "";
-                            $completePath = "<a href=" . $path . "> " . $nameUBS . " </a> - " . $average . "<br>";
+                            $completePath = "<a href=" . $path . "> " . $nameUBS . " - " . $average . "</a><br>";
                             array_push($topFiveArray, $completePath);
                         }
                     } else {
@@ -120,7 +110,7 @@ if (!isset($_POST['submit'])) {
                         </a>
 
                         <a href="http://www2.datasus.gov.br/DATASUS/index.php" target =" _blank1">
-                            <img src="Shared/img/banner3.pnng" alt="Imagem 4" title="Data SUS"/>
+                            <img src="Shared/img/banner3.png" alt="Imagem 4" title="Data SUS"/>
                         </a>
                     </div>
                     <div class="Outline1">
@@ -144,9 +134,7 @@ if (!isset($_POST['submit'])) {
                                         $countArray = count($topFiveArray);
                                         for ($i = 0; $i < $countArray; $i++) {
                                             echo '<div class="ubs">';
-                                            echo '<div id="h1">';
                                             echo $topFiveArray[$i] . "<br>";
-                                            echo '</div>';
                                             echo '</div>';
                                         }
                                         ?>

@@ -274,7 +274,7 @@
 
                     <div id="mapview">
                         <!--  <div id="map_canvas" style="float: left; width: 900px; height: 380px;"></div> -->
-                        <div class="direcao" style="float: center; width: 760px; height: 380px; overflow: scroll;">
+                        <div class="direcao" style=" width: 760px; height: 380px; overflow: scroll;">
                             <div id="directionsPanel" style="width: 100%; height: 100px"></div>
                         </div>
                     </div>

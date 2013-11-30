@@ -1,6 +1,6 @@
 <?php
 
-require_once '/../Utils/Exception/TextFieldException.php';
+require_once '../Utils/Exception/TextFieldException.php';
 
 define('SIZECODMUNIC', 6);
 

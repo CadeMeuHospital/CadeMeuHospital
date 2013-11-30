@@ -59,7 +59,7 @@
                             $stateUBS = $arrayUBS[$i]->getCity()->getState()->getAcronym();
                             $idUBS = $arrayUBS[$i]->getIdUBS();
 
-                            $path = "../view/Profile.php?id=" . $idUBS . "";
+                            $path = "../View/Profile.php?id=" . $idUBS . "";
                             if ($i % 2 == 0) {
                                 echo "<tr id='first-tr'><td><a href=" . $path . " class = 
                                     'linkBranco'> " . $nameUBS . " </a></td>";
@@ -95,13 +95,12 @@
             <div id="pagination">
                 <?php
                 $buscaUBSEncode = urlencode($buscaUBS);
-                $firstPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.
-                        php?page=1&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
-                $lastPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" .
+                $firstPage = "SearchUBS.php?page=1&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
+                $lastPage = "SearchUBS.php?page=" .
                         $quantityPage . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
-                $nextPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" .
+                $nextPage = "SearchUBS.php?page=" .
                         ($currentPage + 1) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
-                $prevPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" .
+                $prevPage = "SearchUBS.php?page=" .
                         ($currentPage - 1) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
                 if ($currentPage > 1 && $quantityUBS != 0) {
                     echo "<a href=" . $firstPage . ">  [<<]  </a>";
@@ -111,7 +110,7 @@
                 if ($currentPage >= 6 && $quantityUBS != 0) {
 
                     for ($i = $currentPage - 6; $i < $currentPage + 5; $i++) {
-                        $pathPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" . ($i + 1) .
+                        $pathPage = "SearchUBS.php?page=" . ($i + 1) .
                                 "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
 
                         if ($i == $quantityPage - 1) {
@@ -132,7 +131,7 @@
                     }
                 } else if($quantityUBS != 0){
                     for ($i = 1; $i < $currentPage + 6; $i++) {
-                        $pathPage = "http://localhost/CadeMeuHospital/src/view/SearchUBS.php?page=" .
+                        $pathPage = "SearchUBS.php?page=" .
                                 ($i) . "&BuscaUBS=" . $buscaUBSEncode . "&searchType=" . $value . "";
 
 

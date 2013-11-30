@@ -10,9 +10,9 @@ if (!isset($_POST['submit'])) {
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-        <link rel="stylesheet" href="/../View/Shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../View/Shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
-        <script type="text/javascript" src="/../View/Shared/js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="../View/Shared/js/jquery-1.7.2.min.js"></script>
         <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <script src="http://code.jquery.com/jquery-1.8.2.min.js" type="text/javascript"></script>
         <script src="Shared/js/jquery.chocoslider.js" type="text/javascript"></script>
@@ -35,9 +35,9 @@ if (!isset($_POST['submit'])) {
     <body align="center">
         <div class="root">                       
             <?php
-            require '/../View/Shared/Header.php';
-            require '/../View/Shared/Navigation_bar.php';
-            require '/../Controller/ControllerRanking.php';
+            require '../View/Shared/Header.php';
+            require '../View/Shared/Navigation_bar.php';
+            require '../Controller/ControllerRanking.php';
             ?> 
 
 
@@ -87,7 +87,7 @@ if (!isset($_POST['submit'])) {
                             $idUBS = mysql_result($topFiveUBS, $i, "cod_unico");
                             $average = mysql_result($topFiveUBS, $i, "average");
 
-                            $path = "/../View/Profile.php?id=" . $idUBS . "";
+                            $path = "../View/Profile.php?id=" . $idUBS . "";
                             $completePath = "<a href=" . $path . "> " . $nameUBS . " - " . $average . "</a><br>";
                             array_push($topFiveArray, $completePath);
                         }
@@ -115,7 +115,7 @@ if (!isset($_POST['submit'])) {
                     </div>
                     <div class="Outline1">
                         <div id="text">Classificacao &nbsp <img 
-                                src="/../View/Shared/img/cmhRankTitle.png" align="right" /></div>
+                                src="../View/Shared/img/cmhRankTitle.png" align="right" /></div>
                         <div class="Outline2">
                             <div class="TabControl">
                                 <div id="header">
@@ -151,7 +151,7 @@ if (!isset($_POST['submit'])) {
                 <br>
                 <br>
                 <br>
-                <?php require '/../View/Shared/Footer.php'; ?>
+                <?php require '../View/Shared/Footer.php'; ?>
             </div>
         </div>
     </body>

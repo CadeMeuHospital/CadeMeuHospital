@@ -7,10 +7,10 @@ require_once '/../Controller/ControllerUser.php';
     <head>
         <title> CMH - UBS Mais Próxima</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="stylesheet" href="/../View/Shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../View/Shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <link rel="stylesheet" href="css/profile.css" type="text/css">
-        <script type="text/javascript" src="/../View/shared/js/jquery.price_format.1.8.min.js"></script>
+        <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <script type="text/javascript" src="//j.maxmind.com/js/geoip.js"></script>
         <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" 
@@ -40,8 +40,8 @@ require_once '/../Controller/ControllerUser.php';
             <div class="root">  
 
                 <?php
-                include_once '/../View/Shared/Header.php';
-                include_once '/../View/Shared/Navigation_bar.php';
+                include_once '../View/Shared/Header.php';
+                include_once '../View/Shared/Navigation_bar.php';
 
                 $controllerUser = ControllerUser::getInstanceControllerUser();
                 $currentUser = $controllerUser->makeObjectUser($_REQUEST['lat'], $_REQUEST['lon']);

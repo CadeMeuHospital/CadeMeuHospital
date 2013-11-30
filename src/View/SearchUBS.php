@@ -3,9 +3,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="/../View/Shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../View/Shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
-        <script type="text/javascript" src="/../View/Shared/js/jquery.price_format.1.8.min.js"></script>
+        <script type="text/javascript" src="../View/Shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <link rel="stylesheet" href="css/profile.css" type="text/css">        
         <style>
@@ -26,8 +26,8 @@
 
         <div class="root">
 
-            <?php require '/../View/Shared/Header.php'; ?>
-            <?php require '/../View/Shared/Navigation_bar.php'; ?>
+            <?php require '../View/Shared/Header.php'; ?>
+            <?php require '../View/Shared/Navigation_bar.php'; ?>
 
             <div class="center" >
 
@@ -59,7 +59,7 @@
                             $stateUBS = $arrayUBS[$i]->getCity()->getState()->getAcronym();
                             $idUBS = $arrayUBS[$i]->getIdUBS();
 
-                            $path = "/../View/Profile.php?id=" . $idUBS . "";
+                            $path = "../View/Profile.php?id=" . $idUBS . "";
                             if ($i % 2 == 0) {
                                 echo "<tr id='first-tr'><td><a href=" . $path . " class = 
                                     'linkBranco'> " . $nameUBS . " </a></td>";
@@ -160,7 +160,7 @@
 
             </div>
             <br /><br /><br /><br /><br /><br /><br />
-            <?php require '/../View/Shared/Footer.php'; ?>
+            <?php require '../View/Shared/Footer.php'; ?>
         </div>
     </body>
 </html>

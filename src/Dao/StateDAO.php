@@ -1,6 +1,6 @@
 <?php
 
-require_once "/../Utils/dataBaseConnection.php";
+require_once "../Utils/DataBaseConnection.php";
 
 class StateDAO {
 

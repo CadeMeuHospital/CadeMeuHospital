@@ -40,7 +40,7 @@ $(function() {
 $(function() {
 	    $( "#datepicker, .datepicker" ).datepicker({
 	      showOn: "button",
-	      buttonImage: "../shared/css/images/calendar-icon.png",
+	      buttonImage: "/../shared/css/images/calendar-icon.png",
 	      buttonImageOnly: true
 	    });
 	  });
@@ -72,7 +72,7 @@ $(function() {
     $( "#from" ).datepicker({
       defaultDate: "+1w",
 	      showOn: "button",
-	      buttonImage: "../shared/css/images/calendar-icon.png",
+	      buttonImage: "/../shared/css/images/calendar-icon.png",
 	      buttonImageOnly: true,
       onClose: function( selectedDate ) {
         $( "#to" ).datepicker( "option", "minDate", selectedDate );
@@ -81,7 +81,7 @@ $(function() {
     $( "#to" ).datepicker({
       defaultDate: "+1w",
 	      showOn: "button",
-	      buttonImage: "../shared/css/images/calendar-icon.png",
+	      buttonImage: "/../shared/css/images/calendar-icon.png",
 	      buttonImageOnly: true,
       onClose: function( selectedDate ) {
         $( "#from" ).datepicker( "option", "maxDate", selectedDate );

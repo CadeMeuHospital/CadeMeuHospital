@@ -2,10 +2,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-        <link rel="stylesheet" href="../View/Shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="/../View/Shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
-        <link href="../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <script type="text/javascript" src="../V.iew/shared/js/jquery.price_format.1.8.min.js"></script>
+        <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <script type="text/javascript" src="/../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <title> CMH - Estatísticas</title>
     </head>
@@ -20,9 +20,9 @@
     <body align="center">
         <div class="root">
             <?php
-                require '../View/Shared/Header.php';
-                require '../View/Shared/Navigation_bar.php';
-                require '../Controller/ControllerStatistics.php';
+                require '/../View/Shared/Header.php';
+                require '/../View/Shared/Navigation_bar.php';
+                require '/../Controller/ControllerStatistics.php';
 
                 $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
                 $arrayStatistics = $controllerStatistics->generateValuesToChartAverageEvaluate();
@@ -195,7 +195,7 @@
                 </div>
             </div>
             <br>
-            <?php require '../View/Shared/Footer.php'; ?>
+            <?php require '/../View/Shared/Footer.php'; ?>
         </div>
     </body>
 </html>

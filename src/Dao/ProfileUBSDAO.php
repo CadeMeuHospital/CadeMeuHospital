@@ -1,7 +1,7 @@
 <?php
 
-require_once "../Utils/DataBaseConnection.php";
-require_once "../Utils/DataValidation.php";
+require_once "/../Utils/DataBaseConnection.php";
+require_once "/../Utils/DataValidation.php";
 
 define('NOME', 1);
 define('CIDADE', 2);

@@ -5,7 +5,7 @@
         <title>CMH - Perfil UBS</title>
     </head>    
     <?php
-        require_once '../Controller/ControllerProfileUBS.php';
+        require_once '/../Controller/ControllerProfileUBS.php';
 
         $evaluate = $_POST['evaluate'];
         $idUBS = $_POST['idUBS'];

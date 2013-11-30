@@ -3,13 +3,13 @@
         <center>
             <ul>
                 <li>
-                    <a href="../View/Home.php">
+                    <a href="/../View/Home.php">
                         Home
                     </a>
                 </li>
 
                 <li>
-                    <a href="../View/ClosestUBS.php">
+                    <a href="/../View/ClosestUBS.php">
                         UBS mais próxima
                     </a>
                 </li>
@@ -21,13 +21,13 @@
                 </li>
                 
                 <li>
-                    <a href="../View/Statistics.php">
+                    <a href="/../View/Statistics.php">
                         Estatísticas
                     </a>
                 </li>
 
                 <li>
-                    <a href="../View/Contact.php">
+                    <a href="/../View/Contact.php">
                         Contatos
                     </a>
                 </li>

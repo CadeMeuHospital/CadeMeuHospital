@@ -2,11 +2,11 @@
 
 require_once 'ControllerState.php';
 require_once 'ControllerCity.php';
-require_once '../Model/ProfileUBS.php';
-require_once '../Dao/ProfileUBSDAO.php';
-require_once '../Dao/StateDAO.php';
-require_once '../Utils/DataValidation.php';
-require_once '../Utils/DistanceLatLon.php';
+require_once '/../Model/ProfileUBS.php';
+require_once '/../Dao/ProfileUBSDAO.php';
+require_once '/../Dao/StateDAO.php';
+require_once '/../Utils/DataValidation.php';
+require_once '/../Utils/DistanceLatLon.php';
 
 class ControllerProfileUBS {
 
@@ -111,7 +111,7 @@ class ControllerProfileUBS {
             }
         } catch (TextFieldException $e) {
             print "<script>alert('" . $e->getMessage() . "')</script>";
-            print "<script>window.location='../View/Home.php'</script>";
+            print "<script>window.location='/../View/Home.php'</script>";
         }
         return $arrayUBS;
     }

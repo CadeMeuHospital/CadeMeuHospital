@@ -1,6 +1,6 @@
 <?php
 
-require_once '../Dao/RankingDAO.php';
+require_once '/../Dao/RankingDAO.php';
 
 class ControllerRanking {
 

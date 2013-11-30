@@ -3,18 +3,18 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../View/Shared/css/style.css" type="text/css">
+        <link rel="stylesheet" href="/../View/Shared/css/style.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
-        <script type="text/javascript" src="../V.iew/Shared/js/jquery.price_format.1.8.min.js"></script>
-        <link href="../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+        <script type="text/javascript" src="/../V.iew/Shared/js/jquery.price_format.1.8.min.js"></script>
+        <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <title> CMH - Contatos</title>
     </head>
 
     <body align="center">
         <div class="root">                   
             <?php 
-                require '../View/Shared/Header.php';
-                require '../View/Shared/Navigation_bar.php'; 
+                require '/../View/Shared/Header.php';
+                require '/../View/Shared/Navigation_bar.php'; 
             ?>
             <div align ="center">
                 <div class="content">
@@ -64,7 +64,7 @@
 
 
                 <br /><br /><br /><br /><br /><br /><br />
-                <?php require '../View/Shared/Footer.php'; ?>
+                <?php require '/../View/Shared/Footer.php'; ?>
             </div>
 
 

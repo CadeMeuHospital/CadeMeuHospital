@@ -1,6 +1,6 @@
 <?php
 
-require_once '../Dao/StatisticsDAO.php';
+require_once '/../Dao/StatisticsDAO.php';
 require_once 'ControllerProfileUBS.php';
 
 class ControllerStatistics {

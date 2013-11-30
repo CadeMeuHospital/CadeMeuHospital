@@ -1,6 +1,6 @@
 <?php
 
-require_once '../Model/User.php'; 
+require_once '/../Model/User.php'; 
 
 class ControllerUser {
     

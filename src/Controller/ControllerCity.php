@@ -1,7 +1,7 @@
 <?php
 
-require_once '/../Dao/CityDAO.php';
-require_once '/../Model/City.php';
+require_once '../Dao/CityDAO.php';
+require_once '../Model/City.php';
 
 class ControllerCity {
     

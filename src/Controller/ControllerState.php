@@ -1,7 +1,7 @@
 <?php
 
-require_once '/../Dao/StateDAO.php';
-require_once '/../Model/State.php';
+require_once '../Dao/StateDAO.php';
+require_once '../Model/State.php';
 
 class ControllerState {
 

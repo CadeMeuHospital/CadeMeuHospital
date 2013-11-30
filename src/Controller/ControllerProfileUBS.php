@@ -2,11 +2,11 @@
 
 require_once 'ControllerState.php';
 require_once 'ControllerCity.php';
-require_once '/../Model/profileUBS.php';
-require_once '/../DAO/profileUBSDAO.php';
-require_once '/../DAO/StateDAO.php';
-require_once '/../Utils/DataValidation.php';
-require_once '/../Utils/DistanceLatLon.php';
+require_once '../Model/profileUBS.php';
+require_once '../Dao/profileUBSDAO.php';
+require_once '../Dao/StateDAO.php';
+require_once '../Utils/DataValidation.php';
+require_once '../Utils/DistanceLatLon.php';
 
 class ControllerProfileUBS {
 

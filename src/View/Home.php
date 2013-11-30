@@ -87,7 +87,7 @@ if (!isset($_POST['submit'])) {
                             $idUBS = mysql_result($topFiveUBS, $i, "cod_unico");
                             $average = mysql_result($topFiveUBS, $i, "average");
 
-                            $path = "../view/Profile.php?id=" . $idUBS . "";
+                            $path = "../View/Profile.php?id=" . $idUBS . "";
                             $completePath = "<a href=" . $path . "> " . $nameUBS . " - " . $average . "</a><br>";
                             array_push($topFiveArray, $completePath);
                         }

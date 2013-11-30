@@ -23,7 +23,7 @@
 </script>
 <div class="header">
     <div id="left">
-        <a href="home.php"><img src="../View/Shared/img/LogoCMH.png" align="center" width="100%" height="100%"/></a>
+        <a href="Home.php"><img src="../View/Shared/img/LogoCMH.png" align="center" width="100%" height="100%"/></a>
     </div>
     <div id ="right">
             <form method="post" action="../View/SearchUBS.php?page=1" id="formSearchUBS">	

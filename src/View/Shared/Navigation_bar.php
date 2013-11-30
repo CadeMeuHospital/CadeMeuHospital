@@ -3,7 +3,7 @@
         <center>
             <ul>
                 <li>
-                    <a href="..../index.php">
+                    <a href="../View/Home.php">
                         Home
                     </a>
                 </li>

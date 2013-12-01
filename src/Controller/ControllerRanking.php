@@ -23,6 +23,56 @@ class ControllerRanking {
         $rankingDAO = RankingDAO::getInstanceRankingDAO();
         return $rankingDAO->getRank();
     }
+
+    public function getStarImage($average) {
+        
+        if ($average == 0) {
+            $starImg = "<img src='Shared/img/NoStar.png' width='160' height='30'";
+        }
+        
+        if ($average > 0 && $average < 1) {
+            $starImg = "<img src='Shared/img/StarHalf.png' width='160' height='30'";
+        }
+        
+        if ($average >= 1 && $average < 1.5) {
+            $starImg = "<img src='Shared/img/StarOne.png' width='160' height='30'";
+        }
+        
+        if ($average >= 1.5 && $average < 2) {
+            $starImg = "<img src='Shared/img/StarOneHalf.png' width='160' height='30'";
+        }
+        
+        if ($average >= 2 && $average < 2.5) {
+            $starImg = "<img src='Shared/img/StarTwo.png' width='160' height='30'";
+        }
+        
+        if ($average >= 2.5 && $average < 3) {
+            $starImg = "<img src='Shared/img/StarTwoHalf.png' width='160' height='30'";
+        }
+        
+        if ($average >= 3 && $average < 3.5) {
+            $starImg = "<img src='Shared/img/StarThree.png' width='160' height='30'";
+        }
+        
+        if ($average >= 3.5 && $average < 4) {
+            $starImg = "<img src='Shared/img/StarThreeHalf.png' width='160' height='30'";
+        }
+        
+        if ($average >= 4 && $average < 4.5) {
+            $starImg = "<img src='Shared/img/StarFour.png' width='160' height='30'";
+        }
+        
+        if ($average >= 4.5 && $average < 5) {
+            $starImg = "<img src='Shared/img/StarFourHalf.png' width='160' height='30'";
+        }
+        
+        if ($average == 5) {
+            $starImg = "<img src='Shared/img/StarFive.png' width='160' height='30'";
+        }
+
+        return $starImg;
+    }
+
 }
 
 ?>

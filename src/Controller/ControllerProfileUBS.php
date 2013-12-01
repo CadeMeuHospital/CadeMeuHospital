@@ -25,10 +25,10 @@ class ControllerProfileUBS {
     }
 
     //Return one UBS with that id
-    public function returnUBS($id) {
+    public function returnUBS($idUBS) {
         $profileUBSDAO = ProfileUBSDAO::getInstanceProfileUBSDAO();
 
-        $attributesUBS = $profileUBSDAO->returnUBS($id);
+        $attributesUBS = $profileUBSDAO->returnUBS($idUBS);
         $attributesUBS2 = $attributesUBS;
         if (mysql_fetch_row($attributesUBS2) == NULL) {
             return false;
@@ -60,22 +60,22 @@ class ControllerProfileUBS {
     }
 
     //Making object in a loop
-    public function makeObjectLoop($attributeUBS, $i) {
+    public function makeObjectLoop($attributeUBS, $index) {
 
-        $idUBS = mysql_result($attributeUBS, $i, "cod_unico");
-        $latitudeUBS = mysql_result($attributeUBS, $i, "vlr_latitude");
-        $longitudeUBS = mysql_result($attributeUBS, $i, "vlr_longitude");
-        $codCNES = mysql_result($attributeUBS, $i, "cod_cnes");
-        $nameUBS = mysql_result($attributeUBS, $i, "nom_estab");
-        $dscEnder = mysql_result($attributeUBS, $i, "dsc_endereco");
-        $phoneUBS = mysql_result($attributeUBS, $i, "dsc_telefone");
-        $physicStructureUBS = mysql_result($attributeUBS, $i, "dsc_estrut_fisic_ambiencia");
-        $adapOldPeople = mysql_result($attributeUBS, $i, "dsc_adap_defic_fisic_idosos");
-        $descriTools = mysql_result($attributeUBS, $i, "dsc_equipamentos");
-        $descMedicine = mysql_result($attributeUBS, $i, "dsc_medicamentos");
-        $average = mysql_result($attributeUBS, $i, "average");
+        $idUBS = mysql_result($attributeUBS, $index, "cod_unico");
+        $latitudeUBS = mysql_result($attributeUBS, $index, "vlr_latitude");
+        $longitudeUBS = mysql_result($attributeUBS, $index, "vlr_longitude");
+        $codCNES = mysql_result($attributeUBS, $index, "cod_cnes");
+        $nameUBS = mysql_result($attributeUBS, $index, "nom_estab");
+        $dscEnder = mysql_result($attributeUBS, $index, "dsc_endereco");
+        $phoneUBS = mysql_result($attributeUBS, $index, "dsc_telefone");
+        $physicStructureUBS = mysql_result($attributeUBS, $index, "dsc_estrut_fisic_ambiencia");
+        $adapOldPeople = mysql_result($attributeUBS, $index, "dsc_adap_defic_fisic_idosos");
+        $descriTools = mysql_result($attributeUBS, $index, "dsc_equipamentos");
+        $descMedicine = mysql_result($attributeUBS, $index, "dsc_medicamentos");
+        $average = mysql_result($attributeUBS, $index, "average");
 
-        $codMunic = mysql_result($attributeUBS, $i, "cod_munic");
+        $codMunic = mysql_result($attributeUBS, $index, "cod_munic");
 
         $controllerState = ControllerState::getInstanceControllerState();
         $stateUBS = $controllerState->makeObjectState($codMunic);
@@ -95,19 +95,19 @@ class ControllerProfileUBS {
 
         $profileUBSDAO = ProfileUBSDAO::getInstanceProfileUBSDAO();
 
-        $i = 0;
+        $cont = 0;
         $arrayUBS = array();
         try {
             $attributesUBS = $profileUBSDAO->searchUBSinDatabase($field, $searchType);
             $lines = mysql_num_rows($attributesUBS);
-            while ($i < $lines) {
+            while ($cont < $lines) {
 
                 $UBS = self::$instanceControllerProfileUBS->
-                        makeObjectLoop($attributesUBS, $i);
+                        makeObjectLoop($attributesUBS, $cont);
 
                 array_push($arrayUBS, $UBS);
 
-                $i++;
+                $cont++;
             }
         } catch (TextFieldException $e) {
             print "<script>alert('" . $e->getMessage() . "')</script>";

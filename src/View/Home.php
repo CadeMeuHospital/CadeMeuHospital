@@ -75,12 +75,9 @@ if (!isset($_POST['submit'])) {
                     <?php
                     $controllerRanking = ControllerRanking::getInstanceControllerRanking();
                     $topFiveArray = array();
-                    switch ($rankType) {
-                        case "geral":
-                            $topFiveUBS = $controllerRanking->makeRank();
-                            break;
-                    }
+                    $topFiveUBS = $controllerRanking->makeRank();
                     $numberUBS = mysql_num_rows($topFiveUBS);
+                    
                     if ($numberUBS > 0) {
                         for ($i = 0; $i < $numberUBS; $i++) {
                             $nameUBS = mysql_result($topFiveUBS, $i, "nom_estab");
@@ -92,8 +89,6 @@ if (!isset($_POST['submit'])) {
                             $completePath = "<a href=" . $path . "> " . $nameUBS . "</a><br>" . $starImg . "<br>";
                             array_push($topFiveArray, $completePath);
                         }
-                    } else {
-                        echo 'Não há UBSs avaliadas. ';
                     }
                     ?>
                     <div class="banner" id="banner" >

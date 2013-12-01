@@ -88,7 +88,8 @@ if (!isset($_POST['submit'])) {
                             $average = mysql_result($topFiveUBS, $i, "average");
 
                             $path = "../View/Profile.php?id=" . $idUBS . "";
-                            $completePath = "<a href=" . $path . "> " . $nameUBS . " - " . $average . "</a><br>";
+                            $starImg = $controllerRanking->getStarImage($average);
+                            $completePath = "<a href=" . $path . "> " . $nameUBS . "</a><br>".$starImg."<br>";
                             array_push($topFiveArray, $completePath);
                         }
                     } else {
@@ -122,8 +123,8 @@ if (!isset($_POST['submit'])) {
                                     <ul class="abas">
                                         <li>
                                             <div class="aba">
-                                                <span style="position: relative; top: 10px;
-                                                      left: 100 px;"> Geral</span>
+                                                <span style="position: relative; top: 5px;
+                                                      left: 5px; color: #000099;"> Geral</span>
                                             </div>
                                         </li>
                                     </ul>
@@ -134,7 +135,7 @@ if (!isset($_POST['submit'])) {
                                         $countArray = count($topFiveArray);
                                         for ($i = 0; $i < $countArray; $i++) {
                                             echo '<div class="ubs">';
-                                            echo $topFiveArray[$i] . "<br>";
+                                            echo $topFiveArray[$i];
                                             echo '</div>';
                                         }
                                         ?>
@@ -143,7 +144,7 @@ if (!isset($_POST['submit'])) {
                             </div>
                         </div>
                     </div>
-                    <a href='http://portalsaude.saude.gov.br/portalsaude/index.html'>
+                    <a href='http://portalsaude.saude.gov.br/portalsaude/index.html' target="_blank">
                         <img src="Shared/img/sus.png"/>
                     </a>
                 </div>
@@ -151,8 +152,8 @@ if (!isset($_POST['submit'])) {
                 <br>
                 <br>
                 <br>
-                <?php require '../View/Shared/Footer.php'; ?>
             </div>
         </div>
+        <?php require '../View/Shared/Footer.php'; ?>
     </body>
 </html>

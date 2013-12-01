@@ -36,6 +36,7 @@
                 $buscaUBS = $_REQUEST['BuscaUBS'];
 
                 require_once '/../Controller/ControllerProfileUBS.php';
+                require_once '/../Controller/ControllerRanking.php';
 
                 $controllerProfileUBS = ControllerProfileUBS::getInstanceControllerProfileUBS();
                 $arrayUBS = $controllerProfileUBS->searchUBS($buscaUBS, $value);
@@ -45,7 +46,8 @@
                     <?php
                     $quantityUBS = count($arrayUBS);
                     echo "<br><p align = 'center'>Sua pesquisa retornou " . $quantityUBS . " resultados.</p><br><br>";
-
+                    
+                    $controllerRanking = ControllerRanking::getInstanceControllerRanking();
                     $quantityPage = ceil($quantityUBS / 10);
                     $currentPage = $_GET['page'];
                     $page = $currentPage * 10;
@@ -66,8 +68,8 @@
                                 echo "<td class = 'linkBranco'><font color = 'white'>" .
                                 $cityUBS . "-" . $stateUBS . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
-                                    echo "<td><font color = 'white'>Média das avaliações:" .
-                                    $arrayUBS[$i]->getAverage() . "</font></td>";
+                                    $starImg = $controllerRanking->getStarImage($arrayUBS[$i]->getAverage());
+                                    echo "<td><font color = 'white'>" . $starImg . "</font></td>";
                                 } else {
                                     echo "<td><font color = 'white'>UBS ainda não avaliada.</font></td></tr>";
                                 }
@@ -77,8 +79,8 @@
                                 echo "<td class = 'linkPreto'><font color = 'black'>" . $cityUBS .
                                 "-" . $stateUBS . "</font></td>";
                                 if ($arrayUBS[$i]->getAverage() != 0) {
-                                    echo "<td><font color = 'black'>Média das avaliações:" .
-                                    $arrayUBS[$i]->getAverage() . "</font></td>";
+                                    $starImg = $controllerRanking->getStarImage($arrayUBS[$i]->getAverage());
+                                    echo "<td><font color = 'white'>" . $starImg . "</font></td>";
                                 } else {
                                     echo "<td><font color = 'black' align = 'center'>
                                         UBS ainda não avaliada.</font></td></tr>";

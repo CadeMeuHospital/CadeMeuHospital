@@ -152,7 +152,8 @@ input.button {
 
 .aba{  
     font-family:Calibri, Tahoma, Arial;
-    width:50px; height:0px;           
+    width:50px;
+    height:0px;           
     border-bottom: 30px solid #E5DEE2;
     border-right: 50px solid transparent;
 }
@@ -189,6 +190,8 @@ input.button {
 }
 
 .ubs{
+    padding-top: 6px;
+    padding-bottom: 6px;
     height: 60px; 
     border-style: solid; 
     border-bottom-width: 1px; 
@@ -196,11 +199,15 @@ input.button {
     border-right-width: 0; 
     border-left-width: 0; 
     text-align:center;
+    text-decoration: none;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .ubs #h1{
     color:#282828;
-    text-justify: center; 
+    text-justify: auto; 
     font-size: 20px; 
     margin-top: 10px;
 }

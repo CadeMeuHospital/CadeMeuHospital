@@ -60,8 +60,8 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testValidadeTextFieldInvalid() {
-        $resultEquals2 = $this->dataValidation->validateTextField("%123)(-");
-        $this->assertEquals(1, $resultEquals2);
+        $resultEquals1 = $this->dataValidation->validateTextField("%123)(-");
+        $this->assertEquals(1, $resultEquals1);
     }
 
     public function testValidadeTextFieldValidate() {
@@ -69,4 +69,15 @@ class DataValidationTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(0, $resultEquals0);
     }
 
+    public function testValidateTextFieldLessThan2Characters() {
+        $resultTrue = $this->dataValidation->validateTextFieldLessThan2Characters("a");
+        $this->assertTrue($resultTrue);
+    }
+    
+    /**
+     * @expectedException TextFieldException
+     */
+    public function testThrowTextFieldExceptionValidateTextFieldLessThan2Characters() {
+        $this->dataValidation->throwTextFieldException("a");
+    }
 }

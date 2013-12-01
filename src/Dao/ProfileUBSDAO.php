@@ -26,8 +26,8 @@ class ProfileUBSDAO {
     }
 
     //Returning a UBS with that id
-    public function returnUBS($id) {
-        $sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $id . "'";
+    public function returnUBS($idUBS) {
+        $sql = " SELECT * FROM ubs WHERE cod_unico LIKE '" . $idUBS . "'";
         $result = mysql_query($sql);
         return $result;
     }

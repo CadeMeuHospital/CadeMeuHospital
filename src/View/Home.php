@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="Shared/img/favicon.ico">
 <?php
 if (!isset($_POST['submit'])) {
     $rankType = "geral";

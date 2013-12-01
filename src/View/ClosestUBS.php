@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="img/favicon.ico">
 <?php
 require_once '/../Controller/ControllerProfileUBS.php';
 require_once '/../Controller/ControllerUser.php';

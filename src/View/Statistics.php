@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<link rel="shortcut icon" href="Shared/img/favicon.ico">
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
@@ -7,7 +8,7 @@
         <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <title> CMH - Estatísticas</title>
+        <title> CMH - Estatisticas</title>
     </head>
     <style>
         h2 {

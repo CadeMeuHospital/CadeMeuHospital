@@ -19,13 +19,13 @@ class StatisticsDAOTest extends PHPUnit_Framework_TestCase {
         $this->assertNotNull($resultNotNull);
     }
 
-    public function testGetValuesToChartAverageEvaluateSigleUBSFalse() {
-        $resultFalse = $this->statisticsDao->getValuesToChartAverageEvaluateSigleUBS(4951951951);
+    public function testGetValuesToChartAverageEvaluateSingleUBSFalse() {
+        $resultFalse = $this->statisticsDao->getValuesToChartAverageEvaluateSingleUBS(4951951951);
         $this->assertFalse($resultFalse);
     }
 
-    public function testGetValuesToChartAverageEvaluateSigleUBSNotNull() {
-        $resultNotNull = $this->statisticsDao->getValuesToChartAverageEvaluateSigleUBS(4);
+    public function testGetValuesToChartAverageEvaluateSingleUBSNotNull() {
+        $resultNotNull = $this->statisticsDao->getValuesToChartAverageEvaluateSingleUBS(4);
         $this->assertNotNull($resultNotNull);
     }
     

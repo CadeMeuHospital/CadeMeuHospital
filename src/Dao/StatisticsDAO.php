@@ -21,16 +21,18 @@ class StatisticsDAO {
             SUM(amount_people_3), 
             SUM(amount_people_4),SUM(amount_people_5) FROM evaluate";
         $result = mysql_query($query);
-        return mysql_fetch_row($result);
+        $sum = mysql_fetch_row($result);
+        return $sum;
     }
 
-    public function getValuesToChartAverageEvaluateSigleUBS($idUBS) {
+    public function getValuesToChartAverageEvaluateSingleUBS($idUBS) {
 
         $query = "SELECT amount_people_1,amount_people_2,amount_people_3,
             amount_people_4,amount_people_5 FROM evaluate 
             WHERE id_cod_unico='" . $idUBS . "'";
         $result = mysql_query($query);
-        return mysql_fetch_row($result);
+        $chartValue = mysql_fetch_row($result);
+        return $chartValue;
     }
 
     public function getStatisticsByState() {

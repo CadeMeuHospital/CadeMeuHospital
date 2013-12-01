@@ -39,25 +39,25 @@
                 switch($option){
                     case "population":
                         $populations = $statistics[3];
-                        $opitionToBeCrossed = array();
+                        $optionToBeCrossed = array();
                         
                         for($i = 0; $i < 27;$i++){
                             $result = $populations[$i]/$amountUBS[$i];
-                            array_push($opitionToBeCrossed, $result);
+                            array_push($optionToBeCrossed, $result);
                         }
                         $title = "Quantidade de Pessoas por UBS";
                         break;
                     case "average":
-                        $opitionToBeCrossed = $statistics[1];
+                        $optionToBeCrossed = $statistics[1];
                         $title = "Média das Avaliações das UBS do Estado";
                         break;
                     case "area":    
                         $areas = $statistics[4];
-                        $opitionToBeCrossed = array();
+                        $optionToBeCrossed = array();
                         
                         for($i = 0; $i < 27;$i++){
                             $result = $areas[$i]/$amountUBS[$i];
-                            array_push($opitionToBeCrossed, $result);
+                            array_push($optionToBeCrossed, $result);
                         }
                         $title = "Uma UBS a cada (Km²)";
                         break;
@@ -156,7 +156,7 @@
                                 data.setValue(<?php echo $i; ?>, 1, 
                                 <?php echo $amountUBS[$i]; ?>);
                                 data.setValue(<?php echo $i; ?>, 2, 
-                                <?php echo $opitionToBeCrossed[$i]; ?>);
+                                <?php echo $optionToBeCrossed[$i]; ?>);
                             <?php
                             }
                             ?>

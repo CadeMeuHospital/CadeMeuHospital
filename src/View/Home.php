@@ -98,19 +98,19 @@ if (!isset($_POST['submit'])) {
                     ?>
                     <div class="banner" id="banner" >
 
-                        <a href="http://www.fga.unb.br/">
+                        <a href="http://www.fga.unb.br/" target="_blank1">
                             <img src="Shared/img/banner1.png" alt="UnB Gama" title="Visite a WebSite da FGA!"/>
                         </a>
 
-                        <a href="http://cnes.datasus.gov.br/" target =" _blank">
+                        <a href="http://cnes.datasus.gov.br/" target =" _blank2">
                             <img src="Shared/img/banner2.png"alt="Imagem 4" title="CNES"/>
                         </a>
 
-                        <a href="http://www.saudeparatodosdf.com.br/" target =" _blank2">
+                        <a href="http://www.saudeparatodosdf.com.br/" target =" _blank3">
                             <img src="Shared/img/banner4.png" alt="Imagem 4" title="Saúde para Todos!"/>
                         </a>
 
-                        <a href="http://www2.datasus.gov.br/DATASUS/index.php" target =" _blank1">
+                        <a href="http://www2.datasus.gov.br/DATASUS/index.php" target =" _blank4">
                             <img src="Shared/img/banner3.png" alt="Imagem 4" title="Data SUS"/>
                         </a>
                     </div>

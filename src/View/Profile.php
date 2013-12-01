@@ -20,6 +20,7 @@
             <?php
             require_once '/../Controller/ControllerProfileUBS.php';
             require_once '/../Controller/ControllerStatistics.php';
+            require_once '/../Controller/ControllerRanking.php';
             require_once '../View/Shared/Header.php';
             require_once '../View/Shared/Navigation_bar.php';
 
@@ -33,6 +34,9 @@
 
             $controllerStatistics = ControllerStatistics::getInstanceControllerStatistics();
             $evaluatesUBS = $controllerStatistics->generateValuesToChartAverageEvaluateSingleUBS($idUBS);
+
+            $controllerRanking = ControllerRanking::getInstanceControllerRanking();
+            $starImg = $controllerRanking->getStarImage($profileUBS->getAverage());
             ?>   
 
             <div class="profile"> 
@@ -54,8 +58,8 @@
                         <tr>
                             <th>Estado:</th>
                             <td class="align-left"><?php
-                                echo $profileUBS->getCity()->getState()->getNameState()." 
-                                    (".$profileUBS->getCity()->getState()->getAcronym().")";
+                                echo $profileUBS->getCity()->getState()->getNameState() . " 
+                                    (" . $profileUBS->getCity()->getState()->getAcronym() . ")";
                                 ?></td>
                         </tr>
                         <tr>
@@ -80,7 +84,7 @@
                         </tr>
                         <tr>
                             <th>Média das avaliações:</th>
-                            <td class="align-left"><?php echo $profileUBS->getAverage(); ?></td>
+                            <td class="align-left"><?php echo $starImg; ?></td>
                         </tr>
                     </table>
                     <br />
@@ -124,8 +128,8 @@
                                         </tr>
                                         <tr>
                                             <td class="align-left">
-                                               
-                                             <input class="button" type="submit" name="submitEvaluate" value="Avaliar"/>
+
+                                                <input class="button" type="submit" name="submitEvaluate" value="Avaliar"/>
                                             </td>
                                         </tr>
                                     </table>
@@ -188,58 +192,58 @@
                 <h2>Mapa</h2>
                 <div id="mapholder" ></div>
                 <div class="content">
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+                    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
                     <script>
-                                    var directionDisplay;
-                                    var directionsService = new google.maps.DirectionsService();
+                        var directionDisplay;
+                        var directionsService = new google.maps.DirectionsService();
 
 <?php $latlon = $profileUBS->getLatitudeUBS() . "," . $profileUBS->getLongitudeUBS(); ?>;
-                                    var myCenter = new google.maps.LatLng(<?php echo $latlon; ?>);
-                                    function initialize()
-                                    {
-                                        directionsDisplay = new google.maps.DirectionsRenderer();
-                                        var myLatlng = new google.maps.LatLng();
+                        var myCenter = new google.maps.LatLng(<?php echo $latlon; ?>);
+                        function initialize()
+                        {
+                            directionsDisplay = new google.maps.DirectionsRenderer();
+                            var myLatlng = new google.maps.LatLng();
 
-                                        var mapProp = {
-                                            center: new google.maps.LatLng(<?php echo $latlon ?>),
-                                            zoom: 16,
-                                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                                        };
-                                        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-                                        directionsDisplay.setMap(map);
-                                        directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+                            var mapProp = {
+                                center: new google.maps.LatLng(<?php echo $latlon ?>),
+                                zoom: 16,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            };
+                            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                            directionsDisplay.setMap(map);
+                            directionsDisplay.setPanel(document.getElementById("directionsPanel"));
 
-                                        var marker = new google.maps.Marker({
-                                            position: myCenter,
-                                            icon: 'Shared/img/cmh.png',
-                                            animation: google.maps.Animation.BOUNCE
-                                        });
+                            var marker = new google.maps.Marker({
+                                position: myCenter,
+                                icon: 'Shared/img/cmh.png',
+                                animation: google.maps.Animation.BOUNCE
+                            });
 
-                                        marker.setMap(map);
+                            marker.setMap(map);
 
-                                    }
+                        }
 
-                                    function calcRoute() {
-                                        var start = document.getElementById("endereco").value;
-                                        var end = document.getElementById("destino").value;
-                                        var request = {
-                                            origin: start,
-                                            destination: end,
-                                            travelMode: google.maps.DirectionsTravelMode.DRIVING
-                                        };
+                        function calcRoute() {
+                            var start = document.getElementById("endereco").value;
+                            var end = document.getElementById("destino").value;
+                            var request = {
+                                origin: start,
+                                destination: end,
+                                travelMode: google.maps.DirectionsTravelMode.DRIVING
+                            };
 
-                                        directionsService.route(request, function(response, status) {
-                                            if (status === google.maps.DirectionsStatus.OK) {
-                                                directionsDisplay.setDirections(response);
-                                            } else {
-                                                alert(status);
-                                            }
-                                            document.getElementById('mapview').style.display = 'block';
-                                            document.getElementById('mapview').style.visibility = 'visible';
-                                        });
-                                    }
+                            directionsService.route(request, function(response, status) {
+                                if (status === google.maps.DirectionsStatus.OK) {
+                                    directionsDisplay.setDirections(response);
+                                } else {
+                                    alert(status);
+                                }
+                                document.getElementById('mapview').style.display = 'block';
+                                document.getElementById('mapview').style.visibility = 'visible';
+                            });
+                        }
 
-                                    google.maps.event.addDomListener(window, 'load', initialize);
+                        google.maps.event.addDomListener(window, 'load', initialize);
 
                     </script>
 
@@ -250,13 +254,13 @@
                             if (!isset($_REQUEST['latlon'])) {
                                 ?>
                                 <script>
-                                    navigator.geolocation.getCurrentPosition(showposUBS);
-                                    function showposUBS(position) {
-                                        var lat = position.coords.latitude;
-                                        var lon = position.coords.longitude;
-                                        var latlon = lat + ',' + lon;
-                                        window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
-                                    }
+                        navigator.geolocation.getCurrentPosition(showposUBS);
+                        function showposUBS(position) {
+                            var lat = position.coords.latitude;
+                            var lon = position.coords.longitude;
+                            var latlon = lat + ',' + lon;
+                            window.location = "Profile.php?id=<?php echo $idUBS ?>&latlon=" + latlon;
+                        }
                                 </script> 
                                 <?php
                             } else {

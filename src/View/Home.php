@@ -89,7 +89,7 @@ if (!isset($_POST['submit'])) {
 
                             $path = "../View/Profile.php?id=" . $idUBS . "";
                             $starImg = $controllerRanking->getStarImage($average);
-                            $completePath = "<a href=" . $path . "> " . $nameUBS . "</a><br>".$starImg."<br>";
+                            $completePath = "<a href=" . $path . "> " . $nameUBS . "</a><br>" . $starImg . "<br>";
                             array_push($topFiveArray, $completePath);
                         }
                     } else {
@@ -119,16 +119,6 @@ if (!isset($_POST['submit'])) {
                                 src="../View/Shared/img/cmhRankTitle.png" align="right" /></div>
                         <div class="Outline2">
                             <div class="TabControl">
-                                <div id="header">
-                                    <ul class="abas">
-                                        <li>
-                                            <div class="aba">
-                                                <span style="position: relative; top: 5px;
-                                                      left: 5px; color: #000099;"> Geral</span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div id="content">
                                     <div class="conteudo">
                                         <?php
@@ -154,6 +144,7 @@ if (!isset($_POST['submit'])) {
                 <br>
             </div>
         </div>
-        <?php require '../View/Shared/Footer.php'; ?>
-    </body>
+    </div>
+    <?php require '../View/Shared/Footer.php'; ?>
+</body>
 </html>

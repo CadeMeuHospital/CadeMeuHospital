@@ -90,7 +90,7 @@
                     <br />
                 </div>
                 <div class="evaluate" style="text-align: center">
-                    <h2>Avalie esta UBS!!</h2>
+                    <h2>Avalie esta UBS</h2>
                     <table>
                         <tr>
                             <td class="align-left">

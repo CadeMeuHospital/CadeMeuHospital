@@ -12,14 +12,22 @@ class DataValidation {
 
         if (self::validateNullFields($textField)) {
             throw new TextFieldException("Campo não pode ser nulo!");
+        } else if (self::validateTextField($textField) == 1) {
+            throw new TextFieldException("Campo contém caracteres invalidos!");
+        } else if (self::validateTextFieldLessThan2Characters($textField)) {
+            throw new TextFieldException("Campo não pode ter menos de dois caracteres!");
         } else {
-            if (self::validateTextField($textField) == 1) {
-                throw new TextFieldException("Campo contém caracteres invalidos!");
-            } else {
-                $result = TRUE;
-            }
+            $result = TRUE;
         }
         return $result;
+    }
+
+    public static function validateTextFieldLessThan2Characters($textField) {
+        $textFieldLenght = strlen($textField);
+        if ($textFieldLenght < 2) {
+            return TRUE;
+        }
+        return FALSE;
     }
 
     public static function validateNullFields($parameter) {
@@ -32,16 +40,15 @@ class DataValidation {
         $validChars = '. abcdefghijklmnopqrstuvwxyzçãõáíóúàòìù0123456789';
 
         $lengthName = strlen($name);
-        
+
         for ($i = 0; $i < $lengthName; $i++) {
             $character = stripos($validChars, $name[$i]);
             if (!$character) {
                 $result = 1;
-            } 
+            }
         }
         return $result;
     }
 
 }
-
 ?>

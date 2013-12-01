@@ -30,8 +30,7 @@ class ControllerStatistics {
     //Generating values to single UBS evaluation avarage
     public function generateValuesToChartAverageEvaluateSingleUBS($idUBS) {
         $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
-        $evaluatesUBS = $statisticsDAO->
-                getValuesToChartAverageEvaluateSigleUBS($idUBS);
+        $evaluatesUBS = $statisticsDAO->getValuesToChartAverageEvaluateSigleUBS($idUBS);
         return $evaluatesUBS;
     }
 

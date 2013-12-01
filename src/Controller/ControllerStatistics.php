@@ -23,14 +23,13 @@ class ControllerStatistics {
     public function generateValuesToChartAverageEvaluate() {
         $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
         $allEvaluates = $statisticsDAO->getValuesToChartAverageEvaluate();
-
         return $allEvaluates;
     }
 
     //Generating values to single UBS evaluation avarage
     public function generateValuesToChartAverageEvaluateSingleUBS($idUBS) {
         $statisticsDAO = StatisticsDAO::getInstanceStatisticsDAO();
-        $evaluatesUBS = $statisticsDAO->getValuesToChartAverageEvaluateSigleUBS($idUBS);
+        $evaluatesUBS = $statisticsDAO->getValuesToChartAverageEvaluateSingleUBS($idUBS);
         return $evaluatesUBS;
     }
 

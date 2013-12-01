@@ -21,7 +21,8 @@ class ControllerRanking {
     //Making a Rank
     public function makeRank() {
         $rankingDAO = RankingDAO::getInstanceRankingDAO();
-        return $rankingDAO->getRank();
+        $rank = $rankingDAO->getRank();
+        return $rank;
     }
 
     public function getStarImage($average) {

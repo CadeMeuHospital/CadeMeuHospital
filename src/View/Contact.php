@@ -31,8 +31,8 @@
                 $suggestionController = ControllerSuggestion::getInstanceControllerSuggestion();
                 $result = $suggestionController->saveSuggestion($suggestion, $email);
                 if($result){
-                    print "<script>alert('Sua sugestão foi gravada com sucesso! Obrigado por nos "
-                    . "ajudar a melhorar o site.')</script>";
+                    print "<script>alert('Sua sugestão foi gravada com sucesso! "
+                    . "Obrigado por nos ajudar a melhorar o site.')</script>";
                 }
             }
             ?>
@@ -41,7 +41,8 @@
                 <textarea name="sugestao" cols="91" rows="10" value="sugestao" maxlenght="1000" 
                           placeholder="Digite sua sugestão aqui..."></textarea>
                 <input type="submit" name="enviarSugestao" value="Enviar">
-                <input type="email" name="email" style="width: 300px; height: 24px" placeholder="Digite seu e-mail aqui..."/>
+                <input type="email" name="email" style="width: 300px; height: 24px" 
+                       placeholder="Digite seu e-mail aqui..."/>
             </form>
 
             <div align ="center">
@@ -87,11 +88,8 @@
                                 <td>larissax55@gmail.com</td>
                             </tr>
                         </table>
-
                 </div>
-
-
-                <br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br />
                 <?php require '../View/Shared/Footer.php'; ?>
             </div>
         </div>

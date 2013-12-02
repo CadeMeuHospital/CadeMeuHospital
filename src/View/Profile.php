@@ -129,8 +129,8 @@
                                         </tr>
                                         <tr>
                                             <td class="align-left">
-
-                                                <input class="button" type="submit" name="submitEvaluate" value="Avaliar"/>
+                                                <input class="button" type="submit" name="submitEvaluate" 
+                                                       value="Avaliar"/>
                                             </td>
                                         </tr>
                                     </table>
@@ -193,7 +193,9 @@
                 <h2>Mapa</h2>
                 <div id="mapholder" ></div>
                 <div class="content">
-                    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+                    <script src="http://maps.googleapis.com/maps/api/js?
+                    key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+                    </script>
                     <script>
                         var directionDisplay;
                         var directionsService = new google.maps.DirectionsService();
@@ -298,7 +300,8 @@
                             fjs.parentNode.insertBefore(js, fjs);
                         }(document, 'script', 'facebook-jssdk'));</script>
                     <div id="fb-root"></div>
-                    <div class="fb-comments" data-href="http://cademeuhospital.url.ph/src/View/Profile.php?id=<?php echo $_REQUEST['id'] ?>" 
+                    <div class="fb-comments" data-href="http://cademeuhospital.url.ph/src/View/Profile.php?
+                         id=<?php echo $_REQUEST['id'] ?>" 
                          data-numposts="4" data-width="760"></div>
                 </div>
                 <?php require '../View/Shared/Footer.php'; ?>

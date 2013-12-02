@@ -1,5 +1,5 @@
 <?php
-class Example extends PHPUnit_Extensions_SeleniumTestCase
+class Search extends PHPUnit_Extensions_SeleniumTestCase
 {
   protected function setUp()
   {
@@ -7,7 +7,7 @@ class Example extends PHPUnit_Extensions_SeleniumTestCase
     $this->setBrowserUrl("http://localhost/");
   }
 
-  public function testMyTestCase()
+  public function testSearchPage()
   {
     $this->open("/CadeMeuHospital/src/view/home.php");
     $this->click("id=search");
@@ -15,7 +15,6 @@ class Example extends PHPUnit_Extensions_SeleniumTestCase
     $this->click("name=Enviar");
     $this->waitForPageToLoad("30000");
     $this->click("link=CST 07 TAGUATINGA");
-    $this->waitForPageToLoad("30000");
     $this->assertTextPresent("CST");
   }
 }

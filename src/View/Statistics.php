@@ -8,7 +8,7 @@
         <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <script type="text/javascript" src="../View/shared/js/jquery.price_format.1.8.min.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <title> CMH - Estatisticas</title>
+        <title>CMH - Estatisticas</title>
     </head>
     <style>
         h2 {

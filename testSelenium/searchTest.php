@@ -1,6 +1,6 @@
 <?php
 
-class Example extends PHPUnit_Extensions_SeleniumTestCase
+class SearchResult extends PHPUnit_Extensions_SeleniumTestCase
 {
   protected function setUp()
   {
@@ -8,7 +8,7 @@ class Example extends PHPUnit_Extensions_SeleniumTestCase
     $this->setBrowserUrl("http://localhost/");
   }
 
-  public function testMyTestCase()
+  public function testSearchResult()
   {
     $this->open("/CadeMeuHospital/src/view/home.php");
     $this->click("id=search");

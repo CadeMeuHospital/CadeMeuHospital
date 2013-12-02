@@ -9,10 +9,8 @@ class Example extends PHPUnit_Extensions_SeleniumTestCase
 
   public function testMyTestCase()
   {
-    $this->open("/CadeMeuHospital/src/View/");
-    $this->click("link=Estatísticas");
-    $this->waitForPageToLoad("30000");
-    $this->assertTitle("CMH - Estatísticas");
+    $this->open("/cademeuhospital/src/View/Statistics.php");
+    $this->assertTitle("CMH - Estatisticas");
   }
 }
 ?>

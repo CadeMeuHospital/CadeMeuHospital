@@ -1,5 +1,5 @@
 <?php
-class Example extends PHPUnit_Extensions_SeleniumTestCase
+class Home extends PHPUnit_Extensions_SeleniumTestCase
 {
   protected function setUp()
   {
@@ -7,7 +7,7 @@ class Example extends PHPUnit_Extensions_SeleniumTestCase
     $this->setBrowserUrl("http://localhost/");
   }
 
-  public function testMyTestCase()
+  public function testHomePage()
   {
     $this->open("/CadeMeuHospital/src/view/Profile.php?id=18517&latlon=-15.780147999999999,-47.92917");
     $this->click("link=Home");

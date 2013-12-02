@@ -46,7 +46,8 @@
                                 mais pobres, terão prioridade os municípios que participam do Programa Brasil 
                                 Sem Miséria. Nas UBS os usuários do SUS podem realizar consultas médicas básicas,
                                 como por exemplo, Pediatria, Ginecologia com exames de gravidez muito mais rápido, 
-                                aproximadamente em 5 minutos já sai o resultado, diferentemente dos exames convencionais
+                                aproximadamente em 5 minutos já sai o resultado, 
+                                diferentemente dos exames convencionais
                                 que levam dias para sair o resultado, Odontologia, Clinica Geral com curativos simples, 
                                 tomar vacinas e coletar exames laboratoriais
                                </p></font>

@@ -20,11 +20,9 @@ class ControllerState {
     }
     
     //Saving the avarage evaluation
-    public function saveAverageEvaluationState(
-            $evaluate, $stateAcronym) {
+    public function saveAverageEvaluationState($evaluate, $stateAcronym) {
         $stateDAO = StateDAO::getInstanceStateDAO();
-        return $stateDAO->
-                saveAverageEvaluationStateDAO($evaluate, $stateAcronym);
+        return $stateDAO->saveAverageEvaluationStateDAO($evaluate, $stateAcronym);
     }
     
     //Taking a State

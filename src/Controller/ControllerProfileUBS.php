@@ -34,8 +34,7 @@ class ControllerProfileUBS {
             return false;
         }
 
-        $profileUBS = self::$instanceControllerProfileUBS->
-                makeObjectLoop($attributesUBS, 0);
+        $profileUBS = self::$instanceControllerProfileUBS->makeObjectLoop($attributesUBS, 0);
         return $profileUBS;
     }
 

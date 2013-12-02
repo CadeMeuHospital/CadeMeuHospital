@@ -44,7 +44,9 @@
                         
                         for($i = 0; $i < 27;$i++){
                             $result = $populations[$i]/$amountUBS[$i];
-                            array_push($optionToBeCrossed, $result);
+                            $resultFormat = round($result, 2);
+                           
+                            array_push($optionToBeCrossed, $resultFormat);
                         }
                         $title = "Quantidade de Pessoas por UBS";
                         break;

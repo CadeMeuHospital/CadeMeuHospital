@@ -60,7 +60,8 @@
                         
                         for($i = 0; $i < 27;$i++){
                             $result = $areas[$i]/$amountUBS[$i];
-                            array_push($optionToBeCrossed, $result);
+                            $resultFormat = round($result, 2);
+                            array_push($optionToBeCrossed, $resultFormat);
                         }
                         $title = "Uma UBS a cada (Km²)";
                         break;
@@ -154,10 +155,10 @@
                             ?>
                                 data.setValue(<?php echo $i; ?>, 0, 
                                 '<?php echo $namesOfStates[$i]; ?>');
-                                data.setValue(<?php echo $i; ?>, 1, 
-                                <?php echo $amountUBS[$i]; ?>);
                                 data.setValue(<?php echo $i; ?>, 2, 
                                 <?php echo $optionToBeCrossed[$i]; ?>);
+                                data.setValue(<?php echo $i; ?>, 1, 
+                                <?php echo $amountUBS[$i]; ?>);
                             <?php
                             }
                             ?>

@@ -22,7 +22,7 @@
                 </li>
 
                 <li>
-                    <a href="../View/About.php" target =" _blank">
+                    <a href="../View/About.php">
                         Sobre
                     </a>
                 </li>

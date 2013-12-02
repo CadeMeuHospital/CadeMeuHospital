@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <script type="text/javascript" src="/../V.iew/Shared/js/jquery.price_format.1.8.min.js"></script>
         <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
-        <title> CMH - Sobre</title>
+        <title>CMH - Sobre</title>
     </head>
 
     <body align="center">

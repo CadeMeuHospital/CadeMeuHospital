@@ -4,21 +4,13 @@ require_once dirname(__FILE__) . '/../../src/Utils/DistanceLatLon.php';
 
 class DistanceLatLonTest extends PHPUnit_Framework_TestCase {
     
-    protected $distanceLatLon;
-
-
-    protected function setUp() {
-        $this->distanceLatLon = new DistanceLatLon;
+    public function testComputeDistance() {
+        $distance = DistanceLatLon::computeDistance(0,2,0,4);
+        $this->assertEquals(222.18, $distance);
     }
 
-
-    protected function tearDown() {
-        
+    public function testComputeDistanceSamePoint() {
+        $distance = DistanceLatLon::computeDistance(2,2,2,2);
+        $this->assertEquals(0.0, $distance);
     }
-
-
-    public function testCompute_distance() {
-        
-    }
-
 }

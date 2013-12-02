@@ -26,10 +26,10 @@ class DistanceLatLon {
 
         // Distance in miles and KM - Add others if needed
         $miles = (float) $distanceDegree * 69.0;
-        $km = (float) $miles * 1.61;
+        $kilometers = (float) $miles * 1.61;
 
         // Return KM = Miles * 1.61
-        return round($km, 2);
+        return round($kilometers, 2);
     }
 }
 

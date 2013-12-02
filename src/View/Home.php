@@ -137,8 +137,8 @@ if (!isset($_POST['submit'])) {
                 <br>
                 <br>
             </div>
+            <?php require '../View/Shared/Footer.php'; ?>
         </div>
     </div>
-    <?php require '../View/Shared/Footer.php'; ?>
 </body>
 </html>

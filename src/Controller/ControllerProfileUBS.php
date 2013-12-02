@@ -48,8 +48,7 @@ class ControllerProfileUBS {
             return false;
         }
         $stateAcronym = $ubs->getCity()->getState()->getAcronym();
-        $resultEvaluation = $profileUBSDAO->
-                saveEvaluationUBS($evaluate, $idUBS);
+        $resultEvaluation = $profileUBSDAO->saveEvaluationUBS($evaluate, $idUBS);
         $controllerState->saveAverageEvaluationState($evaluate, $stateAcronym);
         return $resultEvaluation;
     }
@@ -102,8 +101,7 @@ class ControllerProfileUBS {
             $lines = mysql_num_rows($attributesUBS);
             while ($cont < $lines) {
 
-                $UBS = self::$instanceControllerProfileUBS->
-                        makeObjectLoop($attributesUBS, $cont);
+                $UBS = self::$instanceControllerProfileUBS->makeObjectLoop($attributesUBS, $cont);
 
                 array_push($arrayUBS, $UBS);
 

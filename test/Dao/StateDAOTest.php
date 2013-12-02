@@ -44,7 +44,7 @@ class StateDAOTest extends PHPUnit_Framework_TestCase {
     
     public function testSaveAverageEvaluationStateDAOTrue() {
         
-        $resultTrue = $this->stateDao->saveAverageEvaluationStateDAO(5,["LV"]);
+        $resultTrue = $this->stateDao->saveAverageEvaluationStateDAO(5,"LV");
         
         
         $this->assertTrue($resultTrue);
@@ -55,7 +55,7 @@ class StateDAOTest extends PHPUnit_Framework_TestCase {
         $sqlInsertUBS = "INSERT INTO `ubs`(`cod_unico`, `vlr_latitude`, `vlr_longitude`, `cod_munic`, `average`) VALUES (2222222,-2344.34343,-3434.32323,888888,0);";
         mysql_query($sqlInsert);
         mysql_query($sqlInsertUBS);
-        $resultTrue = $this->stateDao->saveAverageEvaluationStateDAO(5,["JW"]);
+        $resultTrue = $this->stateDao->saveAverageEvaluationStateDAO(5,"JW");
 
         $sqlDelete = "DELETE FROM `cademeuhospital`.`municipios_ibge` WHERE `municipios_ibge`.`codigo` = 888888 LIMIT 1";
         mysql_query($sqlDelete);

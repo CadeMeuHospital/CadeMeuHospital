@@ -4,7 +4,7 @@ class DistanceLatLon {
 
     //Compute the distance between two Lat/Lon Pairs
     //Haversine_formula
-    public static function compute_distance($fromLat, $fromLon, $toLat, $toLon) {
+    public static function computeDistance($fromLat, $fromLon, $toLat, $toLon) {
 
         // Ensure that all are floating pontt values
         $fromLat = floatval($fromLat);

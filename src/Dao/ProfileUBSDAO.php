@@ -100,7 +100,6 @@ class ProfileUBSDAO {
 
         DataValidation::throwTextFieldException($field);
 
-
         switch ($searchType) {
             case NOME :
                 $sql = "SELECT * FROM ubs WHERE nom_estab 

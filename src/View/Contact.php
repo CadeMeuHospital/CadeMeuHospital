@@ -9,13 +9,41 @@
         <link href="/../Shared/css/jquery-ui-1.10.3.custom.css" rel="stylesheet">
         <title> CMH - Contatos</title>
     </head>
+    <style>
+        h2 {
+            color: #990000;
+            text-decoration: none;
+            font-size: 30pt;
+            border-bottom: 1px double #990000;
+        }
+    </style>
 
     <body align="center">
         <div class="root">                   
-            <?php 
-                require '../View/Shared/Header.php';
-                require '../View/Shared/Navigation_bar.php'; 
+            <?php
+            require '../View/Shared/Header.php';
+            require '../View/Shared/Navigation_bar.php';
+            require '../Controller/ControllerSuggestion.php';
+
+            if (isset($_REQUEST['sugestao'])) {
+                $suggestion = $_REQUEST['sugestao'];
+                $email = $_REQUEST['email'];
+                $suggestionController = ControllerSuggestion::getInstanceControllerSuggestion();
+                $result = $suggestionController->saveSuggestion($suggestion, $email);
+                if($result){
+                    print "<script>alert('Sua sugestão foi gravada com sucesso! Obrigado por nos "
+                    . "ajudar a melhorar o site.')</script>";
+                }
+            }
             ?>
+            <h2>Deixe sua opinião</h2>
+            <form action="Contact.php" method="post">
+                <textarea name="sugestao" cols="91" rows="10" value="sugestao" maxlenght="1000" 
+                          placeholder="Digite sua sugestão aqui..."></textarea>
+                <input type="submit" name="enviarSugestao" value="Enviar">
+                <input type="email" name="email" style="width: 300px; height: 24px" placeholder="Digite seu e-mail aqui..."/>
+            </form>
+
             <div align ="center">
                 <div class="content">
                     <table border = "1">                    
@@ -66,8 +94,6 @@
                 <br /><br /><br /><br /><br /><br /><br />
                 <?php require '../View/Shared/Footer.php'; ?>
             </div>
-
-
         </div>
     </body>
 </html>

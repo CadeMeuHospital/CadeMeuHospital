@@ -56,7 +56,7 @@ class ControllerProfileUBS {
 
     //get the distance between two latitude and longitude
     public function getDistanceBetweenTwoLatLon($from_lat, $from_lon, $to_lat, $to_lon) {
-        return DistanceLatLon::compute_distance($from_lat, $from_lon, $to_lat, $to_lon);
+        return DistanceLatLon::computeDistance($from_lat, $from_lon, $to_lat, $to_lon);
     }
 
     //Making object in a loop

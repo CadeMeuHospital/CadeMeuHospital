@@ -1,6 +1,7 @@
 <?php
 
 require_once '/../Utils/Exception/TextFieldException.php';
+require_once '/../Utils/Exception/EmailException.php';
 
 define('SIZECODMUNIC', 6);
 
@@ -30,6 +31,14 @@ class DataValidation {
         return FALSE;
     }
 
+    public function validateEmail($email) {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new EmailException("E-mail inválido!");
+        } else {
+            return TRUE;
+        }
+    }
+
     public static function validateNullFields($parameter) {
         $result = empty($parameter);
         return $result;
@@ -51,4 +60,5 @@ class DataValidation {
     }
 
 }
+
 ?>

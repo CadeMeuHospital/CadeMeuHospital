@@ -14,11 +14,6 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="http://dados.gov.br/dataset/unidades-basicas-de-saude-ubs" target =" _blank">
-                        Dados Abertos
-                    </a>
-                </li>
                 
                 <li>
                     <a href="../View/Statistics.php">
@@ -27,8 +22,13 @@
                 </li>
 
                 <li>
+                    <a href="../View/About.php" target =" _blank">
+                        Sobre
+                    </a>
+                </li>
+                <li>
                     <a href="../View/Contact.php">
-                        Contatos
+                        Fale Conosco
                     </a>
                 </li>
 
